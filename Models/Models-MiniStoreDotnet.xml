@@ -1,0 +1,310 @@
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="component" parent="0" visible="0"/>
+    <mxCell id="binding_feature_component" parent="0" visible="0"/>
+    <concrete label="Azure" type="concrete" selected="false" id="clon5">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="320" y="310" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="AWS" type="concrete" selected="false" id="clon6">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="330" y="260" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="VM" type="concrete" selected="false" id="clon9">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="500" y="280" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="Microservices" type="concrete" selected="false" id="clon10">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="500" y="310" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="Oracle" type="concrete" selected="false" id="clon19">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="700" y="360" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="MSSql" type="concrete" selected="false" id="clon20">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="780" y="340" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="SystemLogs" type="concrete" selected="false" id="clon21">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="1000" y="300" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="Stock" type="concrete" selected="false" id="clon22">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="1070" y="250" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="IdentityManager" type="concrete" selected="false" id="clon23">
+      <mxCell style="fillColor=#DCDCDC;" parent="binding_feature_component" vertex="1">
+        <mxGeometry x="990" y="360" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <mxCell id="feature" parent="0"/>
+    <root label="MiniStoreDotnet" type="root" id="1">
+      <mxCell style="strokeWidth=3" parent="feature" vertex="1">
+        <mxGeometry x="565.8680555555555" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </root>
+    <abstract label="CloudProvider" type="abstract" id="2">
+      <mxCell style="strokeWidth=2" parent="feature" vertex="1">
+        <mxGeometry x="366.73611111111114" y="135" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </abstract>
+    <abstract label="Infrastructure" type="abstract" id="3">
+      <mxCell style="strokeWidth=2" parent="feature" vertex="1">
+        <mxGeometry x="496.7361111111111" y="135" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </abstract>
+    <rel_abstract_root type="relation" relType="mandatory" id="2.3">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="3" target="1" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="546.7361111111111" y="123"/>
+            <mxPoint x="604.6180555555555" y="49"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_abstract_root>
+    <rel_abstract_root type="relation" relType="mandatory" id="2.4">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="2" target="1" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="416.73611111111114" y="123"/>
+            <mxPoint x="582.1180555555555" y="47"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_abstract_root>
+    <concrete label="Azure" type="concrete" selected="false" id="5">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="AWS" type="concrete" selected="false" id="6">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="130" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <bundle label="bundle" type="bundle" bundleType="RANGE" lowRange="1" highRange="2" id="7">
+      <mxCell style="shape=ellipse" parent="feature" vertex="1">
+        <mxGeometry x="198.56026785714292" y="270" width="35" height="35" as="geometry"/>
+      </mxCell>
+    </bundle>
+    <rel_bundle_abstract type="relation" id="2.8">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="7" target="2" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="216.3888888888889" y="258"/>
+            <mxPoint x="416.73611111111114" y="182"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_bundle_abstract>
+    <rel_concrete_bundle type="relation" id="2.9">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="5" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="50" y="393"/>
+            <mxPoint x="208.94469246031747" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_bundle>
+    <rel_concrete_bundle type="relation" id="2.10">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="6" target="7" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="180" y="393"/>
+            <mxPoint x="223.83308531746033" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_bundle>
+    <bundle label="bundle" type="bundle" bundleType="RANGE" lowRange="1" highRange="2" id="8">
+      <mxCell style="shape=ellipse" parent="feature" vertex="1">
+        <mxGeometry x="415.22817460317486" y="270" width="35" height="35" as="geometry"/>
+      </mxCell>
+    </bundle>
+    <concrete label="VM" type="concrete" selected="false" id="9">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="260" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="Microservices" type="concrete" selected="false" id="10">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="390" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_bundle_abstract type="relation" id="2.14">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="8" target="3" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="433.05555555555566" y="258"/>
+            <mxPoint x="546.7361111111111" y="182"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_bundle_abstract>
+    <rel_concrete_bundle type="relation" id="2.15">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="9" target="8" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="310" y="393"/>
+            <mxPoint x="425.6113591269842" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_bundle>
+    <rel_concrete_bundle type="relation" id="2.16">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="10" target="8" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="440" y="393"/>
+            <mxPoint x="440.4997519841271" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_bundle>
+    <abstract label="CoreServices" type="abstract" id="13">
+      <mxCell style="strokeWidth=2" parent="feature" vertex="1">
+        <mxGeometry x="635" y="135" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </abstract>
+    <abstract label="DataAcces" type="abstract" id="15">
+      <mxCell style="strokeWidth=2" parent="feature" vertex="1">
+        <mxGeometry x="524.7767857142856" y="270" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </abstract>
+    <abstract label="BaseServices" type="abstract" id="18">
+      <mxCell style="strokeWidth=2" parent="feature" vertex="1">
+        <mxGeometry x="816" y="270" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </abstract>
+    <concrete label="Oracle" type="concrete" selected="false" id="19">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="520" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="MSSql" type="concrete" selected="false" id="20">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="650" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_abstract_abstract type="relation" relType="mandatory" id="2.22">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="15" target="13" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="574.7767857142856" y="258"/>
+            <mxPoint x="662.5" y="182"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_abstract_abstract>
+    <rel_concrete_abstract type="relation" relType="mandatory" id="2.23">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="19" target="15" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="570" y="393"/>
+            <mxPoint x="552.2767857142856" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_abstract>
+    <rel_concrete_abstract type="relation" relType="mandatory" id="2.24">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="20" target="15" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="700" y="393"/>
+            <mxPoint x="597.2767857142856" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_abstract>
+    <rel_abstract_root type="relation" relType="mandatory" id="2.25">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="13" target="1" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="685" y="123"/>
+            <mxPoint x="627.1180555555555" y="49"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_abstract_root>
+    <concrete label="SystemLogs" type="concrete" selected="false" id="21">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="780" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <concrete label="Stock" type="concrete" selected="false" id="22">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="910" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_abstract type="relation" relType="mandatory" id="2.28">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="21" target="18" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="830" y="393"/>
+            <mxPoint x="836" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_abstract>
+    <rel_concrete_abstract type="relation" relType="mandatory" id="2.29">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="22" target="18" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="960" y="393"/>
+            <mxPoint x="866" y="319"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_abstract>
+    <concrete label="IdentityManager" type="concrete" selected="false" id="23">
+      <mxCell style="" parent="feature" vertex="1">
+        <mxGeometry x="1040" y="405" width="100" height="35" as="geometry"/>
+      </mxCell>
+    </concrete>
+    <rel_concrete_abstract type="relation" relType="mandatory" id="2.31">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="23" target="18" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="1090" y="393"/>
+            <mxPoint x="896" y="317"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_concrete_abstract>
+    <rel_abstract_root type="relation" relType="mandatory" id="2.32">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="18" target="1" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="888.5" y="258"/>
+            <mxPoint x="765" y="220"/>
+            <mxPoint x="765" y="85"/>
+            <mxPoint x="649.6180555555555" y="47"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_abstract_root>
+    <rel_abstract_abstract type="relation" relType="requires" id="2.33">
+      <mxCell style="noEdgeStyle=1;orthogonal=1;" parent="feature" source="18" target="13" edge="1">
+        <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="843.5" y="258"/>
+            <mxPoint x="707.5" y="182"/>
+          </Array>
+        </mxGeometry>
+      </mxCell>
+    </rel_abstract_abstract>
+  </root>
+</mxGraphModel>
