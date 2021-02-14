@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.1.0</Version>
+    <Authors>jasotov@eafit.edu.com</Authors>
+    <Description>Data access component for Mysql vendor</Description>
+    <PackageProjectUrl>https://dev.azure.com/jsoto25/MaestriaSPLE</PackageProjectUrl>
+    <RepositoryUrl>https://dev.azure.com/jsoto25/MaestriaSPLE/_git/MiniStoreDotnet</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiniStoreDotnetCore.DataAccess\MiniStoreDotnetCore.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>
