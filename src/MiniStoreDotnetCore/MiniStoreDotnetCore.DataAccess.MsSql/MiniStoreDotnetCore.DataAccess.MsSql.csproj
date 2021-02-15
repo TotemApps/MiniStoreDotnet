@@ -6,8 +6,8 @@
     <Version>0.1.0</Version>
     <Authors>jasotov@eafit.edu.com</Authors>
     <Description>Data access component for Mysql vendor</Description>
-    <PackageProjectUrl>https://dev.azure.com/jsoto25/MaestriaSPLE</PackageProjectUrl>
-    <RepositoryUrl>https://dev.azure.com/jsoto25/MaestriaSPLE/_git/MiniStoreDotnet</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/orgs/TotemApps/packages</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TotemApps/MiniStoreDotnet</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
