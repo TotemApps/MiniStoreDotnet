@@ -8,8 +8,8 @@
     <Company>jasotov@eafit.edu.comjasotov@eafit.edu.com</Company>
     <Product>MiniStoreDotnetCore.DataAccess</Product>
     <Description>Data access component. Interface for SQL.</Description>
-    <PackageProjectUrl>https://dev.azure.com/jsoto25/MaestriaSPLE</PackageProjectUrl>
-    <RepositoryUrl>https://dev.azure.com/jsoto25/MaestriaSPLE/_git/MiniStoreDotnet</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/orgs/TotemApps/packages</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/TotemApps/MiniStoreDotnet</RepositoryUrl>
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
