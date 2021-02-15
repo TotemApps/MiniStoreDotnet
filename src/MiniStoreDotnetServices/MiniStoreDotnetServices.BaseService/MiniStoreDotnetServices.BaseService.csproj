@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>b8d5e5ee-1069-4c59-92c6-7b08dbf2ddb0</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="MiniStoreDotnetCore.DataAccess" Version="0.1.0" />
+    <PackageReference Include="MiniStoreDotnetCore.DataAccess.MsSql" Version="0.1.0" />
+    <PackageReference Include="MiniStoreDotnetCore.DataAccess.Oracle" Version="0.1.0" />
+  </ItemGroup>
+
+
+</Project>
