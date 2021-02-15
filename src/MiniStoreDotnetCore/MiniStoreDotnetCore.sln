@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniStoreDotnetCore.DataAccess", "MiniStoreDotnetCore.DataAccess\MiniStoreDotnetCore.DataAccess.csproj", "{E217613C-55C2-45B6-88C5-E7444D78F322}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniStoreDotnetCore.DataAccess.MsSql", "MiniStoreDotnetCore.DataAccess.MsSql\MiniStoreDotnetCore.DataAccess.MsSql.csproj", "{F14A5233-66F3-4351-A66C-9ADFE8BF9CAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniStoreDotnetCore.DataAccess.Oracle", "MiniStoreDotnetCore.DataAccess.Oracle\MiniStoreDotnetCore.DataAccess.Oracle.csproj", "{6DBA03EB-47DD-4437-83D2-9C29A6D55434}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{676B948D-2616-4E3B-9775-639F3C0BC527}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E217613C-55C2-45B6-88C5-E7444D78F322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E217613C-55C2-45B6-88C5-E7444D78F322}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E217613C-55C2-45B6-88C5-E7444D78F322}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E217613C-55C2-45B6-88C5-E7444D78F322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14A5233-66F3-4351-A66C-9ADFE8BF9CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14A5233-66F3-4351-A66C-9ADFE8BF9CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14A5233-66F3-4351-A66C-9ADFE8BF9CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14A5233-66F3-4351-A66C-9ADFE8BF9CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DBA03EB-47DD-4437-83D2-9C29A6D55434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DBA03EB-47DD-4437-83D2-9C29A6D55434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DBA03EB-47DD-4437-83D2-9C29A6D55434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DBA03EB-47DD-4437-83D2-9C29A6D55434}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD82B73A-2BEB-44D5-A154-59B1F1D3E4BA}
+	EndGlobalSection
+EndGlobal
