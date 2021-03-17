@@ -12,20 +12,20 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace Company.LabDslE
 {
 	/// <summary>
-	/// DomainClass ExampleModel
+	/// DomainClass FeatureModel
 	/// The root in which all other elements are embedded. Appears as a diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.LabDslE.ExampleModel.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.LabDslE.ExampleModel.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModel.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.LabDslE.FeatureModel.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.LabDslE.LabDslEDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("69bf5bc0-b848-4bf1-ae73-235ac69fb77d")]
-	public partial class ExampleModel : DslModeling::ModelElement
+	public partial class FeatureModel : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ExampleModel domain class Id.
+		/// FeatureModel domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x69bf5bc0, 0xb848, 0x4bf1, 0xae, 0x73, 0x23, 0x5a, 0xc6, 0x9f, 0xb7, 0x7d);
 		/// <summary>
@@ -33,7 +33,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleModel(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureModel(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -43,7 +43,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleModel(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureModel(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -53,12 +53,12 @@ namespace Company.LabDslE
 		/// <summary>
 		/// Gets a list of Elements.
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ExampleElement> Elements
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> Elements
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(global::Company.LabDslE.ExampleModelHasElements.ExampleModelDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.LabDslE.FeatureModelHasElements.FeatureModelDomainRoleId);
 			}
 		}
 		#endregion
@@ -82,7 +82,7 @@ namespace Company.LabDslE
 			{
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.LabDslE.ExampleElement.DomainClassId)) 
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.LabDslE.FeatureElement.DomainClassId)) 
 				{
 					return true;
 				}
@@ -111,11 +111,11 @@ namespace Company.LabDslE
 			if ( sourceElement == null ) throw new global::System.ArgumentNullException("sourceElement");
 		
 				
-			global::Company.LabDslE.ExampleElement sourceExampleElement1 = sourceElement as global::Company.LabDslE.ExampleElement;
-			if (sourceExampleElement1 != null)
+			global::Company.LabDslE.FeatureElement sourceFeatureElement1 = sourceElement as global::Company.LabDslE.FeatureElement;
+			if (sourceFeatureElement1 != null)
 			{
-				// Create link for path ExampleModelHasElements.Elements
-				this.Elements.Add(sourceExampleElement1);
+				// Create link for path FeatureModelHasElements.Elements
+				this.Elements.Add(sourceFeatureElement1);
 
 				return;
 			}
@@ -142,15 +142,15 @@ namespace Company.LabDslE
 		{
 			if (sourceElement == null) throw new global::System.ArgumentNullException("sourceElement");
 				
-			global::Company.LabDslE.ExampleElement sourceExampleElement1 = sourceElement as global::Company.LabDslE.ExampleElement;
-			if (sourceExampleElement1 != null)
+			global::Company.LabDslE.FeatureElement sourceFeatureElement1 = sourceElement as global::Company.LabDslE.FeatureElement;
+			if (sourceFeatureElement1 != null)
 			{
-				// Delete link for path ExampleModelHasElements.Elements
+				// Delete link for path FeatureModelHasElements.Elements
 				
-				foreach (DslModeling::ElementLink link in global::Company.LabDslE.ExampleModelHasElements.GetLinks((global::Company.LabDslE.ExampleModel)this, sourceExampleElement1))
+				foreach (DslModeling::ElementLink link in global::Company.LabDslE.FeatureModelHasElements.GetLinks((global::Company.LabDslE.FeatureModel)this, sourceFeatureElement1))
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.LabDslE.ExampleModelHasElements.ExampleModelDomainRoleId, global::Company.LabDslE.ExampleModelHasElements.ElementDomainRoleId);
+					link.Delete(global::Company.LabDslE.FeatureModelHasElements.FeatureModelDomainRoleId, global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId);
 				}
 
 				return;
@@ -164,21 +164,21 @@ namespace Company.LabDslE
 namespace Company.LabDslE
 {
 	/// <summary>
-	/// DomainClass ExampleElement
+	/// DomainClass FeatureElement
 	/// Elements embedded in the model. Appear as boxes on the diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.LabDslE.ExampleElement.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.LabDslE.ExampleElement.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.LabDslE.FeatureElement.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.LabDslE.FeatureElement.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.LabDslE.LabDslEDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
 	[DslModeling::DomainObjectId("47d1e017-e544-4d18-9f15-0c0d74aab5ce")]
-	public partial class ExampleElement : DslModeling::ModelElement
+	public partial class FeatureElement : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ExampleElement domain class Id.
+		/// FeatureElement domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x47d1e017, 0xe544, 0x4d18, 0x9f, 0x15, 0x0c, 0x0d, 0x74, 0xaa, 0xb5, 0xce);
 		/// <summary>
@@ -186,7 +186,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleElement(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElement(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -196,7 +196,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleElement(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElement(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -215,10 +215,10 @@ namespace Company.LabDslE
 		
 		/// <summary>
 		/// Gets or sets the value of Name domain property.
-		/// Description for Company.LabDslE.ExampleElement.Name
+		/// Description for Company.LabDslE.FeatureElement.Name
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.LabDslE.ExampleElement/Name.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.LabDslE.ExampleElement/Name.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureElement/Name.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureElement/Name.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
 		[global::System.ComponentModel.DefaultValue("")]
 		[DslModeling::ElementName]
 		[DslModeling::DomainObjectId("88852f33-9753-4157-b429-68ba33967cd7")]
@@ -236,19 +236,19 @@ namespace Company.LabDslE
 			}
 		}
 		/// <summary>
-		/// Value handler for the ExampleElement.Name domain property.
+		/// Value handler for the FeatureElement.Name domain property.
 		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<ExampleElement, global::System.String>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureElement, global::System.String>
 		{
 			private NamePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the ExampleElement.Name domain property value handler.
+			/// Gets the singleton instance of the FeatureElement.Name domain property value handler.
 			/// </summary>
 			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the ExampleElement.Name domain property.
+			/// Gets the Id of the FeatureElement.Name domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -264,7 +264,7 @@ namespace Company.LabDslE
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(ExampleElement element)
+			public override sealed global::System.String GetValue(FeatureElement element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.namePropertyStorage;
@@ -275,7 +275,7 @@ namespace Company.LabDslE
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(ExampleElement element, global::System.String newValue)
+			public override sealed void SetValue(FeatureElement element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -290,21 +290,21 @@ namespace Company.LabDslE
 		}
 		
 		#endregion
-		#region ExampleModel opposite domain role accessor
+		#region FeatureModel opposite domain role accessor
 		/// <summary>
-		/// Gets or sets ExampleModel.
+		/// Gets or sets FeatureModel.
 		/// </summary>
-		public virtual ExampleModel ExampleModel
+		public virtual FeatureModel FeatureModel
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.LabDslE.ExampleModelHasElements.ElementDomainRoleId) as ExampleModel;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId) as FeatureModel;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.LabDslE.ExampleModelHasElements.ElementDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId, value);
 			}
 		}
 		#endregion
@@ -314,12 +314,12 @@ namespace Company.LabDslE
 		/// Gets a list of Targets.
 		/// Description for Company.LabDslE.ExampleRelationship.Target
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ExampleElement> Targets
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> Targets
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(global::Company.LabDslE.ExampleElementReferencesTargets.SourceDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.LabDslE.FeatureElementReferencesTargets.SourceDomainRoleId);
 			}
 		}
 		#endregion
@@ -329,12 +329,12 @@ namespace Company.LabDslE
 		/// Gets a list of Sources.
 		/// Description for Company.LabDslE.ExampleRelationship.Source
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<ExampleElement> Sources
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> Sources
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(global::Company.LabDslE.ExampleElementReferencesTargets.TargetDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.LabDslE.FeatureElementReferencesTargets.TargetDomainRoleId);
 			}
 		}
 		#endregion

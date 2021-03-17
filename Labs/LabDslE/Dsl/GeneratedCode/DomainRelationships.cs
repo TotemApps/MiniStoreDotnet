@@ -12,33 +12,33 @@ using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 namespace Company.LabDslE
 {
 	/// <summary>
-	/// DomainRelationship ExampleModelHasElements
+	/// DomainRelationship FeatureModelHasElements
 	/// Embedding relationship between the Model and Elements
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.LabDslE.ExampleModelHasElements.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.LabDslE.ExampleModelHasElements.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModelHasElements.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.LabDslE.FeatureModelHasElements.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.LabDslE.LabDslEDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
 	[DslModeling::DomainObjectId("df6f62a4-9847-4554-8156-e1a546c5e847")]
-	public partial class ExampleModelHasElements : DslModeling::ElementLink
+	public partial class FeatureModelHasElements : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ExampleModelHasElements domain class Id.
+		/// FeatureModelHasElements domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xdf6f62a4, 0x9847, 0x4554, 0x81, 0x56, 0xe1, 0xa5, 0x46, 0xc5, 0xe8, 0x47);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ExampleModelHasElements link in the same Partition as the given ExampleModel
+		/// Creates a FeatureModelHasElements link in the same Partition as the given FeatureModel
 		/// </summary>
-		/// <param name="source">ExampleModel to use as the source of the relationship.</param>
-		/// <param name="target">ExampleElement to use as the target of the relationship.</param>
-		public ExampleModelHasElements(ExampleModel source, ExampleElement target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ExampleModelHasElements.ExampleModelDomainRoleId, source), new DslModeling::RoleAssignment(ExampleModelHasElements.ElementDomainRoleId, target)}, null)
+		/// <param name="source">FeatureModel to use as the source of the relationship.</param>
+		/// <param name="target">FeatureElement to use as the target of the relationship.</param>
+		public FeatureModelHasElements(FeatureModel source, FeatureElement target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureModelHasElements.FeatureModelDomainRoleId, source), new DslModeling::RoleAssignment(FeatureModelHasElements.ElementDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -47,7 +47,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ExampleModelHasElements(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureModelHasElements(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -58,7 +58,7 @@ namespace Company.LabDslE
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ExampleModelHasElements(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureModelHasElements(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -68,7 +68,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ExampleModelHasElements(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureModelHasElements(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -79,59 +79,59 @@ namespace Company.LabDslE
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ExampleModelHasElements(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureModelHasElements(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region ExampleModel domain role code
+		#region FeatureModel domain role code
 		
 		/// <summary>
-		/// ExampleModel domain role Id.
+		/// FeatureModel domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid ExampleModelDomainRoleId = new global::System.Guid(0xaa0343c0, 0x3379, 0x4098, 0xae, 0xae, 0x1b, 0x30, 0x66, 0x75, 0x39, 0x7d);
+		public static readonly global::System.Guid FeatureModelDomainRoleId = new global::System.Guid(0xaa0343c0, 0x3379, 0x4098, 0xae, 0xae, 0x1b, 0x30, 0x66, 0x75, 0x39, 0x7d);
 		
 		/// <summary>
-		/// DomainRole ExampleModel
+		/// DomainRole FeatureModel
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.LabDslE.ExampleModelHasElements/ExampleModel.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.LabDslE.ExampleModelHasElements/ExampleModel.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Elements", PropertyDisplayNameKey="Company.LabDslE.ExampleModelHasElements/ExampleModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModelHasElements/FeatureModel.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureModelHasElements/FeatureModel.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Elements", PropertyDisplayNameKey="Company.LabDslE.FeatureModelHasElements/FeatureModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("aa0343c0-3379-4098-aeae-1b306675397d")]
-		public virtual ExampleModel ExampleModel
+		public virtual FeatureModel FeatureModel
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (ExampleModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, ExampleModelDomainRoleId);
+				return (FeatureModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, FeatureModelDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, ExampleModelDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, FeatureModelDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access ExampleModel of a ExampleElement
+		#region Static methods to access FeatureModel of a FeatureElement
 		/// <summary>
-		/// Gets ExampleModel.
+		/// Gets FeatureModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static ExampleModel GetExampleModel(ExampleElement element)
+		public static FeatureModel GetFeatureModel(FeatureElement element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ElementDomainRoleId) as ExampleModel;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ElementDomainRoleId) as FeatureModel;
 		}
 		
 		/// <summary>
-		/// Sets ExampleModel.
+		/// Sets FeatureModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetExampleModel(ExampleElement element, ExampleModel newExampleModel)
+		public static void SetFeatureModel(FeatureElement element, FeatureModel newFeatureModel)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, ElementDomainRoleId, newExampleModel);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ElementDomainRoleId, newFeatureModel);
 		}
 		#endregion
 		#region Element domain role code
@@ -144,16 +144,16 @@ namespace Company.LabDslE
 		/// <summary>
 		/// DomainRole Element
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.LabDslE.ExampleModelHasElements/Element.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.LabDslE.ExampleModelHasElements/Element.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "ExampleModel", PropertyDisplayNameKey="Company.LabDslE.ExampleModelHasElements/Element.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModelHasElements/Element.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureModelHasElements/Element.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "FeatureModel", PropertyDisplayNameKey="Company.LabDslE.FeatureModelHasElements/Element.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
 		[DslModeling::DomainObjectId("ec309e50-f5ac-4786-aa14-c1e59ec30801")]
-		public virtual ExampleElement Element
+		public virtual FeatureElement Element
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (ExampleElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, ElementDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, ElementDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
@@ -163,37 +163,37 @@ namespace Company.LabDslE
 		}
 				
 		#endregion
-		#region Static methods to access Elements of a ExampleModel
+		#region Static methods to access Elements of a FeatureModel
 		/// <summary>
 		/// Gets a list of Elements.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ExampleElement> GetElements(ExampleModel element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetElements(FeatureModel element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(element, ExampleModelDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, FeatureModelDomainRoleId);
 		}
 		#endregion
-		#region ExampleModel link accessor
+		#region FeatureModel link accessor
 		/// <summary>
-		/// Get the list of ExampleModelHasElements links to a ExampleModel.
+		/// Get the list of FeatureModelHasElements links to a FeatureModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.ExampleModelHasElements> GetLinksToElements ( global::Company.LabDslE.ExampleModel exampleModelInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureModelHasElements> GetLinksToElements ( global::Company.LabDslE.FeatureModel featureModelInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleModelHasElements>(exampleModelInstance, global::Company.LabDslE.ExampleModelHasElements.ExampleModelDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasElements>(featureModelInstance, global::Company.LabDslE.FeatureModelHasElements.FeatureModelDomainRoleId);
 		}
 		#endregion
 		#region Element link accessor
 		/// <summary>
-		/// Get the ExampleModelHasElements link to a ExampleElement.
+		/// Get the FeatureModelHasElements link to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.LabDslE.ExampleModelHasElements GetLinkToExampleModel (global::Company.LabDslE.ExampleElement elementInstance)
+		public static global::Company.LabDslE.FeatureModelHasElements GetLinkToFeatureModel (global::Company.LabDslE.FeatureElement elementInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.LabDslE.ExampleModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleModelHasElements>(elementInstance, global::Company.LabDslE.ExampleModelHasElements.ElementDomainRoleId);
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasElements>(elementInstance, global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId);
 			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of Element not obeyed.");
 			if ( links.Count == 0 )
 			{
@@ -205,18 +205,18 @@ namespace Company.LabDslE
 			}
 		}
 		#endregion
-		#region ExampleModelHasElements instance accessors
+		#region FeatureModelHasElements instance accessors
 		
 		/// <summary>
-		/// Get any ExampleModelHasElements links between a given ExampleModel and a ExampleElement.
+		/// Get any FeatureModelHasElements links between a given FeatureModel and a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.ExampleModelHasElements> GetLinks( global::Company.LabDslE.ExampleModel source, global::Company.LabDslE.ExampleElement target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureModelHasElements> GetLinks( global::Company.LabDslE.FeatureModel source, global::Company.LabDslE.FeatureElement target )
 		{
-			global::System.Collections.Generic.List<global::Company.LabDslE.ExampleModelHasElements> outLinks = new global::System.Collections.Generic.List<global::Company.LabDslE.ExampleModelHasElements>();
-			global::System.Collections.Generic.IList<global::Company.LabDslE.ExampleModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleModelHasElements>(source, global::Company.LabDslE.ExampleModelHasElements.ExampleModelDomainRoleId);
-			foreach ( global::Company.LabDslE.ExampleModelHasElements link in links )
+			global::System.Collections.Generic.List<global::Company.LabDslE.FeatureModelHasElements> outLinks = new global::System.Collections.Generic.List<global::Company.LabDslE.FeatureModelHasElements>();
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasElements>(source, global::Company.LabDslE.FeatureModelHasElements.FeatureModelDomainRoleId);
+			foreach ( global::Company.LabDslE.FeatureModelHasElements link in links )
 			{
 				if ( target.Equals(link.Element) )
 				{
@@ -226,14 +226,14 @@ namespace Company.LabDslE
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ExampleModelHasElements link between a given ExampleModeland a ExampleElement.
+		/// Get the one FeatureModelHasElements link between a given FeatureModeland a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.LabDslE.ExampleModelHasElements GetLink( global::Company.LabDslE.ExampleModel source, global::Company.LabDslE.ExampleElement target )
+		public static global::Company.LabDslE.FeatureModelHasElements GetLink( global::Company.LabDslE.FeatureModel source, global::Company.LabDslE.FeatureElement target )
 		{
-			global::System.Collections.Generic.IList<global::Company.LabDslE.ExampleModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleModelHasElements>(source, global::Company.LabDslE.ExampleModelHasElements.ExampleModelDomainRoleId);
-			foreach ( global::Company.LabDslE.ExampleModelHasElements link in links )
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureModelHasElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasElements>(source, global::Company.LabDslE.FeatureModelHasElements.FeatureModelDomainRoleId);
+			foreach ( global::Company.LabDslE.FeatureModelHasElements link in links )
 			{
 				if ( target.Equals(link.Element) )
 				{
@@ -249,33 +249,33 @@ namespace Company.LabDslE
 namespace Company.LabDslE
 {
 	/// <summary>
-	/// DomainRelationship ExampleElementReferencesTargets
+	/// DomainRelationship FeatureElementReferencesTargets
 	/// Reference relationship between Elements.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.LabDslE.ExampleElementReferencesTargets.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.LabDslE.ExampleElementReferencesTargets.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.LabDslE.FeatureElementReferencesTargets.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.LabDslE.FeatureElementReferencesTargets.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.LabDslE.LabDslEDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship()]
 	[DslModeling::DomainObjectId("80657553-7092-4e14-82c2-9242a14bea89")]
-	public partial class ExampleElementReferencesTargets : DslModeling::ElementLink
+	public partial class FeatureElementReferencesTargets : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// ExampleElementReferencesTargets domain class Id.
+		/// FeatureElementReferencesTargets domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x80657553, 0x7092, 0x4e14, 0x82, 0xc2, 0x92, 0x42, 0xa1, 0x4b, 0xea, 0x89);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a ExampleElementReferencesTargets link in the same Partition as the given ExampleElement
+		/// Creates a FeatureElementReferencesTargets link in the same Partition as the given FeatureElement
 		/// </summary>
-		/// <param name="source">ExampleElement to use as the source of the relationship.</param>
-		/// <param name="target">ExampleElement to use as the target of the relationship.</param>
-		public ExampleElementReferencesTargets(ExampleElement source, ExampleElement target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(ExampleElementReferencesTargets.SourceDomainRoleId, source), new DslModeling::RoleAssignment(ExampleElementReferencesTargets.TargetDomainRoleId, target)}, null)
+		/// <param name="source">FeatureElement to use as the source of the relationship.</param>
+		/// <param name="target">FeatureElement to use as the target of the relationship.</param>
+		public FeatureElementReferencesTargets(FeatureElement source, FeatureElement target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementReferencesTargets.SourceDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementReferencesTargets.TargetDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -284,7 +284,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ExampleElementReferencesTargets(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureElementReferencesTargets(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -295,7 +295,7 @@ namespace Company.LabDslE
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ExampleElementReferencesTargets(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElementReferencesTargets(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -305,7 +305,7 @@ namespace Company.LabDslE
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public ExampleElementReferencesTargets(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureElementReferencesTargets(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -316,7 +316,7 @@ namespace Company.LabDslE
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public ExampleElementReferencesTargets(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElementReferencesTargets(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
@@ -332,16 +332,16 @@ namespace Company.LabDslE
 		/// DomainRole Source
 		/// Description for Company.LabDslE.ExampleRelationship.Target
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.LabDslE.ExampleElementReferencesTargets/Source.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.LabDslE.ExampleElementReferencesTargets/Source.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Targets", PropertyDisplayNameKey="Company.LabDslE.ExampleElementReferencesTargets/Source.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureElementReferencesTargets/Source.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureElementReferencesTargets/Source.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Targets", PropertyDisplayNameKey="Company.LabDslE.FeatureElementReferencesTargets/Source.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("0659727b-feef-4a10-94dc-4a692773c25a")]
-		public virtual ExampleElement Source
+		public virtual FeatureElement Source
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (ExampleElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
@@ -351,15 +351,15 @@ namespace Company.LabDslE
 		}
 				
 		#endregion
-		#region Static methods to access Sources of a ExampleElement
+		#region Static methods to access Sources of a FeatureElement
 		/// <summary>
 		/// Gets a list of Sources.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ExampleElement> GetSources(ExampleElement element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetSources(FeatureElement element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(element, TargetDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, TargetDomainRoleId);
 		}
 		#endregion
 		#region Target domain role code
@@ -373,16 +373,16 @@ namespace Company.LabDslE
 		/// DomainRole Target
 		/// Description for Company.LabDslE.ExampleRelationship.Source
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.LabDslE.ExampleElementReferencesTargets/Target.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.LabDslE.ExampleElementReferencesTargets/Target.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Sources", PropertyDisplayNameKey="Company.LabDslE.ExampleElementReferencesTargets/Target.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureElementReferencesTargets/Target.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureElementReferencesTargets/Target.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Sources", PropertyDisplayNameKey="Company.LabDslE.FeatureElementReferencesTargets/Target.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("ef075d83-a1c0-4541-9b2c-15584eeaa183")]
-		public virtual ExampleElement Target
+		public virtual FeatureElement Target
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (ExampleElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
@@ -392,51 +392,51 @@ namespace Company.LabDslE
 		}
 				
 		#endregion
-		#region Static methods to access Targets of a ExampleElement
+		#region Static methods to access Targets of a FeatureElement
 		/// <summary>
 		/// Gets a list of Targets.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<ExampleElement> GetTargets(ExampleElement element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetTargets(FeatureElement element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<ExampleElement>, ExampleElement>(element, SourceDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, SourceDomainRoleId);
 		}
 		#endregion
 		#region Source link accessor
 		/// <summary>
-		/// Get the list of ExampleElementReferencesTargets links to a ExampleElement.
+		/// Get the list of FeatureElementReferencesTargets links to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.ExampleElementReferencesTargets> GetLinksToTargets ( global::Company.LabDslE.ExampleElement sourceInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureElementReferencesTargets> GetLinksToTargets ( global::Company.LabDslE.FeatureElement sourceInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleElementReferencesTargets>(sourceInstance, global::Company.LabDslE.ExampleElementReferencesTargets.SourceDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureElementReferencesTargets>(sourceInstance, global::Company.LabDslE.FeatureElementReferencesTargets.SourceDomainRoleId);
 		}
 		#endregion
 		#region Target link accessor
 		/// <summary>
-		/// Get the list of ExampleElementReferencesTargets links to a ExampleElement.
+		/// Get the list of FeatureElementReferencesTargets links to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.ExampleElementReferencesTargets> GetLinksToSources ( global::Company.LabDslE.ExampleElement targetInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureElementReferencesTargets> GetLinksToSources ( global::Company.LabDslE.FeatureElement targetInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleElementReferencesTargets>(targetInstance, global::Company.LabDslE.ExampleElementReferencesTargets.TargetDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureElementReferencesTargets>(targetInstance, global::Company.LabDslE.FeatureElementReferencesTargets.TargetDomainRoleId);
 		}
 		#endregion
-		#region ExampleElementReferencesTargets instance accessors
+		#region FeatureElementReferencesTargets instance accessors
 		
 		/// <summary>
-		/// Get any ExampleElementReferencesTargets links between a given ExampleElement and a ExampleElement.
+		/// Get any FeatureElementReferencesTargets links between a given FeatureElement and a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.ExampleElementReferencesTargets> GetLinks( global::Company.LabDslE.ExampleElement source, global::Company.LabDslE.ExampleElement target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureElementReferencesTargets> GetLinks( global::Company.LabDslE.FeatureElement source, global::Company.LabDslE.FeatureElement target )
 		{
-			global::System.Collections.Generic.List<global::Company.LabDslE.ExampleElementReferencesTargets> outLinks = new global::System.Collections.Generic.List<global::Company.LabDslE.ExampleElementReferencesTargets>();
-			global::System.Collections.Generic.IList<global::Company.LabDslE.ExampleElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleElementReferencesTargets>(source, global::Company.LabDslE.ExampleElementReferencesTargets.SourceDomainRoleId);
-			foreach ( global::Company.LabDslE.ExampleElementReferencesTargets link in links )
+			global::System.Collections.Generic.List<global::Company.LabDslE.FeatureElementReferencesTargets> outLinks = new global::System.Collections.Generic.List<global::Company.LabDslE.FeatureElementReferencesTargets>();
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureElementReferencesTargets>(source, global::Company.LabDslE.FeatureElementReferencesTargets.SourceDomainRoleId);
+			foreach ( global::Company.LabDslE.FeatureElementReferencesTargets link in links )
 			{
 				if ( target.Equals(link.Target) )
 				{
@@ -446,14 +446,14 @@ namespace Company.LabDslE
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one ExampleElementReferencesTargets link between a given ExampleElementand a ExampleElement.
+		/// Get the one FeatureElementReferencesTargets link between a given FeatureElementand a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.LabDslE.ExampleElementReferencesTargets GetLink( global::Company.LabDslE.ExampleElement source, global::Company.LabDslE.ExampleElement target )
+		public static global::Company.LabDslE.FeatureElementReferencesTargets GetLink( global::Company.LabDslE.FeatureElement source, global::Company.LabDslE.FeatureElement target )
 		{
-			global::System.Collections.Generic.IList<global::Company.LabDslE.ExampleElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.ExampleElementReferencesTargets>(source, global::Company.LabDslE.ExampleElementReferencesTargets.SourceDomainRoleId);
-			foreach ( global::Company.LabDslE.ExampleElementReferencesTargets link in links )
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureElementReferencesTargets>(source, global::Company.LabDslE.FeatureElementReferencesTargets.SourceDomainRoleId);
+			foreach ( global::Company.LabDslE.FeatureElementReferencesTargets link in links )
 			{
 				if ( target.Equals(link.Target) )
 				{

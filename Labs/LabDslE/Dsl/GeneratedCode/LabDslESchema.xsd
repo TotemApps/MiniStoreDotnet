@@ -1,29 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xsd:schema id="LabDslESchema" targetNamespace="http://schemas.microsoft.com/dsltools/LabDslE" elementFormDefault="qualified" xmlns="http://schemas.microsoft.com/dsltools/LabDslE" xmlns:core="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <xsd:import id="CoreSchema" namespace="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" />
-  <!-- ExampleModel -->
-  <xsd:element name="exampleModel" type="ExampleModel" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleModel">
+  <!-- FeatureModel -->
+  <xsd:element name="featureModel" type="FeatureModel" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureModel">
     <xsd:annotation>
       <xsd:documentation>The root in which all other elements are embedded. Appears as a diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: ExampleModelHasElements -->
+          <!-- Relationship: FeatureModelHasElements -->
           <xsd:element name="elements" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ExampleModelHasElements</xsd:documentation>
+              <xsd:documentation>Instances of FeatureModelHasElements</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
                 <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="exampleModelHasElements">
+                  <xsd:element ref="featureModelHasElements">
                     <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from ExampleModelHasElements needs to be serialized in full-form]</xsd:documentation>
+                      <xsd:documentation>[Relationship deriving from FeatureModelHasElements needs to be serialized in full-form]</xsd:documentation>
                     </xsd:annotation>
                   </xsd:element>
-                  <xsd:element ref="exampleElement" >
+                  <xsd:element ref="featureElement" >
                     <xsd:annotation>
                       <xsd:documentation>[Target role-player]</xsd:documentation>
                     </xsd:annotation>
@@ -49,11 +49,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleModel Moniker -->
-  <xsd:element name="exampleModelMoniker" type="ExampleModelMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleModelMoniker">
+  <!-- FeatureModel Moniker -->
+  <xsd:element name="featureModelMoniker" type="FeatureModelMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureModelMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleModel instance.</xsd:documentation>
+      <xsd:documentation>Moniker for FeatureModel instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -66,29 +66,29 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleElement -->
-  <xsd:element name="exampleElement" type="ExampleElement" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleElement">
+  <!-- FeatureElement -->
+  <xsd:element name="featureElement" type="FeatureElement" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureElement">
     <xsd:annotation>
       <xsd:documentation>Elements embedded in the model. Appear as boxes on the diagram.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Relationship: ExampleElementReferencesTargets -->
+          <!-- Relationship: FeatureElementReferencesTargets -->
           <xsd:element name="targets" minOccurs="0" maxOccurs="1">
             <xsd:annotation>
-              <xsd:documentation>Instances of ExampleElementReferencesTargets</xsd:documentation>
+              <xsd:documentation>Instances of FeatureElementReferencesTargets</xsd:documentation>
             </xsd:annotation>
             <xsd:complexType>
               <xsd:sequence>
                 <xsd:choice minOccurs="0" maxOccurs="unbounded" >
-                  <xsd:element ref="exampleElementReferencesTargets">
+                  <xsd:element ref="featureElementReferencesTargets">
                     <xsd:annotation>
-                      <xsd:documentation>[Relationship deriving from ExampleElementReferencesTargets needs to be serialized in full-form]</xsd:documentation>
+                      <xsd:documentation>[Relationship deriving from FeatureElementReferencesTargets needs to be serialized in full-form]</xsd:documentation>
                     </xsd:annotation>
                   </xsd:element>
-                  <xsd:element ref="exampleElementMoniker" >
+                  <xsd:element ref="featureElementMoniker" >
                     <xsd:annotation>
                       <xsd:documentation>[Target role-player]</xsd:documentation>
                     </xsd:annotation>
@@ -110,11 +110,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleElement Moniker -->
-  <xsd:element name="exampleElementMoniker" type="ExampleElementMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleElementMoniker">
+  <!-- FeatureElement Moniker -->
+  <xsd:element name="featureElementMoniker" type="FeatureElementMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureElementMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleElement instance.</xsd:documentation>
+      <xsd:documentation>Moniker for FeatureElement instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -127,17 +127,17 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleModelHasElements -->
-  <xsd:element name="exampleModelHasElements" abstract="true" type="ExampleModelHasElements" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleModelHasElements" abstract="true" >
+  <!-- FeatureModelHasElements -->
+  <xsd:element name="featureModelHasElements" abstract="true" type="FeatureModelHasElements" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureModelHasElements" abstract="true" >
     <xsd:annotation>
       <xsd:documentation>Embedding relationship between the Model and Elements</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end ExampleElement -->
-          <xsd:element ref="exampleElement" minOccurs="1" maxOccurs="1">
+          <!-- Target end FeatureElement -->
+          <xsd:element ref="featureElement" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -153,11 +153,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleModelHasElements Moniker -->
-  <xsd:element name="exampleModelHasElementsMoniker" type="ExampleModelHasElementsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleModelHasElementsMoniker">
+  <!-- FeatureModelHasElements Moniker -->
+  <xsd:element name="featureModelHasElementsMoniker" type="FeatureModelHasElementsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureModelHasElementsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleModelHasElements instance.</xsd:documentation>
+      <xsd:documentation>Moniker for FeatureModelHasElements instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -170,17 +170,17 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleElementReferencesTargets -->
-  <xsd:element name="exampleElementReferencesTargets" abstract="true" type="ExampleElementReferencesTargets" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="ExampleElementReferencesTargets" abstract="true" >
+  <!-- FeatureElementReferencesTargets -->
+  <xsd:element name="featureElementReferencesTargets" abstract="true" type="FeatureElementReferencesTargets" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureElementReferencesTargets" abstract="true" >
     <xsd:annotation>
       <xsd:documentation>Reference relationship between Elements.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end ExampleElement -->
-          <xsd:element ref="exampleElementMoniker" minOccurs="1" maxOccurs="1">
+          <!-- Target end FeatureElement -->
+          <xsd:element ref="featureElementMoniker" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -196,11 +196,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- ExampleElementReferencesTargets Moniker -->
-  <xsd:element name="exampleElementReferencesTargetsMoniker" type="ExampleElementReferencesTargetsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="ExampleElementReferencesTargetsMoniker">
+  <!-- FeatureElementReferencesTargets Moniker -->
+  <xsd:element name="featureElementReferencesTargetsMoniker" type="FeatureElementReferencesTargetsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureElementReferencesTargetsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for ExampleElementReferencesTargets instance.</xsd:documentation>
+      <xsd:documentation>Moniker for FeatureElementReferencesTargets instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

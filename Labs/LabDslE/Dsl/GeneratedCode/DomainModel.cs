@@ -67,10 +67,10 @@ namespace Company.LabDslE
 		{
 			return new global::System.Type[]
 			{
-				typeof(ExampleModel),
-				typeof(ExampleElement),
-				typeof(ExampleModelHasElements),
-				typeof(ExampleElementReferencesTargets),
+				typeof(FeatureModel),
+				typeof(FeatureElement),
+				typeof(FeatureModelHasElements),
+				typeof(FeatureElementReferencesTargets),
 				typeof(LabDslEDiagram),
 				typeof(ExampleConnector),
 				typeof(ExampleShape),
@@ -87,7 +87,7 @@ namespace Company.LabDslE
 		{
 			return new DomainMemberInfo[]
 			{
-				new DomainMemberInfo(typeof(ExampleElement), "Name", ExampleElement.NameDomainPropertyId, typeof(ExampleElement.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -98,10 +98,10 @@ namespace Company.LabDslE
 		{
 			return new DomainRolePlayerInfo[]
 			{
-				new DomainRolePlayerInfo(typeof(ExampleModelHasElements), "ExampleModel", ExampleModelHasElements.ExampleModelDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ExampleModelHasElements), "Element", ExampleModelHasElements.ElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ExampleElementReferencesTargets), "Source", ExampleElementReferencesTargets.SourceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(ExampleElementReferencesTargets), "Target", ExampleElementReferencesTargets.TargetDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureModelHasElements), "FeatureModel", FeatureModelHasElements.FeatureModelDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureModelHasElements), "Element", FeatureModelHasElements.ElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Source", FeatureElementReferencesTargets.SourceDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Target", FeatureElementReferencesTargets.TargetDomainRoleId),
 			};
 		}
 		#endregion
@@ -124,8 +124,8 @@ namespace Company.LabDslE
 			if (createElementMap == null)
 			{
 				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
-				createElementMap.Add(typeof(ExampleModel), 0);
-				createElementMap.Add(typeof(ExampleElement), 1);
+				createElementMap.Add(typeof(FeatureModel), 0);
+				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(LabDslEDiagram), 2);
 				createElementMap.Add(typeof(ExampleConnector), 3);
 				createElementMap.Add(typeof(ExampleShape), 4);
@@ -142,8 +142,8 @@ namespace Company.LabDslE
 			}
 			switch (index)
 			{
-				case 0: return new ExampleModel(partition, propertyAssignments);
-				case 1: return new ExampleElement(partition, propertyAssignments);
+				case 0: return new FeatureModel(partition, propertyAssignments);
+				case 1: return new FeatureElement(partition, propertyAssignments);
 				case 2: return new LabDslEDiagram(partition, propertyAssignments);
 				case 3: return new ExampleConnector(partition, propertyAssignments);
 				case 4: return new ExampleShape(partition, propertyAssignments);
@@ -170,8 +170,8 @@ namespace Company.LabDslE
 			if (createElementLinkMap == null)
 			{
 				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
-				createElementLinkMap.Add(typeof(ExampleModelHasElements), 0);
-				createElementLinkMap.Add(typeof(ExampleElementReferencesTargets), 1);
+				createElementLinkMap.Add(typeof(FeatureModelHasElements), 0);
+				createElementLinkMap.Add(typeof(FeatureElementReferencesTargets), 1);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -186,8 +186,8 @@ namespace Company.LabDslE
 			}
 			switch (index)
 			{
-				case 0: return new ExampleModelHasElements(partition, roleAssignments, propertyAssignments);
-				case 1: return new ExampleElementReferencesTargets(partition, roleAssignments, propertyAssignments);
+				case 0: return new FeatureModelHasElements(partition, roleAssignments, propertyAssignments);
+				case 1: return new FeatureElementReferencesTargets(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -356,7 +356,7 @@ namespace Company.LabDslE
 		public LabDslEDeleteClosureBase()
 		{
 			#region Initialize DomainData Table
-			DomainRoles.Add(global::Company.LabDslE.ExampleModelHasElements.ElementDomainRoleId, true);
+			DomainRoles.Add(global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

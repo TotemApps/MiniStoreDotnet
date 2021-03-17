@@ -191,13 +191,13 @@ namespace Company.LabDslE
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
-			if(element is global::Company.LabDslE.ExampleElement)
+			if(element is global::Company.LabDslE.FeatureElement)
 			{
 				global::Company.LabDslE.ExampleShape newShape = new global::Company.LabDslE.ExampleShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
-			if(element is global::Company.LabDslE.ExampleElementReferencesTargets)
+			if(element is global::Company.LabDslE.FeatureElementReferencesTargets)
 			{
 				global::Company.LabDslE.ExampleConnector newShape = new global::Company.LabDslE.ExampleConnector(this.Partition);
 				return newShape;
@@ -229,7 +229,7 @@ namespace Company.LabDslE
 				DslDiagrams::ShapeElement shape = (DslDiagrams::ShapeElement)sender;
 				DslDiagrams::AssociatedPropertyInfo propertyInfo;
 				
-				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.LabDslE.ExampleElement.NameDomainPropertyId);
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.LabDslE.FeatureElement.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
 			}
 		}
@@ -238,7 +238,7 @@ namespace Company.LabDslE
 		
 		#region Connect actions
 		private bool changingMouseAction;
-		private global::Company.LabDslE.ExampleRelationshipConnectAction exampleRelationshipConnectAction;
+		private global::Company.LabDslE.OptionalRelationshipConnectAction optionalRelationshipConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -261,14 +261,14 @@ namespace Company.LabDslE
 			if(activeView != null)
 			{
 				DslDiagrams::MouseAction action = null;
-				if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.LabDslE.LabDslEToolboxHelper.ExampleRelationshipFilterString))
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.LabDslE.LabDslEToolboxHelper.OptionalRelationshipFilterString))
 				{
-					if (this.exampleRelationshipConnectAction == null)
+					if (this.optionalRelationshipConnectAction == null)
 					{
-						this.exampleRelationshipConnectAction = new global::Company.LabDslE.ExampleRelationshipConnectAction(this);
-						this.exampleRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+						this.optionalRelationshipConnectAction = new global::Company.LabDslE.OptionalRelationshipConnectAction(this);
+						this.optionalRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
-					action = this.exampleRelationshipConnectAction;
+					action = this.optionalRelationshipConnectAction;
 				} 
 				else
 				{
@@ -327,10 +327,10 @@ namespace Company.LabDslE
 			{
 				if(disposing)
 				{
-					if(this.exampleRelationshipConnectAction != null)
+					if(this.optionalRelationshipConnectAction != null)
 					{
-						this.exampleRelationshipConnectAction.Dispose();
-						this.exampleRelationshipConnectAction = null;
+						this.optionalRelationshipConnectAction.Dispose();
+						this.optionalRelationshipConnectAction = null;
 					}
 				}
 			}
@@ -385,8 +385,8 @@ namespace Company.LabDslE
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Company.LabDslE.ExampleElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
-		[DslModeling::RuleOn(typeof(global::Company.LabDslE.ExampleElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.LabDslE.FeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.LabDslE.FeatureElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -402,9 +402,9 @@ namespace Company.LabDslE
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
-				if(childElement is global::Company.LabDslE.ExampleElement)
+				if(childElement is global::Company.LabDslE.FeatureElement)
 				{
-					parentElement = GetParentForExampleElement((global::Company.LabDslE.ExampleElement)childElement);
+					parentElement = GetParentForFeatureElement((global::Company.LabDslE.FeatureElement)childElement);
 				} else
 				{
 					parentElement = null;
@@ -415,10 +415,10 @@ namespace Company.LabDslE
 					DslDiagrams::Diagram.FixUpDiagram(parentElement, childElement);
 				}
 			}
-			public static global::Company.LabDslE.ExampleModel GetParentForExampleElement( global::Company.LabDslE.ExampleElement root )
+			public static global::Company.LabDslE.FeatureModel GetParentForFeatureElement( global::Company.LabDslE.FeatureElement root )
 			{
 				// Segments 0 and 1
-				global::Company.LabDslE.ExampleModel result = root.ExampleModel;
+				global::Company.LabDslE.FeatureModel result = root.FeatureModel;
 				if ( result == null ) return null;
 				return result;
 			}
@@ -511,7 +511,7 @@ namespace Company.LabDslE
 		/// <summary>
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
-		[DslModeling::RuleOn(typeof(global::Company.LabDslE.ExampleElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.LabDslE.FeatureElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

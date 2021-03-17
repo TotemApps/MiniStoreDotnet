@@ -15,7 +15,7 @@ namespace Company.LabDslE
 	/// <summary>
 	/// ConnectionBuilder class to provide logic for constructing connections between elements.
 	/// </summary>
-	public static partial class ExampleElementReferencesTargetsBuilder
+	public static partial class FeatureElementReferencesTargetsBuilder
 	{
 		#region Accept Connection Methods
 		/// <summary>
@@ -27,7 +27,7 @@ namespace Company.LabDslE
 		public static bool CanAcceptSource(DslModeling::ModelElement candidate)
 		{
 			if (candidate == null) return false;
-			else if (candidate is global::Company.LabDslE.ExampleElement)
+			else if (candidate is global::Company.LabDslE.FeatureElement)
 			{ 
 				return true;
 			}
@@ -44,7 +44,7 @@ namespace Company.LabDslE
 		public static bool CanAcceptTarget(DslModeling::ModelElement candidate)
 		{
 			if (candidate == null) return false;
-			else if (candidate is global::Company.LabDslE.ExampleElement)
+			else if (candidate is global::Company.LabDslE.FeatureElement)
 			{ 
 				return true;
 			}
@@ -83,13 +83,13 @@ namespace Company.LabDslE
 			}
 			else // Check combinations
 			{
-				if (candidateSource is global::Company.LabDslE.ExampleElement)
+				if (candidateSource is global::Company.LabDslE.FeatureElement)
 				{
-					if (candidateTarget is global::Company.LabDslE.ExampleElement)
+					if (candidateTarget is global::Company.LabDslE.FeatureElement)
 					{
-						global::Company.LabDslE.ExampleElement sourceExampleElement = (global::Company.LabDslE.ExampleElement)candidateSource;
-						global::Company.LabDslE.ExampleElement targetExampleElement = (global::Company.LabDslE.ExampleElement)candidateTarget;
-						if(targetExampleElement == null || sourceExampleElement == null || global::Company.LabDslE.ExampleElementReferencesTargets.GetLinks(sourceExampleElement, targetExampleElement).Count > 0) return false;
+						global::Company.LabDslE.FeatureElement sourceFeatureElement = (global::Company.LabDslE.FeatureElement)candidateSource;
+						global::Company.LabDslE.FeatureElement targetFeatureElement = (global::Company.LabDslE.FeatureElement)candidateTarget;
+						if(targetFeatureElement == null || sourceFeatureElement == null || global::Company.LabDslE.FeatureElementReferencesTargets.GetLinks(sourceFeatureElement, targetFeatureElement).Count > 0) return false;
 						return true;
 					}
 				}
@@ -121,13 +121,13 @@ namespace Company.LabDslE
 			
 			if (CanAcceptSourceAndTarget(source, target))
 			{
-				if (source is global::Company.LabDslE.ExampleElement)
+				if (source is global::Company.LabDslE.FeatureElement)
 				{
-					if (target is global::Company.LabDslE.ExampleElement)
+					if (target is global::Company.LabDslE.FeatureElement)
 					{
-						global::Company.LabDslE.ExampleElement sourceAccepted = (global::Company.LabDslE.ExampleElement)source;
-						global::Company.LabDslE.ExampleElement targetAccepted = (global::Company.LabDslE.ExampleElement)target;
-						DslModeling::ElementLink result = new global::Company.LabDslE.ExampleElementReferencesTargets(sourceAccepted, targetAccepted);
+						global::Company.LabDslE.FeatureElement sourceAccepted = (global::Company.LabDslE.FeatureElement)source;
+						global::Company.LabDslE.FeatureElement targetAccepted = (global::Company.LabDslE.FeatureElement)target;
+						DslModeling::ElementLink result = new global::Company.LabDslE.FeatureElementReferencesTargets(sourceAccepted, targetAccepted);
 						if (DslModeling::DomainClassInfo.HasNameProperty(result))
 						{
 							DslModeling::DomainClassInfo.SetUniqueName(result);
@@ -146,14 +146,14 @@ namespace Company.LabDslE
  	/// <summary>
 	/// Handles interaction between the ConnectionBuilder and the corresponding ConnectionTool.
 	/// </summary>
-	internal partial class ExampleRelationshipConnectAction : DslDiagrams::ConnectAction
+	internal partial class OptionalRelationshipConnectAction : DslDiagrams::ConnectAction
 	{
 		private DslDiagrams::ConnectionType[] connectionTypes;
 		
 		/// <summary>
-		/// Constructs a new ExampleRelationshipConnectAction for the given Diagram.
+		/// Constructs a new OptionalRelationshipConnectAction for the given Diagram.
 		/// </summary>
-		public ExampleRelationshipConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
+		public OptionalRelationshipConnectAction(DslDiagrams::Diagram diagram): base(diagram, true) 
 		{
 		}
 		
@@ -183,24 +183,24 @@ namespace Company.LabDslE
 		
 		
 		/// <summary>
-		/// Returns the ExampleRelationshipConnectionType associated with this action.
+		/// Returns the OptionalRelationshipConnectionType associated with this action.
 		/// </summary>
 		protected override DslDiagrams::ConnectionType[] GetConnectionTypes(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement)
 		{
 			if(this.connectionTypes == null)
 			{
-				this.connectionTypes = new DslDiagrams::ConnectionType[] { new ExampleRelationshipConnectionType() };
+				this.connectionTypes = new DslDiagrams::ConnectionType[] { new OptionalRelationshipConnectionType() };
 			}
 			
 			return this.connectionTypes;
 		}
 		
-		private partial class ExampleRelationshipConnectionTypeBase : DslDiagrams::ConnectionType
+		private partial class OptionalRelationshipConnectionTypeBase : DslDiagrams::ConnectionType
 		{
 			/// <summary>
-			/// Constructs a new the ExampleRelationshipConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the OptionalRelationshipConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			protected ExampleRelationshipConnectionTypeBase() : base() {}
+			protected OptionalRelationshipConnectionTypeBase() : base() {}
 			
 			private static DslDiagrams::ShapeElement RemovePassThroughShapes(DslDiagrams::ShapeElement shape)
 			{
@@ -220,7 +220,7 @@ namespace Company.LabDslE
 			/// Called by the base ConnectAction class to determine if the given shapes can be connected.
 			/// </summary>
 			/// <remarks>
-			/// This implementation delegates calls to the ConnectionBuilder ExampleElementReferencesTargetsBuilder.
+			/// This implementation delegates calls to the ConnectionBuilder FeatureElementReferencesTargetsBuilder.
 			/// </remarks>
 			public override bool CanCreateConnection(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement, ref string connectionWarning)
 			{
@@ -246,11 +246,11 @@ namespace Company.LabDslE
 				{				
 					if(targetShapeElement == null)
 					{
-						return ExampleElementReferencesTargetsBuilder.CanAcceptSource(sourceElement);
+						return FeatureElementReferencesTargetsBuilder.CanAcceptSource(sourceElement);
 					}
 					else
 					{				
-						return ExampleElementReferencesTargetsBuilder.CanAcceptSourceAndTarget(sourceElement, targetElement);
+						return FeatureElementReferencesTargetsBuilder.CanAcceptSourceAndTarget(sourceElement, targetElement);
 					}
 				}
 				else
@@ -275,7 +275,7 @@ namespace Company.LabDslE
 			/// Called by the base ConnectAction class to create the underlying relationship.
 			/// </summary>
 			/// <remarks>
-			/// This implementation delegates calls to the ConnectionBuilder ExampleElementReferencesTargetsBuilder.
+			/// This implementation delegates calls to the ConnectionBuilder FeatureElementReferencesTargetsBuilder.
 			/// </remarks>
 			public override void CreateConnection(DslDiagrams::ShapeElement sourceShapeElement, DslDiagrams::ShapeElement targetShapeElement, DslDiagrams::PaintFeedbackArgs paintFeedbackArgs)
 			{
@@ -289,16 +289,16 @@ namespace Company.LabDslE
 				if(sourceElement == null) sourceElement = sourceShapeElement;
 				DslModeling::ModelElement targetElement = targetShapeElement.ModelElement;
 				if(targetElement == null) targetElement = targetShapeElement;
-				ExampleElementReferencesTargetsBuilder.Connect(sourceElement, targetElement);
+				FeatureElementReferencesTargetsBuilder.Connect(sourceElement, targetElement);
 			}
 		}
 		
-		private partial class ExampleRelationshipConnectionType : ExampleRelationshipConnectionTypeBase
+		private partial class OptionalRelationshipConnectionType : OptionalRelationshipConnectionTypeBase
 		{
 			/// <summary>
-			/// Constructs a new the ExampleRelationshipConnectionType with the given ConnectionBuilder.
+			/// Constructs a new the OptionalRelationshipConnectionType with the given ConnectionBuilder.
 			/// </summary>
-			public ExampleRelationshipConnectionType() : base() {}
+			public OptionalRelationshipConnectionType() : base() {}
 		}
 	}
 }
