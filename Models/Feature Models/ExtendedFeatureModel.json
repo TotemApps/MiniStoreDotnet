@@ -1,0 +1,26 @@
+{
+    "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
+    "version": "0.0.1",
+    "features":[
+        {
+            "name":"miniStoreDotNetRoot",
+            "type":"variamos/feature",
+            "included":1,
+            "attributes":[
+            ],
+            "relations":[
+                "cloudProvider"
+            ]
+        },
+        {
+            "name":"cloudProvider",
+            "type":"variamos/feature",
+            "included":1,
+            "attributes":[
+            ],
+            "relations":[
+
+            ]
+        }
+    ]
+}
