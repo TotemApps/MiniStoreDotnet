@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<exampleModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d5c6510f-49b3-41c7-9194-bbab22f48e5c" xmlns="http://schemas.microsoft.com/dsltools/LabDslE">
+  <elements>
+    <exampleElement Id="668c49b1-9c05-4c49-ab46-7eb326f674f0" name="ExampleElement1">
+      <targets>
+        <exampleElementMoniker name="/d5c6510f-49b3-41c7-9194-bbab22f48e5c/ExampleElement2" />
+      </targets>
+    </exampleElement>
+    <exampleElement Id="72c8263b-efe0-4b41-956c-f2f7bfe3a484" name="ExampleElement2" />
+  </elements>
+</exampleModel>

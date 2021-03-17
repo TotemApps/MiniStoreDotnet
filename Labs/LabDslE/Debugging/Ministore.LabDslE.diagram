@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<labDslEDiagram dslVersion="1.0.0.0" Id="b4a92c1b-bb56-4cf1-84de-e4b373b17e6a" absoluteBounds="0, 0, 11, 8.5" name="Ministore">
+  <exampleModelMoniker Id="e26f7629-89fd-4afd-b50a-50baa21c84e4" />
+  <nestedChildShapes>
+    <exampleShape Id="04511b04-31a0-4bec-a0cf-247005b6861d" absoluteBounds="4.375, 0.75, 2, 0.75">
+      <exampleElementMoniker name="/e26f7629-89fd-4afd-b50a-50baa21c84e4/ExampleElement1" />
+    </exampleShape>
+    <exampleShape Id="dd608b4c-34f6-4473-94c1-d7cd78933df0" absoluteBounds="2.25, 3.125, 2, 0.75">
+      <exampleElementMoniker name="/e26f7629-89fd-4afd-b50a-50baa21c84e4/ExampleElement2" />
+    </exampleShape>
+    <exampleShape Id="56b62002-d34b-446b-a705-62844572cb8f" absoluteBounds="6.875, 3.5, 2, 0.75">
+      <exampleElementMoniker name="/e26f7629-89fd-4afd-b50a-50baa21c84e4/ExampleElement3" />
+    </exampleShape>
+    <exampleConnector Id="8661b9c6-c825-4f93-94ff-7fb16058d02a" edgePoints="[(5.375 : 1.5); (5.375 : 3.5); (4.25 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="80657553-7092-4e14-82c2-9242a14bea89">
+      <nodes>
+        <exampleShapeMoniker Id="04511b04-31a0-4bec-a0cf-247005b6861d" />
+        <exampleShapeMoniker Id="dd608b4c-34f6-4473-94c1-d7cd78933df0" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="2cae369f-cf6e-4766-bad9-f13718615482" edgePoints="[(5.9062525 : 1.5); (5.9062525 : 3.875); (6.875 : 3.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="80657553-7092-4e14-82c2-9242a14bea89">
+      <nodes>
+        <exampleShapeMoniker Id="04511b04-31a0-4bec-a0cf-247005b6861d" />
+        <exampleShapeMoniker Id="56b62002-d34b-446b-a705-62844572cb8f" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</labDslEDiagram>
