@@ -305,7 +305,7 @@ namespace Company.LabDslE
 		protected override void Load(string fileName, bool isReload)
 		{
 			DslModeling::SerializationResult serializationResult = new DslModeling::SerializationResult();
-			global::Company.LabDslE.ExampleModel modelRoot = null;
+			global::Company.LabDslE.FeatureModel modelRoot = null;
 			DslModeling::ISchemaResolver schemaResolver = new DslShell::ModelingSchemaResolver(this.ServiceProvider);
 			//clear the current root element
 			this.SetRootElement(null);
@@ -410,7 +410,7 @@ namespace Company.LabDslE
 		protected override void Save(string fileName)
 		{
 			DslModeling::SerializationResult serializationResult = new DslModeling::SerializationResult();
-			global::Company.LabDslE.ExampleModel modelRoot = (global::Company.LabDslE.ExampleModel)this.RootElement;
+			global::Company.LabDslE.FeatureModel modelRoot = (global::Company.LabDslE.FeatureModel)this.RootElement;
 
 			
 			// Only save the diagrams if
@@ -556,7 +556,7 @@ namespace Company.LabDslE
 		{
 			get
 			{
-				global::Company.LabDslE.ExampleModel modelRoot = this.RootElement as global::Company.LabDslE.ExampleModel;
+				global::Company.LabDslE.FeatureModel modelRoot = this.RootElement as global::Company.LabDslE.FeatureModel;
 				string modelFile = string.Empty;
 				if (modelRoot != null)
 				{

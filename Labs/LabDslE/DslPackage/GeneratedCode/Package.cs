@@ -29,19 +29,19 @@ namespace Company.LabDslE
 	[VSShell::ProvideToolWindowVisibility(typeof(LabDslEExplorerToolWindow), Constants.LabDslEEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@LabDslEToolboxTab;Company.LabDslE.Dsl.dll", "Company.LabDslE.LabDslEToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("Company.LabDslE.LabDslEToolboxTab",
-					"@ExampleElementToolboxItem;Company.LabDslE.Dsl.dll", 
-					"Company.LabDslE.ExampleElementToolboxItem", 
+					"@FeatureElementToolboxItem;Company.LabDslE.Dsl.dll", 
+					"Company.LabDslE.FeatureElementToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"CreateExampleClassF1Keyword", 
-					"@ExampleElementToolboxBitmap;Company.LabDslE.Dsl.dll", 
+					"@FeatureElementToolboxBitmap;Company.LabDslE.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("Company.LabDslE.LabDslEToolboxTab",
-					"@ExampleRelationshipToolboxItem;Company.LabDslE.Dsl.dll", 
-					"Company.LabDslE.ExampleRelationshipToolboxItem", 
+					"@OptionalRelationshipToolboxItem;Company.LabDslE.Dsl.dll", 
+					"Company.LabDslE.OptionalRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"ConnectExampleRelationF1Keyword", 
-					"@ExampleRelationshipToolboxBitmap;Company.LabDslE.Dsl.dll", 
+					"@OptionalRelationshipToolboxBitmap;Company.LabDslE.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
 	[VSShell::ProvideEditorFactory(typeof(LabDslEEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]

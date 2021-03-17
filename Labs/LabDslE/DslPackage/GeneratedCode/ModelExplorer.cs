@@ -67,7 +67,7 @@ namespace Company.LabDslE
 		///</summary>
 		protected override global::System.Guid RootElementDomainClassId
 		{
-			get { return global::Company.LabDslE.ExampleModel.DomainClassId; }
+			get { return global::Company.LabDslE.FeatureModel.DomainClassId; }
 		}
 		
 		/// <summary>

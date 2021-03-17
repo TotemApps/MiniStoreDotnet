@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<exampleModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e26f7629-89fd-4afd-b50a-50baa21c84e4" xmlns="http://schemas.microsoft.com/dsltools/LabDslE">
+<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dc511776-40c1-470a-a306-7779f895b213" xmlns="http://schemas.microsoft.com/dsltools/LabDslE">
   <elements>
-    <exampleElement Id="09f080f9-4548-43a4-b9fb-6b6ac1808faa" name="ExampleElement1">
+    <featureElement Id="0ab2f34e-8a56-496d-aab9-840c326c2c5f" name="Ministore">
       <targets>
-        <exampleElementMoniker name="/e26f7629-89fd-4afd-b50a-50baa21c84e4/ExampleElement2" />
-        <exampleElementMoniker name="/e26f7629-89fd-4afd-b50a-50baa21c84e4/ExampleElement3" />
+        <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Stack" />
+        <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Core Components" />
       </targets>
-    </exampleElement>
-    <exampleElement Id="d45512ac-af95-4ce0-8c68-bd51ef92d0e0" name="ExampleElement2" />
-    <exampleElement Id="ee8cb505-8377-4af6-a6f9-c8d3c364ac58" name="ExampleElement3" />
+    </featureElement>
+    <featureElement Id="e7ef14b8-cae1-4c9a-b2e8-1ebd57660bde" name="Stack" />
+    <featureElement Id="c16fe3be-6694-4c4a-86ea-f965444ef5a1" name="Core Components" />
   </elements>
-</exampleModel>
+</featureModel>
