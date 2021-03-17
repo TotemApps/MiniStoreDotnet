@@ -44,6 +44,14 @@ namespace Company.LabDslE
 					"@OptionalRelationshipToolboxBitmap;Company.LabDslE.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
+	[VSShell::ProvideStaticToolboxItem("Company.LabDslE.LabDslEToolboxTab",
+					"@AbstractFeatureToolToolboxItem;Company.LabDslE.Dsl.dll", 
+					"Company.LabDslE.AbstractFeatureToolToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"AbstractFeatureTool", 
+					"@AbstractFeatureToolToolboxBitmap;Company.LabDslE.Dsl.dll", 
+					0xff00ff,
+					Index = 2)]
 	[VSShell::ProvideEditorFactory(typeof(LabDslEEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(LabDslEEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(LabDslEEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

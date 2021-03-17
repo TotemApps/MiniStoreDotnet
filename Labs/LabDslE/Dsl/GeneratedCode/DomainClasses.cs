@@ -62,6 +62,21 @@ namespace Company.LabDslE
 			}
 		}
 		#endregion
+		#region AbstractFeatured opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of AbstractFeatured.
+		/// Description for Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModel
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<AbstractFeature> AbstractFeatured
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractFeature>, AbstractFeature>(global::Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -83,6 +98,11 @@ namespace Company.LabDslE
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.LabDslE.FeatureElement.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.LabDslE.AbstractFeature.DomainClassId)) 
 				{
 					return true;
 				}
@@ -119,6 +139,15 @@ namespace Company.LabDslE
 
 				return;
 			}
+				
+			global::Company.LabDslE.AbstractFeature sourceAbstractFeature2 = sourceElement as global::Company.LabDslE.AbstractFeature;
+			if (sourceAbstractFeature2 != null)
+			{
+				// Create link for path FeatureModelHasAbstractFeatured.AbstractFeatured
+				this.AbstractFeatured.Add(sourceAbstractFeature2);
+
+				return;
+			}
 		
 			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
 			// during a "Paste".
@@ -151,6 +180,20 @@ namespace Company.LabDslE
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.LabDslE.FeatureModelHasElements.FeatureModelDomainRoleId, global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.LabDslE.AbstractFeature sourceAbstractFeature2 = sourceElement as global::Company.LabDslE.AbstractFeature;
+			if (sourceAbstractFeature2 != null)
+			{
+				// Delete link for path FeatureModelHasAbstractFeatured.AbstractFeatured
+				
+				foreach (DslModeling::ElementLink link in global::Company.LabDslE.FeatureModelHasAbstractFeatured.GetLinks((global::Company.LabDslE.FeatureModel)this, sourceAbstractFeature2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId, global::Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId);
 				}
 
 				return;
@@ -335,6 +378,240 @@ namespace Company.LabDslE
 			get
 			{
 				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.LabDslE.FeatureElementReferencesTargets.TargetDomainRoleId);
+			}
+		}
+		#endregion
+	}
+}
+namespace Company.LabDslE
+{
+	/// <summary>
+	/// DomainClass AbstractFeature
+	/// Description for Company.LabDslE.AbstractFeature
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.LabDslE.AbstractFeature.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.LabDslE.AbstractFeature.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.LabDslE.LabDslEDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("2b6923fc-2f9d-4f56-a9ec-67491a50a2a8")]
+	public partial class AbstractFeature : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// AbstractFeature domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x2b6923fc, 0x2f9d, 0x4f56, 0xa9, 0xec, 0x67, 0x49, 0x1a, 0x50, 0xa2, 0xa8);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AbstractFeature(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public AbstractFeature(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Name domain property code
+		
+		/// <summary>
+		/// Name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0xb7eeb139, 0x9f1f, 0x4403, 0xb0, 0xc9, 0xe2, 0x3e, 0x6c, 0x39, 0xd8, 0x3f);
+		
+		/// <summary>
+		/// Storage for Name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Name domain property.
+		/// Description for Company.LabDslE.AbstractFeature.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.LabDslE.AbstractFeature/Name.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.AbstractFeature/Name.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("b7eeb139-9f1f-4403-b0c9-e23e6c39d83f")]
+		public global::System.String Name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the AbstractFeature.Name domain property.
+		/// </summary>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<AbstractFeature, global::System.String>
+		{
+			private NamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the AbstractFeature.Name domain property value handler.
+			/// </summary>
+			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the AbstractFeature.Name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(AbstractFeature element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(AbstractFeature element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Caption domain property code
+		
+		/// <summary>
+		/// Caption domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid CaptionDomainPropertyId = new global::System.Guid(0x0b816f0b, 0xd6a1, 0x4681, 0xbe, 0xb1, 0x4c, 0x40, 0x08, 0x57, 0xfb, 0xcd);
+		
+		/// <summary>
+		/// Storage for Caption
+		/// </summary>
+		private global::System.String captionPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Caption domain property.
+		/// Description for Company.LabDslE.AbstractFeature.Caption
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.LabDslE.AbstractFeature/Caption.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.AbstractFeature/Caption.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("0b816f0b-d6a1-4681-beb1-4c400857fbcd")]
+		public global::System.String Caption
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return captionPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				CaptionPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the AbstractFeature.Caption domain property.
+		/// </summary>
+		internal sealed partial class CaptionPropertyHandler : DslModeling::DomainPropertyValueHandler<AbstractFeature, global::System.String>
+		{
+			private CaptionPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the AbstractFeature.Caption domain property value handler.
+			/// </summary>
+			public static readonly CaptionPropertyHandler Instance = new CaptionPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the AbstractFeature.Caption domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return CaptionDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(AbstractFeature element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.captionPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(AbstractFeature element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.captionPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region FeatureModel opposite domain role accessor
+		/// <summary>
+		/// Gets or sets FeatureModel.
+		/// Description for Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeature
+		/// </summary>
+		public virtual FeatureModel FeatureModel
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId) as FeatureModel;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId, value);
 			}
 		}
 		#endregion

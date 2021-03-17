@@ -69,11 +69,14 @@ namespace Company.LabDslE
 			{
 				typeof(FeatureModel),
 				typeof(FeatureElement),
+				typeof(AbstractFeature),
 				typeof(FeatureModelHasElements),
 				typeof(FeatureElementReferencesTargets),
+				typeof(FeatureModelHasAbstractFeatured),
 				typeof(LabDslEDiagram),
 				typeof(ExampleConnector),
 				typeof(ExampleShape),
+				typeof(AbstractFeatureShape),
 				typeof(global::Company.LabDslE.FixUpDiagram),
 				typeof(global::Company.LabDslE.ConnectorRolePlayerChanged),
 			};
@@ -88,6 +91,8 @@ namespace Company.LabDslE
 			return new DomainMemberInfo[]
 			{
 				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(AbstractFeature), "Name", AbstractFeature.NameDomainPropertyId, typeof(AbstractFeature.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(AbstractFeature), "Caption", AbstractFeature.CaptionDomainPropertyId, typeof(AbstractFeature.CaptionPropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -102,6 +107,8 @@ namespace Company.LabDslE
 				new DomainRolePlayerInfo(typeof(FeatureModelHasElements), "Element", FeatureModelHasElements.ElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Source", FeatureElementReferencesTargets.SourceDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Target", FeatureElementReferencesTargets.TargetDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureModelHasAbstractFeatured), "FeatureModel", FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureModelHasAbstractFeatured), "AbstractFeature", FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId),
 			};
 		}
 		#endregion
@@ -123,12 +130,14 @@ namespace Company.LabDslE
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
 				createElementMap.Add(typeof(FeatureModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
-				createElementMap.Add(typeof(LabDslEDiagram), 2);
-				createElementMap.Add(typeof(ExampleConnector), 3);
-				createElementMap.Add(typeof(ExampleShape), 4);
+				createElementMap.Add(typeof(AbstractFeature), 2);
+				createElementMap.Add(typeof(LabDslEDiagram), 3);
+				createElementMap.Add(typeof(ExampleConnector), 4);
+				createElementMap.Add(typeof(ExampleShape), 5);
+				createElementMap.Add(typeof(AbstractFeatureShape), 6);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -144,9 +153,11 @@ namespace Company.LabDslE
 			{
 				case 0: return new FeatureModel(partition, propertyAssignments);
 				case 1: return new FeatureElement(partition, propertyAssignments);
-				case 2: return new LabDslEDiagram(partition, propertyAssignments);
-				case 3: return new ExampleConnector(partition, propertyAssignments);
-				case 4: return new ExampleShape(partition, propertyAssignments);
+				case 2: return new AbstractFeature(partition, propertyAssignments);
+				case 3: return new LabDslEDiagram(partition, propertyAssignments);
+				case 4: return new ExampleConnector(partition, propertyAssignments);
+				case 5: return new ExampleShape(partition, propertyAssignments);
+				case 6: return new AbstractFeatureShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -169,9 +180,10 @@ namespace Company.LabDslE
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
 				createElementLinkMap.Add(typeof(FeatureModelHasElements), 0);
 				createElementLinkMap.Add(typeof(FeatureElementReferencesTargets), 1);
+				createElementLinkMap.Add(typeof(FeatureModelHasAbstractFeatured), 2);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -188,6 +200,7 @@ namespace Company.LabDslE
 			{
 				case 0: return new FeatureModelHasElements(partition, roleAssignments, propertyAssignments);
 				case 1: return new FeatureElementReferencesTargets(partition, roleAssignments, propertyAssignments);
+				case 2: return new FeatureModelHasAbstractFeatured(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -357,6 +370,7 @@ namespace Company.LabDslE
 		{
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::Company.LabDslE.FeatureModelHasElements.ElementDomainRoleId, true);
+			DomainRoles.Add(global::Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

@@ -32,6 +32,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: FeatureModelHasAbstractFeatured -->
+          <xsd:element name="abstractFeatured" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of FeatureModelHasAbstractFeatured</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="featureModelHasAbstractFeatured" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of FeatureModelHasAbstractFeatured needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -127,6 +142,42 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- AbstractFeature -->
+  <xsd:element name="abstractFeature" type="AbstractFeature" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="AbstractFeature">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: Caption -->
+        <xsd:attribute name="caption" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- AbstractFeature Moniker -->
+  <xsd:element name="abstractFeatureMoniker" type="AbstractFeatureMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="AbstractFeatureMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for AbstractFeature instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- FeatureModelHasElements -->
   <xsd:element name="featureModelHasElements" abstract="true" type="FeatureModelHasElements" substitutionGroup="core:modelElement" />
   <xsd:complexType name="FeatureModelHasElements" abstract="true" >
@@ -201,6 +252,46 @@
   <xsd:complexType name="FeatureElementReferencesTargetsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for FeatureElementReferencesTargets instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureModelHasAbstractFeatured -->
+  <xsd:element name="featureModelHasAbstractFeatured" type="FeatureModelHasAbstractFeatured" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureModelHasAbstractFeatured">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end AbstractFeature -->
+          <xsd:element ref="abstractFeature" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureModelHasAbstractFeatured Moniker -->
+  <xsd:element name="featureModelHasAbstractFeaturedMoniker" type="FeatureModelHasAbstractFeaturedMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureModelHasAbstractFeaturedMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FeatureModelHasAbstractFeatured instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

@@ -466,3 +466,242 @@ namespace Company.LabDslE
 		#endregion
 	}
 }
+namespace Company.LabDslE
+{
+	/// <summary>
+	/// DomainRelationship FeatureModelHasAbstractFeatured
+	/// Description for Company.LabDslE.FeatureModelHasAbstractFeatured
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModelHasAbstractFeatured.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.LabDslE.FeatureModelHasAbstractFeatured.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.LabDslE.LabDslEDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship(IsEmbedding=true)]
+	[DslModeling::DomainObjectId("80cdbf9a-145c-4044-a50a-4b5425ffd70b")]
+	public partial class FeatureModelHasAbstractFeatured : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// FeatureModelHasAbstractFeatured domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x80cdbf9a, 0x145c, 0x4044, 0xa5, 0x0a, 0x4b, 0x54, 0x25, 0xff, 0xd7, 0x0b);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a FeatureModelHasAbstractFeatured link in the same Partition as the given FeatureModel
+		/// </summary>
+		/// <param name="source">FeatureModel to use as the source of the relationship.</param>
+		/// <param name="target">AbstractFeature to use as the target of the relationship.</param>
+		public FeatureModelHasAbstractFeatured(FeatureModel source, AbstractFeature target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId, source), new DslModeling::RoleAssignment(FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public FeatureModelHasAbstractFeatured(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public FeatureModelHasAbstractFeatured(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public FeatureModelHasAbstractFeatured(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public FeatureModelHasAbstractFeatured(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region FeatureModel domain role code
+		
+		/// <summary>
+		/// FeatureModel domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid FeatureModelDomainRoleId = new global::System.Guid(0x1e971aa6, 0xbc9b, 0x44eb, 0xb3, 0x84, 0x8e, 0xb3, 0x77, 0xfb, 0x6a, 0xdd);
+		
+		/// <summary>
+		/// DomainRole FeatureModel
+		/// Description for Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModel
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModelHasAbstractFeatured/FeatureModel.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureModelHasAbstractFeatured/FeatureModel.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "AbstractFeatured", PropertyDisplayNameKey="Company.LabDslE.FeatureModelHasAbstractFeatured/FeatureModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("1e971aa6-bc9b-44eb-b384-8eb377fb6add")]
+		public virtual FeatureModel FeatureModel
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (FeatureModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, FeatureModelDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, FeatureModelDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access FeatureModel of a AbstractFeature
+		/// <summary>
+		/// Gets FeatureModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static FeatureModel GetFeatureModel(AbstractFeature element)
+		{
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, AbstractFeatureDomainRoleId) as FeatureModel;
+		}
+		
+		/// <summary>
+		/// Sets FeatureModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static void SetFeatureModel(AbstractFeature element, FeatureModel newFeatureModel)
+		{
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, AbstractFeatureDomainRoleId, newFeatureModel);
+		}
+		#endregion
+		#region AbstractFeature domain role code
+		
+		/// <summary>
+		/// AbstractFeature domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid AbstractFeatureDomainRoleId = new global::System.Guid(0x0e1ca949, 0xc138, 0x4b2a, 0xa9, 0x1c, 0x9a, 0x09, 0xfe, 0x97, 0xa2, 0xb4);
+		
+		/// <summary>
+		/// DomainRole AbstractFeature
+		/// Description for Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeature
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.LabDslE.FeatureModelHasAbstractFeatured/AbstractFeature.DisplayName", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.LabDslE.FeatureModelHasAbstractFeatured/AbstractFeature.Description", typeof(global::Company.LabDslE.LabDslEDomainModel), "Company.LabDslE.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "FeatureModel", PropertyDisplayNameKey="Company.LabDslE.FeatureModelHasAbstractFeatured/AbstractFeature.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("0e1ca949-c138-4b2a-a91c-9a09fe97a2b4")]
+		public virtual AbstractFeature AbstractFeature
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (AbstractFeature)DslModeling::DomainRoleInfo.GetRolePlayer(this, AbstractFeatureDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, AbstractFeatureDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access AbstractFeatured of a FeatureModel
+		/// <summary>
+		/// Gets a list of AbstractFeatured.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<AbstractFeature> GetAbstractFeatured(FeatureModel element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<AbstractFeature>, AbstractFeature>(element, FeatureModelDomainRoleId);
+		}
+		#endregion
+		#region FeatureModel link accessor
+		/// <summary>
+		/// Get the list of FeatureModelHasAbstractFeatured links to a FeatureModel.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureModelHasAbstractFeatured> GetLinksToAbstractFeatured ( global::Company.LabDslE.FeatureModel featureModelInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasAbstractFeatured>(featureModelInstance, global::Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId);
+		}
+		#endregion
+		#region AbstractFeature link accessor
+		/// <summary>
+		/// Get the FeatureModelHasAbstractFeatured link to a AbstractFeature.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.LabDslE.FeatureModelHasAbstractFeatured GetLinkToFeatureModel (global::Company.LabDslE.AbstractFeature abstractFeatureInstance)
+		{
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureModelHasAbstractFeatured> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasAbstractFeatured>(abstractFeatureInstance, global::Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeatureDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of AbstractFeature not obeyed.");
+			if ( links.Count == 0 )
+			{
+				return null;
+			}
+			else
+			{
+				return links[0];
+			}
+		}
+		#endregion
+		#region FeatureModelHasAbstractFeatured instance accessors
+		
+		/// <summary>
+		/// Get any FeatureModelHasAbstractFeatured links between a given FeatureModel and a AbstractFeature.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.LabDslE.FeatureModelHasAbstractFeatured> GetLinks( global::Company.LabDslE.FeatureModel source, global::Company.LabDslE.AbstractFeature target )
+		{
+			global::System.Collections.Generic.List<global::Company.LabDslE.FeatureModelHasAbstractFeatured> outLinks = new global::System.Collections.Generic.List<global::Company.LabDslE.FeatureModelHasAbstractFeatured>();
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureModelHasAbstractFeatured> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasAbstractFeatured>(source, global::Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId);
+			foreach ( global::Company.LabDslE.FeatureModelHasAbstractFeatured link in links )
+			{
+				if ( target.Equals(link.AbstractFeature) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one FeatureModelHasAbstractFeatured link between a given FeatureModeland a AbstractFeature.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.LabDslE.FeatureModelHasAbstractFeatured GetLink( global::Company.LabDslE.FeatureModel source, global::Company.LabDslE.AbstractFeature target )
+		{
+			global::System.Collections.Generic.IList<global::Company.LabDslE.FeatureModelHasAbstractFeatured> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.LabDslE.FeatureModelHasAbstractFeatured>(source, global::Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModelDomainRoleId);
+			foreach ( global::Company.LabDslE.FeatureModelHasAbstractFeatured link in links )
+			{
+				if ( target.Equals(link.AbstractFeature) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}

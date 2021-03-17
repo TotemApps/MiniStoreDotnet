@@ -17,7 +17,7 @@
     <exampleShape Id="6ae5fec9-3c3b-490f-9683-98998243fad5" absoluteBounds="6, 2.875, 2, 0.75">
       <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Core Components" />
     </exampleShape>
-    <exampleConnector Id="5910e054-231b-45e7-9658-d6ceea36ac29" edgePoints="[(5.125 : 0.832894736842105); (7 : 0.832894736842105); (7 : 2.875)]" fixedFrom="Caller" fixedTo="Algorithm" TargetRelationshipDomainClassId="80657553-7092-4e14-82c2-9242a14bea89">
+    <exampleConnector Id="5910e054-231b-45e7-9658-d6ceea36ac29" edgePoints="[(5.125 : 0.875); (7.15625 : 0.875); (7.15625 : 2.875)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="80657553-7092-4e14-82c2-9242a14bea89">
       <nodes>
         <exampleShapeMoniker Id="919c9b3f-fce5-4b05-b5c9-8df2fb5b7608" />
         <exampleShapeMoniker Id="6ae5fec9-3c3b-490f-9683-98998243fad5" />

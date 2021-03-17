@@ -98,7 +98,7 @@ namespace Company.LabDslE
 		{
 			get
 			{
-				return 2;
+				return 3;
 			}
 		}
 		
@@ -179,6 +179,22 @@ namespace Company.LabDslE
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(OptionalRelationshipFilterString)
+						});
+					break;
+				case "Company.LabDslE.AbstractFeatureToolToolboxItem":
+					// Add AbstractFeatureTool shape tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.LabDslE.AbstractFeatureToolToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						3, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("AbstractFeatureToolToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("AbstractFeatureToolToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						"Company.LabDslE.LabDslEToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("LabDslEToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"AbstractFeatureTool", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("AbstractFeatureToolToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						CreateElementToolPrototype(store, global::Company.LabDslE.AbstractFeature.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
 						});
 					break;
 				default:

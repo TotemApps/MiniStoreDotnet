@@ -12,11 +12,33 @@
             <DomainPath>FeatureModelHasElements.Elements</DomainPath>
           </LinkCreationPaths>
         </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="AbstractFeature" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>FeatureModelHasAbstractFeatured.AbstractFeatured</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
       </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="47d1e017-e544-4d18-9f15-0c0d74aab5ce" Description="Elements embedded in the model. Appear as boxes on the diagram." Name="FeatureElement" DisplayName="Feature Element" Namespace="Company.LabDslE">
       <Properties>
         <DomainProperty Id="88852f33-9753-4157-b429-68ba33967cd7" Description="Description for Company.LabDslE.FeatureElement.Name" Name="Name" DisplayName="Name" DefaultValue="" IsElementName="true">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="2b6923fc-2f9d-4f56-a9ec-67491a50a2a8" Description="Description for Company.LabDslE.AbstractFeature" Name="AbstractFeature" DisplayName="Abstract Feature" Namespace="Company.LabDslE">
+      <Properties>
+        <DomainProperty Id="b7eeb139-9f1f-4403-b0c9-e23e6c39d83f" Description="Description for Company.LabDslE.AbstractFeature.Name" Name="Name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="0b816f0b-d6a1-4681-beb1-4c400857fbcd" Description="Description for Company.LabDslE.AbstractFeature.Caption" Name="Caption" DisplayName="Caption">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -57,6 +79,22 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="80cdbf9a-145c-4044-a50a-4b5425ffd70b" Description="Description for Company.LabDslE.FeatureModelHasAbstractFeatured" Name="FeatureModelHasAbstractFeatured" DisplayName="Feature Model Has Abstract Featured" Namespace="Company.LabDslE" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="1e971aa6-bc9b-44eb-b384-8eb377fb6add" Description="Description for Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModel" Name="FeatureModel" DisplayName="Feature Model" PropertyName="AbstractFeatured" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Abstract Featured">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureModel" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="0e1ca949-c138-4b2a-a91c-9a09fe97a2b4" Description="Description for Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeature" Name="AbstractFeature" DisplayName="Abstract Feature" PropertyName="FeatureModel" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Feature Model">
+          <RolePlayer>
+            <DomainClassMoniker Name="AbstractFeature" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -82,6 +120,7 @@
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
     </GeometryShape>
+    <GeometryShape Id="a15ae773-1df1-4890-be03-d3f0c5448f57" Description="Description for Company.LabDslE.AbstractFeatureShape" Name="AbstractFeatureShape" DisplayName="Abstract Feature Shape" Namespace="Company.LabDslE" FixedTooltipText="Abstract Feature Shape" InitialHeight="1" Geometry="Rectangle" />
   </Shapes>
   <Connectors>
     <Connector Id="4c41566f-eb29-4b4b-bc19-d0efa26d93c2" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.LabDslE" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
@@ -93,6 +132,9 @@
         <ElementData>
           <XmlRelationshipData RoleElementName="elements">
             <DomainRelationshipMoniker Name="FeatureModelHasElements" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="abstractFeatured">
+            <DomainRelationshipMoniker Name="FeatureModelHasAbstractFeatured" />
           </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
@@ -121,6 +163,23 @@
       </XmlClassData>
       <XmlClassData TypeName="LabDslEDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="labDslEDiagramMoniker" ElementName="labDslEDiagram" MonikerTypeName="LabDslEDiagramMoniker">
         <DiagramMoniker Name="LabDslEDiagram" />
+      </XmlClassData>
+      <XmlClassData TypeName="AbstractFeature" MonikerAttributeName="" SerializeId="true" MonikerElementName="abstractFeatureMoniker" ElementName="abstractFeature" MonikerTypeName="AbstractFeatureMoniker">
+        <DomainClassMoniker Name="AbstractFeature" />
+        <ElementData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="AbstractFeature/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="caption">
+            <DomainPropertyMoniker Name="AbstractFeature/Caption" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="AbstractFeatureShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="abstractFeatureShapeMoniker" ElementName="abstractFeatureShape" MonikerTypeName="AbstractFeatureShapeMoniker">
+        <GeometryShapeMoniker Name="AbstractFeatureShape" />
+      </XmlClassData>
+      <XmlClassData TypeName="FeatureModelHasAbstractFeatured" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasAbstractFeaturedMoniker" ElementName="featureModelHasAbstractFeatured" MonikerTypeName="FeatureModelHasAbstractFeaturedMoniker">
+        <DomainRelationshipMoniker Name="FeatureModelHasAbstractFeatured" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -167,6 +226,13 @@
         </DecoratorMap>
         <GeometryShapeMoniker Name="ExampleShape" />
       </ShapeMap>
+      <ShapeMap>
+        <DomainClassMoniker Name="AbstractFeature" />
+        <ParentElementPath>
+          <DomainPath>FeatureModelHasAbstractFeatured.FeatureModel/!FeatureModel</DomainPath>
+        </ParentElementPath>
+        <GeometryShapeMoniker Name="AbstractFeatureShape" />
+      </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
       <ConnectorMap>
@@ -189,6 +255,9 @@
       <ConnectionTool Name="OptionalRelationship" ToolboxIcon="resources\exampleconnectortoolbitmap.bmp" Caption="Optional Relationship" Tooltip="Drag between ExampleElements to create an ExampleRelationship" HelpKeyword="ConnectExampleRelationF1Keyword">
         <ConnectionBuilderMoniker Name="LabDslE/FeatureElementReferencesTargetsBuilder" />
       </ConnectionTool>
+      <ElementTool Name="AbstractFeatureTool" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="AbstractFeatureTool" Tooltip="Abstract Feature Tool" HelpKeyword="AbstractFeatureTool">
+        <DomainClassMoniker Name="AbstractFeature" />
+      </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="LabDslEDiagram" />

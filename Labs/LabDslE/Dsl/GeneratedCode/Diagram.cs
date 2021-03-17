@@ -197,6 +197,12 @@ namespace Company.LabDslE
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
+			if(element is global::Company.LabDslE.AbstractFeature)
+			{
+				global::Company.LabDslE.AbstractFeatureShape newShape = new global::Company.LabDslE.AbstractFeatureShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Company.LabDslE.FeatureElementReferencesTargets)
 			{
 				global::Company.LabDslE.ExampleConnector newShape = new global::Company.LabDslE.ExampleConnector(this.Partition);
@@ -386,6 +392,7 @@ namespace Company.LabDslE
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.LabDslE.FeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.LabDslE.AbstractFeature), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.LabDslE.FeatureElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
@@ -406,6 +413,10 @@ namespace Company.LabDslE
 				{
 					parentElement = GetParentForFeatureElement((global::Company.LabDslE.FeatureElement)childElement);
 				} else
+				if(childElement is global::Company.LabDslE.AbstractFeature)
+				{
+					parentElement = GetParentForAbstractFeature((global::Company.LabDslE.AbstractFeature)childElement);
+				} else
 				{
 					parentElement = null;
 				}
@@ -416,6 +427,13 @@ namespace Company.LabDslE
 				}
 			}
 			public static global::Company.LabDslE.FeatureModel GetParentForFeatureElement( global::Company.LabDslE.FeatureElement root )
+			{
+				// Segments 0 and 1
+				global::Company.LabDslE.FeatureModel result = root.FeatureModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.LabDslE.FeatureModel GetParentForAbstractFeature( global::Company.LabDslE.AbstractFeature root )
 			{
 				// Segments 0 and 1
 				global::Company.LabDslE.FeatureModel result = root.FeatureModel;

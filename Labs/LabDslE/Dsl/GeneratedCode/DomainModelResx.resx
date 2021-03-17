@@ -149,6 +149,30 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
+  <data name="Company.LabDslE.AbstractFeature.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.AbstractFeature</value>
+    <comment>Description for DomainClass &apos;AbstractFeature&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeature.DisplayName" xml:space="preserve">
+    <value>Abstract Feature</value>
+    <comment>DisplayName for DomainClass &apos;AbstractFeature&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeature/Name.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.AbstractFeature.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;AbstractFeature&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeature/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;AbstractFeature&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeature/Caption.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.AbstractFeature.Caption</value>
+    <comment>Description for DomainProperty &apos;Caption&apos; on DomainClass &apos;AbstractFeature&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeature/Caption.DisplayName" xml:space="preserve">
+    <value>Caption</value>
+    <comment>DisplayName for DomainProperty &apos;Caption&apos; on DomainClass &apos;AbstractFeature&apos;</comment>
+  </data>
   <data name="Company.LabDslE.FeatureModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;FeatureModelHasElements&apos;</comment>
@@ -213,6 +237,38 @@
     <value>Sources</value>
     <comment>PropertyDisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;FeatureElementReferencesTargets&apos;</comment>
   </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.FeatureModelHasAbstractFeatured</value>
+    <comment>Description for DomainClass &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured.DisplayName" xml:space="preserve">
+    <value>Feature Model Has Abstract Featured</value>
+    <comment>DisplayName for DomainClass &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured/FeatureModel.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.FeatureModelHasAbstractFeatured.FeatureModel</value>
+    <comment>Description for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured/FeatureModel.DisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>DisplayName for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured/FeatureModel.PropertyDisplayName" xml:space="preserve">
+    <value>Abstract Featured</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured/AbstractFeature.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.FeatureModelHasAbstractFeatured.AbstractFeature</value>
+    <comment>Description for DomainRole &apos;AbstractFeature&apos; on DomainRelationship &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured/AbstractFeature.DisplayName" xml:space="preserve">
+    <value>Abstract Feature</value>
+    <comment>DisplayName for DomainRole &apos;AbstractFeature&apos; on DomainRelationship &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.FeatureModelHasAbstractFeatured/AbstractFeature.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>PropertyDisplayName for DomainRole &apos;AbstractFeature&apos; on DomainRelationship &apos;FeatureModelHasAbstractFeatured&apos;</comment>
+  </data>
   <data name="Company.LabDslE.ExampleShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleShape&apos;</comment>
@@ -224,6 +280,14 @@
   <data name="ExampleShapeNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeatureShape.Description" xml:space="preserve">
+    <value>Description for Company.LabDslE.AbstractFeatureShape</value>
+    <comment>Description for DomainClass &apos;AbstractFeatureShape&apos;</comment>
+  </data>
+  <data name="Company.LabDslE.AbstractFeatureShape.DisplayName" xml:space="preserve">
+    <value>Abstract Feature Shape</value>
+    <comment>DisplayName for DomainClass &apos;AbstractFeatureShape&apos;</comment>
   </data>
   <data name="Company.LabDslE.ExampleConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -267,6 +331,14 @@
   </data>
   <data name="OptionalRelationshipToolboxTooltip" xml:space="preserve">
     <value>Drag between ExampleElements to create an ExampleRelationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="AbstractFeatureToolToolboxItem" xml:space="preserve">
+    <value>AbstractFeatureTool</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="AbstractFeatureToolToolboxTooltip" xml:space="preserve">
+    <value>Abstract Feature Tool</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -400,6 +472,10 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="OptionalRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleconnectortoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="AbstractFeatureToolToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>
