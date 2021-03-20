@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{1ead585a-9db6-493a-a66d-c3903ce9b2d4}</TemplateID>
+		<Name Package="{84cd64c5-67ee-4ed1-9a75-83ba806b4399}" ID="103"/>
+		<Description Package="{84cd64c5-67ee-4ed1-9a75-83ba806b4399}" ID="102"/>
+		<Icon Package="{84cd64c5-67ee-4ed1-9a75-83ba806b4399}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>FeatureModelLab02.FeatureModelLab02</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.FeatureModelLab02">FeatureModelLab02.FeatureModelLab02</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.FeatureModelLab02.diagram">FeatureModelLab02.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+
