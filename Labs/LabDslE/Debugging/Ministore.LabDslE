@@ -9,6 +9,7 @@
     </featureElement>
     <featureElement Id="e7ef14b8-cae1-4c9a-b2e8-1ebd57660bde" name="Stack" />
     <featureElement Id="c16fe3be-6694-4c4a-86ea-f965444ef5a1" name="Core Components" />
+    <featureElement Id="d27e148d-dc3d-412b-8ffc-64a64110bcd6" name="FeatureElement1" />
   </elements>
   <abstractFeatured>
     <featureModelHasAbstractFeatured Id="402c5dd5-981d-4e1a-afcb-66607e8ca28f">
