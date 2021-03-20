@@ -44,7 +44,7 @@
     <exampleShape Id="bd61b9dd-99c8-4b24-a450-7aa0095e0d18" absoluteBounds="17, 3.5, 2, 0.75">
       <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Dash board" />
     </exampleShape>
-    <exampleConnector Id="2b541d01-f39f-4e46-896c-cff0ab6f6026" edgePoints="[(9.5 : 1.039064375); (18 : 1.039064375); (18 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="61c7edf5-0d74-457c-a702-ba37130c0741">
+    <exampleConnector Id="2b541d01-f39f-4e46-896c-cff0ab6f6026" edgePoints="[(9.5 : 1.039064375); (15.4166666666667 : 1.039064375 : JumpStart); (15.5833333333333 : 1.039064375 : JumpEnd); (18 : 1.039064375); (18 : 3.5)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="61c7edf5-0d74-457c-a702-ba37130c0741">
       <nodes>
         <exampleShapeMoniker Id="5d495892-5bec-4733-bcf7-d8172a309d5c" />
         <exampleShapeMoniker Id="bd61b9dd-99c8-4b24-a450-7aa0095e0d18" />
