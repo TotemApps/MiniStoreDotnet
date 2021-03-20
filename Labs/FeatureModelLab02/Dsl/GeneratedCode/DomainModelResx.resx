@@ -149,6 +149,14 @@
     <value>Name</value>
     <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
+  <data name="Company.FeatureModelLab02.FeatureElement/Included.Description" xml:space="preserve">
+    <value>Description for Company.FeatureModelLab02.FeatureElement.Included</value>
+    <comment>Description for DomainProperty &apos;Included&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.FeatureModelLab02.FeatureElement/Included.DisplayName" xml:space="preserve">
+    <value>Included</value>
+    <comment>DisplayName for DomainProperty &apos;Included&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
   <data name="Company.FeatureModelLab02.FeatureModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;FeatureModelHasElements&apos;</comment>

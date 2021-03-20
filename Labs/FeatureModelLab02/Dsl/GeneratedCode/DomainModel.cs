@@ -88,6 +88,7 @@ namespace Company.FeatureModelLab02
 			return new DomainMemberInfo[]
 			{
 				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureElement), "Included", FeatureElement.IncludedDomainPropertyId, typeof(FeatureElement.IncludedPropertyHandler)),
 			};
 		}
 		/// <summary>

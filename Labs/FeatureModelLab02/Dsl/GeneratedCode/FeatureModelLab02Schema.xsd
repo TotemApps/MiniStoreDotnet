@@ -106,6 +106,8 @@
         </xsd:attribute>
         <!-- Property: Name -->
         <xsd:attribute name="name" type="xsd:string" use="required" />
+        <!-- Property: Included -->
+        <xsd:attribute name="included" type="xsd:boolean" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

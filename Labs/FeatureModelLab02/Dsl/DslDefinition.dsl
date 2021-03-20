@@ -21,6 +21,12 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="5b789093-fde9-4efb-87aa-90feb79d3c44" Description="Description for Company.FeatureModelLab02.FeatureElement.Included" Name="Included" DisplayName="Included" DefaultValue="true">
+          <Notes>Indicates if the feature is included for the derived model</Notes>
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
   </Classes>
@@ -105,6 +111,9 @@
           <XmlRelationshipData RoleElementName="targets">
             <DomainRelationshipMoniker Name="FeatureElementReferencesTargets" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="included">
+            <DomainPropertyMoniker Name="FeatureElement/Included" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasElementsMoniker" ElementName="featureModelHasElements" MonikerTypeName="FeatureModelHasElementsMoniker">

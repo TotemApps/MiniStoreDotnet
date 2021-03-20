@@ -942,6 +942,23 @@ namespace Company.FeatureModelLab02
 					}
 				}
 			}
+			// Included
+			if (!serializationContext.Result.Failed)
+			{
+				string attribIncluded = FeatureModelLab02SerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "included");
+				if (attribIncluded != null)
+				{
+					global::System.Boolean valueOfIncluded;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Boolean>(serializationContext, attribIncluded, out valueOfIncluded))
+					{
+						instanceOfFeatureElement.Included = valueOfIncluded;
+					}
+					else
+					{	// Invalid property value, ignored.
+						FeatureModelLab02SerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "included", typeof(global::System.Boolean), attribIncluded);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -1451,6 +1468,19 @@ namespace Company.FeatureModelLab02
 				if (!serializationContext.Result.Failed)
 				{
 					FeatureModelLab02SerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+				}
+			}
+			// Included
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.Boolean propValue = instanceOfFeatureElement.Included;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Boolean>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "true") != 0)
+					{	// No need to write the value out if it's the same as default value.
+						FeatureModelLab02SerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "included", serializedPropValue);
+					}
 				}
 			}
 		}
