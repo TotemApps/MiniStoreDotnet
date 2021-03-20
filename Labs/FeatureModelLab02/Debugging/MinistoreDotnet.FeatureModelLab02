@@ -31,9 +31,9 @@
     <featureElement Id="a691a399-4788-4d8f-bb58-f7afc8744af0" name="Web store" />
     <featureElement Id="cf773590-e037-4e26-bc4b-e55758db0726" name="Dash board" />
     <featureElement Id="25e513bd-236c-4157-8156-d78d9ce92077" name="Azure" />
-    <featureElement Id="51a244ca-1331-4a30-bf59-0db8d2fed5da" name="AWS" />
+    <featureElement Id="51a244ca-1331-4a30-bf59-0db8d2fed5da" name="AWS" included="false" />
     <featureElement Id="104536e9-e641-4adc-b7c3-9fe91b63dadc" name="VM" />
-    <featureElement Id="2146a56b-a4bc-4922-81d3-12b507f124e6" name="Microservices" />
+    <featureElement Id="2146a56b-a4bc-4922-81d3-12b507f124e6" name="Microservices" included="false" />
     <featureElement Id="9bf101dd-48d7-4197-8c68-29826a41143e" name="Data Acces">
       <targets>
         <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Oracle" />
@@ -47,8 +47,8 @@
       </targets>
     </featureElement>
     <featureElement Id="d851159e-3c29-4b2c-93ca-b1818899867b" name="Oracle" />
-    <featureElement Id="555b9ee6-f882-4005-be0c-aef1ef62813c" name="MSSql" />
+    <featureElement Id="555b9ee6-f882-4005-be0c-aef1ef62813c" name="MSSql" included="false" />
     <featureElement Id="c01b18d6-c2b5-4371-aff8-31598760a07f" name="System Logs" />
-    <featureElement Id="752984d5-c979-430a-8bf5-8e3a7a0e7337" name="Stock" />
+    <featureElement Id="752984d5-c979-430a-8bf5-8e3a7a0e7337" name="Stock" included="false" />
   </elements>
 </featureModel>

@@ -231,6 +231,9 @@ namespace Company.FeatureModelLab02
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.FeatureModelLab02.FeatureElement.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+		
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.FeatureModelLab02.FeatureElement.IncludedDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "IncludedDecorator").AssociateVisibilityWith(shape.Store, propertyInfo);
 			}
 		}
 		

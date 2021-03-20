@@ -177,6 +177,12 @@
             </PropertyPath>
           </PropertyDisplayed>
         </DecoratorMap>
+        <DecoratorMap>
+          <IconDecoratorMoniker Name="ExampleShape/IncludedDecorator" />
+          <VisibilityPropertyPath>
+            <DomainPropertyMoniker Name="FeatureElement/Included" />
+          </VisibilityPropertyPath>
+        </DecoratorMap>
         <GeometryShapeMoniker Name="ExampleShape" />
       </ShapeMap>
     </ShapeMaps>
