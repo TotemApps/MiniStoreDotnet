@@ -512,6 +512,22 @@ namespace Company.FeatureSpl
 			}
 		}
 		#endregion
+		#region RootFeatureElements opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of RootFeatureElements.
+		/// Description for
+		/// Company.FeatureSpl.RootFeatureElementReferencesFeatureElements.FeatureElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<RootFeatureElement> RootFeatureElements
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<RootFeatureElement>, RootFeatureElement>(global::Company.FeatureSpl.RootFeatureElementReferencesFeatureElements.FeatureElementDomainRoleId);
+			}
+		}
+		#endregion
 	}
 }
 namespace Company.FeatureSpl
@@ -551,6 +567,22 @@ namespace Company.FeatureSpl
 		public RootFeatureElement(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
+		}
+		#endregion
+		#region FeatureElements opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of FeatureElements.
+		/// Description for
+		/// Company.FeatureSpl.RootFeatureElementReferencesFeatureElements.RootFeatureElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> FeatureElements
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.FeatureSpl.RootFeatureElementReferencesFeatureElements.RootFeatureElementDomainRoleId);
+			}
 		}
 		#endregion
 	}

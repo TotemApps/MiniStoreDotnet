@@ -73,6 +73,22 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="7dff9289-8d36-4ccc-a847-cc66d76f6154" Description="Description for Company.FeatureSpl.RootFeatureElementReferencesFeatureElements" Name="RootFeatureElementReferencesFeatureElements" DisplayName="Root Feature Element References Feature Elements" Namespace="Company.FeatureSpl">
+      <Source>
+        <DomainRole Id="4d1b5024-7ef9-4275-8ce9-22294e084bab" Description="Description for Company.FeatureSpl.RootFeatureElementReferencesFeatureElements.RootFeatureElement" Name="RootFeatureElement" DisplayName="Root Feature Element" PropertyName="FeatureElements" PropertyDisplayName="Feature Elements">
+          <RolePlayer>
+            <DomainClassMoniker Name="RootFeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="8a8ebe58-07e6-49d7-ad99-c23f06730adf" Description="Description for Company.FeatureSpl.RootFeatureElementReferencesFeatureElements.FeatureElement" Name="FeatureElement" DisplayName="Feature Element" PropertyName="RootFeatureElements" PropertyDisplayName="Root Feature Elements">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -109,6 +125,7 @@
   </Shapes>
   <Connectors>
     <Connector Id="eac9d3a5-dd72-4084-bd71-29a5e67bd89d" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="OptionalConnector" DisplayName="Optional Connector" Namespace="Company.FeatureSpl" FixedTooltipText="Optional Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
+    <Connector Id="3463a5cf-7913-49bd-9d5b-2f750c49ea95" Description="Description for Company.FeatureSpl.MandatoryConnector" Name="MandatoryConnector" DisplayName="Mandatory Connector" Namespace="Company.FeatureSpl" FixedTooltipText="Mandatory Connector" />
   </Connectors>
   <XmlSerializationBehavior Name="FeatureSplSerializationBehavior" Namespace="Company.FeatureSpl">
     <ClassData>
@@ -157,6 +174,17 @@
       </XmlClassData>
       <XmlClassData TypeName="RootFeatureElement" MonikerAttributeName="" SerializeId="true" MonikerElementName="rootFeatureElementMoniker" ElementName="rootFeatureElement" MonikerTypeName="RootFeatureElementMoniker">
         <DomainClassMoniker Name="RootFeatureElement" />
+        <ElementData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="featureElements">
+            <DomainRelationshipMoniker Name="RootFeatureElementReferencesFeatureElements" />
+          </XmlRelationshipData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="RootFeatureElementReferencesFeatureElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="rootFeatureElementReferencesFeatureElementsMoniker" ElementName="rootFeatureElementReferencesFeatureElements" MonikerTypeName="RootFeatureElementReferencesFeatureElementsMoniker">
+        <DomainRelationshipMoniker Name="RootFeatureElementReferencesFeatureElements" />
+      </XmlClassData>
+      <XmlClassData TypeName="MandatoryConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="mandatoryConnectorMoniker" ElementName="mandatoryConnector" MonikerTypeName="MandatoryConnectorMoniker">
+        <ConnectorMoniker Name="MandatoryConnector" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -170,6 +198,25 @@
           <RolePlayerConnectDirective>
             <AcceptingClass>
               <DomainClassMoniker Name="FeatureElement" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="FeatureElement" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+    <ConnectionBuilder Name="RootFeatureElementReferencesFeatureElementsBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="RootFeatureElementReferencesFeatureElements" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="RootFeatureElement" />
             </AcceptingClass>
           </RolePlayerConnectDirective>
         </SourceDirectives>
@@ -222,6 +269,10 @@
         <ConnectorMoniker Name="OptionalConnector" />
         <DomainRelationshipMoniker Name="FeatureElementReferencesTargets" />
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="MandatoryConnector" />
+        <DomainRelationshipMoniker Name="RootFeatureElementReferencesFeatureElements" />
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="feature" EditorGuid="81d59881-6d4c-4d3c-b590-f3eedeef0fdf">
@@ -241,6 +292,9 @@
       <ElementTool Name="RootFeatureElement" ToolboxIcon="Resources\ExampleShapeToolBitmap.bmp" Caption="RootFeatureElement" Tooltip="Root Feature Element" HelpKeyword="RootFeatureElement">
         <DomainClassMoniker Name="RootFeatureElement" />
       </ElementTool>
+      <ConnectionTool Name="MandatoryRelationship" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="MandatoryRelationship" Tooltip="Mandatory Relationship" HelpKeyword="MandatoryRelationship">
+        <ConnectionBuilderMoniker Name="FeatureSpl/RootFeatureElementReferencesFeatureElementsBuilder" />
+      </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="FeatureSplDiagram" />

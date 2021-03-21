@@ -208,6 +208,11 @@ namespace Company.FeatureSpl
 				global::Company.FeatureSpl.OptionalConnector newShape = new global::Company.FeatureSpl.OptionalConnector(this.Partition);
 				return newShape;
 			}
+			if(element is global::Company.FeatureSpl.RootFeatureElementReferencesFeatureElements)
+			{
+				global::Company.FeatureSpl.MandatoryConnector newShape = new global::Company.FeatureSpl.MandatoryConnector(this.Partition);
+				return newShape;
+			}
 			return base.CreateChildShape(element);
 		}
 		#endregion
@@ -264,6 +269,7 @@ namespace Company.FeatureSpl
 		#region Connect actions
 		private bool changingMouseAction;
 		private global::Company.FeatureSpl.OptionalRelationshipConnectAction optionalRelationshipConnectAction;
+		private global::Company.FeatureSpl.MandatoryRelationshipConnectAction mandatoryRelationshipConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -294,6 +300,15 @@ namespace Company.FeatureSpl
 						this.optionalRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
 					action = this.optionalRelationshipConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.FeatureSpl.FeatureSplToolboxHelper.MandatoryRelationshipFilterString))
+				{
+					if (this.mandatoryRelationshipConnectAction == null)
+					{
+						this.mandatoryRelationshipConnectAction = new global::Company.FeatureSpl.MandatoryRelationshipConnectAction(this);
+						this.mandatoryRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.mandatoryRelationshipConnectAction;
 				} 
 				else
 				{
@@ -357,6 +372,11 @@ namespace Company.FeatureSpl
 						this.optionalRelationshipConnectAction.Dispose();
 						this.optionalRelationshipConnectAction = null;
 					}
+					if(this.mandatoryRelationshipConnectAction != null)
+					{
+						this.mandatoryRelationshipConnectAction.Dispose();
+						this.mandatoryRelationshipConnectAction = null;
+					}
 				}
 			}
 			finally
@@ -413,6 +433,7 @@ namespace Company.FeatureSpl
 		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.RootFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.FeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.FeatureElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.RootFeatureElementReferencesFeatureElements), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -549,6 +570,7 @@ namespace Company.FeatureSpl
 		/// Reroute a connector when the role players of its underlying relationship change
 		/// </summary>
 		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.FeatureElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.RootFeatureElementReferencesFeatureElements), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

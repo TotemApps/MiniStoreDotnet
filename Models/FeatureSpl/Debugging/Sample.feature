@@ -8,6 +8,12 @@
         <featureElementMoniker name="/603b6577-b7db-4cd6-bc4f-bbb1551798bb/Stack" />
         <featureElementMoniker name="/603b6577-b7db-4cd6-bc4f-bbb1551798bb/Core components" />
       </targets>
+      <featureElements>
+        <rootFeatureElementReferencesFeatureElements Id="de709d12-3eec-43ab-bb6a-723a58fbd48d">
+          <featureElementMoniker name="/603b6577-b7db-4cd6-bc4f-bbb1551798bb/FeatureElement1" />
+        </rootFeatureElementReferencesFeatureElements>
+      </featureElements>
     </rootFeatureElement>
+    <featureElement Id="53c0b0ec-91a4-4331-bfcb-d5be151d546a" name="FeatureElement1" included="true" />
   </elements>
 </exampleModel>

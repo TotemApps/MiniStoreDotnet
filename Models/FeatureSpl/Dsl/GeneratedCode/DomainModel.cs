@@ -72,8 +72,10 @@ namespace Company.FeatureSpl
 				typeof(RootFeatureElement),
 				typeof(ExampleModelHasElements),
 				typeof(FeatureElementReferencesTargets),
+				typeof(RootFeatureElementReferencesFeatureElements),
 				typeof(FeatureSplDiagram),
 				typeof(OptionalConnector),
+				typeof(MandatoryConnector),
 				typeof(FeatureShape),
 				typeof(RootFeatureShape),
 				typeof(global::Company.FeatureSpl.FixUpDiagram),
@@ -106,6 +108,8 @@ namespace Company.FeatureSpl
 				new DomainRolePlayerInfo(typeof(ExampleModelHasElements), "Element", ExampleModelHasElements.ElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Source", FeatureElementReferencesTargets.SourceDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Target", FeatureElementReferencesTargets.TargetDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RootFeatureElementReferencesFeatureElements), "RootFeatureElement", RootFeatureElementReferencesFeatureElements.RootFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(RootFeatureElementReferencesFeatureElements), "FeatureElement", RootFeatureElementReferencesFeatureElements.FeatureElementDomainRoleId),
 			};
 		}
 		#endregion
@@ -127,14 +131,15 @@ namespace Company.FeatureSpl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
 				createElementMap.Add(typeof(ExampleModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(RootFeatureElement), 2);
 				createElementMap.Add(typeof(FeatureSplDiagram), 3);
 				createElementMap.Add(typeof(OptionalConnector), 4);
-				createElementMap.Add(typeof(FeatureShape), 5);
-				createElementMap.Add(typeof(RootFeatureShape), 6);
+				createElementMap.Add(typeof(MandatoryConnector), 5);
+				createElementMap.Add(typeof(FeatureShape), 6);
+				createElementMap.Add(typeof(RootFeatureShape), 7);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -153,8 +158,9 @@ namespace Company.FeatureSpl
 				case 2: return new RootFeatureElement(partition, propertyAssignments);
 				case 3: return new FeatureSplDiagram(partition, propertyAssignments);
 				case 4: return new OptionalConnector(partition, propertyAssignments);
-				case 5: return new FeatureShape(partition, propertyAssignments);
-				case 6: return new RootFeatureShape(partition, propertyAssignments);
+				case 5: return new MandatoryConnector(partition, propertyAssignments);
+				case 6: return new FeatureShape(partition, propertyAssignments);
+				case 7: return new RootFeatureShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -177,9 +183,10 @@ namespace Company.FeatureSpl
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(2);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
 				createElementLinkMap.Add(typeof(ExampleModelHasElements), 0);
 				createElementLinkMap.Add(typeof(FeatureElementReferencesTargets), 1);
+				createElementLinkMap.Add(typeof(RootFeatureElementReferencesFeatureElements), 2);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -196,6 +203,7 @@ namespace Company.FeatureSpl
 			{
 				case 0: return new ExampleModelHasElements(partition, roleAssignments, propertyAssignments);
 				case 1: return new FeatureElementReferencesTargets(partition, roleAssignments, propertyAssignments);
+				case 2: return new RootFeatureElementReferencesFeatureElements(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}

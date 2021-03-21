@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{9c7d1001-bdc8-4018-a93d-dfc7487d48cf}</TemplateID>
+		<Name Package="{0e382322-6e06-4539-b5e4-874a29c54f0c}" ID="103"/>
+		<Description Package="{0e382322-6e06-4539-b5e4-874a29c54f0c}" ID="102"/>
+		<Icon Package="{0e382322-6e06-4539-b5e4-874a29c54f0c}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>LanguageLab03.LanguageLab03</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.LanguageLab03">LanguageLab03.LanguageLab03</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.LanguageLab03.diagram">LanguageLab03.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

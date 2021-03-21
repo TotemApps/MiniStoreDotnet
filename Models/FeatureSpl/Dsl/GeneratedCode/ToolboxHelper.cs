@@ -51,6 +51,10 @@ namespace Company.FeatureSpl
 		/// Toolbox item filter string used to identify OptionalRelationship connector tool.
 		/// </summary>
 		public const string OptionalRelationshipFilterString = "OptionalRelationship.1.0";
+		/// <summary>
+		/// Toolbox item filter string used to identify MandatoryRelationship connector tool.
+		/// </summary>
+		public const string MandatoryRelationshipFilterString = "MandatoryRelationship.1.0";
 
 	
 		private global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem> toolboxItemCache = new global::System.Collections.Generic.Dictionary<string, DslDesign::ModelingToolboxItem>();
@@ -98,7 +102,7 @@ namespace Company.FeatureSpl
 		{
 			get
 			{
-				return 3;
+				return 4;
 			}
 		}
 		
@@ -195,6 +199,24 @@ namespace Company.FeatureSpl
 						CreateElementToolPrototype(store, global::Company.FeatureSpl.RootFeatureElement.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 
+						});
+					break;
+				case "Company.FeatureSpl.MandatoryRelationshipToolboxItem":
+
+					// Add MandatoryRelationship connector tool.
+					result = new DslDesign::ModelingToolboxItem(
+						"Company.FeatureSpl.MandatoryRelationshipToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						4, // Position relative to other items in the same toolbox tab.
+						resourceManager.GetString("MandatoryRelationshipToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("MandatoryRelationshipToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.				
+						"Company.FeatureSpl.FeatureSplToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
+						resourceManager.GetString("FeatureSplToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
+						"MandatoryRelationship", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("MandatoryRelationshipToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						null, // Connector toolbox items do not have an underlying data object.
+						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require), 
+							new global::System.ComponentModel.ToolboxItemFilterAttribute(MandatoryRelationshipFilterString)
 						});
 					break;
 				default:
