@@ -514,3 +514,44 @@ namespace Company.FeatureSpl
 		#endregion
 	}
 }
+namespace Company.FeatureSpl
+{
+	/// <summary>
+	/// DomainClass RootFeatureElement
+	/// Description for Company.FeatureSpl.RootFeatureElement
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.FeatureSpl.RootFeatureElement.DisplayName", typeof(global::Company.FeatureSpl.FeatureSplDomainModel), "Company.FeatureSpl.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.FeatureSpl.RootFeatureElement.Description", typeof(global::Company.FeatureSpl.FeatureSplDomainModel), "Company.FeatureSpl.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.FeatureSpl.FeatureSplDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("8e4b9269-f2df-4207-8380-d0efa0164baa")]
+	public partial class RootFeatureElement : FeatureElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// RootFeatureElement domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8e4b9269, 0xf2df, 0x4207, 0x83, 0x80, 0xd0, 0xef, 0xa0, 0x16, 0x4b, 0xaa);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public RootFeatureElement(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public RootFeatureElement(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}

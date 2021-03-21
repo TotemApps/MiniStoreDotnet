@@ -131,6 +131,33 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- RootFeatureElement -->
+  <xsd:element name="rootFeatureElement" type="RootFeatureElement" substitutionGroup="featureElement" />
+  <xsd:complexType name="RootFeatureElement">
+    <xsd:complexContent>
+      <xsd:extension base="FeatureElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- RootFeatureElement Moniker -->
+  <xsd:element name="rootFeatureElementMoniker" type="RootFeatureElementMoniker" substitutionGroup="featureElementMoniker" />
+  <xsd:complexType name="RootFeatureElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for RootFeatureElement instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="FeatureElementMoniker">
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- ExampleModelHasElements -->
   <xsd:element name="exampleModelHasElements" abstract="true" type="ExampleModelHasElements" substitutionGroup="core:modelElement" />
   <xsd:complexType name="ExampleModelHasElements" abstract="true" >

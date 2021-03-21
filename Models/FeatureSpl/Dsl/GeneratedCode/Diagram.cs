@@ -191,6 +191,12 @@ namespace Company.FeatureSpl
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
 		protected override DslDiagrams::ShapeElement CreateChildShape(DslModeling::ModelElement element)
 		{
+			if(element is global::Company.FeatureSpl.RootFeatureElement)
+			{
+				global::Company.FeatureSpl.RootFeatureShape newShape = new global::Company.FeatureSpl.RootFeatureShape(this.Partition);
+				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
+				return newShape;
+			}
 			if(element is global::Company.FeatureSpl.FeatureElement)
 			{
 				global::Company.FeatureSpl.FeatureShape newShape = new global::Company.FeatureSpl.FeatureShape(this.Partition);
@@ -214,6 +220,7 @@ namespace Company.FeatureSpl
 		{
 			base.InitializeShapeFields(shapeFields);
 			global::Company.FeatureSpl.FeatureShape.DecoratorsInitialized += FeatureShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.FeatureSpl.RootFeatureShape.DecoratorsInitialized += RootFeatureShapeDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
@@ -237,11 +244,26 @@ namespace Company.FeatureSpl
 			}
 		}
 		
+		/// <summary>
+		/// Class containing decorator path traversal methods for RootFeatureShape.
+		/// </summary>
+		internal static partial class RootFeatureShapeDecoratorMap
+		{
+			/// <summary>
+			/// Event handler called when decorator initialization is complete for RootFeatureShape.  Adds decorator mappings for this shape or connector.
+			/// </summary>
+			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
+			{
+				FeatureShapeDecoratorMap.OnDecoratorsInitialized(sender, e);
+				
+			}
+		}
+		
 		#endregion
 		
 		#region Connect actions
 		private bool changingMouseAction;
-		private global::Company.FeatureSpl.ExampleRelationshipConnectAction exampleRelationshipConnectAction;
+		private global::Company.FeatureSpl.OptionalRelationshipConnectAction optionalRelationshipConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -264,14 +286,14 @@ namespace Company.FeatureSpl
 			if(activeView != null)
 			{
 				DslDiagrams::MouseAction action = null;
-				if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.FeatureSpl.FeatureSplToolboxHelper.ExampleRelationshipFilterString))
+				if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.FeatureSpl.FeatureSplToolboxHelper.OptionalRelationshipFilterString))
 				{
-					if (this.exampleRelationshipConnectAction == null)
+					if (this.optionalRelationshipConnectAction == null)
 					{
-						this.exampleRelationshipConnectAction = new global::Company.FeatureSpl.ExampleRelationshipConnectAction(this);
-						this.exampleRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+						this.optionalRelationshipConnectAction = new global::Company.FeatureSpl.OptionalRelationshipConnectAction(this);
+						this.optionalRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
-					action = this.exampleRelationshipConnectAction;
+					action = this.optionalRelationshipConnectAction;
 				} 
 				else
 				{
@@ -330,10 +352,10 @@ namespace Company.FeatureSpl
 			{
 				if(disposing)
 				{
-					if(this.exampleRelationshipConnectAction != null)
+					if(this.optionalRelationshipConnectAction != null)
 					{
-						this.exampleRelationshipConnectAction.Dispose();
-						this.exampleRelationshipConnectAction = null;
+						this.optionalRelationshipConnectAction.Dispose();
+						this.optionalRelationshipConnectAction = null;
 					}
 				}
 			}
@@ -388,6 +410,7 @@ namespace Company.FeatureSpl
 		/// <summary>
 		/// Rule that initiates view fixup when an element that has an associated shape is added to the model. 
 		/// </summary>
+		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.RootFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.FeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddShapeParentExistRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.FeatureSpl.FeatureElementReferencesTargets), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
@@ -405,6 +428,10 @@ namespace Company.FeatureSpl
 				{
 					parentElement = GetParentForRelationship((DslModeling::ElementLink)childElement);
 				} else
+				if(childElement is global::Company.FeatureSpl.RootFeatureElement)
+				{
+					parentElement = GetParentForRootFeatureElement((global::Company.FeatureSpl.RootFeatureElement)childElement);
+				} else
 				if(childElement is global::Company.FeatureSpl.FeatureElement)
 				{
 					parentElement = GetParentForFeatureElement((global::Company.FeatureSpl.FeatureElement)childElement);
@@ -419,6 +446,13 @@ namespace Company.FeatureSpl
 				}
 			}
 			public static global::Company.FeatureSpl.ExampleModel GetParentForFeatureElement( global::Company.FeatureSpl.FeatureElement root )
+			{
+				// Segments 0 and 1
+				global::Company.FeatureSpl.ExampleModel result = root.ExampleModel;
+				if ( result == null ) return null;
+				return result;
+			}
+			public static global::Company.FeatureSpl.ExampleModel GetParentForRootFeatureElement( global::Company.FeatureSpl.FeatureElement root )
 			{
 				// Segments 0 and 1
 				global::Company.FeatureSpl.ExampleModel result = root.ExampleModel;

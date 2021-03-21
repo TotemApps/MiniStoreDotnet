@@ -165,6 +165,14 @@
     <value>Is Root</value>
     <comment>DisplayName for DomainProperty &apos;IsRoot&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
+  <data name="Company.FeatureSpl.RootFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.FeatureSpl.RootFeatureElement</value>
+    <comment>Description for DomainClass &apos;RootFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.FeatureSpl.RootFeatureElement.DisplayName" xml:space="preserve">
+    <value>Root Feature Element</value>
+    <comment>DisplayName for DomainClass &apos;RootFeatureElement&apos;</comment>
+  </data>
   <data name="Company.FeatureSpl.ExampleModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;ExampleModelHasElements&apos;</comment>
@@ -241,6 +249,14 @@
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
   </data>
+  <data name="Company.FeatureSpl.RootFeatureShape.Description" xml:space="preserve">
+    <value>Description for Company.FeatureSpl.RootFeatureShape</value>
+    <comment>Description for DomainClass &apos;RootFeatureShape&apos;</comment>
+  </data>
+  <data name="Company.FeatureSpl.RootFeatureShape.DisplayName" xml:space="preserve">
+    <value>Root Feature Shape</value>
+    <comment>DisplayName for DomainClass &apos;RootFeatureShape&apos;</comment>
+  </data>
   <data name="Company.FeatureSpl.OptionalConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
     <comment>Description for DomainClass &apos;OptionalConnector&apos;</comment>
@@ -269,20 +285,28 @@
     <value>FeatureSpl</value>
     <comment>Toolbox item tab name</comment>
   </data>
-  <data name="ExampleElementToolboxItem" xml:space="preserve">
-    <value>ExampleElement</value>
+  <data name="FeatureElementToolboxItem" xml:space="preserve">
+    <value>FeatureElement</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ExampleElementToolboxTooltip" xml:space="preserve">
+  <data name="FeatureElementToolboxTooltip" xml:space="preserve">
     <value>Create an ExampleElement</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="ExampleRelationshipToolboxItem" xml:space="preserve">
-    <value>ExampleRelationship</value>
+  <data name="OptionalRelationshipToolboxItem" xml:space="preserve">
+    <value>OptionalRelationship</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ExampleRelationshipToolboxTooltip" xml:space="preserve">
+  <data name="OptionalRelationshipToolboxTooltip" xml:space="preserve">
     <value>Drag between ExampleElements to create an ExampleRelationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="RootFeatureElementToolboxItem" xml:space="preserve">
+    <value>RootFeatureElement</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="RootFeatureElementToolboxTooltip" xml:space="preserve">
+    <value>Root Feature Element</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -414,12 +438,16 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\SelectedIcon.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="ExampleElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="FeatureElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ExampleRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="OptionalRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleconnectortoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="RootFeatureElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleShapeToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

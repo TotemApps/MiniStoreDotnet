@@ -69,11 +69,13 @@ namespace Company.FeatureSpl
 			{
 				typeof(ExampleModel),
 				typeof(FeatureElement),
+				typeof(RootFeatureElement),
 				typeof(ExampleModelHasElements),
 				typeof(FeatureElementReferencesTargets),
 				typeof(FeatureSplDiagram),
 				typeof(OptionalConnector),
 				typeof(FeatureShape),
+				typeof(RootFeatureShape),
 				typeof(global::Company.FeatureSpl.FixUpDiagram),
 				typeof(global::Company.FeatureSpl.ConnectorRolePlayerChanged),
 			};
@@ -125,12 +127,14 @@ namespace Company.FeatureSpl
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
 				createElementMap.Add(typeof(ExampleModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
-				createElementMap.Add(typeof(FeatureSplDiagram), 2);
-				createElementMap.Add(typeof(OptionalConnector), 3);
-				createElementMap.Add(typeof(FeatureShape), 4);
+				createElementMap.Add(typeof(RootFeatureElement), 2);
+				createElementMap.Add(typeof(FeatureSplDiagram), 3);
+				createElementMap.Add(typeof(OptionalConnector), 4);
+				createElementMap.Add(typeof(FeatureShape), 5);
+				createElementMap.Add(typeof(RootFeatureShape), 6);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -146,9 +150,11 @@ namespace Company.FeatureSpl
 			{
 				case 0: return new ExampleModel(partition, propertyAssignments);
 				case 1: return new FeatureElement(partition, propertyAssignments);
-				case 2: return new FeatureSplDiagram(partition, propertyAssignments);
-				case 3: return new OptionalConnector(partition, propertyAssignments);
-				case 4: return new FeatureShape(partition, propertyAssignments);
+				case 2: return new RootFeatureElement(partition, propertyAssignments);
+				case 3: return new FeatureSplDiagram(partition, propertyAssignments);
+				case 4: return new OptionalConnector(partition, propertyAssignments);
+				case 5: return new FeatureShape(partition, propertyAssignments);
+				case 6: return new RootFeatureShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
