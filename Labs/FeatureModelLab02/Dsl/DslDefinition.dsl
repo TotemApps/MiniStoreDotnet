@@ -82,7 +82,7 @@
     <ExternalType Name="Char" Namespace="System" />
   </Types>
   <Shapes>
-    <GeometryShape Id="74a2ed58-498a-4d72-b81e-98308e30db33" Description="Shape used to represent ExampleElements on a Diagram." Name="ExampleShape" DisplayName="Example Shape" Namespace="Company.FeatureModelLab02" FixedTooltipText="Example Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
+    <GeometryShape Id="74a2ed58-498a-4d72-b81e-98308e30db33" Description="Shape used to represent ExampleElements on a Diagram." Name="FeatureShape" DisplayName="Feature Shape" Namespace="Company.FeatureModelLab02" FixedTooltipText="Feature Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
       <Notes>The shape has a text decorator used to display the Name property of the mapped ExampleElement.</Notes>
       <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
@@ -93,7 +93,7 @@
     </GeometryShape>
   </Shapes>
   <Connectors>
-    <Connector Id="4649825c-4ace-4299-99af-50362842bcee" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.FeatureModelLab02" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" />
+    <Connector Id="4649825c-4ace-4299-99af-50362842bcee" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.FeatureModelLab02" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
   </Connectors>
   <XmlSerializationBehavior Name="FeatureModelLab02SerializationBehavior" Namespace="Company.FeatureModelLab02">
     <ClassData>
@@ -125,8 +125,8 @@
       <XmlClassData TypeName="FeatureElementReferencesTargets" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureElementReferencesTargetsMoniker" ElementName="featureElementReferencesTargets" MonikerTypeName="FeatureElementReferencesTargetsMoniker">
         <DomainRelationshipMoniker Name="FeatureElementReferencesTargets" />
       </XmlClassData>
-      <XmlClassData TypeName="ExampleShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleShapeMoniker" ElementName="exampleShape" MonikerTypeName="ExampleShapeMoniker">
-        <GeometryShapeMoniker Name="ExampleShape" />
+      <XmlClassData TypeName="FeatureShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureShapeMoniker" ElementName="featureShape" MonikerTypeName="FeatureShapeMoniker">
+        <GeometryShapeMoniker Name="FeatureShape" />
       </XmlClassData>
       <XmlClassData TypeName="ExampleConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleConnectorMoniker" ElementName="exampleConnector" MonikerTypeName="ExampleConnectorMoniker">
         <ConnectorMoniker Name="ExampleConnector" />
@@ -170,7 +170,7 @@
           <DomainPath>FeatureModelHasElements.FeatureModel/!FeatureModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="ExampleShape/NameDecorator" />
+          <TextDecoratorMoniker Name="FeatureShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="FeatureElement/Name" />
@@ -178,12 +178,12 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <DecoratorMap>
-          <IconDecoratorMoniker Name="ExampleShape/IncludedDecorator" />
+          <IconDecoratorMoniker Name="FeatureShape/IncludedDecorator" />
           <VisibilityPropertyPath>
             <DomainPropertyMoniker Name="FeatureElement/Included" />
           </VisibilityPropertyPath>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="ExampleShape" />
+        <GeometryShapeMoniker Name="FeatureShape" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>

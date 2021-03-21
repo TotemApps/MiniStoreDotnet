@@ -14,15 +14,15 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace Company.FeatureModelLab02
 {
 	/// <summary>
-	/// DomainClass ExampleShape
+	/// DomainClass FeatureShape
 	/// Shape used to represent ExampleElements on a Diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.FeatureModelLab02.ExampleShape.DisplayName", typeof(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel), "Company.FeatureModelLab02.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.FeatureModelLab02.ExampleShape.Description", typeof(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel), "Company.FeatureModelLab02.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.FeatureModelLab02.FeatureShape.DisplayName", typeof(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel), "Company.FeatureModelLab02.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.FeatureModelLab02.FeatureShape.Description", typeof(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel), "Company.FeatureModelLab02.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("74a2ed58-498a-4d72-b81e-98308e30db33")]
-	public partial class ExampleShape : DslDiagrams::NodeShape
+	public partial class FeatureShape : DslDiagrams::NodeShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -87,9 +87,9 @@ namespace Company.FeatureModelLab02
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with ExampleShape.
+		/// Finds a decorator associated with FeatureShape.
 		/// </summary>
-		public static DslDiagrams::Decorator FindExampleShapeDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindFeatureShapeDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -178,7 +178,7 @@ namespace Company.FeatureModelLab02
 		{
 			base.InitializeShapeFields(shapeFields);
 			DslDiagrams::TextField field1 = new DslDiagrams::TextField("NameDecorator");
-			field1.DefaultText = global::Company.FeatureModelLab02.FeatureModelLab02DomainModel.SingletonResourceManager.GetString("ExampleShapeNameDecoratorDefaultText");
+			field1.DefaultText = global::Company.FeatureModelLab02.FeatureModelLab02DomainModel.SingletonResourceManager.GetString("FeatureShapeNameDecoratorDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -187,7 +187,7 @@ namespace Company.FeatureModelLab02
 			shapeFields.Add(field1);
 			
 			DslDiagrams::ImageField field2 = new DslDiagrams::ImageField("IncludedDecorator");
-			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel.SingletonResourceManager.GetObject("ExampleShapeIncludedDecoratorDefaultImage"));
+			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Company.FeatureModelLab02.FeatureModelLab02DomainModel.SingletonResourceManager.GetObject("FeatureShapeIncludedDecoratorDefaultImage"));
 			shapeFields.Add(field2);
 			
 		}
@@ -234,7 +234,7 @@ namespace Company.FeatureModelLab02
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ExampleShape domain class Id.
+		/// FeatureShape domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x74a2ed58, 0x498a, 0x4d72, 0xb8, 0x1e, 0x98, 0x30, 0x8e, 0x30, 0xdb, 0x33);
 		/// <summary>
@@ -242,7 +242,7 @@ namespace Company.FeatureModelLab02
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureShape(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -252,7 +252,7 @@ namespace Company.FeatureModelLab02
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureShape(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}

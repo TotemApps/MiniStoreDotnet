@@ -73,7 +73,7 @@ namespace Company.FeatureModelLab02
 				typeof(FeatureElementReferencesTargets),
 				typeof(FeatureModelLab02Diagram),
 				typeof(ExampleConnector),
-				typeof(ExampleShape),
+				typeof(FeatureShape),
 				typeof(global::Company.FeatureModelLab02.FixUpDiagram),
 				typeof(global::Company.FeatureModelLab02.ConnectorRolePlayerChanged),
 			};
@@ -129,7 +129,7 @@ namespace Company.FeatureModelLab02
 				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(FeatureModelLab02Diagram), 2);
 				createElementMap.Add(typeof(ExampleConnector), 3);
-				createElementMap.Add(typeof(ExampleShape), 4);
+				createElementMap.Add(typeof(FeatureShape), 4);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -147,7 +147,7 @@ namespace Company.FeatureModelLab02
 				case 1: return new FeatureElement(partition, propertyAssignments);
 				case 2: return new FeatureModelLab02Diagram(partition, propertyAssignments);
 				case 3: return new ExampleConnector(partition, propertyAssignments);
-				case 4: return new ExampleShape(partition, propertyAssignments);
+				case 4: return new FeatureShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}

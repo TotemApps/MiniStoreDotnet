@@ -3189,15 +3189,15 @@ namespace Company.FeatureModelLab02
 namespace Company.FeatureModelLab02
 {
 	/// <summary>
-	/// Serializer ExampleShapeSerializer for DomainClass ExampleShape.
+	/// Serializer FeatureShapeSerializer for DomainClass FeatureShape.
 	/// </summary>
-	public partial class ExampleShapeSerializer : DslDiagrams::NodeShapeSerializer
+	public partial class FeatureShapeSerializer : DslDiagrams::NodeShapeSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// ExampleShapeSerializer Constructor
+		/// FeatureShapeSerializer Constructor
 		/// </summary>
-		public ExampleShapeSerializer ()
+		public FeatureShapeSerializer ()
 			: base ()
 		{
 		}
@@ -3223,25 +3223,25 @@ namespace Company.FeatureModelLab02
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of ExampleShape.
+		/// This is the XML tag name used to serialize an instance of FeatureShape.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"exampleShape"; }
+			get { return @"featureShape"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of ExampleShape.
+		/// This is the XML tag name used to serialize a monikerized instance of FeatureShape.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"exampleShapeMoniker"; }
+			get { return @"featureShapeMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of ExampleShape in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of FeatureShape in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -3252,16 +3252,16 @@ namespace Company.FeatureModelLab02
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one ExampleShape instance from XML.
+		/// Public Read() method that deserializes one FeatureShape instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the ExampleShape element that is about to be deserialized. 
+		/// of the FeatureShape element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory ExampleShape instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory FeatureShape instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -3313,8 +3313,8 @@ namespace Company.FeatureModelLab02
 	
 		#region TryCreateInstance
 		/// <summary>
-		/// This method creates a correct instance of ExampleShape based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized ExampleShape, a new ExampleShape instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of FeatureShape based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized FeatureShape, a new FeatureShape instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -3324,7 +3324,7 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created ExampleShape instance, or null if the reader is not pointing to a serialized ExampleShape instance.</returns>
+		/// <returns>Created FeatureShape instance, or null if the reader is not pointing to a serialized FeatureShape instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -3344,18 +3344,18 @@ namespace Company.FeatureModelLab02
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "ExampleShape" instance.
+				{	// New "FeatureShape" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "ExampleShape".
+				{	// Check for derived classes of "FeatureShape".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class instance.
-						ExampleShapeSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ExampleShapeSerializer;
+						FeatureShapeSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureShapeSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -3366,8 +3366,8 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// This method creates an instance of ExampleShape based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of ExampleShape.
+		/// This method creates an instance of FeatureShape based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of FeatureShape.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -3375,8 +3375,8 @@ namespace Company.FeatureModelLab02
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new ExampleShape instance should be created.</param>	
-		/// <returns>Created ExampleShape instance.</returns>
+		/// <param name="partition">Partition in which new FeatureShape instance should be created.</param>	
+		/// <returns>Created FeatureShape instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -3392,7 +3392,7 @@ namespace Company.FeatureModelLab02
 				{
 					id = new global::System.Guid (idStr);
 				}
-				return new ExampleShape(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+				return new FeatureShape(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
 			}
 			catch (global::System.ArgumentNullException /* anEx */)
 			{	
@@ -3410,12 +3410,12 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from ExampleShape, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from FeatureShape, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from ExampleShape.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from FeatureShape.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -3424,7 +3424,7 @@ namespace Company.FeatureModelLab02
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ExampleShape.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureShape.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -3456,7 +3456,7 @@ namespace Company.FeatureModelLab02
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including ExampleShape itself) instance of ExampleShape based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including FeatureShape itself) instance of FeatureShape based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -3490,18 +3490,18 @@ namespace Company.FeatureModelLab02
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "ExampleShape" moniker instance.
+				{	// New "FeatureShape" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "ExampleShape".
+				{	// Check for derived classes of "FeatureShape".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						ExampleShapeSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ExampleShapeSerializer;
+						FeatureShapeSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureShapeSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -3512,7 +3512,7 @@ namespace Company.FeatureModelLab02
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of ExampleShape based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of FeatureShape based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -3537,7 +3537,7 @@ namespace Company.FeatureModelLab02
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, ExampleShape.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, FeatureShape.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -3561,12 +3561,12 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from ExampleShape, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureShape, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from ExampleShape.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureShape.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -3575,7 +3575,7 @@ namespace Company.FeatureModelLab02
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ExampleShape.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureShape.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -3601,13 +3601,13 @@ namespace Company.FeatureModelLab02
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized ExampleShape instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized FeatureShape instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">ExampleShape instance to be monikerized.</param>
+		/// <param name="element">FeatureShape instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the ExampleShape instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the ExampleShape instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the FeatureShape instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the FeatureShape instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -3636,10 +3636,10 @@ namespace Company.FeatureModelLab02
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one ExampleShape instance into XML.
+		/// Public Write() method that serializes one FeatureShape instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">ExampleShape instance to be serialized.</param>
+		/// <param name="element">FeatureShape instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -3699,11 +3699,11 @@ namespace Company.FeatureModelLab02
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given ExampleShape instance.
+		/// This method calculates a moniker to a given FeatureShape instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">ExampleShape instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the ExampleShape instance.</returns>
+		/// <param name="element">FeatureShape instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the FeatureShape instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -3715,8 +3715,8 @@ namespace Company.FeatureModelLab02
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			ExampleShape instance = element as ExampleShape;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of ExampleShape!");
+			FeatureShape instance = element as FeatureShape;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of FeatureShape!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -3727,7 +3727,7 @@ namespace Company.FeatureModelLab02
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">ExampleShape instance to get moniker qualifier from.</param>
+		/// <param name="element">FeatureShape instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -4944,7 +4944,7 @@ namespace Company.FeatureModelLab02
 					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElement.DomainClassId, typeof(FeatureElementSerializer)));
 					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureModelHasElements.DomainClassId, typeof(FeatureModelHasElementsSerializer)));
 					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementReferencesTargets.DomainClassId, typeof(FeatureElementReferencesTargetsSerializer)));
-					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ExampleShape.DomainClassId, typeof(ExampleShapeSerializer)));
+					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureShape.DomainClassId, typeof(FeatureShapeSerializer)));
 					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ExampleConnector.DomainClassId, typeof(ExampleConnectorSerializer)));
 					FeatureModelLab02SerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureModelLab02Diagram.DomainClassId, typeof(FeatureModelLab02DiagramSerializer)));
 					#endregion

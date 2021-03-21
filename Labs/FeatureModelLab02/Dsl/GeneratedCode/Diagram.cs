@@ -193,7 +193,7 @@ namespace Company.FeatureModelLab02
 		{
 			if(element is global::Company.FeatureModelLab02.FeatureElement)
 			{
-				global::Company.FeatureModelLab02.ExampleShape newShape = new global::Company.FeatureModelLab02.ExampleShape(this.Partition);
+				global::Company.FeatureModelLab02.FeatureShape newShape = new global::Company.FeatureModelLab02.FeatureShape(this.Partition);
 				if(newShape != null) newShape.Size = newShape.DefaultSize; // set default shape size
 				return newShape;
 			}
@@ -213,16 +213,16 @@ namespace Company.FeatureModelLab02
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			global::Company.FeatureModelLab02.ExampleShape.DecoratorsInitialized += ExampleShapeDecoratorMap.OnDecoratorsInitialized;
+			global::Company.FeatureModelLab02.FeatureShape.DecoratorsInitialized += FeatureShapeDecoratorMap.OnDecoratorsInitialized;
 		}
 		
 		/// <summary>
-		/// Class containing decorator path traversal methods for ExampleShape.
+		/// Class containing decorator path traversal methods for FeatureShape.
 		/// </summary>
-		internal static partial class ExampleShapeDecoratorMap
+		internal static partial class FeatureShapeDecoratorMap
 		{
 			/// <summary>
-			/// Event handler called when decorator initialization is complete for ExampleShape.  Adds decorator mappings for this shape or connector.
+			/// Event handler called when decorator initialization is complete for FeatureShape.  Adds decorator mappings for this shape or connector.
 			/// </summary>
 			public static void OnDecoratorsInitialized(object sender, global::System.EventArgs e)
 			{
