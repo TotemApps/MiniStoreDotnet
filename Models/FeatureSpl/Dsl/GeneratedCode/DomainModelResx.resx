@@ -157,6 +157,14 @@
     <value>Included</value>
     <comment>DisplayName for DomainProperty &apos;Included&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
+  <data name="Company.FeatureSpl.FeatureElement/IsRoot.Description" xml:space="preserve">
+    <value>Description for Company.FeatureSpl.FeatureElement.Is Root</value>
+    <comment>Description for DomainProperty &apos;IsRoot&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.FeatureSpl.FeatureElement/IsRoot.DisplayName" xml:space="preserve">
+    <value>Is Root</value>
+    <comment>DisplayName for DomainProperty &apos;IsRoot&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
   <data name="Company.FeatureSpl.ExampleModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;ExampleModelHasElements&apos;</comment>

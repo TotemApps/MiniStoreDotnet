@@ -108,6 +108,8 @@
         <xsd:attribute name="name" type="xsd:string" use="required" />
         <!-- Property: Included -->
         <xsd:attribute name="included" type="xsd:boolean" />
+        <!-- Property: IsRoot -->
+        <xsd:attribute name="isRoot" type="xsd:boolean" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>

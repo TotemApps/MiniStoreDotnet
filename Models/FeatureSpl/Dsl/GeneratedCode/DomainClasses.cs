@@ -377,6 +377,93 @@ namespace Company.FeatureSpl
 		}
 		
 		#endregion
+		#region IsRoot domain property code
+		
+		/// <summary>
+		/// IsRoot domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid IsRootDomainPropertyId = new global::System.Guid(0xeb0d64dc, 0xc8fd, 0x460f, 0x87, 0x86, 0x77, 0x42, 0x7c, 0xa3, 0x04, 0x9a);
+		
+		/// <summary>
+		/// Storage for IsRoot
+		/// </summary>
+		private global::System.Boolean isRootPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of IsRoot domain property.
+		/// Description for Company.FeatureSpl.FeatureElement.Is Root
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.FeatureSpl.FeatureElement/IsRoot.DisplayName", typeof(global::Company.FeatureSpl.FeatureSplDomainModel), "Company.FeatureSpl.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.FeatureSpl.FeatureElement/IsRoot.Description", typeof(global::Company.FeatureSpl.FeatureSplDomainModel), "Company.FeatureSpl.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("eb0d64dc-c8fd-460f-8786-77427ca3049a")]
+		public global::System.Boolean IsRoot
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return isRootPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				IsRootPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FeatureElement.IsRoot domain property.
+		/// </summary>
+		internal sealed partial class IsRootPropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureElement, global::System.Boolean>
+		{
+			private IsRootPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FeatureElement.IsRoot domain property value handler.
+			/// </summary>
+			public static readonly IsRootPropertyHandler Instance = new IsRootPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FeatureElement.IsRoot domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return IsRootDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(FeatureElement element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.isRootPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FeatureElement element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.isRootPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region ExampleModel opposite domain role accessor
 		/// <summary>
 		/// Gets or sets ExampleModel.

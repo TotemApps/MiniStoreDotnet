@@ -89,6 +89,7 @@ namespace Company.FeatureSpl
 			{
 				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Included", FeatureElement.IncludedDomainPropertyId, typeof(FeatureElement.IncludedPropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureElement), "IsRoot", FeatureElement.IsRootDomainPropertyId, typeof(FeatureElement.IsRootPropertyHandler)),
 			};
 		}
 		/// <summary>

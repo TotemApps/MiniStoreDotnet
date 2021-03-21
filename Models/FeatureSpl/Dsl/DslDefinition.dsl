@@ -27,6 +27,11 @@
             <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="eb0d64dc-c8fd-460f-8786-77427ca3049a" Description="Description for Company.FeatureSpl.FeatureElement.Is Root" Name="IsRoot" DisplayName="Is Root" DefaultValue="false">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
   </Classes>
@@ -116,6 +121,9 @@
           </XmlRelationshipData>
           <XmlPropertyData XmlName="included">
             <DomainPropertyMoniker Name="FeatureElement/Included" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="isRoot">
+            <DomainPropertyMoniker Name="FeatureElement/IsRoot" />
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>

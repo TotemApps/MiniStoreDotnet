@@ -959,6 +959,23 @@ namespace Company.FeatureSpl
 					}
 				}
 			}
+			// IsRoot
+			if (!serializationContext.Result.Failed)
+			{
+				string attribIsRoot = FeatureSplSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "isRoot");
+				if (attribIsRoot != null)
+				{
+					global::System.Boolean valueOfIsRoot;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Boolean>(serializationContext, attribIsRoot, out valueOfIsRoot))
+					{
+						instanceOfFeatureElement.IsRoot = valueOfIsRoot;
+					}
+					else
+					{	// Invalid property value, ignored.
+						FeatureSplSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "isRoot", typeof(global::System.Boolean), attribIsRoot);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -1478,6 +1495,19 @@ namespace Company.FeatureSpl
 				if (!serializationContext.Result.Failed)
 				{
 					FeatureSplSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "included", serializedPropValue);
+				}
+			}
+			// IsRoot
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.Boolean propValue = instanceOfFeatureElement.IsRoot;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Boolean>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					if (serializationContext.WriteOptionalPropertiesWithDefaultValue || string.CompareOrdinal(serializedPropValue, "false") != 0)
+					{	// No need to write the value out if it's the same as default value.
+						FeatureSplSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "isRoot", serializedPropValue);
+					}
 				}
 			}
 		}
