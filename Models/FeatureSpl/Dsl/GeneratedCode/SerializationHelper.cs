@@ -12,10 +12,10 @@ using DslModeling = global::Microsoft.VisualStudio.Modeling;
 using DslValidation = global::Microsoft.VisualStudio.Modeling.Validation;
 using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 
-namespace Company.FeatureModelLab02
+namespace Company.FeatureSpl
 {
 	
-	partial class FeatureModelLab02DomainModel
+	partial class FeatureSplDomainModel
 	{
 		///<Summary>
 		/// Provide an implementation of the partial method to set up the serialization behavior for this model.
@@ -27,21 +27,21 @@ namespace Company.FeatureModelLab02
 		partial void InitializeSerialization(DslModeling::Store store)
 		{
 			// Register the serializers and moniker resolver for this model
-			FeatureModelLab02SerializationHelper.Instance.InitializeSerialization(store);	
+			FeatureSplSerializationHelper.Instance.InitializeSerialization(store);	
 		}
 	}
 	
 	
 	/// <summary>
-	/// Helper class for serializing and deserializing FeatureModelLab02 models.
+	/// Helper class for serializing and deserializing FeatureSpl models.
 	/// </summary>
-	public abstract partial class FeatureModelLab02SerializationHelperBase
+	public abstract partial class FeatureSplSerializationHelperBase
 	{
 		#region Constructor
 		/// <summary>
 		/// Constructor
 		/// </summary>
-		protected FeatureModelLab02SerializationHelperBase() { }
+		protected FeatureSplSerializationHelperBase() { }
 		#endregion
 		
 		#region Methods
@@ -62,15 +62,15 @@ namespace Company.FeatureModelLab02
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(store);
 	
 			// Register the moniker resolver for this model, unless one is already registered
-			DslModeling::IMonikerResolver monikerResolver = store.FindMonikerResolver(FeatureModelLab02DomainModel.DomainModelId);
+			DslModeling::IMonikerResolver monikerResolver = store.FindMonikerResolver(FeatureSplDomainModel.DomainModelId);
 			if (monikerResolver == null)
 			{
-				monikerResolver = new FeatureModelLab02SerializationBehaviorMonikerResolver(store, directory);
-				store.AddMonikerResolver(FeatureModelLab02DomainModel.DomainModelId, monikerResolver);
+				monikerResolver = new FeatureSplSerializationBehaviorMonikerResolver(store, directory);
+				store.AddMonikerResolver(FeatureSplDomainModel.DomainModelId, monikerResolver);
 			}
 			
 			// Add serialization behaviors
-			directory.AddBehavior(FeatureModelLab02SerializationBehavior.Instance);
+			directory.AddBehavior(FeatureSplSerializationBehavior.Instance);
 		}
 	
 		/// <Summary>
@@ -266,34 +266,34 @@ namespace Company.FeatureModelLab02
 	}
 	
 	/// <summary>
-	/// Helper class for serializing and deserializing FeatureModelLab02 models.
+	/// Helper class for serializing and deserializing FeatureSpl models.
 	/// </summary>
-	public sealed partial class FeatureModelLab02SerializationHelper : FeatureModelLab02SerializationHelperBase
+	public sealed partial class FeatureSplSerializationHelper : FeatureSplSerializationHelperBase
 	{
 		#region Constructor
 		/// <summary>
 		/// Private constructor to prevent direct instantiation.
 		/// </summary>
-		private FeatureModelLab02SerializationHelper() : base () { }
+		private FeatureSplSerializationHelper() : base () { }
 		#endregion
 		
 		#region Singleton Instance
 		/// <summary>
 		/// Singleton instance.
 		/// </summary>
-		private static FeatureModelLab02SerializationHelper instance;
+		private static FeatureSplSerializationHelper instance;
 		/// <summary>
 		/// Singleton instance.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerBrowsable(global::System.Diagnostics.DebuggerBrowsableState.Never)] // Will trigger creation otherwise.
-		public static FeatureModelLab02SerializationHelper Instance
+		public static FeatureSplSerializationHelper Instance
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				if (FeatureModelLab02SerializationHelper.instance == null)
-					FeatureModelLab02SerializationHelper.instance = new FeatureModelLab02SerializationHelper();
-				return FeatureModelLab02SerializationHelper.instance;
+				if (FeatureSplSerializationHelper.instance == null)
+					FeatureSplSerializationHelper.instance = new FeatureSplSerializationHelper();
+				return FeatureSplSerializationHelper.instance;
 			}
 		}
 		#endregion
@@ -302,17 +302,17 @@ namespace Company.FeatureModelLab02
 }
 
 
-namespace Company.FeatureModelLab02
+namespace Company.FeatureSpl
 {
 	
-	partial class FeatureModelLab02SerializationHelperBase
+	partial class FeatureSplSerializationHelperBase
 	{
 	
 		/// <summary>
-		/// Loads a FeatureModel instance into the default partition of the given store, and ignore serialization result.
+		/// Loads a ExampleModel instance into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new FeatureModel instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the FeatureModel instance will be deserialized.</param>
+		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -324,8 +324,8 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded FeatureModel instance.</returns>
-		public virtual FeatureModel LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded ExampleModel instance.</returns>
+		public virtual ExampleModel LoadModel(DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -336,11 +336,11 @@ namespace Company.FeatureModelLab02
 		}
 		
 		/// <summary>
-		/// Loads a FeatureModel instance into the default partition of the given store.
+		/// Loads a ExampleModel instance into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new FeatureModel instance will be created into the default partition of this store.</param>
-		/// <param name="fileName">Name of the file from which the FeatureModel instance will be deserialized.</param>
+		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
+		/// <param name="fileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -352,8 +352,8 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded FeatureModel instance.</returns>
-		public virtual FeatureModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded ExampleModel instance.</returns>
+		public virtual ExampleModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null) 
@@ -364,11 +364,11 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// Loads a FeatureModel instance.
+		/// Loads a ExampleModel instance.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new FeatureModel instance will be created.</param>
-		/// <param name="fileName">Name of the file from which the FeatureModel instance will be deserialized.</param>
+		/// <param name="partition">Partition in which the new ExampleModel instance will be created.</param>
+		/// <param name="fileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -380,9 +380,9 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded FeatureModel instance.</returns>
+		/// <returns>The loaded ExampleModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual FeatureModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual ExampleModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string fileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (string.IsNullOrEmpty(fileName))
@@ -396,11 +396,11 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// Loads a FeatureModel instance from a stream.
+		/// Loads a ExampleModel instance from a stream.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="partition">Partition in which the new FeatureModel instance will be created.</param>
-		/// <param name="location">Source location associated with stream from which the FeatureModel instance is to be loaded. Usually a file path, but can be any string, including null.</param>
+		/// <param name="partition">Partition in which the new ExampleModel instance will be created.</param>
+		/// <param name="location">Source location associated with stream from which the ExampleModel instance is to be loaded. Usually a file path, but can be any string, including null.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -412,10 +412,10 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <param name="stream">The Stream from which the FeatureModel will be deserialized.</param>
-		/// <returns>The loaded FeatureModel instance.</returns>
+		/// <param name="stream">The Stream from which the ExampleModel will be deserialized.</param>
+		/// <returns>The loaded ExampleModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability","CA1506:AvoidExcessiveClassCoupling", Justification="Generated code")]
-		public virtual FeatureModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
+		public virtual ExampleModel LoadModel(DslModeling::SerializationResult serializationResult, DslModeling::Partition partition, string location, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator, global::System.IO.Stream stream)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -429,13 +429,13 @@ namespace Company.FeatureModelLab02
 			// Ensure there is a transaction for this model to Load in.
 			if (!partition.Store.TransactionActive)
 			{
-				throw new global::System.InvalidOperationException(FeatureModelLab02DomainModel.SingletonResourceManager.GetString("MissingTransaction"));
+				throw new global::System.InvalidOperationException(FeatureSplDomainModel.SingletonResourceManager.GetString("MissingTransaction"));
 			}
 			
-			FeatureModel modelRoot = null;
+			ExampleModel modelRoot = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(partition.Store);
-			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(FeatureModel.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for FeatureModel!");
+			DslModeling::DomainClassXmlSerializer modelRootSerializer = directory.GetSerializer(ExampleModel.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(modelRootSerializer != null, "Cannot find serializer for ExampleModel!");
 			if (modelRootSerializer != null)
 			{
 				DslModeling::SerializationContext serializationContext = new DslModeling::SerializationContext(directory, location, serializationResult);
@@ -450,7 +450,7 @@ namespace Company.FeatureModelLab02
 					{
 						try
 						{
-							global::System.Xml.XmlReaderSettings settings = FeatureModelLab02SerializationHelper.Instance.CreateXmlReaderSettings(serializationContext, false);
+							global::System.Xml.XmlReaderSettings settings = FeatureSplSerializationHelper.Instance.CreateXmlReaderSettings(serializationContext, false);
 							using (global::System.Xml.XmlReader reader = global::System.Xml.XmlReader.Create(stream, settings))
 							{
 								// Attempt to read the encoding.
@@ -466,7 +466,7 @@ namespace Company.FeatureModelLab02
 								
 								reader.MoveToContent();
 									
-								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as FeatureModel;
+								modelRoot = modelRootSerializer.TryCreateInstance(serializationContext, reader, partition) as ExampleModel;
 								if (modelRoot != null && !serializationResult.Failed)
 								{
 									this.ReadRootElement(serializationContext, modelRoot, reader, schemaResolver);
@@ -535,9 +535,9 @@ namespace Company.FeatureModelLab02
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the FeatureModel instance will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string fileName)
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -546,10 +546,10 @@ namespace Company.FeatureModelLab02
 		/// Saves the given model to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the FeatureModel instance will be saved.</param>
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModel(serializationResult, modelRoot, fileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
@@ -558,12 +558,12 @@ namespace Company.FeatureModelLab02
 		/// Saves the given model root to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the FeatureModel instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the FeatureModel instance.</param>
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the ExampleModel instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -598,13 +598,13 @@ namespace Company.FeatureModelLab02
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
-		/// <param name="fileName">Name of the file in which the FeatureModel instance will be saved.</param>
-		/// <param name="encoding">Encoding to use when saving the FeatureModel instance.</param>
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
+		/// <param name="fileName">Name of the file in which the ExampleModel instance will be saved.</param>
+		/// <param name="encoding">Encoding to use when saving the ExampleModel instance.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized FeatureModel instance.</returns>
+		/// <returns>In-memory stream containing the serialized ExampleModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveModel(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string fileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -623,7 +623,7 @@ namespace Company.FeatureModelLab02
 			this.InitializeSerializationContext(modelRoot.Partition, serializationContext, false);
 			// MonikerResolver shouldn't be required in Save operation, so not calling SetupMonikerResolver() here.
 			serializationContext.WriteOptionalPropertiesWithDefaultValue = writeOptionalPropertiesWithDefaultValue;
-			global::System.Xml.XmlWriterSettings settings = FeatureModelLab02SerializationHelper.Instance.CreateXmlWriterSettings(serializationContext, false, encoding);
+			global::System.Xml.XmlWriterSettings settings = FeatureSplSerializationHelper.Instance.CreateXmlWriterSettings(serializationContext, false, encoding);
 			using (global::System.Xml.XmlWriter writer = global::System.Xml.XmlWriter.Create(newFileContent, settings))
 			{
 				this.WriteRootElement(serializationContext, modelRoot, writer);
@@ -637,13 +637,13 @@ namespace Company.FeatureModelLab02
 		/// both can be saved without error before writing the content to disk, so we serialize the model into a in-memory stream first.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		/// <returns>In-memory stream containing the serialized FeatureModelLab02Diagram instance.</returns>
+		/// <returns>In-memory stream containing the serialized FeatureSplDiagram instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		internal global::System.IO.MemoryStream InternalSaveDiagram(DslModeling::SerializationResult serializationResult, FeatureModelLab02Diagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		internal global::System.IO.MemoryStream InternalSaveDiagram(DslModeling::SerializationResult serializationResult, FeatureSplDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			global::System.Diagnostics.Debug.Assert(serializationResult != null);
@@ -660,7 +660,7 @@ namespace Company.FeatureModelLab02
 			this.InitializeSerializationContext(diagram.Partition, serializationContext, false);
 			// MonikerResolver shouldn't be required in Save operation, so not calling SetupMonikerResolver() here.
 			serializationContext.WriteOptionalPropertiesWithDefaultValue = writeOptionalPropertiesWithDefaultValue;
-			global::System.Xml.XmlWriterSettings settings = FeatureModelLab02SerializationHelper.Instance.CreateXmlWriterSettings(serializationContext, true, encoding);
+			global::System.Xml.XmlWriterSettings settings = FeatureSplSerializationHelper.Instance.CreateXmlWriterSettings(serializationContext, true, encoding);
 			using (global::System.Xml.XmlWriter writer = global::System.Xml.XmlWriter.Create(newFileContent, settings))
 			{
 				this.WriteRootElement(serializationContext, diagram, writer);
@@ -670,20 +670,20 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new FeatureModel.
+		/// Helper method to create and initialize a new ExampleModel.
 		/// </summary>
-		internal protected virtual FeatureModel CreateModelHelper(DslModeling::Partition modelPartition)
+		internal protected virtual ExampleModel CreateModelHelper(DslModeling::Partition modelPartition)
 		{
-			FeatureModel model = new FeatureModel(modelPartition);
+			ExampleModel model = new ExampleModel(modelPartition);
 			return model;
 		}
 		
 		/// <summary>
-		/// Loads a FeatureModel instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
+		/// Loads a ExampleModel instance and its associated diagram file into the default partition of the given store, and ignore serialization result.
 		/// </summary>
-		/// <param name="store">The new FeatureModel instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the FeatureModel instance will be deserialized.</param>
-		/// <param name="diagramFileName">Name of the file from which the FeatureModelLab02Diagram instance will be deserialized.</param>
+		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="diagramFileName">Name of the file from which the FeatureSplDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -695,19 +695,19 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded FeatureModel instance.</returns>
-		public virtual FeatureModel LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded ExampleModel instance.</returns>
+		public virtual ExampleModel LoadModelAndDiagram(DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			return this.LoadModelAndDiagram(new DslModeling::SerializationResult(), store, modelFileName, diagramFileName, schemaResolver, validationController, serializerLocator);
 		}
 		
 		/// <summary>
-		/// Loads a FeatureModel instance and its associated diagram file into the default partition of the given store.
+		/// Loads a ExampleModel instance and its associated diagram file into the default partition of the given store.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="store">The new FeatureModel instance will be created into the default partition of this store.</param>
-		/// <param name="modelFileName">Name of the file from which the FeatureModel instance will be deserialized.</param>
-		/// <param name="diagramFileName">Name of the file from which the FeatureModelLab02Diagram instance will be deserialized.</param>
+		/// <param name="store">The new ExampleModel instance will be created into the default partition of this store.</param>
+		/// <param name="modelFileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="diagramFileName">Name of the file from which the FeatureSplDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -719,8 +719,8 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded FeatureModel instance.</returns>
-		public virtual FeatureModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		/// <returns>The loaded ExampleModel instance.</returns>
+		public virtual ExampleModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Store store, string modelFileName, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (store == null)
@@ -732,13 +732,13 @@ namespace Company.FeatureModelLab02
 		}
 			
 		/// <summary>
-		/// Loads a FeatureModel instance and its associated diagram file.
+		/// Loads a ExampleModel instance and its associated diagram file.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the load operation.</param>
-		/// <param name="modelPartition">Partition in which the new FeatureModel instance will be created.</param>
-		/// <param name="modelFileName">Name of the file from which the FeatureModel instance will be deserialized.</param>
-		/// <param name="diagramPartition">Partition in which the new FeatureModelLab02Diagram instance will be created.</param>
-		/// <param name="diagramFileName">Name of the file from which the FeatureModelLab02Diagram instance will be deserialized.</param>
+		/// <param name="modelPartition">Partition in which the new ExampleModel instance will be created.</param>
+		/// <param name="modelFileName">Name of the file from which the ExampleModel instance will be deserialized.</param>
+		/// <param name="diagramPartition">Partition in which the new FeatureSplDiagram instance will be created.</param>
+		/// <param name="diagramFileName">Name of the file from which the FeatureSplDiagram instance will be deserialized.</param>
 		/// <param name="schemaResolver">
 		/// An ISchemaResolver that allows the serializer to do schema validation on the root element (and everything inside it).
 		/// If null is passed, schema validation will not be performed.
@@ -750,9 +750,9 @@ namespace Company.FeatureModelLab02
 		/// <param name="serializerLocator">
 		/// An ISerializerLocator that will be used to locate any additional domain model types required to load the model. Can be null.
 		/// </param>
-		/// <returns>The loaded FeatureModel instance.</returns>
+		/// <returns>The loaded ExampleModel instance.</returns>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1506:AvoidExcessiveClassCoupling", Justification = "Generated code.")]
-		public virtual FeatureModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
+		public virtual ExampleModel LoadModelAndDiagram(DslModeling::SerializationResult serializationResult, DslModeling::Partition modelPartition, string modelFileName, DslModeling::Partition diagramPartition, string diagramFileName, DslModeling::ISchemaResolver schemaResolver, DslValidation::ValidationController validationController, DslModeling::ISerializerLocator serializerLocator)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -765,12 +765,12 @@ namespace Company.FeatureModelLab02
 				throw new global::System.ArgumentNullException("diagramFileName");
 			#endregion
 	
-			FeatureModel modelRoot;
+			ExampleModel modelRoot;
 	
 			// Ensure there is an outer transaction spanning both model and diagram load, so moniker resolution works properly.
 			if (!diagramPartition.Store.TransactionActive)
 			{
-				throw new global::System.InvalidOperationException(FeatureModelLab02DomainModel.SingletonResourceManager.GetString("MissingTransaction"));
+				throw new global::System.InvalidOperationException(FeatureSplDomainModel.SingletonResourceManager.GetString("MissingTransaction"));
 			}
 	
 			modelRoot = this.LoadModel(serializationResult, modelPartition, modelFileName, schemaResolver, validationController, serializerLocator);
@@ -781,10 +781,10 @@ namespace Company.FeatureModelLab02
 				return modelRoot;
 			}
 	
-			FeatureModelLab02Diagram diagram = null;
+			FeatureSplDiagram diagram = null;
 			DslModeling::DomainXmlSerializerDirectory directory = this.GetDirectory(diagramPartition.Store);
-			DslModeling::DomainClassXmlSerializer diagramSerializer = directory.GetSerializer(FeatureModelLab02Diagram.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(diagramSerializer != null, "Cannot find serializer for FeatureModelLab02Diagram");
+			DslModeling::DomainClassXmlSerializer diagramSerializer = directory.GetSerializer(FeatureSplDiagram.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(diagramSerializer != null, "Cannot find serializer for FeatureSplDiagram");
 			if (diagramSerializer != null)
 			{
 				if(!global::System.IO.File.Exists(diagramFileName))
@@ -807,13 +807,13 @@ namespace Company.FeatureModelLab02
 							// files will cause a new diagram to be created and returned 
 							if (fileStream.Length > 5)
 							{
-								global::System.Xml.XmlReaderSettings settings = FeatureModelLab02SerializationHelper.Instance.CreateXmlReaderSettings(serializationContext, false);
+								global::System.Xml.XmlReaderSettings settings = FeatureSplSerializationHelper.Instance.CreateXmlReaderSettings(serializationContext, false);
 								try
 								{
 									using (global::System.Xml.XmlReader reader = global::System.Xml.XmlReader.Create(fileStream, settings))
 									{
 										reader.MoveToContent();
-										diagram = diagramSerializer.TryCreateInstance(serializationContext, reader, diagramPartition) as FeatureModelLab02Diagram;
+										diagram = diagramSerializer.TryCreateInstance(serializationContext, reader, diagramPartition) as FeatureSplDiagram;
 										if (diagram != null)
 										{
 											this.ReadRootElement(serializationContext, diagram, reader, schemaResolver);
@@ -875,12 +875,12 @@ namespace Company.FeatureModelLab02
 		}
 	
 		/// <summary>
-		/// Helper method to create and initialize a new FeatureModelLab02Diagram.
+		/// Helper method to create and initialize a new FeatureSplDiagram.
 		/// </summary>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="modelRoot", Justification = "Signature enforced by caller.")]
-		internal protected virtual FeatureModelLab02Diagram CreateDiagramHelper(DslModeling::Partition diagramPartition, DslModeling::ModelElement modelRoot)
+		internal protected virtual FeatureSplDiagram CreateDiagramHelper(DslModeling::Partition diagramPartition, DslModeling::ModelElement modelRoot)
 		{
-			FeatureModelLab02Diagram diagram = new FeatureModelLab02Diagram(diagramPartition);
+			FeatureSplDiagram diagram = new FeatureSplDiagram(diagramPartition);
 			return diagram;
 		}
 		
@@ -890,11 +890,11 @@ namespace Company.FeatureModelLab02
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string modelFileName, FeatureModelLab02Diagram diagram, string diagramFileName)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string modelFileName, FeatureSplDiagram diagram, string diagramFileName)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -903,28 +903,28 @@ namespace Company.FeatureModelLab02
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string modelFileName, FeatureModelLab02Diagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string modelFileName, FeatureSplDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveModelAndDiagram(serializationResult, modelRoot, modelFileName, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given FeatureModel and FeatureModelLab02Diagram to the given files, with specified encoding.
+		/// Saves the given ExampleModel and FeatureSplDiagram to the given files, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="modelRoot">FeatureModel instance to be saved.</param>
+		/// <param name="modelRoot">ExampleModel instance to be saved.</param>
 		/// <param name="modelFileName">Name of the file in which the CanonicalSampleRoot instance will be saved.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, FeatureModel modelRoot, string modelFileName, FeatureModelLab02Diagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveModelAndDiagram(DslModeling::SerializationResult serializationResult, ExampleModel modelRoot, string modelFileName, FeatureSplDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -981,9 +981,9 @@ namespace Company.FeatureModelLab02
 		/// be written out.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, FeatureModelLab02Diagram diagram, string diagramFileName)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, FeatureSplDiagram diagram, string diagramFileName)
 		{
 			this.SaveDiagram(serializationResult, diagram, diagramFileName, global::System.Text.Encoding.UTF8, false);
 		}
@@ -992,24 +992,24 @@ namespace Company.FeatureModelLab02
 		/// Saves the given diagram to the given file, with default encoding (UTF-8).
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, FeatureModelLab02Diagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, FeatureSplDiagram diagram, string diagramFileName, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			this.SaveDiagram(serializationResult, diagram, diagramFileName, global::System.Text.Encoding.UTF8, writeOptionalPropertiesWithDefaultValue);
 		}
 	
 		/// <summary>
-		/// Saves the given FeatureModelLab02Diagram to the given file, with specified encoding.
+		/// Saves the given FeatureSplDiagram to the given file, with specified encoding.
 		/// </summary>
 		/// <param name="serializationResult">Stores serialization result from the save operation.</param>
-		/// <param name="diagram">FeatureModelLab02Diagram to be saved.</param>
+		/// <param name="diagram">FeatureSplDiagram to be saved.</param>
 		/// <param name="diagramFileName">Name of the file in which the diagram will be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the diagram.</param>
 		/// <param name="writeOptionalPropertiesWithDefaultValue">Whether optional properties with default value will be saved.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011:ConsiderPassingBaseTypesAsParameters")]
-		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, FeatureModelLab02Diagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
+		public virtual void SaveDiagram(DslModeling::SerializationResult serializationResult, FeatureSplDiagram diagram, string diagramFileName, global::System.Text.Encoding encoding, bool writeOptionalPropertiesWithDefaultValue)
 		{
 			#region Check Parameters
 			if (serializationResult == null)
@@ -1112,7 +1112,7 @@ namespace Company.FeatureModelLab02
 			if (!(rootElement is DslDiagrams::Diagram))
 			{
 				// Only model has schema, diagram has no schema.
-				rootElementSettings.SchemaTargetNamespace = "http://schemas.microsoft.com/dsltools/FeatureModelLab02";
+				rootElementSettings.SchemaTargetNamespace = "http://schemas.microsoft.com/dsltools/FeatureSpl";
 			}
 			rootElementSettings.Version = new global::System.Version("1.0.0.0");
 	
@@ -1145,20 +1145,20 @@ namespace Company.FeatureModelLab02
 					global::System.Version actualVersion = new global::System.Version(dslVersionStr);
 					if (actualVersion != expectedVersion)
 					{
-						FeatureModelLab02SerializationBehaviorSerializationMessages.VersionMismatch(serializationContext, reader, expectedVersion, actualVersion);
+						FeatureSplSerializationBehaviorSerializationMessages.VersionMismatch(serializationContext, reader, expectedVersion, actualVersion);
 					}
 				}
 				catch (global::System.ArgumentException)
 				{
-					FeatureModelLab02SerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "dslVersion", typeof(global::System.Version), dslVersionStr);
+					FeatureSplSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "dslVersion", typeof(global::System.Version), dslVersionStr);
 				}
 				catch (global::System.FormatException)
 				{
-					FeatureModelLab02SerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "dslVersion", typeof(global::System.Version), dslVersionStr);
+					FeatureSplSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "dslVersion", typeof(global::System.Version), dslVersionStr);
 				}
 				catch (global::System.OverflowException)
 				{
-					FeatureModelLab02SerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "dslVersion", typeof(global::System.Version), dslVersionStr);
+					FeatureSplSerializationBehaviorSerializationMessages.InvalidPropertyValue(serializationContext, reader, "dslVersion", typeof(global::System.Version), dslVersionStr);
 				}
 			}
 		}
@@ -1199,7 +1199,7 @@ namespace Company.FeatureModelLab02
 				readerSettings.ConformanceLevel = global::System.Xml.ConformanceLevel.Auto;
 				readerSettings.ValidationType = global::System.Xml.ValidationType.Schema;
 				readerSettings.Schemas = schemaSet;
-				FeatureModelLab02SerializationBehaviorSchemaValidationCallback validationCallback = new FeatureModelLab02SerializationBehaviorSchemaValidationCallback(serializationContext);
+				FeatureSplSerializationBehaviorSchemaValidationCallback validationCallback = new FeatureSplSerializationBehaviorSchemaValidationCallback(serializationContext);
 				readerSettings.ValidationEventHandler += new global::System.Xml.Schema.ValidationEventHandler(validationCallback.Handler);
 	
 	
@@ -1227,13 +1227,13 @@ namespace Company.FeatureModelLab02
 			{
 				if (schemas.Count > 1)
 				{
-					FeatureModelLab02SerializationBehaviorSerializationMessages.AmbiguousSchema(serializationContext, reader, targetNamespace, schemas[0]);
+					FeatureSplSerializationBehaviorSerializationMessages.AmbiguousSchema(serializationContext, reader, targetNamespace, schemas[0]);
 				}
 				schemaSet.Add(targetNamespace, schemas[0]);
 				return true;
 			}
 	
-			FeatureModelLab02SerializationBehaviorSerializationMessages.NoSchema(serializationContext, reader, targetNamespace);
+			FeatureSplSerializationBehaviorSerializationMessages.NoSchema(serializationContext, reader, targetNamespace);
 			return false;
 		}
 	
@@ -1241,7 +1241,7 @@ namespace Company.FeatureModelLab02
 		/// <summary>
 		/// A utility class to handle schema validation warning/error
 		/// </summary>
-		private sealed class FeatureModelLab02SerializationBehaviorSchemaValidationCallback
+		private sealed class FeatureSplSerializationBehaviorSchemaValidationCallback
 		{
 			#region Member Variables
 			/// <summary>
@@ -1259,7 +1259,7 @@ namespace Company.FeatureModelLab02
 			/// Constructor
 			/// </summary>
 			/// <param name="serializationContext">SerializationContext to be used to store schema validation warning/error.</param>
-			internal FeatureModelLab02SerializationBehaviorSchemaValidationCallback(DslModeling::SerializationContext serializationContext)
+			internal FeatureSplSerializationBehaviorSchemaValidationCallback(DslModeling::SerializationContext serializationContext)
 			{
 				global::System.Diagnostics.Debug.Assert(serializationContext != null);
 				this.serializationContext = serializationContext;
@@ -1285,7 +1285,7 @@ namespace Company.FeatureModelLab02
 			{
 				global::System.Diagnostics.Debug.Assert(this.serializationContext != null);
 				if (this.serializationContext != null)
-					FeatureModelLab02SerializationBehaviorSerializationMessages.SchemaValidationError(this.serializationContext, this.reader, e.Message);
+					FeatureSplSerializationBehaviorSerializationMessages.SchemaValidationError(this.serializationContext, this.reader, e.Message);
 			}
 			#endregion
 		}
@@ -1296,7 +1296,7 @@ namespace Company.FeatureModelLab02
 		/// <param name="modelRoot">Root instance to be saved.</param>
 		/// <param name="encoding">Encoding to use when saving the root instance.</param>
 		/// <returns>Model in XML form</returns>
-		public virtual string GetSerializedModelString(global::Company.FeatureModelLab02.FeatureModel modelRoot, global::System.Text.Encoding encoding)
+		public virtual string GetSerializedModelString(global::Company.FeatureSpl.ExampleModel modelRoot, global::System.Text.Encoding encoding)
 		{
 			string result = string.Empty;
 			if (modelRoot == null)
@@ -1496,10 +1496,10 @@ namespace Company.FeatureModelLab02
 	
 }
 
-namespace Company.FeatureModelLab02
+namespace Company.FeatureSpl
 {
 	[DslValidation::ValidationState(DslValidation::ValidationState.Enabled)]
-	public partial class FeatureModel
+	public partial class ExampleModel
 	{
 		/// <summary>
 		/// Check to make sure all elements in the model will have unambiguous monikers when serialized.
@@ -1515,7 +1515,7 @@ namespace Company.FeatureModelLab02
 				return;
 			}
 		
-			global::System.Collections.Generic.IDictionary<global::System.Guid, DslModeling::IMonikerResolver> monikerResolvers = FeatureModelLab02SerializationHelper.Instance.GetMonikerResolvers(this.Store);
+			global::System.Collections.Generic.IDictionary<global::System.Guid, DslModeling::IMonikerResolver> monikerResolvers = FeatureSplSerializationHelper.Instance.GetMonikerResolvers(this.Store);
 			foreach (DslModeling::ModelElement element in this.Store.ElementDirectory.AllElements)
 			{
 				global::System.Guid domainModelId = element.GetDomainClass().DomainModel.Id;
@@ -1534,7 +1534,7 @@ namespace Company.FeatureModelLab02
 							context.LogError(
 								string.Format(
 									global::System.Globalization.CultureInfo.CurrentCulture,
-									FeatureModelLab02DomainModel.SingletonResourceManager.GetString("AmbiguousMoniker"),
+									FeatureSplDomainModel.SingletonResourceManager.GetString("AmbiguousMoniker"),
 									amEx.Moniker,
 									DslModeling::SerializationUtilities.GetElementName(element),
 									DslModeling::SerializationUtilities.GetElementName(amEx.Element)

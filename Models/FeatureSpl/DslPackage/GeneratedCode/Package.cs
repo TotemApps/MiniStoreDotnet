@@ -20,34 +20,34 @@ using DslShell = global::Microsoft.VisualStudio.Modeling.Shell;
 using DslDesign = global::Microsoft.VisualStudio.Modeling.Design;
 using DslModeling = global::Microsoft.VisualStudio.Modeling;
 
-namespace Company.FeatureModelLab02
+namespace Company.FeatureSpl
 {
 	/// <summary>
 	/// This class implements the VS package that integrates this DSL into Visual Studio.
 	/// </summary>
 	[VSShell::PackageRegistration(RegisterUsing = VSShell::RegistrationMethod.Assembly, UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
-	[VSShell::ProvideToolWindow(typeof(FeatureModelLab02ExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
-	[VSShell::ProvideToolWindowVisibility(typeof(FeatureModelLab02ExplorerToolWindow), Constants.FeatureModelLab02EditorFactoryId)]
-	[VSShell::ProvideStaticToolboxGroup("@FeatureModelLab02ToolboxTab;Company.FeatureModelLab02.Dsl.dll", "Company.FeatureModelLab02.FeatureModelLab02ToolboxTab")]
-	[VSShell::ProvideStaticToolboxItem("Company.FeatureModelLab02.FeatureModelLab02ToolboxTab",
-					"@FeatureElementToolboxItem;Company.FeatureModelLab02.Dsl.dll", 
-					"Company.FeatureModelLab02.FeatureElementToolboxItem", 
+	[VSShell::ProvideToolWindow(typeof(FeatureSplExplorerToolWindow), MultiInstances = false, Style = VSShell::VsDockStyle.Tabbed, Orientation = VSShell::ToolWindowOrientation.Right, Window = "{3AE79031-E1BC-11D0-8F78-00A0C9110057}")]
+	[VSShell::ProvideToolWindowVisibility(typeof(FeatureSplExplorerToolWindow), Constants.FeatureSplEditorFactoryId)]
+	[VSShell::ProvideStaticToolboxGroup("@FeatureSplToolboxTab;Company.FeatureSpl.Dsl.dll", "Company.FeatureSpl.FeatureSplToolboxTab")]
+	[VSShell::ProvideStaticToolboxItem("Company.FeatureSpl.FeatureSplToolboxTab",
+					"@ExampleElementToolboxItem;Company.FeatureSpl.Dsl.dll", 
+					"Company.FeatureSpl.ExampleElementToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"CreateExampleClassF1Keyword", 
-					"@FeatureElementToolboxBitmap;Company.FeatureModelLab02.Dsl.dll", 
+					"@ExampleElementToolboxBitmap;Company.FeatureSpl.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
-	[VSShell::ProvideStaticToolboxItem("Company.FeatureModelLab02.FeatureModelLab02ToolboxTab",
-					"@OptionalRelationshipToolboxItem;Company.FeatureModelLab02.Dsl.dll", 
-					"Company.FeatureModelLab02.OptionalRelationshipToolboxItem", 
+	[VSShell::ProvideStaticToolboxItem("Company.FeatureSpl.FeatureSplToolboxTab",
+					"@ExampleRelationshipToolboxItem;Company.FeatureSpl.Dsl.dll", 
+					"Company.FeatureSpl.ExampleRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"ConnectExampleRelationF1Keyword", 
-					"@OptionalRelationshipToolboxBitmap;Company.FeatureModelLab02.Dsl.dll", 
+					"@ExampleRelationshipToolboxBitmap;Company.FeatureSpl.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
-	[VSShell::ProvideEditorFactory(typeof(FeatureModelLab02EditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
-	[VSShell::ProvideEditorExtension(typeof(FeatureModelLab02EditorFactory), "." + Constants.DesignerFileExtension, 50)]
-	[VSShell::ProvideEditorLogicalView(typeof(FeatureModelLab02EditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
+	[VSShell::ProvideEditorFactory(typeof(FeatureSplEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
+	[VSShell::ProvideEditorExtension(typeof(FeatureSplEditorFactory), "." + Constants.DesignerFileExtension, 50)]
+	[VSShell::ProvideEditorLogicalView(typeof(FeatureSplEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
 	[DslShell::ProvideRelatedFile("." + Constants.DesignerFileExtension, Constants.DefaultDiagramExtension,
 		ProjectSystem = DslShell::ProvideRelatedFileAttribute.CSharpProjectGuid,
 		FileOptions = DslShell::RelatedFileType.FileName)]
@@ -57,11 +57,11 @@ namespace Company.FeatureModelLab02
 	[DslShell::RegisterAsDslToolsEditor]
 	[global::System.Runtime.InteropServices.ComVisible(true)]
 	[DslShell::ProvideBindingPath]
-	[DslShell::ProvideXmlEditorChooserBlockSxSWithXmlEditor(@"FeatureModelLab02", typeof(FeatureModelLab02EditorFactory))]
+	[DslShell::ProvideXmlEditorChooserBlockSxSWithXmlEditor(@"FeatureSpl", typeof(FeatureSplEditorFactory))]
 
-	internal abstract partial class FeatureModelLab02PackageBase : DslShell::AsyncModelingPackage
+	internal abstract partial class FeatureSplPackageBase : DslShell::AsyncModelingPackage
 	{
-		protected global::Company.FeatureModelLab02.FeatureModelLab02ToolboxHelper toolboxHelper;	
+		protected global::Company.FeatureSpl.FeatureSplToolboxHelper toolboxHelper;	
 		
 		/// <summary>
 		/// Initialization method called by the package base class when this package is loaded.
@@ -71,21 +71,21 @@ namespace Company.FeatureModelLab02
 			await base.InitializeAsync(cancellationToken, progress);
 
 			// Register the editor factory used to create the DSL editor.
-			this.RegisterEditorFactory(new FeatureModelLab02EditorFactory(this));
+			this.RegisterEditorFactory(new FeatureSplEditorFactory(this));
 			
 			// Initialize the toolbox helper
-			toolboxHelper = new global::Company.FeatureModelLab02.FeatureModelLab02ToolboxHelper(this);
+			toolboxHelper = new global::Company.FeatureSpl.FeatureSplToolboxHelper(this);
 
 			// Create the command set that handles menu commands provided by this package.
-			FeatureModelLab02CommandSet commandSet = new FeatureModelLab02CommandSet(this);
+			FeatureSplCommandSet commandSet = new FeatureSplCommandSet(this);
 			await commandSet.InitializeAsync(cancellationToken);
 			
 			// Create the command set that handles cut/copy/paste commands provided by this package.
-			FeatureModelLab02ClipboardCommandSet clipboardCommandSet = new FeatureModelLab02ClipboardCommandSet(this);
+			FeatureSplClipboardCommandSet clipboardCommandSet = new FeatureSplClipboardCommandSet(this);
 			await clipboardCommandSet.InitializeAsync(cancellationToken);
 			
 			// Register the model explorer tool window for this DSL.
-			this.AddToolWindow(typeof(FeatureModelLab02ExplorerToolWindow));
+			this.AddToolWindow(typeof(FeatureSplExplorerToolWindow));
 
 			if (cancellationToken.IsCancellationRequested)
 			{
@@ -142,7 +142,7 @@ namespace Company.FeatureModelLab02
 
 		public override VSShellInterop::IVsAsyncToolWindowFactory GetAsyncToolWindowFactory(Guid toolWindowType)
 		{
-			if (toolWindowType == typeof(FeatureModelLab02ExplorerToolWindow).GUID)
+			if (toolWindowType == typeof(FeatureSplExplorerToolWindow).GUID)
 			{
 				return this;
 			}
@@ -155,16 +155,16 @@ namespace Company.FeatureModelLab02
 //
 // Package attributes which may need to change are placed on the partial class below, rather than in the main include file.
 //
-namespace Company.FeatureModelLab02
+namespace Company.FeatureSpl
 {
 	/// <summary>
 	/// Double-derived class to allow easier code customization.
 	/// </summary>
-	[VSShell::ProvideMenuResource("1000.ctmenu", 1)]
+	[VSShell::ProvideMenuResource("1000.ctmenu", 3)]
 	[VSShell::ProvideToolboxItems(1)]
-	[global::Microsoft.VisualStudio.TextTemplating.VSHost.ProvideDirectiveProcessor(typeof(global::Company.FeatureModelLab02.FeatureModelLab02DirectiveProcessor), global::Company.FeatureModelLab02.FeatureModelLab02DirectiveProcessor.FeatureModelLab02DirectiveProcessorName, "A directive processor that provides access to FeatureModelLab02 files")]
-	[global::System.Runtime.InteropServices.Guid(Constants.FeatureModelLab02PackageId)]
-	internal sealed partial class FeatureModelLab02Package : FeatureModelLab02PackageBase
+	[global::Microsoft.VisualStudio.TextTemplating.VSHost.ProvideDirectiveProcessor(typeof(global::Company.FeatureSpl.FeatureSplDirectiveProcessor), global::Company.FeatureSpl.FeatureSplDirectiveProcessor.FeatureSplDirectiveProcessorName, "A directive processor that provides access to FeatureSpl files")]
+	[global::System.Runtime.InteropServices.Guid(Constants.FeatureSplPackageId)]
+	internal sealed partial class FeatureSplPackage : FeatureSplPackageBase
 	{
 	}
 }
