@@ -186,6 +186,10 @@ namespace Company.SplLanguage
 			field1.DefaultAccessibleState = global::System.Windows.Forms.AccessibleStates.Invisible;
 			shapeFields.Add(field1);
 			
+			DslDiagrams::ImageField field2 = new DslDiagrams::ImageField("IncludedDecorator");
+			field2.DefaultImage = DslDiagrams::ImageHelper.GetImage(global::Company.SplLanguage.SplLanguageDomainModel.SingletonResourceManager.GetObject("ExampleShapeIncludedDecoratorDefaultImage"));
+			shapeFields.Add(field2);
+			
 		}
 		
 		/// <summary>
@@ -200,6 +204,10 @@ namespace Company.SplLanguage
 			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
+				
+			DslDiagrams::ShapeField field2 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "IncludedDecorator");
+			DslDiagrams::Decorator decorator2 = new DslDiagrams::ShapeDecorator(field2, DslDiagrams::ShapeDecoratorPosition.InnerBottomRight, DslDiagrams::PointD.Empty);
+			decorators.Add(decorator2);
 				
 		}
 		

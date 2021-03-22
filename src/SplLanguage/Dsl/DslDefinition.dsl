@@ -21,6 +21,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="0aeac9c5-bf64-4592-b421-3ad8a48d22fd" Description="Description for Company.SplLanguage.FeatureElement.Included" Name="Included" DisplayName="Included">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Boolean" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
   </Classes>
@@ -81,6 +86,9 @@
       <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
       </ShapeHasDecorators>
+      <ShapeHasDecorators Position="InnerBottomRight" HorizontalOffset="0" VerticalOffset="0">
+        <IconDecorator Name="IncludedDecorator" DisplayName="Included Decorator" DefaultIcon="Resources\SelectedIcon.bmp" />
+      </ShapeHasDecorators>
     </GeometryShape>
   </Shapes>
   <Connectors>
@@ -105,6 +113,9 @@
           <XmlRelationshipData RoleElementName="targets">
             <DomainRelationshipMoniker Name="FeatureElementReferencesTargets" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="included">
+            <DomainPropertyMoniker Name="FeatureElement/Included" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasElementsMoniker" ElementName="featureModelHasElements" MonikerTypeName="FeatureModelHasElementsMoniker">
@@ -164,6 +175,12 @@
               <DomainPropertyMoniker Name="FeatureElement/Name" />
             </PropertyPath>
           </PropertyDisplayed>
+        </DecoratorMap>
+        <DecoratorMap>
+          <IconDecoratorMoniker Name="ExampleShape/IncludedDecorator" />
+          <VisibilityPropertyPath>
+            <DomainPropertyMoniker Name="FeatureElement/Included" />
+          </VisibilityPropertyPath>
         </DecoratorMap>
         <GeometryShapeMoniker Name="ExampleShape" />
       </ShapeMap>

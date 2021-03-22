@@ -290,6 +290,93 @@ namespace Company.SplLanguage
 		}
 		
 		#endregion
+		#region Included domain property code
+		
+		/// <summary>
+		/// Included domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid IncludedDomainPropertyId = new global::System.Guid(0x0aeac9c5, 0xbf64, 0x4592, 0xb4, 0x21, 0x3a, 0xd8, 0xa4, 0x8d, 0x22, 0xfd);
+		
+		/// <summary>
+		/// Storage for Included
+		/// </summary>
+		private global::System.Boolean includedPropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Included domain property.
+		/// Description for Company.SplLanguage.FeatureElement.Included
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElement/Included.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElement/Included.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("0aeac9c5-bf64-4592-b421-3ad8a48d22fd")]
+		public global::System.Boolean Included
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return includedPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				IncludedPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FeatureElement.Included domain property.
+		/// </summary>
+		internal sealed partial class IncludedPropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureElement, global::System.Boolean>
+		{
+			private IncludedPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FeatureElement.Included domain property value handler.
+			/// </summary>
+			public static readonly IncludedPropertyHandler Instance = new IncludedPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FeatureElement.Included domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return IncludedDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.Boolean GetValue(FeatureElement element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.includedPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FeatureElement element, global::System.Boolean newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.Boolean oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.includedPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region FeatureModel opposite domain role accessor
 		/// <summary>
 		/// Gets or sets FeatureModel.

@@ -231,6 +231,9 @@ namespace Company.SplLanguage
 				
 				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.SplLanguage.FeatureElement.NameDomainPropertyId);
 				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "NameDecorator").AssociateValueWith(shape.Store, propertyInfo);
+		
+				propertyInfo = new DslDiagrams::AssociatedPropertyInfo(global::Company.SplLanguage.FeatureElement.IncludedDomainPropertyId);
+				DslDiagrams::ShapeElement.FindDecorator(shape.Decorators, "IncludedDecorator").AssociateVisibilityWith(shape.Store, propertyInfo);
 			}
 		}
 		

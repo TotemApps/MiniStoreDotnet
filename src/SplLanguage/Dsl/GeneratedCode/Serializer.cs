@@ -942,6 +942,23 @@ namespace Company.SplLanguage
 					}
 				}
 			}
+			// Included
+			if (!serializationContext.Result.Failed)
+			{
+				string attribIncluded = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "included");
+				if (attribIncluded != null)
+				{
+					global::System.Boolean valueOfIncluded;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Boolean>(serializationContext, attribIncluded, out valueOfIncluded))
+					{
+						instanceOfFeatureElement.Included = valueOfIncluded;
+					}
+					else
+					{	// Invalid property value, ignored.
+						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "included", typeof(global::System.Boolean), attribIncluded);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -1451,6 +1468,16 @@ namespace Company.SplLanguage
 				if (!serializationContext.Result.Failed)
 				{
 					SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+				}
+			}
+			// Included
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.Boolean propValue = instanceOfFeatureElement.Included;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Boolean>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "included", serializedPropValue);
 				}
 			}
 		}
