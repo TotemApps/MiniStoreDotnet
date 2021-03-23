@@ -74,6 +74,22 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="9d57ccb1-6b0e-4a45-9dc2-9f117a026a92" Description="Description for Company.SplLanguage.FeatureElementReferencesTargetFeatureElements" Name="FeatureElementReferencesTargetFeatureElements" DisplayName="Feature Element References Target Feature Elements" Namespace="Company.SplLanguage">
+      <Source>
+        <DomainRole Id="ba943ae6-8ff8-4a6d-b9b6-0849c375144b" Description="Description for Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElement" Name="SourceFeatureElement" DisplayName="Source Feature Element" PropertyName="TargetFeatureElements" PropertyDisplayName="Target Feature Elements">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="da45bd39-cb08-420f-9637-5908e9b2f49f" Description="Description for Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElement" Name="TargetFeatureElement" DisplayName="Target Feature Element" PropertyName="SourceFeatureElements" PropertyDisplayName="Source Feature Elements">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -104,7 +120,8 @@
     </GeometryShape>
   </Shapes>
   <Connectors>
-    <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.SplLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyArrow" Thickness="0.01" />
+    <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="ExampleConnector" DisplayName="Example Connector" Namespace="Company.SplLanguage" FixedTooltipText="Example Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
+    <Connector Id="b33c28f5-07e2-4271-9171-b8b4b6132bab" Description="Description for Company.SplLanguage.MandatoryConnector" Name="MandatoryConnector" DisplayName="Mandatory Connector" Namespace="Company.SplLanguage" FixedTooltipText="Mandatory Connector" TargetEndStyle="FilledDiamond" Thickness="0.01" RoutingStyle="Straight" />
   </Connectors>
   <XmlSerializationBehavior Name="SplLanguageSerializationBehavior" Namespace="Company.SplLanguage">
     <ClassData>
@@ -134,6 +151,9 @@
           <XmlPropertyData XmlName="included">
             <DomainPropertyMoniker Name="FeatureElement/Included" />
           </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="targetFeatureElements">
+            <DomainRelationshipMoniker Name="FeatureElementReferencesTargetFeatureElements" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasElementsMoniker" ElementName="featureModelHasElements" MonikerTypeName="FeatureModelHasElementsMoniker">
@@ -151,6 +171,12 @@
       <XmlClassData TypeName="SplLanguageDiagram" MonikerAttributeName="" SerializeId="true" MonikerElementName="splLanguageDiagramMoniker" ElementName="splLanguageDiagram" MonikerTypeName="SplLanguageDiagramMoniker">
         <DiagramMoniker Name="SplLanguageDiagram" />
       </XmlClassData>
+      <XmlClassData TypeName="FeatureElementReferencesTargetFeatureElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureElementReferencesTargetFeatureElementsMoniker" ElementName="featureElementReferencesTargetFeatureElements" MonikerTypeName="FeatureElementReferencesTargetFeatureElementsMoniker">
+        <DomainRelationshipMoniker Name="FeatureElementReferencesTargetFeatureElements" />
+      </XmlClassData>
+      <XmlClassData TypeName="MandatoryConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="mandatoryConnectorMoniker" ElementName="mandatoryConnector" MonikerTypeName="MandatoryConnectorMoniker">
+        <ConnectorMoniker Name="MandatoryConnector" />
+      </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
   <ExplorerBehavior Name="SplLanguageExplorer" />
@@ -159,6 +185,25 @@
       <Notes>Provides for the creation of an ExampleRelationship by pointing at two ExampleElements.</Notes>
       <LinkConnectDirective>
         <DomainRelationshipMoniker Name="FeatureElementReferencesTargets" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="FeatureElement" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="FeatureElement" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
+    <ConnectionBuilder Name="FeatureElementReferencesTargetFeatureElementsBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="FeatureElementReferencesTargetFeatureElements" />
         <SourceDirectives>
           <RolePlayerConnectDirective>
             <AcceptingClass>
@@ -208,6 +253,10 @@
         <ConnectorMoniker Name="ExampleConnector" />
         <DomainRelationshipMoniker Name="FeatureElementReferencesTargets" />
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="MandatoryConnector" />
+        <DomainRelationshipMoniker Name="FeatureElementReferencesTargetFeatureElements" />
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="SplLanguage" EditorGuid="aab0177a-6704-4fce-9dee-dcc789321e57">
@@ -218,11 +267,14 @@
       <XmlSerializationBehaviorMoniker Name="SplLanguageSerializationBehavior" />
     </XmlSerializationDefinition>
     <ToolboxTab TabText="SplLanguage">
-      <ElementTool Name="ExampleElement" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Feature Element" Tooltip="Create an ExampleElement" HelpKeyword="CreateExampleClassF1Keyword">
+      <ElementTool Name="FeatureElement" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Feature Element" Tooltip="Create an ExampleElement" HelpKeyword="CreateExampleClassF1Keyword">
         <DomainClassMoniker Name="FeatureElement" />
       </ElementTool>
-      <ConnectionTool Name="ExampleRelationship" ToolboxIcon="resources\exampleconnectortoolbitmap.bmp" Caption="Relationship" Tooltip="Drag between ExampleElements to create an ExampleRelationship" HelpKeyword="ConnectExampleRelationF1Keyword">
+      <ConnectionTool Name="OptionalRelationship" ToolboxIcon="resources\exampleconnectortoolbitmap.bmp" Caption="Optional Relationship" Tooltip="Drag between ExampleElements to create an ExampleRelationship" HelpKeyword="ConnectExampleRelationF1Keyword">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementReferencesTargetsBuilder" />
+      </ConnectionTool>
+      <ConnectionTool Name="MandatoryRelationship" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Mandatory Relationship" Tooltip="Mandatory Relationship" HelpKeyword="MandatoryRelationship">
+        <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementReferencesTargetFeatureElementsBuilder" />
       </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

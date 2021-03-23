@@ -6,6 +6,11 @@
         <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 01" />
         <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 02" />
       </targets>
+      <targetFeatureElements>
+        <featureElementReferencesTargetFeatureElements Id="e4c8efa3-9ad9-42e5-867d-d3d8dfb9ec0e">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 05" />
+        </featureElementReferencesTargetFeatureElements>
+      </targetFeatureElements>
     </featureElement>
     <featureElement Id="9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa" name="Child element 01" included="false" />
     <featureElement Id="87d22180-1bb9-4f4d-97b3-5a89f20ee3db" name="Child element 02" included="false">
@@ -16,5 +21,6 @@
     </featureElement>
     <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="Child element 03" included="true" />
     <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Child element 04" included="true" />
+    <featureElement Id="3b955e06-7006-4d42-a192-144b69d90a83" name="Child element 05" included="true" />
   </elements>
 </featureModel>

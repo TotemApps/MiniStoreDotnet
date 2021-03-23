@@ -237,6 +237,38 @@
     <value>Sources</value>
     <comment>PropertyDisplayName for DomainRole &apos;Target&apos; on DomainRelationship &apos;FeatureElementReferencesTargets&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementReferencesTargetFeatureElements</value>
+    <comment>Description for DomainClass &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.DisplayName" xml:space="preserve">
+    <value>Feature Element References Target Feature Elements</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/SourceFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElement</value>
+    <comment>Description for DomainRole &apos;SourceFeatureElement&apos; on DomainRelationship &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/SourceFeatureElement.DisplayName" xml:space="preserve">
+    <value>Source Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;SourceFeatureElement&apos; on DomainRelationship &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/SourceFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Target Feature Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceFeatureElement&apos; on DomainRelationship &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/TargetFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElement</value>
+    <comment>Description for DomainRole &apos;TargetFeatureElement&apos; on DomainRelationship &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/TargetFeatureElement.DisplayName" xml:space="preserve">
+    <value>Target Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;TargetFeatureElement&apos; on DomainRelationship &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/TargetFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Source Feature Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetFeatureElement&apos; on DomainRelationship &apos;FeatureElementReferencesTargetFeatureElements&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.ExampleShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;ExampleShape&apos;</comment>
@@ -256,6 +288,14 @@
   <data name="Company.SplLanguage.ExampleConnector.DisplayName" xml:space="preserve">
     <value>Example Connector</value>
     <comment>DisplayName for DomainClass &apos;ExampleConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.MandatoryConnector.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.MandatoryConnector</value>
+    <comment>Description for DomainClass &apos;MandatoryConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.MandatoryConnector.DisplayName" xml:space="preserve">
+    <value>Mandatory Connector</value>
+    <comment>DisplayName for DomainClass &apos;MandatoryConnector&apos;</comment>
   </data>
   <data name="FormatList" xml:space="preserve">
     <value>SplLanguage (*.SplLanguage)|*.SplLanguage</value>
@@ -277,20 +317,28 @@
     <value>SplLanguage</value>
     <comment>Toolbox item tab name</comment>
   </data>
-  <data name="ExampleElementToolboxItem" xml:space="preserve">
+  <data name="FeatureElementToolboxItem" xml:space="preserve">
     <value>Feature Element</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ExampleElementToolboxTooltip" xml:space="preserve">
+  <data name="FeatureElementToolboxTooltip" xml:space="preserve">
     <value>Create an ExampleElement</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="ExampleRelationshipToolboxItem" xml:space="preserve">
-    <value>Relationship</value>
+  <data name="OptionalRelationshipToolboxItem" xml:space="preserve">
+    <value>Optional Relationship</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="ExampleRelationshipToolboxTooltip" xml:space="preserve">
+  <data name="OptionalRelationshipToolboxTooltip" xml:space="preserve">
     <value>Drag between ExampleElements to create an ExampleRelationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="MandatoryRelationshipToolboxItem" xml:space="preserve">
+    <value>Mandatory Relationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MandatoryRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Mandatory Relationship</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -422,12 +470,16 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\SelectedIcon.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
-  <data name="ExampleElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="FeatureElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="ExampleRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="OptionalRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\resources\exampleconnectortoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="MandatoryRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExampleConnectorToolBitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

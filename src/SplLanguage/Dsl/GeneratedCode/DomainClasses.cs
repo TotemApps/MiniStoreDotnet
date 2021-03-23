@@ -599,5 +599,37 @@ namespace Company.SplLanguage
 			}
 		}
 		#endregion
+		#region TargetFeatureElements opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of TargetFeatureElements.
+		/// Description for
+		/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> TargetFeatureElements
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId);
+			}
+		}
+		#endregion
+		#region SourceFeatureElements opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of SourceFeatureElements.
+		/// Description for
+		/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> SourceFeatureElements
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElementDomainRoleId);
+			}
+		}
+		#endregion
 	}
 }

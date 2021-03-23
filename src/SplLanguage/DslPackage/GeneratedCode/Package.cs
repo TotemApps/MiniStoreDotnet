@@ -30,21 +30,29 @@ namespace Company.SplLanguage
 	[VSShell::ProvideToolWindowVisibility(typeof(SplLanguageExplorerToolWindow), Constants.SplLanguageEditorFactoryId)]
 	[VSShell::ProvideStaticToolboxGroup("@SplLanguageToolboxTab;Company.SplLanguage.Dsl.dll", "Company.SplLanguage.SplLanguageToolboxTab")]
 	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
-					"@ExampleElementToolboxItem;Company.SplLanguage.Dsl.dll", 
-					"Company.SplLanguage.ExampleElementToolboxItem", 
+					"@FeatureElementToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.FeatureElementToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"CreateExampleClassF1Keyword", 
-					"@ExampleElementToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					"@FeatureElementToolboxBitmap;Company.SplLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 0)]
 	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
-					"@ExampleRelationshipToolboxItem;Company.SplLanguage.Dsl.dll", 
-					"Company.SplLanguage.ExampleRelationshipToolboxItem", 
+					"@OptionalRelationshipToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.OptionalRelationshipToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
 					"ConnectExampleRelationF1Keyword", 
-					"@ExampleRelationshipToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					"@OptionalRelationshipToolboxBitmap;Company.SplLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 1)]
+	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
+					"@MandatoryRelationshipToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.MandatoryRelationshipToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"MandatoryRelationship", 
+					"@MandatoryRelationshipToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 2)]
 	[VSShell::ProvideEditorFactory(typeof(SplLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(SplLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(SplLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer
