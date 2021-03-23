@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
+<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" name="Ministore Model" description="Feature Model for Ministore product" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
   <elements>
     <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="Root feature" included="true">
       <targets>

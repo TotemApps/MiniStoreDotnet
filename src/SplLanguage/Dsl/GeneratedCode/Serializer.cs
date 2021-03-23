@@ -103,7 +103,7 @@ namespace Company.SplLanguage
 			
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
-				
+	
 			// Read nested XML elements.
 			if (!serializationContext.Result.Failed)
 			{
@@ -151,7 +151,43 @@ namespace Company.SplLanguage
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			// There is no property to read; do nothing
+			FeatureModel instanceOfFeatureModel = element as FeatureModel;
+			global::System.Diagnostics.Debug.Assert(instanceOfFeatureModel != null, "Expecting an instance of FeatureModel");
+	
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				string attribName = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "name");
+				if (attribName != null)
+				{
+					global::System.String valueOfName;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribName, out valueOfName))
+					{
+						instanceOfFeatureModel.Name = valueOfName;
+					}
+					else
+					{	// Invalid property value, ignored.
+						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "name", typeof(global::System.String), attribName);
+					}
+				}
+			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				string attribDescription = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "description");
+				if (attribDescription != null)
+				{
+					global::System.String valueOfDescription;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribDescription, out valueOfDescription))
+					{
+						instanceOfFeatureModel.Description = valueOfDescription;
+					}
+					else
+					{	// Invalid property value, ignored.
+						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "description", typeof(global::System.String), attribDescription);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -665,7 +701,31 @@ namespace Company.SplLanguage
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			// There are no properties; do nothing
+			FeatureModel instanceOfFeatureModel = element as FeatureModel;
+			global::System.Diagnostics.Debug.Assert(instanceOfFeatureModel != null, "Expecting an instance of FeatureModel");
+	
+			// Name
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfFeatureModel.Name;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "name", propValue);
+	
+				}
+			}
+			// Description
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfFeatureModel.Description;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "description", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>

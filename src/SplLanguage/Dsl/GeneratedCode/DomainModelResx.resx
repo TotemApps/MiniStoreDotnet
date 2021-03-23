@@ -133,6 +133,22 @@
     <value>Feature Model</value>
     <comment>DisplayName for DomainClass &apos;FeatureModel&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureModel/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModel.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Description.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModel.Description</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureElement.Description" xml:space="preserve">
     <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
     <comment>Description for DomainClass &apos;FeatureElement&apos;</comment>
