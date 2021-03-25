@@ -249,33 +249,33 @@ namespace Company.SplLanguage
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// DomainRelationship FeatureElementReferencesTargets
+	/// DomainRelationship FeatureElementOptionalReferencesFeatureElement
 	/// Reference relationship between Elements.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementReferencesTargets.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementReferencesTargets.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship()]
 	[DslModeling::DomainObjectId("20b619db-33d1-485b-9cac-5c3d29f9c491")]
-	public partial class FeatureElementReferencesTargets : DslModeling::ElementLink
+	public partial class FeatureElementOptionalReferencesFeatureElement : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// FeatureElementReferencesTargets domain class Id.
+		/// FeatureElementOptionalReferencesFeatureElement domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x20b619db, 0x33d1, 0x485b, 0x9c, 0xac, 0x5c, 0x3d, 0x29, 0xf9, 0xc4, 0x91);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a FeatureElementReferencesTargets link in the same Partition as the given FeatureElement
+		/// Creates a FeatureElementOptionalReferencesFeatureElement link in the same Partition as the given FeatureElement
 		/// </summary>
 		/// <param name="source">FeatureElement to use as the source of the relationship.</param>
 		/// <param name="target">FeatureElement to use as the target of the relationship.</param>
-		public FeatureElementReferencesTargets(FeatureElement source, FeatureElement target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementReferencesTargets.SourceDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementReferencesTargets.TargetDomainRoleId, target)}, null)
+		public FeatureElementOptionalReferencesFeatureElement(FeatureElement source, FeatureElement target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementOptionalReferencesFeatureElement.SourceOptionalFeatureElementDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementOptionalReferencesFeatureElement.TargetOptionalFeatureElementDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -284,7 +284,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public FeatureElementReferencesTargets(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureElementOptionalReferencesFeatureElement(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -295,7 +295,7 @@ namespace Company.SplLanguage
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public FeatureElementReferencesTargets(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElementOptionalReferencesFeatureElement(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -305,7 +305,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public FeatureElementReferencesTargets(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureElementOptionalReferencesFeatureElement(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -316,129 +316,129 @@ namespace Company.SplLanguage
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public FeatureElementReferencesTargets(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElementOptionalReferencesFeatureElement(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region Source domain role code
+		#region SourceOptionalFeatureElement domain role code
 		
 		/// <summary>
-		/// Source domain role Id.
+		/// SourceOptionalFeatureElement domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid SourceDomainRoleId = new global::System.Guid(0xc8080e7a, 0x3c3a, 0x42e5, 0x80, 0x2b, 0x4a, 0x0f, 0x37, 0xd1, 0xd9, 0xc5);
+		public static readonly global::System.Guid SourceOptionalFeatureElementDomainRoleId = new global::System.Guid(0xc8080e7a, 0x3c3a, 0x42e5, 0x80, 0x2b, 0x4a, 0x0f, 0x37, 0xd1, 0xd9, 0xc5);
 		
 		/// <summary>
-		/// DomainRole Source
+		/// DomainRole SourceOptionalFeatureElement
 		/// Description for Company.SplLanguage.ExampleRelationship.Target
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementReferencesTargets/Source.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementReferencesTargets/Source.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "Targets", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementReferencesTargets/Source.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/SourceOptionalFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/SourceOptionalFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "SourceOptionalFeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/SourceOptionalFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("c8080e7a-3c3a-42e5-802b-4a0f37d1d9c5")]
-		public virtual FeatureElement Source
+		public virtual FeatureElement SourceOptionalFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceOptionalFeatureElementDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceOptionalFeatureElementDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access Sources of a FeatureElement
+		#region Static methods to access TargetOptionalFeatureElement of a FeatureElement
 		/// <summary>
-		/// Gets a list of Sources.
+		/// Gets a list of TargetOptionalFeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FeatureElement> GetSources(FeatureElement element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetTargetOptionalFeatureElement(FeatureElement element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, TargetDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, TargetOptionalFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region Target domain role code
+		#region TargetOptionalFeatureElement domain role code
 		
 		/// <summary>
-		/// Target domain role Id.
+		/// TargetOptionalFeatureElement domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid TargetDomainRoleId = new global::System.Guid(0x81e849b8, 0xdbac, 0x47e0, 0x90, 0x46, 0xee, 0x0e, 0x3e, 0xff, 0xd5, 0x89);
+		public static readonly global::System.Guid TargetOptionalFeatureElementDomainRoleId = new global::System.Guid(0x81e849b8, 0xdbac, 0x47e0, 0x90, 0x46, 0xee, 0x0e, 0x3e, 0xff, 0xd5, 0x89);
 		
 		/// <summary>
-		/// DomainRole Target
+		/// DomainRole TargetOptionalFeatureElement
 		/// Description for Company.SplLanguage.ExampleRelationship.Source
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementReferencesTargets/Target.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementReferencesTargets/Target.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "Sources", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementReferencesTargets/Target.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/TargetOptionalFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/TargetOptionalFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "TargetOptionalFeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/TargetOptionalFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("81e849b8-dbac-47e0-9046-ee0e3effd589")]
-		public virtual FeatureElement Target
+		public virtual FeatureElement TargetOptionalFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetOptionalFeatureElementDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetOptionalFeatureElementDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access Targets of a FeatureElement
+		#region Static methods to access SourceOptionalFeatureElement of a FeatureElement
 		/// <summary>
-		/// Gets a list of Targets.
+		/// Gets a list of SourceOptionalFeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FeatureElement> GetTargets(FeatureElement element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetSourceOptionalFeatureElement(FeatureElement element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, SourceDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, SourceOptionalFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region Source link accessor
+		#region SourceOptionalFeatureElement link accessor
 		/// <summary>
-		/// Get the list of FeatureElementReferencesTargets links to a FeatureElement.
+		/// Get the list of FeatureElementOptionalReferencesFeatureElement links to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementReferencesTargets> GetLinksToTargets ( global::Company.SplLanguage.FeatureElement sourceInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement> GetLinksToSourceOptionalFeatureElement ( global::Company.SplLanguage.FeatureElement sourceOptionalFeatureElementInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargets>(sourceInstance, global::Company.SplLanguage.FeatureElementReferencesTargets.SourceDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement>(sourceOptionalFeatureElementInstance, global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.SourceOptionalFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region Target link accessor
+		#region TargetOptionalFeatureElement link accessor
 		/// <summary>
-		/// Get the list of FeatureElementReferencesTargets links to a FeatureElement.
+		/// Get the list of FeatureElementOptionalReferencesFeatureElement links to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementReferencesTargets> GetLinksToSources ( global::Company.SplLanguage.FeatureElement targetInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement> GetLinksToTargetOptionalFeatureElement ( global::Company.SplLanguage.FeatureElement targetOptionalFeatureElementInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargets>(targetInstance, global::Company.SplLanguage.FeatureElementReferencesTargets.TargetDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement>(targetOptionalFeatureElementInstance, global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.TargetOptionalFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region FeatureElementReferencesTargets instance accessors
+		#region FeatureElementOptionalReferencesFeatureElement instance accessors
 		
 		/// <summary>
-		/// Get any FeatureElementReferencesTargets links between a given FeatureElement and a FeatureElement.
+		/// Get any FeatureElementOptionalReferencesFeatureElement links between a given FeatureElement and a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementReferencesTargets> GetLinks( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement> GetLinks( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
 		{
-			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementReferencesTargets> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementReferencesTargets>();
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargets>(source, global::Company.SplLanguage.FeatureElementReferencesTargets.SourceDomainRoleId);
-			foreach ( global::Company.SplLanguage.FeatureElementReferencesTargets link in links )
+			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement>();
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement>(source, global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.SourceOptionalFeatureElementDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement link in links )
 			{
-				if ( target.Equals(link.Target) )
+				if ( target.Equals(link.TargetOptionalFeatureElement) )
 				{
 					outLinks.Add(link);
 				}
@@ -446,16 +446,16 @@ namespace Company.SplLanguage
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one FeatureElementReferencesTargets link between a given FeatureElementand a FeatureElement.
+		/// Get the one FeatureElementOptionalReferencesFeatureElement link between a given FeatureElementand a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.SplLanguage.FeatureElementReferencesTargets GetLink( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
+		public static global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement GetLink( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
 		{
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementReferencesTargets> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargets>(source, global::Company.SplLanguage.FeatureElementReferencesTargets.SourceDomainRoleId);
-			foreach ( global::Company.SplLanguage.FeatureElementReferencesTargets link in links )
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement>(source, global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.SourceOptionalFeatureElementDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement link in links )
 			{
-				if ( target.Equals(link.Target) )
+				if ( target.Equals(link.TargetOptionalFeatureElement) )
 				{
 					return link;
 				}
@@ -469,34 +469,34 @@ namespace Company.SplLanguage
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// DomainRelationship FeatureElementReferencesTargetFeatureElements
+	/// DomainRelationship FeatureElementMandatoryReferencesFeatureElement
 	/// Description for
-	/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements
+	/// Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship()]
 	[DslModeling::DomainObjectId("9d57ccb1-6b0e-4a45-9dc2-9f117a026a92")]
-	public partial class FeatureElementReferencesTargetFeatureElements : DslModeling::ElementLink
+	public partial class FeatureElementMandatoryReferencesFeatureElement : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// FeatureElementReferencesTargetFeatureElements domain class Id.
+		/// FeatureElementMandatoryReferencesFeatureElement domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x9d57ccb1, 0x6b0e, 0x4a45, 0x9d, 0xc2, 0x9f, 0x11, 0x7a, 0x02, 0x6a, 0x92);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a FeatureElementReferencesTargetFeatureElements link in the same Partition as the given FeatureElement
+		/// Creates a FeatureElementMandatoryReferencesFeatureElement link in the same Partition as the given FeatureElement
 		/// </summary>
 		/// <param name="source">FeatureElement to use as the source of the relationship.</param>
 		/// <param name="target">FeatureElement to use as the target of the relationship.</param>
-		public FeatureElementReferencesTargetFeatureElements(FeatureElement source, FeatureElement target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementReferencesTargetFeatureElements.TargetFeatureElementDomainRoleId, target)}, null)
+		public FeatureElementMandatoryReferencesFeatureElement(FeatureElement source, FeatureElement target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElementDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElementDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -505,7 +505,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public FeatureElementReferencesTargetFeatureElements(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureElementMandatoryReferencesFeatureElement(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -516,7 +516,7 @@ namespace Company.SplLanguage
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public FeatureElementReferencesTargetFeatureElements(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElementMandatoryReferencesFeatureElement(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -526,7 +526,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public FeatureElementReferencesTargetFeatureElements(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureElementMandatoryReferencesFeatureElement(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -537,131 +537,131 @@ namespace Company.SplLanguage
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public FeatureElementReferencesTargetFeatureElements(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureElementMandatoryReferencesFeatureElement(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region SourceFeatureElement domain role code
+		#region SourceMandatoryFeatureElement domain role code
 		
 		/// <summary>
-		/// SourceFeatureElement domain role Id.
+		/// SourceMandatoryFeatureElement domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid SourceFeatureElementDomainRoleId = new global::System.Guid(0xba943ae6, 0x8ff8, 0x4a6d, 0xb9, 0xb6, 0x08, 0x49, 0xc3, 0x75, 0x14, 0x4b);
+		public static readonly global::System.Guid SourceMandatoryFeatureElementDomainRoleId = new global::System.Guid(0xba943ae6, 0x8ff8, 0x4a6d, 0xb9, 0xb6, 0x08, 0x49, 0xc3, 0x75, 0x14, 0x4b);
 		
 		/// <summary>
-		/// DomainRole SourceFeatureElement
+		/// DomainRole SourceMandatoryFeatureElement
 		/// Description for
-		/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElement
+		/// Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElement
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/SourceFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/SourceFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "TargetFeatureElements", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/SourceFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/SourceMandatoryFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/SourceMandatoryFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "SourceMandatoryFeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/SourceMandatoryFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("ba943ae6-8ff8-4a6d-b9b6-0849c375144b")]
-		public virtual FeatureElement SourceFeatureElement
+		public virtual FeatureElement SourceMandatoryFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceFeatureElementDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceMandatoryFeatureElementDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceFeatureElementDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceMandatoryFeatureElementDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access SourceFeatureElements of a FeatureElement
+		#region Static methods to access TargetMandatoryFeatureElement of a FeatureElement
 		/// <summary>
-		/// Gets a list of SourceFeatureElements.
+		/// Gets a list of TargetMandatoryFeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FeatureElement> GetSourceFeatureElements(FeatureElement element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetTargetMandatoryFeatureElement(FeatureElement element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, TargetFeatureElementDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, TargetMandatoryFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region TargetFeatureElement domain role code
+		#region TargetMandatoryFeatureElement domain role code
 		
 		/// <summary>
-		/// TargetFeatureElement domain role Id.
+		/// TargetMandatoryFeatureElement domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid TargetFeatureElementDomainRoleId = new global::System.Guid(0xda45bd39, 0xcb08, 0x420f, 0x96, 0x37, 0x59, 0x08, 0xe9, 0xb2, 0xf4, 0x9f);
+		public static readonly global::System.Guid TargetMandatoryFeatureElementDomainRoleId = new global::System.Guid(0xda45bd39, 0xcb08, 0x420f, 0x96, 0x37, 0x59, 0x08, 0xe9, 0xb2, 0xf4, 0x9f);
 		
 		/// <summary>
-		/// DomainRole TargetFeatureElement
+		/// DomainRole TargetMandatoryFeatureElement
 		/// Description for
-		/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElement
+		/// Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElement
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/TargetFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/TargetFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "SourceFeatureElements", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementReferencesTargetFeatureElements/TargetFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/TargetMandatoryFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/TargetMandatoryFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "TargetMandatoryFeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/TargetMandatoryFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
 		[DslModeling::DomainObjectId("da45bd39-cb08-420f-9637-5908e9b2f49f")]
-		public virtual FeatureElement TargetFeatureElement
+		public virtual FeatureElement TargetMandatoryFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetFeatureElementDomainRoleId);
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetMandatoryFeatureElementDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetFeatureElementDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetMandatoryFeatureElementDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access TargetFeatureElements of a FeatureElement
+		#region Static methods to access SourceMandatoryFeatureElement of a FeatureElement
 		/// <summary>
-		/// Gets a list of TargetFeatureElements.
+		/// Gets a list of SourceMandatoryFeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FeatureElement> GetTargetFeatureElements(FeatureElement element)
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetSourceMandatoryFeatureElement(FeatureElement element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, SourceFeatureElementDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, SourceMandatoryFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region SourceFeatureElement link accessor
+		#region SourceMandatoryFeatureElement link accessor
 		/// <summary>
-		/// Get the list of FeatureElementReferencesTargetFeatureElements links to a FeatureElement.
+		/// Get the list of FeatureElementMandatoryReferencesFeatureElement links to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements> GetLinksToTargetFeatureElements ( global::Company.SplLanguage.FeatureElement sourceFeatureElementInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement> GetLinksToSourceMandatoryFeatureElement ( global::Company.SplLanguage.FeatureElement sourceMandatoryFeatureElementInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements>(sourceFeatureElementInstance, global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement>(sourceMandatoryFeatureElementInstance, global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region TargetFeatureElement link accessor
+		#region TargetMandatoryFeatureElement link accessor
 		/// <summary>
-		/// Get the list of FeatureElementReferencesTargetFeatureElements links to a FeatureElement.
+		/// Get the list of FeatureElementMandatoryReferencesFeatureElement links to a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements> GetLinksToSourceFeatureElements ( global::Company.SplLanguage.FeatureElement targetFeatureElementInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement> GetLinksToTargetMandatoryFeatureElement ( global::Company.SplLanguage.FeatureElement targetMandatoryFeatureElementInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements>(targetFeatureElementInstance, global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElementDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement>(targetMandatoryFeatureElementInstance, global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElementDomainRoleId);
 		}
 		#endregion
-		#region FeatureElementReferencesTargetFeatureElements instance accessors
+		#region FeatureElementMandatoryReferencesFeatureElement instance accessors
 		
 		/// <summary>
-		/// Get any FeatureElementReferencesTargetFeatureElements links between a given FeatureElement and a FeatureElement.
+		/// Get any FeatureElementMandatoryReferencesFeatureElement links between a given FeatureElement and a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements> GetLinks( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement> GetLinks( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
 		{
-			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements>();
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements>(source, global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId);
-			foreach ( global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements link in links )
+			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement>();
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement>(source, global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElementDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement link in links )
 			{
-				if ( target.Equals(link.TargetFeatureElement) )
+				if ( target.Equals(link.TargetMandatoryFeatureElement) )
 				{
 					outLinks.Add(link);
 				}
@@ -669,16 +669,239 @@ namespace Company.SplLanguage
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one FeatureElementReferencesTargetFeatureElements link between a given FeatureElementand a FeatureElement.
+		/// Get the one FeatureElementMandatoryReferencesFeatureElement link between a given FeatureElementand a FeatureElement.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements GetLink( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
+		public static global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement GetLink( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
 		{
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements>(source, global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId);
-			foreach ( global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements link in links )
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement>(source, global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElementDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement link in links )
 			{
-				if ( target.Equals(link.TargetFeatureElement) )
+				if ( target.Equals(link.TargetMandatoryFeatureElement) )
+				{
+					return link;
+				}
+			}
+			return null;
+		}
+		
+		#endregion
+	}
+}
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainRelationship FeatureElementRequiresReferencesFeatureElements
+	/// Description for
+	/// Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainRelationship()]
+	[DslModeling::DomainObjectId("6c077d53-2bcb-4bdd-b992-bbadc08f114c")]
+	public partial class FeatureElementRequiresReferencesFeatureElements : DslModeling::ElementLink
+	{
+		#region Constructors, domain class Id
+		
+		/// <summary>
+		/// FeatureElementRequiresReferencesFeatureElements domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x6c077d53, 0x2bcb, 0x4bdd, 0xb9, 0x92, 0xbb, 0xad, 0xc0, 0x8f, 0x11, 0x4c);
+	
+				
+		/// <summary>
+		/// Constructor
+		/// Creates a FeatureElementRequiresReferencesFeatureElements link in the same Partition as the given FeatureElement
+		/// </summary>
+		/// <param name="source">FeatureElement to use as the source of the relationship.</param>
+		/// <param name="target">FeatureElement to use as the target of the relationship.</param>
+		public FeatureElementRequiresReferencesFeatureElements(FeatureElement source, FeatureElement target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElementDomainRoleId, target)}, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public FeatureElementRequiresReferencesFeatureElements(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public FeatureElementRequiresReferencesFeatureElements(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		public FeatureElementRequiresReferencesFeatureElements(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+			: base(partition, roleAssignments, null)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new link is to be created.</param>
+		/// <param name="roleAssignments">List of relationship role assignments.</param>
+		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
+		public FeatureElementRequiresReferencesFeatureElements(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, roleAssignments, propertyAssignments)
+		{
+		}
+		#endregion
+		#region SourceRequiresFeatureElement domain role code
+		
+		/// <summary>
+		/// SourceRequiresFeatureElement domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid SourceRequiresFeatureElementDomainRoleId = new global::System.Guid(0x0eb1a27f, 0x935e, 0x40b6, 0xb1, 0x2f, 0x37, 0x42, 0xcc, 0x78, 0x16, 0xf8);
+		
+		/// <summary>
+		/// DomainRole SourceRequiresFeatureElement
+		/// Description for
+		/// Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElement
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/SourceRequiresFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/SourceRequiresFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "SourceRequiresFeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/SourceRequiresFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("0eb1a27f-935e-40b6-b12f-3742cc7816f8")]
+		public virtual FeatureElement SourceRequiresFeatureElement
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, SourceRequiresFeatureElementDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, SourceRequiresFeatureElementDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access TargetRequiresFeatureElement of a FeatureElement
+		/// <summary>
+		/// Gets a list of TargetRequiresFeatureElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetTargetRequiresFeatureElement(FeatureElement element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, TargetRequiresFeatureElementDomainRoleId);
+		}
+		#endregion
+		#region TargetRequiresFeatureElement domain role code
+		
+		/// <summary>
+		/// TargetRequiresFeatureElement domain role Id.
+		/// </summary>
+		public static readonly global::System.Guid TargetRequiresFeatureElementDomainRoleId = new global::System.Guid(0xcaf96b38, 0xcda1, 0x4044, 0x93, 0x28, 0x16, 0x73, 0xd2, 0xdb, 0x05, 0x84);
+		
+		/// <summary>
+		/// DomainRole TargetRequiresFeatureElement
+		/// Description for
+		/// Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElement
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/TargetRequiresFeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/TargetRequiresFeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "TargetRequiresFeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/TargetRequiresFeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("caf96b38-cda1-4044-9328-1673d2db0584")]
+		public virtual FeatureElement TargetRequiresFeatureElement
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, TargetRequiresFeatureElementDomainRoleId);
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, TargetRequiresFeatureElementDomainRoleId, value);
+			}
+		}
+				
+		#endregion
+		#region Static methods to access SourceRequiresFeatureElement of a FeatureElement
+		/// <summary>
+		/// Gets a list of SourceRequiresFeatureElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static DslModeling::LinkedElementCollection<FeatureElement> GetSourceRequiresFeatureElement(FeatureElement element)
+		{
+			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(element, SourceRequiresFeatureElementDomainRoleId);
+		}
+		#endregion
+		#region SourceRequiresFeatureElement link accessor
+		/// <summary>
+		/// Get the list of FeatureElementRequiresReferencesFeatureElements links to a FeatureElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements> GetLinksToSourceRequiresFeatureElement ( global::Company.SplLanguage.FeatureElement sourceRequiresFeatureElementInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements>(sourceRequiresFeatureElementInstance, global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId);
+		}
+		#endregion
+		#region TargetRequiresFeatureElement link accessor
+		/// <summary>
+		/// Get the list of FeatureElementRequiresReferencesFeatureElements links to a FeatureElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements> GetLinksToTargetRequiresFeatureElement ( global::Company.SplLanguage.FeatureElement targetRequiresFeatureElementInstance )
+		{
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements>(targetRequiresFeatureElementInstance, global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElementDomainRoleId);
+		}
+		#endregion
+		#region FeatureElementRequiresReferencesFeatureElements instance accessors
+		
+		/// <summary>
+		/// Get any FeatureElementRequiresReferencesFeatureElements links between a given FeatureElement and a FeatureElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements> GetLinks( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
+		{
+			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements>();
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements>(source, global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements link in links )
+			{
+				if ( target.Equals(link.TargetRequiresFeatureElement) )
+				{
+					outLinks.Add(link);
+				}
+			}
+			return outLinks.AsReadOnly();
+		}
+		/// <summary>
+		/// Get the one FeatureElementRequiresReferencesFeatureElements link between a given FeatureElementand a FeatureElement.
+		/// </summary>
+		[global::System.Diagnostics.DebuggerStepThrough]
+		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
+		public static global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements GetLink( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureElement target )
+		{
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements>(source, global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements link in links )
+			{
+				if ( target.Equals(link.TargetRequiresFeatureElement) )
 				{
 					return link;
 				}

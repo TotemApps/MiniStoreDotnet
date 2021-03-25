@@ -569,65 +569,97 @@ namespace Company.SplLanguage
 			}
 		}
 		#endregion
-		#region Targets opposite domain role accessor
+		#region SourceOptionalFeatureElement opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of Targets.
+		/// Gets a list of SourceOptionalFeatureElement.
 		/// Description for Company.SplLanguage.ExampleRelationship.Target
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FeatureElement> Targets
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> SourceOptionalFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementReferencesTargets.SourceDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.SourceOptionalFeatureElementDomainRoleId);
 			}
 		}
 		#endregion
-		#region Sources opposite domain role accessor
+		#region TargetOptionalFeatureElement opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of Sources.
+		/// Gets a list of TargetOptionalFeatureElement.
 		/// Description for Company.SplLanguage.ExampleRelationship.Source
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FeatureElement> Sources
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> TargetOptionalFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementReferencesTargets.TargetDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.TargetOptionalFeatureElementDomainRoleId);
 			}
 		}
 		#endregion
-		#region TargetFeatureElements opposite domain role accessor
+		#region SourceMandatoryFeatureElement opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of TargetFeatureElements.
+		/// Gets a list of SourceMandatoryFeatureElement.
 		/// Description for
-		/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElement
+		/// Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElement
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FeatureElement> TargetFeatureElements
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> SourceMandatoryFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElementDomainRoleId);
 			}
 		}
 		#endregion
-		#region SourceFeatureElements opposite domain role accessor
+		#region TargetMandatoryFeatureElement opposite domain role accessor
 		
 		/// <summary>
-		/// Gets a list of SourceFeatureElements.
+		/// Gets a list of TargetMandatoryFeatureElement.
 		/// Description for
-		/// Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElement
+		/// Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElement
 		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FeatureElement> SourceFeatureElements
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> TargetMandatoryFeatureElement
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementReferencesTargetFeatureElements.TargetFeatureElementDomainRoleId);
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElementDomainRoleId);
+			}
+		}
+		#endregion
+		#region SourceRequiresFeatureElement opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of SourceRequiresFeatureElement.
+		/// Description for
+		/// Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> SourceRequiresFeatureElement
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId);
+			}
+		}
+		#endregion
+		#region TargetRequiresFeatureElement opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of TargetRequiresFeatureElement.
+		/// Description for
+		/// Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElement
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<FeatureElement> TargetRequiresFeatureElement
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureElement>, FeatureElement>(global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElementDomainRoleId);
 			}
 		}
 		#endregion

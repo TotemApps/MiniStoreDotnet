@@ -70,11 +70,13 @@ namespace Company.SplLanguage
 				typeof(FeatureModel),
 				typeof(FeatureElement),
 				typeof(FeatureModelHasElements),
-				typeof(FeatureElementReferencesTargets),
-				typeof(FeatureElementReferencesTargetFeatureElements),
+				typeof(FeatureElementOptionalReferencesFeatureElement),
+				typeof(FeatureElementMandatoryReferencesFeatureElement),
+				typeof(FeatureElementRequiresReferencesFeatureElements),
 				typeof(SplLanguageDiagram),
-				typeof(ExampleConnector),
+				typeof(OptionalConnector),
 				typeof(MandatoryConnector),
+				typeof(RequiresConnector),
 				typeof(ExampleShape),
 				typeof(global::Company.SplLanguage.FixUpDiagram),
 				typeof(global::Company.SplLanguage.ConnectorRolePlayerChanged),
@@ -105,10 +107,12 @@ namespace Company.SplLanguage
 			{
 				new DomainRolePlayerInfo(typeof(FeatureModelHasElements), "FeatureModel", FeatureModelHasElements.FeatureModelDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureModelHasElements), "Element", FeatureModelHasElements.ElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Source", FeatureElementReferencesTargets.SourceDomainRoleId),
-				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargets), "Target", FeatureElementReferencesTargets.TargetDomainRoleId),
-				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargetFeatureElements), "SourceFeatureElement", FeatureElementReferencesTargetFeatureElements.SourceFeatureElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(FeatureElementReferencesTargetFeatureElements), "TargetFeatureElement", FeatureElementReferencesTargetFeatureElements.TargetFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementOptionalReferencesFeatureElement), "SourceOptionalFeatureElement", FeatureElementOptionalReferencesFeatureElement.SourceOptionalFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementOptionalReferencesFeatureElement), "TargetOptionalFeatureElement", FeatureElementOptionalReferencesFeatureElement.TargetOptionalFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementMandatoryReferencesFeatureElement), "SourceMandatoryFeatureElement", FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementMandatoryReferencesFeatureElement), "TargetMandatoryFeatureElement", FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementRequiresReferencesFeatureElements), "SourceRequiresFeatureElement", FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementRequiresReferencesFeatureElements), "TargetRequiresFeatureElement", FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElementDomainRoleId),
 			};
 		}
 		#endregion
@@ -130,13 +134,14 @@ namespace Company.SplLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(6);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
 				createElementMap.Add(typeof(FeatureModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(SplLanguageDiagram), 2);
-				createElementMap.Add(typeof(ExampleConnector), 3);
+				createElementMap.Add(typeof(OptionalConnector), 3);
 				createElementMap.Add(typeof(MandatoryConnector), 4);
-				createElementMap.Add(typeof(ExampleShape), 5);
+				createElementMap.Add(typeof(RequiresConnector), 5);
+				createElementMap.Add(typeof(ExampleShape), 6);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -153,9 +158,10 @@ namespace Company.SplLanguage
 				case 0: return new FeatureModel(partition, propertyAssignments);
 				case 1: return new FeatureElement(partition, propertyAssignments);
 				case 2: return new SplLanguageDiagram(partition, propertyAssignments);
-				case 3: return new ExampleConnector(partition, propertyAssignments);
+				case 3: return new OptionalConnector(partition, propertyAssignments);
 				case 4: return new MandatoryConnector(partition, propertyAssignments);
-				case 5: return new ExampleShape(partition, propertyAssignments);
+				case 5: return new RequiresConnector(partition, propertyAssignments);
+				case 6: return new ExampleShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -178,10 +184,11 @@ namespace Company.SplLanguage
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(3);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
 				createElementLinkMap.Add(typeof(FeatureModelHasElements), 0);
-				createElementLinkMap.Add(typeof(FeatureElementReferencesTargets), 1);
-				createElementLinkMap.Add(typeof(FeatureElementReferencesTargetFeatureElements), 2);
+				createElementLinkMap.Add(typeof(FeatureElementOptionalReferencesFeatureElement), 1);
+				createElementLinkMap.Add(typeof(FeatureElementMandatoryReferencesFeatureElement), 2);
+				createElementLinkMap.Add(typeof(FeatureElementRequiresReferencesFeatureElements), 3);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -197,8 +204,9 @@ namespace Company.SplLanguage
 			switch (index)
 			{
 				case 0: return new FeatureModelHasElements(partition, roleAssignments, propertyAssignments);
-				case 1: return new FeatureElementReferencesTargets(partition, roleAssignments, propertyAssignments);
-				case 2: return new FeatureElementReferencesTargetFeatureElements(partition, roleAssignments, propertyAssignments);
+				case 1: return new FeatureElementOptionalReferencesFeatureElement(partition, roleAssignments, propertyAssignments);
+				case 2: return new FeatureElementMandatoryReferencesFeatureElement(partition, roleAssignments, propertyAssignments);
+				case 3: return new FeatureElementRequiresReferencesFeatureElements(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}

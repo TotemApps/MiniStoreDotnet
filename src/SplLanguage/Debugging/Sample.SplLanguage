@@ -2,22 +2,30 @@
 <featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" name="Ministore Model" description="Feature Model for Ministore product" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
   <elements>
     <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="Root feature" included="true">
-      <targets>
+      <sourceOptionalFeatureElement>
         <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 01" />
-        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 02" />
-      </targets>
-      <targetFeatureElements>
-        <featureElementReferencesTargetFeatureElements Id="e4c8efa3-9ad9-42e5-867d-d3d8dfb9ec0e">
+      </sourceOptionalFeatureElement>
+      <sourceMandatoryFeatureElement>
+        <featureElementMandatoryReferencesFeatureElement Id="bc4700f1-7329-4ca5-b64f-c12deffcf6cb">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 02" />
+        </featureElementMandatoryReferencesFeatureElement>
+      </sourceMandatoryFeatureElement>
+      <sourceRequiresFeatureElement>
+        <featureElementRequiresReferencesFeatureElements Id="b37783cb-e7b9-4042-b7c3-aa6a7d3133a3">
           <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 05" />
-        </featureElementReferencesTargetFeatureElements>
-      </targetFeatureElements>
+        </featureElementRequiresReferencesFeatureElements>
+      </sourceRequiresFeatureElement>
     </featureElement>
     <featureElement Id="9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa" name="Child element 01" included="false" />
     <featureElement Id="87d22180-1bb9-4f4d-97b3-5a89f20ee3db" name="Child element 02" included="false">
-      <targets>
-        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 03" />
+      <sourceOptionalFeatureElement>
         <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 04" />
-      </targets>
+      </sourceOptionalFeatureElement>
+      <sourceRequiresFeatureElement>
+        <featureElementRequiresReferencesFeatureElements Id="1da1fe4e-108c-4f80-99eb-7742ce622acb">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 03" />
+        </featureElementRequiresReferencesFeatureElements>
+      </sourceRequiresFeatureElement>
     </featureElement>
     <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="Child element 03" included="true" />
     <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Child element 04" included="true" />

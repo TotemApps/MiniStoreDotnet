@@ -14,16 +14,16 @@ using DslDiagrams = global::Microsoft.VisualStudio.Modeling.Diagrams;
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// DomainClass ExampleConnector
+	/// DomainClass OptionalConnector
 	/// Connector between the ExampleShapes. Represents ExampleRelationships on the
 	/// Diagram.
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.SplLanguage.ExampleConnector.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.SplLanguage.ExampleConnector.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.SplLanguage.OptionalConnector.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.OptionalConnector.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainObjectId("f0b7116b-612f-46cc-98dc-ebaa03cd1db6")]
-	public partial class ExampleConnector : DslDiagrams::BinaryLinkShape
+	public partial class OptionalConnector : DslDiagrams::BinaryLinkShape
 	{
 		#region DiagramElement boilerplate
 		private static DslDiagrams::StyleSet classStyleSet;
@@ -88,9 +88,9 @@ namespace Company.SplLanguage
 		}
 		
 		/// <summary>
-		/// Finds a decorator associated with ExampleConnector.
+		/// Finds a decorator associated with OptionalConnector.
 		/// </summary>
-		public static DslDiagrams::Decorator FindExampleConnectorDecorator(string decoratorName)
+		public static DslDiagrams::Decorator FindOptionalConnectorDecorator(string decoratorName)
 		{	
 			if(decorators == null) return null;
 			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
@@ -144,7 +144,7 @@ namespace Company.SplLanguage
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// ExampleConnector domain class Id.
+		/// OptionalConnector domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xf0b7116b, 0x612f, 0x46cc, 0x98, 0xdc, 0xeb, 0xaa, 0x03, 0xcd, 0x1d, 0xb6);
 		/// <summary>
@@ -152,7 +152,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleConnector(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public OptionalConnector(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -162,7 +162,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public ExampleConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public OptionalConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -314,6 +314,157 @@ namespace Company.SplLanguage
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
 		public MandatoryConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+	}
+}
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainClass RequiresConnector
+	/// Description for Company.SplLanguage.RequiresConnector
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.SplLanguage.RequiresConnector.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.RequiresConnector.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("5b5a6950-700f-400f-a55c-6d1e08c6c096")]
+	public partial class RequiresConnector : DslDiagrams::BinaryLinkShape
+	{
+		#region DiagramElement boilerplate
+		private static DslDiagrams::StyleSet classStyleSet;
+		private static global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields;
+		private static global::System.Collections.Generic.IList<DslDiagrams::Decorator> decorators;
+		
+		/// <summary>
+		/// Per-class style set for this shape.
+		/// </summary>
+		protected override DslDiagrams::StyleSet ClassStyleSet
+		{
+			get
+			{
+				if (classStyleSet == null)
+				{
+					classStyleSet = CreateClassStyleSet();
+				}
+				return classStyleSet;
+			}
+		}
+		
+		/// <summary>
+		/// Per-class ShapeFields for this shape.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::ShapeField> ShapeFields
+		{
+			get
+			{
+				if (shapeFields == null)
+				{
+					shapeFields = CreateShapeFields();
+				}
+				return shapeFields;
+			}
+		}
+		
+		/// <summary>
+		/// Event fired when decorator initialization is complete for this shape type.
+		/// </summary>
+		public static event global::System.EventHandler DecoratorsInitialized;
+		
+		/// <summary>
+		/// List containing decorators used by this type.
+		/// </summary>
+		public override global::System.Collections.Generic.IList<DslDiagrams::Decorator> Decorators
+		{
+			get 
+			{
+				if(decorators == null)
+				{
+					decorators = CreateDecorators();
+					
+					// fire this event to allow the diagram to initialize decorator mappings for this shape type.
+					if(DecoratorsInitialized != null)
+					{
+						DecoratorsInitialized(this, global::System.EventArgs.Empty);
+					}
+				}
+				
+				return decorators; 
+			}
+		}
+		
+		/// <summary>
+		/// Finds a decorator associated with RequiresConnector.
+		/// </summary>
+		public static DslDiagrams::Decorator FindRequiresConnectorDecorator(string decoratorName)
+		{	
+			if(decorators == null) return null;
+			return DslDiagrams::ShapeElement.FindDecorator(decorators, decoratorName);
+		}
+		
+		#endregion
+		
+		#region Connector styles
+		/// <summary>
+		/// Initializes style set resources for this shape type
+		/// </summary>
+		/// <param name="classStyleSet">The style set for this shape class</param>
+		protected override void InitializeResources(DslDiagrams::StyleSet classStyleSet)
+		{
+			base.InitializeResources(classStyleSet);
+			
+			// Line pen settings for this connector.
+			DslDiagrams::PenSettings linePen = new DslDiagrams::PenSettings();
+			linePen.Width = 0.01f;
+			classStyleSet.OverridePen(DslDiagrams::DiagramPens.ConnectionLine, linePen);
+		}
+		
+		/// <summary>
+		/// Initializes resources associated with this connector instance.
+		/// </summary>
+		protected override void InitializeInstanceResources()
+		{
+			base.InitializeInstanceResources();
+			this.SetDecorators(null, new DslDiagrams::SizeD(0.1,0.1), DslDiagrams::LinkDecorator.DecoratorEmptyArrow, new DslDiagrams::SizeD(0.1,0.1), false);
+		}
+		
+		/// <summary>
+		/// Gets the default line routing style for this connector.
+		/// </summary>
+		[global::System.CLSCompliant(false)]
+		protected override DslDiagrams::GraphObject.VGRoutingStyle DefaultRoutingStyle
+		{
+			get
+			{
+				return DslDiagrams::GraphObject.VGRoutingStyle.VGRouteStraight;
+			}
+		}
+		#endregion
+		
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// RequiresConnector domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x5b5a6950, 0x700f, 0x400f, 0xa5, 0x5c, 0x6d, 0x1e, 0x08, 0xc6, 0xc0, 0x96);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public RequiresConnector(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public RequiresConnector(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
