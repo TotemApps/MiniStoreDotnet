@@ -319,13 +319,13 @@
       <ElementTool Name="FeatureElement" ToolboxIcon="resources\exampleshapetoolbitmap.bmp" Caption="Feature Element" Tooltip="Create an ExampleElement" HelpKeyword="CreateExampleClassF1Keyword">
         <DomainClassMoniker Name="FeatureElement" />
       </ElementTool>
-      <ConnectionTool Name="OptionalRelationship" ToolboxIcon="resources\exampleconnectortoolbitmap.bmp" Caption="Optional Relationship" Tooltip="Drag between ExampleElements to create an ExampleRelationship" HelpKeyword="ConnectExampleRelationF1Keyword">
+      <ConnectionTool Name="OptionalRelationship" ToolboxIcon="Resources\OptionalIcon.bmp" Caption="Optional Relationship" Tooltip="Drag between ExampleElements to create an ExampleRelationship" HelpKeyword="ConnectExampleRelationF1Keyword">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementOptionalReferencesFeatureElementBuilder" />
       </ConnectionTool>
-      <ConnectionTool Name="MandatoryRelationship" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Mandatory Relationship" Tooltip="Mandatory Relationship" HelpKeyword="MandatoryRelationship">
+      <ConnectionTool Name="MandatoryRelationship" ToolboxIcon="Resources\MandatoryIcon.bmp" Caption="Mandatory Relationship" Tooltip="Mandatory Relationship" HelpKeyword="MandatoryRelationship">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementMandatoryReferencesFeatureElementBuilder" />
       </ConnectionTool>
-      <ConnectionTool Name="RequiresRelationship" ToolboxIcon="Resources\ExampleConnectorToolBitmap.bmp" Caption="Requires Relationship" Tooltip="Requires Relationship" HelpKeyword="RequiresRelationship">
+      <ConnectionTool Name="RequiresRelationship" ToolboxIcon="Resources\RequiresIcon.bmp" Caption="Requires Relationship" Tooltip="Requires Relationship" HelpKeyword="RequiresRelationship">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementRequiresReferencesFeatureElementsBuilder" />
       </ConnectionTool>
     </ToolboxTab>
