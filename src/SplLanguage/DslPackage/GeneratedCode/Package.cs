@@ -176,7 +176,7 @@ namespace Company.SplLanguage
 	/// <summary>
 	/// Double-derived class to allow easier code customization.
 	/// </summary>
-	[VSShell::ProvideMenuResource("1000.ctmenu", 1)]
+	[VSShell::ProvideMenuResource("1000.ctmenu", 2)]
 	[VSShell::ProvideToolboxItems(1)]
 	[global::Microsoft.VisualStudio.TextTemplating.VSHost.ProvideDirectiveProcessor(typeof(global::Company.SplLanguage.SplLanguageDirectiveProcessor), global::Company.SplLanguage.SplLanguageDirectiveProcessor.SplLanguageDirectiveProcessorName, "A directive processor that provides access to SplLanguage files")]
 	[global::System.Runtime.InteropServices.Guid(Constants.SplLanguagePackageId)]
