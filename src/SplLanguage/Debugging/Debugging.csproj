@@ -44,6 +44,16 @@
       <SubType>
       </SubType>
     </None>
+    <None Include="DebugTest.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebugTest.tt</DependentUpon>
+    </None>
+    <None Include="FeatureModelToJson.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeatureModelToJson.tt</DependentUpon>
+    </None>
     <None Include="SplLanguageReport.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SplLanguageReport.txt</LastGenOutput>
@@ -67,12 +77,11 @@
   <ItemGroup>
     <Content Include="DebugTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DebugTest.txt</LastGenOutput>
+      <LastGenOutput>DebugTest.json</LastGenOutput>
     </Content>
-    <Content Include="DebugTest.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DebugTest.tt</DependentUpon>
+    <Content Include="FeatureModelToJson.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FeatureModelToJson.json</LastGenOutput>
     </Content>
     <Content Include="SplLanguageReport.txt">
       <AutoGen>True</AutoGen>

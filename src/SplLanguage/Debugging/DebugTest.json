@@ -1,0 +1,17 @@
+﻿
+{
+    "features":[
+    "Name": "Mini Store Dotnet",
+    "Included": "True"
+    "Name": "Cloud Provider",
+    "Included": "False"
+    "Name": "Infrastructure",
+    "Included": "False"
+    "Name": "VM",
+    "Included": "True"
+    "Name": "Microservices",
+    "Included": "True"
+    "Name": "Core components",
+    "Included": "True"
+    ]
+}
