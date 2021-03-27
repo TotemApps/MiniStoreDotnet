@@ -1,5 +1,5 @@
 ﻿<#@ template language="C#" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
-<#@ output extension=".json" #>
+<#@ output extension=".txt" #>
 <#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
 
 Model: <#= this.FeatureModel #>
