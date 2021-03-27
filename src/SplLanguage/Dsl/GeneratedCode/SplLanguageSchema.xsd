@@ -142,6 +142,8 @@
         <xsd:attribute name="name" type="xsd:string" use="required" />
         <!-- Property: Included -->
         <xsd:attribute name="included" type="xsd:boolean" />
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="FeatureType" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -328,6 +330,15 @@
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
+  
+  <!-- Enum FeatureType -->
+  <xsd:simpleType name="FeatureType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Abstract"/>
+      <xsd:enumeration value="Concrete"/>
+      <xsd:enumeration value="Root"/>
+    </xsd:restriction>
+  </xsd:simpleType>
   
 </xsd:schema>
 

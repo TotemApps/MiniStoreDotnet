@@ -38,6 +38,11 @@
             <ExternalTypeMoniker Name="/System/Boolean" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="06fa5ce3-5517-491c-b2ac-2a9445b7127d" Description="Description for Company.SplLanguage.FeatureElement.Type" Name="Type" DisplayName="Type">
+          <Type>
+            <DomainEnumerationMoniker Name="FeatureType" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
   </Classes>
@@ -123,6 +128,13 @@
     <ExternalType Name="Guid" Namespace="System" />
     <ExternalType Name="Boolean" Namespace="System" />
     <ExternalType Name="Char" Namespace="System" />
+    <DomainEnumeration Name="FeatureType" Namespace="Company.SplLanguage" Description="Description for Company.SplLanguage.FeatureType">
+      <Literals>
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureType.Abstract" Name="Abstract" Value="0" />
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureType.Concrete" Name="Concrete" Value="1" />
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureType.Root" Name="Root" Value="2" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="828ca0d5-7a5e-414a-adb6-d8b8b144cc01" Description="Shape used to represent ExampleElements on a Diagram." Name="ExampleShape" DisplayName="Example Shape" Namespace="Company.SplLanguage" FixedTooltipText="Example Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
@@ -174,6 +186,9 @@
           <XmlRelationshipData UseFullForm="true" RoleElementName="sourceRequiresFeatureElement">
             <DomainRelationshipMoniker Name="FeatureElementRequiresReferencesFeatureElements" />
           </XmlRelationshipData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="FeatureElement/Type" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasElementsMoniker" ElementName="featureModelHasElements" MonikerTypeName="FeatureModelHasElementsMoniker">

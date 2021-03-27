@@ -3,6 +3,9 @@
 <#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
 
 {
+    "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
+    "version": "0.0.1",
+    "name":"<#= this.FeatureModel.Name #>",
     "features":[
 <#
 for (int i = 0; i < this.FeatureModel.Elements.Count;i++)
@@ -12,7 +15,8 @@ for (int i = 0; i < this.FeatureModel.Elements.Count;i++)
 #>
         {
             "name": "<#= element.Name #>",
-            "included": "<#= element.Included #>"
+            "included": "<#= element.Included #>",
+            "type": "<#= element.Type #>"
         }<#= i<(this.FeatureModel.Elements.Count - 1) ? "," : "" #>
 <#
 }

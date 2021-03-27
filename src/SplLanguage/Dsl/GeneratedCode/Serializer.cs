@@ -1019,6 +1019,23 @@ namespace Company.SplLanguage
 					}
 				}
 			}
+			// Type
+			if (!serializationContext.Result.Failed)
+			{
+				string attribType = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "type");
+				if (attribType != null)
+				{
+					FeatureType valueOfType;
+					if (DslModeling::SerializationUtilities.TryGetValue<FeatureType>(serializationContext, attribType, out valueOfType))
+					{
+						instanceOfFeatureElement.Type = valueOfType;
+					}
+					else
+					{	// Invalid property value, ignored.
+						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "type", typeof(FeatureType), attribType);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -1656,6 +1673,16 @@ namespace Company.SplLanguage
 				if (!serializationContext.Result.Failed)
 				{
 					SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "included", serializedPropValue);
+				}
+			}
+			// Type
+			if (!serializationContext.Result.Failed)
+			{
+				FeatureType propValue = instanceOfFeatureElement.Type;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<FeatureType>(serializationContext, propValue);
+				if (!serializationContext.Result.Failed)
+				{
+					SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "type", serializedPropValue);
 				}
 			}
 		}

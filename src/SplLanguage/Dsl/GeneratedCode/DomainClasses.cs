@@ -551,6 +551,93 @@ namespace Company.SplLanguage
 		}
 		
 		#endregion
+		#region Type domain property code
+		
+		/// <summary>
+		/// Type domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid TypeDomainPropertyId = new global::System.Guid(0x06fa5ce3, 0x5517, 0x491c, 0xb2, 0xac, 0x2a, 0x94, 0x45, 0xb7, 0x12, 0x7d);
+		
+		/// <summary>
+		/// Storage for Type
+		/// </summary>
+		private FeatureType typePropertyStorage;
+		
+		/// <summary>
+		/// Gets or sets the value of Type domain property.
+		/// Description for Company.SplLanguage.FeatureElement.Type
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElement/Type.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElement/Type.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("06fa5ce3-5517-491c-b2ac-2a9445b7127d")]
+		public FeatureType Type
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return typePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				TypePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FeatureElement.Type domain property.
+		/// </summary>
+		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureElement, FeatureType>
+		{
+			private TypePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FeatureElement.Type domain property value handler.
+			/// </summary>
+			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FeatureElement.Type domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return TypeDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed FeatureType GetValue(FeatureElement element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.typePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FeatureElement element, FeatureType newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				FeatureType oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.typePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
 		#region FeatureModel opposite domain role accessor
 		/// <summary>
 		/// Gets or sets FeatureModel.

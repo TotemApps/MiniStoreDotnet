@@ -1,29 +1,38 @@
 ﻿
 {
+    "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
+    "version": "0.0.1",
+    "name":"MinistoreModel",
     "features":[
         {
             "name": "Mini Store Dotnet",
-            "included": "True"
+            "included": "True",
+            "type": "Root"
         },
         {
             "name": "Cloud Provider",
-            "included": "False"
+            "included": "False",
+            "type": "Abstract"
         },
         {
             "name": "Infrastructure",
-            "included": "False"
+            "included": "False",
+            "type": "Abstract"
         },
         {
             "name": "VM",
-            "included": "True"
+            "included": "True",
+            "type": "Concrete"
         },
         {
             "name": "Microservices",
-            "included": "True"
+            "included": "True",
+            "type": "Concrete"
         },
         {
             "name": "Core components",
-            "included": "True"
+            "included": "True",
+            "type": "Concrete"
         }
     ]
 }

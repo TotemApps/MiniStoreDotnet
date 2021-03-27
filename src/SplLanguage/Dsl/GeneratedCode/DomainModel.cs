@@ -95,6 +95,7 @@ namespace Company.SplLanguage
 				new DomainMemberInfo(typeof(FeatureModel), "Description", FeatureModel.DescriptionDomainPropertyId, typeof(FeatureModel.DescriptionPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Included", FeatureElement.IncludedDomainPropertyId, typeof(FeatureElement.IncludedPropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureElement), "Type", FeatureElement.TypeDomainPropertyId, typeof(FeatureElement.TypePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -449,5 +450,34 @@ namespace Company.SplLanguage
 	}
 	#endregion
 		
+}
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainEnumeration: FeatureType
+	/// Description for Company.SplLanguage.FeatureType
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum FeatureType
+	{
+		/// <summary>
+		/// Abstract
+		/// Description for Company.SplLanguage.FeatureType.Abstract
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureType/Abstract.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Abstract = 0,
+		/// <summary>
+		/// Concrete
+		/// Description for Company.SplLanguage.FeatureType.Concrete
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureType/Concrete.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Concrete = 1,
+		/// <summary>
+		/// Root
+		/// Description for Company.SplLanguage.FeatureType.Root
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureType/Root.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Root = 2,
+	}
 }
 
