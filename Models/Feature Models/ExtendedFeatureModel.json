@@ -1,6 +1,7 @@
 {
     "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
     "version": "0.0.1",
+    "name":"",
     "features":[
         {
             "name":"miniStoreDotNetRoot",
