@@ -1,0 +1,13 @@
+﻿<#@ template language="C#" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
+<#@ output extension=".json" #>
+<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
+
+Model: <#= this.FeatureModel #>
+<#
+foreach (FeatureElement element in this.FeatureModel.Elements)
+{
+#>
+    Feature: <#= element.Name #>
+<#
+}
+#>

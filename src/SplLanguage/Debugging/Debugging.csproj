@@ -65,6 +65,15 @@
     <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DebugTest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DebugTest.txt</LastGenOutput>
+    </Content>
+    <Content Include="DebugTest.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebugTest.tt</DependentUpon>
+    </Content>
     <Content Include="SplLanguageReport.txt">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

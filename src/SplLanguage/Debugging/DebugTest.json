@@ -1,0 +1,8 @@
+﻿
+Model: Company.SplLanguage.FeatureModel
+    Feature: Mini Store Dotnet
+    Feature: Cloud Provider
+    Feature: Infrastructure
+    Feature: VM
+    Feature: Microservices
+    Feature: Core components

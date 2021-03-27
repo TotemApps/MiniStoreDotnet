@@ -3,22 +3,22 @@
   <featureModelMoniker Id="62219585-981d-4f23-bc53-d6ebad321a1a" />
   <nestedChildShapes>
     <exampleShape Id="484a472f-b3c2-4024-a3f2-bc8c095dbd11" absoluteBounds="6.875, 1.75, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Root feature" />
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Mini Store Dotnet" />
     </exampleShape>
     <exampleShape Id="d527cab7-48b2-4731-a437-32f087691c49" absoluteBounds="3.875, 4.375, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 01" />
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Cloud Provider" />
     </exampleShape>
     <exampleShape Id="91d1ee1b-1210-4ba6-8eeb-b39f62c63552" absoluteBounds="6.75, 4.375, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 02" />
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Infrastructure" />
     </exampleShape>
     <exampleShape Id="baf6d3ad-062e-40fb-800c-c704b6098f42" absoluteBounds="5.5, 6.875, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 03" />
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/VM" />
     </exampleShape>
     <exampleShape Id="c5b3fd9b-9a82-4a80-945d-fd5e62f408cd" absoluteBounds="8.25, 6.875, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 04" />
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Microservices" />
     </exampleShape>
     <exampleShape Id="84a1bbea-3466-428a-8daa-6903dd3a76b4" absoluteBounds="10.375, 4.375, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Child element 05" />
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Core components" />
     </exampleShape>
     <optionalConnector Id="d8a67dc4-9e46-450e-8a74-2c5a941a0dba" edgePoints="[(6.875 : 2.5); (5.875 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="20b619db-33d1-485b-9cac-5c3d29f9c491">
       <nodes>
