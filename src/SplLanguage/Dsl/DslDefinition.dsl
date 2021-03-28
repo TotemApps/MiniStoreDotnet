@@ -54,6 +54,24 @@
           </Type>
         </DomainProperty>
       </Properties>
+      <ElementMergeDirectives>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="FeatureAttribute" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>FeatureElementHasFeatureAttributed.FeatureAttributed</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+        <ElementMergeDirective>
+          <Index>
+            <DomainClassMoniker Name="FeatureConstraint" />
+          </Index>
+          <LinkCreationPaths>
+            <DomainPath>FeatureElementHasFeatureConstraints.FeatureConstraints</DomainPath>
+          </LinkCreationPaths>
+        </ElementMergeDirective>
+      </ElementMergeDirectives>
     </DomainClass>
     <DomainClass Id="8edaac53-90f8-4739-a6b2-39fcae20306f" Description="Description for Company.SplLanguage.FeatureAttribute" Name="FeatureAttribute" DisplayName="Feature Attribute" Namespace="Company.SplLanguage">
       <Properties>
@@ -68,6 +86,25 @@
           </Type>
         </DomainProperty>
         <DomainProperty Id="a672ac9d-314e-4fc8-9688-93508b83b261" Description="Description for Company.SplLanguage.FeatureAttribute.Value" Name="Value" DisplayName="Value">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
+    <DomainClass Id="7f044b6e-9619-4c37-9142-4d95570f1be9" Description="Description for Company.SplLanguage.FeatureConstraint" Name="FeatureConstraint" DisplayName="Feature Constraint" Namespace="Company.SplLanguage">
+      <Properties>
+        <DomainProperty Id="7ff449cd-cdf4-4b12-8590-79a0cb587fb3" Description="Description for Company.SplLanguage.FeatureConstraint.Type" Name="Type" DisplayName="Type">
+          <Type>
+            <DomainEnumerationMoniker Name="ConstraintType" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="fc32fd23-15cd-4865-a6a2-605a4df1a44f" Description="Description for Company.SplLanguage.FeatureConstraint.Name" Name="Name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="8bbc1517-3caf-4567-80ce-71dcdb338fbf" Description="Description for Company.SplLanguage.FeatureConstraint.Value" Name="Value" DisplayName="Value">
           <Type>
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
@@ -156,6 +193,38 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="f1bb9d84-fdf2-4096-9e17-67993136d22b" Description="Description for Company.SplLanguage.FeatureElementHasFeatureAttributed" Name="FeatureElementHasFeatureAttributed" DisplayName="Feature Element Has Feature Attributed" Namespace="Company.SplLanguage" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="d48ccfdc-f971-4980-bd80-b91c24084f5b" Description="Description for Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureElement" Name="FeatureElement" DisplayName="Feature Element" PropertyName="FeatureAttributed" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Feature Attributed">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="72333ea4-b4fa-4db5-a7cf-6081a67ab278" Description="Description for Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureAttribute" Name="FeatureAttribute" DisplayName="Feature Attribute" PropertyName="FeatureElement" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Feature Element">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureAttribute" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
+    <DomainRelationship Id="ff7d02ac-1334-40a8-963c-09d62df722fb" Description="Description for Company.SplLanguage.FeatureElementHasFeatureConstraints" Name="FeatureElementHasFeatureConstraints" DisplayName="Feature Element Has Feature Constraints" Namespace="Company.SplLanguage" IsEmbedding="true">
+      <Source>
+        <DomainRole Id="a3a82740-9d40-42bc-af4e-6e2358be492a" Description="Description for Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElement" Name="FeatureElement" DisplayName="Feature Element" PropertyName="FeatureConstraints" PropagatesCopy="PropagatesCopyToLinkAndOppositeRolePlayer" PropertyDisplayName="Feature Constraints">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="00102a39-d3ad-404a-8a26-da60cbaeb461" Description="Description for Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraint" Name="FeatureConstraint" DisplayName="Feature Constraint" PropertyName="FeatureElement" Multiplicity="One" PropagatesDelete="true" PropertyDisplayName="Feature Element">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureConstraint" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -180,6 +249,13 @@
         <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureType.Root" Name="Root" Value="2" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="ConstraintType" Namespace="Company.SplLanguage" Description="Description for Company.SplLanguage.ConstraintType">
+      <Literals>
+        <EnumerationLiteral Description="Description for Company.SplLanguage.ConstraintType.Boolean" Name="Boolean" Value="0" />
+        <EnumerationLiteral Description="Description for Company.SplLanguage.ConstraintType.Arithmetic" Name="Arithmetic" Value="1" />
+        <EnumerationLiteral Description="Description for Company.SplLanguage.ConstraintType.Symbolic" Name="Symbolic" Value="2" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="828ca0d5-7a5e-414a-adb6-d8b8b144cc01" Description="Shape used to represent ExampleElements on a Diagram." Name="FeatureShape" DisplayName="Feature Shape" Namespace="Company.SplLanguage" FixedTooltipText="Feature Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
@@ -191,7 +267,6 @@
         <IconDecorator Name="IncludedDecorator" DisplayName="Included Decorator" DefaultIcon="Resources\SelectedIcon.bmp" />
       </ShapeHasDecorators>
     </GeometryShape>
-    <GeometryShape Id="8a34525c-9a54-4517-bb42-96b5268a4e48" Description="Description for Company.SplLanguage.FeatureAttributeShape" Name="FeatureAttributeShape" DisplayName="Feature Attribute Shape" Namespace="Company.SplLanguage" FixedTooltipText="Feature Attribute Shape" InitialHeight="1" Geometry="Rectangle" />
   </Shapes>
   <Connectors>
     <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="OptionalConnector" DisplayName="Optional Connector" Namespace="Company.SplLanguage" FixedTooltipText="Optional Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
@@ -245,6 +320,12 @@
           <XmlPropertyData XmlName="idFeature">
             <DomainPropertyMoniker Name="FeatureElement/IdFeature" />
           </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="featureAttributed">
+            <DomainRelationshipMoniker Name="FeatureElementHasFeatureAttributed" />
+          </XmlRelationshipData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="featureConstraints">
+            <DomainRelationshipMoniker Name="FeatureElementHasFeatureConstraints" />
+          </XmlRelationshipData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasElementsMoniker" ElementName="featureModelHasElements" MonikerTypeName="FeatureModelHasElementsMoniker">
@@ -294,8 +375,25 @@
           </XmlPropertyData>
         </ElementData>
       </XmlClassData>
-      <XmlClassData TypeName="FeatureAttributeShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureAttributeShapeMoniker" ElementName="featureAttributeShape" MonikerTypeName="FeatureAttributeShapeMoniker">
-        <GeometryShapeMoniker Name="FeatureAttributeShape" />
+      <XmlClassData TypeName="FeatureElementHasFeatureAttributed" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureElementHasFeatureAttributedMoniker" ElementName="featureElementHasFeatureAttributed" MonikerTypeName="FeatureElementHasFeatureAttributedMoniker">
+        <DomainRelationshipMoniker Name="FeatureElementHasFeatureAttributed" />
+      </XmlClassData>
+      <XmlClassData TypeName="FeatureConstraint" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureConstraintMoniker" ElementName="featureConstraint" MonikerTypeName="FeatureConstraintMoniker">
+        <DomainClassMoniker Name="FeatureConstraint" />
+        <ElementData>
+          <XmlPropertyData XmlName="type">
+            <DomainPropertyMoniker Name="FeatureConstraint/Type" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="FeatureConstraint/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="value">
+            <DomainPropertyMoniker Name="FeatureConstraint/Value" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="FeatureElementHasFeatureConstraints" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureElementHasFeatureConstraintsMoniker" ElementName="featureElementHasFeatureConstraints" MonikerTypeName="FeatureElementHasFeatureConstraintsMoniker">
+        <DomainRelationshipMoniker Name="FeatureElementHasFeatureConstraints" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -448,8 +546,11 @@
       <ConnectionTool Name="ExcludeRelationship" ToolboxIcon="Resources\ExcludesIcon.bmp" Caption="Exclude Relationship" Tooltip="Exclude Relationship" HelpKeyword="ExcludeRelationship">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementExcludesReferenceFeatureElementBuilder" />
       </ConnectionTool>
-      <ElementTool Name="FetureAttribute" ToolboxIcon="Resources\AttributeIcon.bmp" Caption="Feture AttributeElement" Tooltip="Feture Attribute" HelpKeyword="FetureAttribute">
+      <ElementTool Name="FeatureAttribute" ToolboxIcon="Resources\AttributeIcon.bmp" Caption="Feature Attribute" Tooltip="Feature Attribute" HelpKeyword="FeatureAttribute">
         <DomainClassMoniker Name="FeatureAttribute" />
+      </ElementTool>
+      <ElementTool Name="FeatureConstraint" ToolboxIcon="Resources\ConstraintIcon.bmp" Caption="Feature Constraint" Tooltip="Feature Constraint" HelpKeyword="FeatureConstraint">
+        <DomainClassMoniker Name="FeatureConstraint" />
       </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

@@ -26,9 +26,20 @@
           <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/VM" />
         </featureElementRequiresReferencesFeatureElements>
       </sourceRequiresFeatureElement>
+      <featureAttributed>
+        <featureElementHasFeatureAttributed Id="21bb93c2-96f8-48c8-9aff-a4af669e6e3f">
+          <featureAttribute Id="93fc3e9e-d049-41c4-bed9-4fb254f2affa" />
+        </featureElementHasFeatureAttributed>
+      </featureAttributed>
     </featureElement>
     <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="VM" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
-    <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Microservices" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
+    <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Microservices" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000">
+      <featureConstraints>
+        <featureElementHasFeatureConstraints Id="bc6b127b-b46e-4a63-9aa2-57b771cca5e3">
+          <featureConstraint Id="35904b25-041b-40e8-a9b8-0e8f0cf1f1b3" type="Boolean" />
+        </featureElementHasFeatureConstraints>
+      </featureConstraints>
+    </featureElement>
     <featureElement Id="3b955e06-7006-4d42-a192-144b69d90a83" name="Core components" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
   </elements>
 </featureModel>

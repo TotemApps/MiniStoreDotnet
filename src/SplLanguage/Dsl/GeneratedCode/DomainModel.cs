@@ -70,18 +70,20 @@ namespace Company.SplLanguage
 				typeof(FeatureModel),
 				typeof(FeatureElement),
 				typeof(FeatureAttribute),
+				typeof(FeatureConstraint),
 				typeof(FeatureModelHasElements),
 				typeof(FeatureElementOptionalReferencesFeatureElement),
 				typeof(FeatureElementMandatoryReferencesFeatureElement),
 				typeof(FeatureElementRequiresReferencesFeatureElements),
 				typeof(FeatureElementExcludesReferenceFeatureElement),
+				typeof(FeatureElementHasFeatureAttributed),
+				typeof(FeatureElementHasFeatureConstraints),
 				typeof(SplLanguageDiagram),
 				typeof(OptionalConnector),
 				typeof(MandatoryConnector),
 				typeof(RequiresConnector),
 				typeof(ExcludeConnector),
 				typeof(FeatureShape),
-				typeof(FeatureAttributeShape),
 				typeof(global::Company.SplLanguage.FixUpDiagram),
 				typeof(global::Company.SplLanguage.ConnectorRolePlayerChanged),
 			};
@@ -105,6 +107,9 @@ namespace Company.SplLanguage
 				new DomainMemberInfo(typeof(FeatureAttribute), "Name", FeatureAttribute.NameDomainPropertyId, typeof(FeatureAttribute.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Domain", FeatureAttribute.DomainDomainPropertyId, typeof(FeatureAttribute.DomainPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Value", FeatureAttribute.ValueDomainPropertyId, typeof(FeatureAttribute.ValuePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureConstraint), "Type", FeatureConstraint.TypeDomainPropertyId, typeof(FeatureConstraint.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureConstraint), "Name", FeatureConstraint.NameDomainPropertyId, typeof(FeatureConstraint.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureConstraint), "Value", FeatureConstraint.ValueDomainPropertyId, typeof(FeatureConstraint.ValuePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -125,6 +130,10 @@ namespace Company.SplLanguage
 				new DomainRolePlayerInfo(typeof(FeatureElementRequiresReferencesFeatureElements), "TargetRequiresFeatureElement", FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementExcludesReferenceFeatureElement), "SourceExcludeFeatureElement", FeatureElementExcludesReferenceFeatureElement.SourceExcludeFeatureElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementExcludesReferenceFeatureElement), "TargetExcludeFeatureElement", FeatureElementExcludesReferenceFeatureElement.TargetExcludeFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureAttributed), "FeatureElement", FeatureElementHasFeatureAttributed.FeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureAttributed), "FeatureAttribute", FeatureElementHasFeatureAttributed.FeatureAttributeDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureConstraints), "FeatureElement", FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureConstraints), "FeatureConstraint", FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId),
 			};
 		}
 		#endregion
@@ -150,13 +159,13 @@ namespace Company.SplLanguage
 				createElementMap.Add(typeof(FeatureModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(FeatureAttribute), 2);
-				createElementMap.Add(typeof(SplLanguageDiagram), 3);
-				createElementMap.Add(typeof(OptionalConnector), 4);
-				createElementMap.Add(typeof(MandatoryConnector), 5);
-				createElementMap.Add(typeof(RequiresConnector), 6);
-				createElementMap.Add(typeof(ExcludeConnector), 7);
-				createElementMap.Add(typeof(FeatureShape), 8);
-				createElementMap.Add(typeof(FeatureAttributeShape), 9);
+				createElementMap.Add(typeof(FeatureConstraint), 3);
+				createElementMap.Add(typeof(SplLanguageDiagram), 4);
+				createElementMap.Add(typeof(OptionalConnector), 5);
+				createElementMap.Add(typeof(MandatoryConnector), 6);
+				createElementMap.Add(typeof(RequiresConnector), 7);
+				createElementMap.Add(typeof(ExcludeConnector), 8);
+				createElementMap.Add(typeof(FeatureShape), 9);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -173,13 +182,13 @@ namespace Company.SplLanguage
 				case 0: return new FeatureModel(partition, propertyAssignments);
 				case 1: return new FeatureElement(partition, propertyAssignments);
 				case 2: return new FeatureAttribute(partition, propertyAssignments);
-				case 3: return new SplLanguageDiagram(partition, propertyAssignments);
-				case 4: return new OptionalConnector(partition, propertyAssignments);
-				case 5: return new MandatoryConnector(partition, propertyAssignments);
-				case 6: return new RequiresConnector(partition, propertyAssignments);
-				case 7: return new ExcludeConnector(partition, propertyAssignments);
-				case 8: return new FeatureShape(partition, propertyAssignments);
-				case 9: return new FeatureAttributeShape(partition, propertyAssignments);
+				case 3: return new FeatureConstraint(partition, propertyAssignments);
+				case 4: return new SplLanguageDiagram(partition, propertyAssignments);
+				case 5: return new OptionalConnector(partition, propertyAssignments);
+				case 6: return new MandatoryConnector(partition, propertyAssignments);
+				case 7: return new RequiresConnector(partition, propertyAssignments);
+				case 8: return new ExcludeConnector(partition, propertyAssignments);
+				case 9: return new FeatureShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -202,12 +211,14 @@ namespace Company.SplLanguage
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
 				createElementLinkMap.Add(typeof(FeatureModelHasElements), 0);
 				createElementLinkMap.Add(typeof(FeatureElementOptionalReferencesFeatureElement), 1);
 				createElementLinkMap.Add(typeof(FeatureElementMandatoryReferencesFeatureElement), 2);
 				createElementLinkMap.Add(typeof(FeatureElementRequiresReferencesFeatureElements), 3);
 				createElementLinkMap.Add(typeof(FeatureElementExcludesReferenceFeatureElement), 4);
+				createElementLinkMap.Add(typeof(FeatureElementHasFeatureAttributed), 5);
+				createElementLinkMap.Add(typeof(FeatureElementHasFeatureConstraints), 6);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -227,6 +238,8 @@ namespace Company.SplLanguage
 				case 2: return new FeatureElementMandatoryReferencesFeatureElement(partition, roleAssignments, propertyAssignments);
 				case 3: return new FeatureElementRequiresReferencesFeatureElements(partition, roleAssignments, propertyAssignments);
 				case 4: return new FeatureElementExcludesReferenceFeatureElement(partition, roleAssignments, propertyAssignments);
+				case 5: return new FeatureElementHasFeatureAttributed(partition, roleAssignments, propertyAssignments);
+				case 6: return new FeatureElementHasFeatureConstraints(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -396,6 +409,8 @@ namespace Company.SplLanguage
 		{
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::Company.SplLanguage.FeatureModelHasElements.ElementDomainRoleId, true);
+			DomainRoles.Add(global::Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureAttributeDomainRoleId, true);
+			DomainRoles.Add(global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>
@@ -497,6 +512,35 @@ namespace Company.SplLanguage
 		/// </summary>
 		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureType/Root.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 		Root = 2,
+	}
+}
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainEnumeration: ConstraintType
+	/// Description for Company.SplLanguage.ConstraintType
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum ConstraintType
+	{
+		/// <summary>
+		/// Boolean
+		/// Description for Company.SplLanguage.ConstraintType.Boolean
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.ConstraintType/Boolean.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Boolean = 0,
+		/// <summary>
+		/// Arithmetic
+		/// Description for Company.SplLanguage.ConstraintType.Arithmetic
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.ConstraintType/Arithmetic.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Arithmetic = 1,
+		/// <summary>
+		/// Symbolic
+		/// Description for Company.SplLanguage.ConstraintType.Symbolic
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.ConstraintType/Symbolic.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Symbolic = 2,
 	}
 }
 

@@ -229,6 +229,38 @@
     <value>Value</value>
     <comment>DisplayName for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureConstraint.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureConstraint</value>
+    <comment>Description for DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint.DisplayName" xml:space="preserve">
+    <value>Feature Constraint</value>
+    <comment>DisplayName for DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint/Type.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureConstraint.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureConstraint.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint/Value.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureConstraint.Value</value>
+    <comment>Description for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureConstraint/Value.DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>DisplayName for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureConstraint&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;FeatureModelHasElements&apos;</comment>
@@ -389,6 +421,70 @@
     <value>Source Exclude Feature Elements</value>
     <comment>PropertyDisplayName for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureAttributed</value>
+    <comment>Description for DomainClass &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed.DisplayName" xml:space="preserve">
+    <value>Feature Element Has Feature Attributed</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureElement</value>
+    <comment>Description for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Attributed</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureAttribute.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureAttribute</value>
+    <comment>Description for DomainRole &apos;FeatureAttribute&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureAttribute.DisplayName" xml:space="preserve">
+    <value>Feature Attribute</value>
+    <comment>DisplayName for DomainRole &apos;FeatureAttribute&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureAttribute.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureAttribute&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureConstraints</value>
+    <comment>Description for DomainClass &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints.DisplayName" xml:space="preserve">
+    <value>Feature Element Has Feature Constraints</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElement</value>
+    <comment>Description for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Constraints</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureConstraint.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraint</value>
+    <comment>Description for DomainRole &apos;FeatureConstraint&apos; on DomainRelationship &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureConstraint.DisplayName" xml:space="preserve">
+    <value>Feature Constraint</value>
+    <comment>DisplayName for DomainRole &apos;FeatureConstraint&apos; on DomainRelationship &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureConstraint.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureConstraint&apos; on DomainRelationship &apos;FeatureElementHasFeatureConstraints&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureType/Abstract.DisplayName" xml:space="preserve">
     <value>Abstract</value>
     <comment>Display name for EnumerationLiteral &apos;Abstract&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
@@ -413,6 +509,30 @@
     <value>Description for Company.SplLanguage.FeatureType.Root</value>
     <comment>Description for EnumerationLiteral &apos;Root&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.ConstraintType/Boolean.DisplayName" xml:space="preserve">
+    <value>Boolean</value>
+    <comment>Display name for EnumerationLiteral &apos;Boolean&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Boolean.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ConstraintType.Boolean</value>
+    <comment>Description for EnumerationLiteral &apos;Boolean&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Arithmetic.DisplayName" xml:space="preserve">
+    <value>Arithmetic</value>
+    <comment>Display name for EnumerationLiteral &apos;Arithmetic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Arithmetic.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ConstraintType.Arithmetic</value>
+    <comment>Description for EnumerationLiteral &apos;Arithmetic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Symbolic.DisplayName" xml:space="preserve">
+    <value>Symbolic</value>
+    <comment>Display name for EnumerationLiteral &apos;Symbolic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Symbolic.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ConstraintType.Symbolic</value>
+    <comment>Description for EnumerationLiteral &apos;Symbolic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;FeatureShape&apos;</comment>
@@ -424,14 +544,6 @@
   <data name="FeatureShapeNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
-  </data>
-  <data name="Company.SplLanguage.FeatureAttributeShape.Description" xml:space="preserve">
-    <value>Description for Company.SplLanguage.FeatureAttributeShape</value>
-    <comment>Description for DomainClass &apos;FeatureAttributeShape&apos;</comment>
-  </data>
-  <data name="Company.SplLanguage.FeatureAttributeShape.DisplayName" xml:space="preserve">
-    <value>Feature Attribute Shape</value>
-    <comment>DisplayName for DomainClass &apos;FeatureAttributeShape&apos;</comment>
   </data>
   <data name="Company.SplLanguage.OptionalConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -531,6 +643,14 @@
   </data>
   <data name="FetureAttributeToolboxTooltip" xml:space="preserve">
     <value>Feture Attribute</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="FeatureConstraintToolboxItem" xml:space="preserve">
+    <value>Feature Constraint</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="FeatureConstraintToolboxTooltip" xml:space="preserve">
+    <value>Feature Constraint</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -684,6 +804,10 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="FetureAttributeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\AttributeIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="FeatureConstraintToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ConstraintIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

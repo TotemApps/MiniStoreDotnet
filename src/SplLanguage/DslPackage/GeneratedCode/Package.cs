@@ -77,6 +77,14 @@ namespace Company.SplLanguage
 					"@FetureAttributeToolboxBitmap;Company.SplLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 5)]
+	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
+					"@FeatureConstraintToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.FeatureConstraintToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"FeatureConstraint", 
+					"@FeatureConstraintToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 6)]
 	[VSShell::ProvideEditorFactory(typeof(SplLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(SplLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(SplLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

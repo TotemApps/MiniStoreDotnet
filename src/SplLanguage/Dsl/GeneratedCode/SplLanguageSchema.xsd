@@ -146,6 +146,36 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: FeatureElementHasFeatureAttributed -->
+          <xsd:element name="featureAttributed" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of FeatureElementHasFeatureAttributed</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="featureElementHasFeatureAttributed" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of FeatureElementHasFeatureAttributed needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+          <!-- Relationship: FeatureElementHasFeatureConstraints -->
+          <xsd:element name="featureConstraints" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of FeatureElementHasFeatureConstraints</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="featureElementHasFeatureConstraints" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of FeatureElementHasFeatureConstraints needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -210,6 +240,44 @@
   <xsd:complexType name="FeatureAttributeMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for FeatureAttribute instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureConstraint -->
+  <xsd:element name="featureConstraint" type="FeatureConstraint" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureConstraint">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Type -->
+        <xsd:attribute name="type" type="ConstraintType" />
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: Value -->
+        <xsd:attribute name="value" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureConstraint Moniker -->
+  <xsd:element name="featureConstraintMoniker" type="FeatureConstraintMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureConstraintMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FeatureConstraint instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -428,12 +496,101 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- FeatureElementHasFeatureAttributed -->
+  <xsd:element name="featureElementHasFeatureAttributed" type="FeatureElementHasFeatureAttributed" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureElementHasFeatureAttributed">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end FeatureAttribute -->
+          <xsd:element ref="featureAttribute" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureElementHasFeatureAttributed Moniker -->
+  <xsd:element name="featureElementHasFeatureAttributedMoniker" type="FeatureElementHasFeatureAttributedMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureElementHasFeatureAttributedMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FeatureElementHasFeatureAttributed instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureElementHasFeatureConstraints -->
+  <xsd:element name="featureElementHasFeatureConstraints" type="FeatureElementHasFeatureConstraints" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureElementHasFeatureConstraints">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end FeatureConstraint -->
+          <xsd:element ref="featureConstraint" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureElementHasFeatureConstraints Moniker -->
+  <xsd:element name="featureElementHasFeatureConstraintsMoniker" type="FeatureElementHasFeatureConstraintsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureElementHasFeatureConstraintsMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FeatureElementHasFeatureConstraints instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- Enum FeatureType -->
   <xsd:simpleType name="FeatureType">
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="Abstract"/>
       <xsd:enumeration value="Concrete"/>
       <xsd:enumeration value="Root"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum ConstraintType -->
+  <xsd:simpleType name="ConstraintType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Boolean"/>
+      <xsd:enumeration value="Arithmetic"/>
+      <xsd:enumeration value="Symbolic"/>
     </xsd:restriction>
   </xsd:simpleType>
   
