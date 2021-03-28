@@ -55,6 +55,25 @@
         </DomainProperty>
       </Properties>
     </DomainClass>
+    <DomainClass Id="8edaac53-90f8-4739-a6b2-39fcae20306f" Description="Description for Company.SplLanguage.FeatureAttribute" Name="FeatureAttribute" DisplayName="Feature Attribute" Namespace="Company.SplLanguage">
+      <Properties>
+        <DomainProperty Id="edb24ed8-a5cb-4f33-a482-2ce95393e3f4" Description="Description for Company.SplLanguage.FeatureAttribute.Name" Name="Name" DisplayName="Name">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="75afc430-1646-456a-a507-abb07423791c" Description="Description for Company.SplLanguage.FeatureAttribute.Domain" Name="Domain" DisplayName="Domain">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="a672ac9d-314e-4fc8-9688-93508b83b261" Description="Description for Company.SplLanguage.FeatureAttribute.Value" Name="Value" DisplayName="Value">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+      </Properties>
+    </DomainClass>
   </Classes>
   <Relationships>
     <DomainRelationship Id="81b4eb75-6e8d-45c2-8a83-5d915131d8ae" Description="Embedding relationship between the Model and Elements" Name="FeatureModelHasElements" DisplayName="Feature Model Has Elements" Namespace="Company.SplLanguage" IsEmbedding="true">
@@ -163,7 +182,7 @@
     </DomainEnumeration>
   </Types>
   <Shapes>
-    <GeometryShape Id="828ca0d5-7a5e-414a-adb6-d8b8b144cc01" Description="Shape used to represent ExampleElements on a Diagram." Name="ExampleShape" DisplayName="Example Shape" Namespace="Company.SplLanguage" FixedTooltipText="Example Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
+    <GeometryShape Id="828ca0d5-7a5e-414a-adb6-d8b8b144cc01" Description="Shape used to represent ExampleElements on a Diagram." Name="FeatureShape" DisplayName="Feature Shape" Namespace="Company.SplLanguage" FixedTooltipText="Feature Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
       <Notes>The shape has a text decorator used to display the Name property of the mapped ExampleElement.</Notes>
       <ShapeHasDecorators Position="Center" HorizontalOffset="0" VerticalOffset="0">
         <TextDecorator Name="NameDecorator" DisplayName="Name Decorator" DefaultText="NameDecorator" />
@@ -172,6 +191,7 @@
         <IconDecorator Name="IncludedDecorator" DisplayName="Included Decorator" DefaultIcon="Resources\SelectedIcon.bmp" />
       </ShapeHasDecorators>
     </GeometryShape>
+    <GeometryShape Id="8a34525c-9a54-4517-bb42-96b5268a4e48" Description="Description for Company.SplLanguage.FeatureAttributeShape" Name="FeatureAttributeShape" DisplayName="Feature Attribute Shape" Namespace="Company.SplLanguage" FixedTooltipText="Feature Attribute Shape" InitialHeight="1" Geometry="Rectangle" />
   </Shapes>
   <Connectors>
     <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="OptionalConnector" DisplayName="Optional Connector" Namespace="Company.SplLanguage" FixedTooltipText="Optional Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
@@ -233,8 +253,8 @@
       <XmlClassData TypeName="FeatureElementOptionalReferencesFeatureElement" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureElementOptionalReferencesFeatureElementMoniker" ElementName="featureElementOptionalReferencesFeatureElement" MonikerTypeName="FeatureElementOptionalReferencesFeatureElementMoniker">
         <DomainRelationshipMoniker Name="FeatureElementOptionalReferencesFeatureElement" />
       </XmlClassData>
-      <XmlClassData TypeName="ExampleShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="exampleShapeMoniker" ElementName="exampleShape" MonikerTypeName="ExampleShapeMoniker">
-        <GeometryShapeMoniker Name="ExampleShape" />
+      <XmlClassData TypeName="FeatureShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureShapeMoniker" ElementName="featureShape" MonikerTypeName="FeatureShapeMoniker">
+        <GeometryShapeMoniker Name="FeatureShape" />
       </XmlClassData>
       <XmlClassData TypeName="OptionalConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="optionalConnectorMoniker" ElementName="optionalConnector" MonikerTypeName="OptionalConnectorMoniker">
         <ConnectorMoniker Name="OptionalConnector" />
@@ -259,6 +279,23 @@
       </XmlClassData>
       <XmlClassData TypeName="ExcludeConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="excludeConnectorMoniker" ElementName="excludeConnector" MonikerTypeName="ExcludeConnectorMoniker">
         <ConnectorMoniker Name="ExcludeConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="FeatureAttribute" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureAttributeMoniker" ElementName="featureAttribute" MonikerTypeName="FeatureAttributeMoniker">
+        <DomainClassMoniker Name="FeatureAttribute" />
+        <ElementData>
+          <XmlPropertyData XmlName="name">
+            <DomainPropertyMoniker Name="FeatureAttribute/Name" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="domain">
+            <DomainPropertyMoniker Name="FeatureAttribute/Domain" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="value">
+            <DomainPropertyMoniker Name="FeatureAttribute/Value" />
+          </XmlPropertyData>
+        </ElementData>
+      </XmlClassData>
+      <XmlClassData TypeName="FeatureAttributeShape" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureAttributeShapeMoniker" ElementName="featureAttributeShape" MonikerTypeName="FeatureAttributeShapeMoniker">
+        <GeometryShapeMoniker Name="FeatureAttributeShape" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -353,7 +390,7 @@
           <DomainPath>FeatureModelHasElements.FeatureModel/!FeatureModel</DomainPath>
         </ParentElementPath>
         <DecoratorMap>
-          <TextDecoratorMoniker Name="ExampleShape/NameDecorator" />
+          <TextDecoratorMoniker Name="FeatureShape/NameDecorator" />
           <PropertyDisplayed>
             <PropertyPath>
               <DomainPropertyMoniker Name="FeatureElement/Name" />
@@ -361,12 +398,12 @@
           </PropertyDisplayed>
         </DecoratorMap>
         <DecoratorMap>
-          <IconDecoratorMoniker Name="ExampleShape/IncludedDecorator" />
+          <IconDecoratorMoniker Name="FeatureShape/IncludedDecorator" />
           <VisibilityPropertyPath>
             <DomainPropertyMoniker Name="FeatureElement/Included" />
           </VisibilityPropertyPath>
         </DecoratorMap>
-        <GeometryShapeMoniker Name="ExampleShape" />
+        <GeometryShapeMoniker Name="FeatureShape" />
       </ShapeMap>
     </ShapeMaps>
     <ConnectorMaps>
@@ -411,6 +448,9 @@
       <ConnectionTool Name="ExcludeRelationship" ToolboxIcon="Resources\ExcludesIcon.bmp" Caption="Exclude Relationship" Tooltip="Exclude Relationship" HelpKeyword="ExcludeRelationship">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementExcludesReferenceFeatureElementBuilder" />
       </ConnectionTool>
+      <ElementTool Name="FetureAttribute" ToolboxIcon="Resources\AttributeIcon.bmp" Caption="Feture AttributeElement" Tooltip="Feture Attribute" HelpKeyword="FetureAttribute">
+        <DomainClassMoniker Name="FeatureAttribute" />
+      </ElementTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
     <DiagramMoniker Name="SplLanguageDiagram" />

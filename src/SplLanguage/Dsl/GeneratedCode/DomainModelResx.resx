@@ -197,6 +197,38 @@
     <value>Id Feature</value>
     <comment>DisplayName for DomainProperty &apos;IdFeature&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureAttribute.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute</value>
+    <comment>Description for DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute.DisplayName" xml:space="preserve">
+    <value>Feature Attribute</value>
+    <comment>DisplayName for DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Domain.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute.Domain</value>
+    <comment>Description for DomainProperty &apos;Domain&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Domain.DisplayName" xml:space="preserve">
+    <value>Domain</value>
+    <comment>DisplayName for DomainProperty &apos;Domain&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Value.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute.Value</value>
+    <comment>Description for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Value.DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>DisplayName for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;FeatureModelHasElements&apos;</comment>
@@ -381,17 +413,25 @@
     <value>Description for Company.SplLanguage.FeatureType.Root</value>
     <comment>Description for EnumerationLiteral &apos;Root&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
   </data>
-  <data name="Company.SplLanguage.ExampleShape.Description" xml:space="preserve">
+  <data name="Company.SplLanguage.FeatureShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
-    <comment>Description for DomainClass &apos;ExampleShape&apos;</comment>
+    <comment>Description for DomainClass &apos;FeatureShape&apos;</comment>
   </data>
-  <data name="Company.SplLanguage.ExampleShape.DisplayName" xml:space="preserve">
-    <value>Example Shape</value>
-    <comment>DisplayName for DomainClass &apos;ExampleShape&apos;</comment>
+  <data name="Company.SplLanguage.FeatureShape.DisplayName" xml:space="preserve">
+    <value>Feature Shape</value>
+    <comment>DisplayName for DomainClass &apos;FeatureShape&apos;</comment>
   </data>
-  <data name="ExampleShapeNameDecoratorDefaultText" xml:space="preserve">
+  <data name="FeatureShapeNameDecoratorDefaultText" xml:space="preserve">
     <value>NameDecorator</value>
     <comment>Text decorator default text</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttributeShape.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttributeShape</value>
+    <comment>Description for DomainClass &apos;FeatureAttributeShape&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttributeShape.DisplayName" xml:space="preserve">
+    <value>Feature Attribute Shape</value>
+    <comment>DisplayName for DomainClass &apos;FeatureAttributeShape&apos;</comment>
   </data>
   <data name="Company.SplLanguage.OptionalConnector.Description" xml:space="preserve">
     <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
@@ -483,6 +523,14 @@
   </data>
   <data name="ExcludeRelationshipToolboxTooltip" xml:space="preserve">
     <value>Exclude Relationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="FetureAttributeToolboxItem" xml:space="preserve">
+    <value>Feture AttributeElement</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="FetureAttributeToolboxTooltip" xml:space="preserve">
+    <value>Feture Attribute</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -610,7 +658,7 @@ A DomainClass can be serialized as a moniker only if
     <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ExampleShapeIncludedDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="FeatureShapeIncludedDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\SelectedIcon.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Icon decorator default image</comment>
   </data>
@@ -632,6 +680,10 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="ExcludeRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\ExcludesIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="FetureAttributeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\AttributeIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

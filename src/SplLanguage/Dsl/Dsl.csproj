@@ -172,6 +172,8 @@
       <LastGenOutput>MyT4HtmlTemplate.html</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\AttributeIcon.bmp" />
+    <Content Include="Resources\AttributeRleationship.bmp" />
     <Content Include="Resources\ExcludesIcon.bmp" />
     <Content Include="Resources\MandatoryIcon.bmp" />
     <Content Include="Resources\OptionalIcon.bmp" />

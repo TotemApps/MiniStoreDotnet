@@ -1,56 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<splLanguageDiagram dslVersion="1.0.0.0" Id="2bf88b3c-d996-4d10-a575-d32710075e80" absoluteBounds="0, 0, 12.625, 8.5" name="Sample">
+<splLanguageDiagram dslVersion="1.0.0.0" Id="2bf88b3c-d996-4d10-a575-d32710075e80" absoluteBounds="0, 0, 13.5, 8.5" name="Sample">
   <featureModelMoniker Id="62219585-981d-4f23-bc53-d6ebad321a1a" />
   <nestedChildShapes>
-    <exampleShape Id="484a472f-b3c2-4024-a3f2-bc8c095dbd11" absoluteBounds="6.875, 1.75, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Mini Store Dotnet" />
-    </exampleShape>
-    <exampleShape Id="d527cab7-48b2-4731-a437-32f087691c49" absoluteBounds="3.875, 4.375, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Cloud Provider" />
-    </exampleShape>
-    <exampleShape Id="91d1ee1b-1210-4ba6-8eeb-b39f62c63552" absoluteBounds="6.75, 4.375, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Infrastructure" />
-    </exampleShape>
-    <exampleShape Id="baf6d3ad-062e-40fb-800c-c704b6098f42" absoluteBounds="5.5, 6.875, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/VM" />
-    </exampleShape>
-    <exampleShape Id="c5b3fd9b-9a82-4a80-945d-fd5e62f408cd" absoluteBounds="8.25, 6.875, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Microservices" />
-    </exampleShape>
-    <exampleShape Id="84a1bbea-3466-428a-8daa-6903dd3a76b4" absoluteBounds="10.375, 4.375, 2, 0.75">
-      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Core components" />
-    </exampleShape>
-    <optionalConnector Id="d8a67dc4-9e46-450e-8a74-2c5a941a0dba" edgePoints="[(6.875 : 2.5); (5.875 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="20b619db-33d1-485b-9cac-5c3d29f9c491">
-      <nodes>
-        <exampleShapeMoniker Id="484a472f-b3c2-4024-a3f2-bc8c095dbd11" />
-        <exampleShapeMoniker Id="d527cab7-48b2-4731-a437-32f087691c49" />
-      </nodes>
-    </optionalConnector>
-    <mandatoryConnector Id="593f2f9e-9ca1-41e4-9d99-648175b77862" edgePoints="[(7.8437525 : 2.5); (7.8437525 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <mandatoryConnector Id="593f2f9e-9ca1-41e4-9d99-648175b77862" edgePoints="[(8.14950284090909 : 1.625); (3.56157136212792 : 3.5)]" fixedFrom="Caller" fixedTo="Caller">
       <featureElementMandatoryReferencesFeatureElementMoniker Id="bc4700f1-7329-4ca5-b64f-c12deffcf6cb" />
       <nodes>
-        <exampleShapeMoniker Id="484a472f-b3c2-4024-a3f2-bc8c095dbd11" />
-        <exampleShapeMoniker Id="91d1ee1b-1210-4ba6-8eeb-b39f62c63552" />
+        <featureShapeMoniker Id="657a7a4e-77fb-464a-bd76-68e9232d1b5d" />
+        <featureShapeMoniker Id="9e93cdfa-a8b5-4b30-933c-8012f7ec8886" />
       </nodes>
     </mandatoryConnector>
-    <requiresConnector Id="e0499cb1-a5d0-4f7a-962f-df7bfa0607a9" edgePoints="[(8.875 : 2.5); (10.375 : 4.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <requiresConnector Id="e0499cb1-a5d0-4f7a-962f-df7bfa0607a9" edgePoints="[(8.14669421487603 : 1.625); (12.7604754160152 : 3.625)]" fixedFrom="Caller" fixedTo="Caller">
       <featureElementRequiresReferencesFeatureElementsMoniker Id="b37783cb-e7b9-4042-b7c3-aa6a7d3133a3" />
       <nodes>
-        <exampleShapeMoniker Id="484a472f-b3c2-4024-a3f2-bc8c095dbd11" />
-        <exampleShapeMoniker Id="84a1bbea-3466-428a-8daa-6903dd3a76b4" />
+        <featureShapeMoniker Id="657a7a4e-77fb-464a-bd76-68e9232d1b5d" />
+        <featureShapeMoniker Id="53aa3ea8-8e3e-4f7a-9cb0-8dbb865fbfc2" />
       </nodes>
     </requiresConnector>
-    <requiresConnector Id="ec4da59a-e422-42ef-9492-6a2c43ec3b03" edgePoints="[(7.76234756097561 : 5.125); (6.5 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <requiresConnector Id="ec4da59a-e422-42ef-9492-6a2c43ec3b03" edgePoints="[(3.52500118113824 : 4.25); (4.91799611814115 : 6.375)]" fixedFrom="Caller" fixedTo="Caller">
       <featureElementRequiresReferencesFeatureElementsMoniker Id="1da1fe4e-108c-4f80-99eb-7742ce622acb" />
       <nodes>
-        <exampleShapeMoniker Id="91d1ee1b-1210-4ba6-8eeb-b39f62c63552" />
-        <exampleShapeMoniker Id="baf6d3ad-062e-40fb-800c-c704b6098f42" />
+        <featureShapeMoniker Id="9e93cdfa-a8b5-4b30-933c-8012f7ec8886" />
+        <featureShapeMoniker Id="6f24cc47-baa4-446d-88cc-e1e51ef63d87" />
       </nodes>
     </requiresConnector>
-    <optionalConnector Id="a5f39c70-7521-4f14-9be0-69d62f7a5998" edgePoints="[(7.83901066350711 : 5.125); (9.25 : 6.875)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="20b619db-33d1-485b-9cac-5c3d29f9c491">
+    <featureShape Id="657a7a4e-77fb-464a-bd76-68e9232d1b5d" absoluteBounds="7.125, 0.875, 2, 0.75">
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Mini Store Dotnet" />
+    </featureShape>
+    <featureShape Id="527e3572-d2dc-4638-b48e-b28ebfcd115e" absoluteBounds="7.125, 3.5, 2, 0.75">
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Cloud Provider" />
+    </featureShape>
+    <featureShape Id="9e93cdfa-a8b5-4b30-933c-8012f7ec8886" absoluteBounds="2.5, 3.5, 2, 0.75">
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Infrastructure" />
+    </featureShape>
+    <featureShape Id="6f24cc47-baa4-446d-88cc-e1e51ef63d87" absoluteBounds="3.875, 6.375, 2, 0.75">
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/VM" />
+    </featureShape>
+    <featureShape Id="02a5dfcd-bd9b-4f81-9412-3d450737d866" absoluteBounds="1.25, 6.375, 2, 0.75">
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Microservices" />
+    </featureShape>
+    <featureShape Id="53aa3ea8-8e3e-4f7a-9cb0-8dbb865fbfc2" absoluteBounds="11.25, 3.625, 2, 0.75">
+      <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Core components" />
+    </featureShape>
+    <optionalConnector Id="4edf6907-28af-4fb0-8d9f-ec2eab84a5ea" edgePoints="[(8.1267247945534 : 1.625); (8.1586113509245 : 3.5)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="20b619db-33d1-485b-9cac-5c3d29f9c491">
       <nodes>
-        <exampleShapeMoniker Id="91d1ee1b-1210-4ba6-8eeb-b39f62c63552" />
-        <exampleShapeMoniker Id="c5b3fd9b-9a82-4a80-945d-fd5e62f408cd" />
+        <featureShapeMoniker Id="657a7a4e-77fb-464a-bd76-68e9232d1b5d" />
+        <featureShapeMoniker Id="527e3572-d2dc-4638-b48e-b28ebfcd115e" />
+      </nodes>
+    </optionalConnector>
+    <optionalConnector Id="28908b13-3777-44c7-9368-9c6d74fa7231" edgePoints="[(3.41836734693878 : 4.25); (2.28250227216393 : 6.375)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="20b619db-33d1-485b-9cac-5c3d29f9c491">
+      <nodes>
+        <featureShapeMoniker Id="9e93cdfa-a8b5-4b30-933c-8012f7ec8886" />
+        <featureShapeMoniker Id="02a5dfcd-bd9b-4f81-9412-3d450737d866" />
       </nodes>
     </optionalConnector>
   </nestedChildShapes>

@@ -184,6 +184,44 @@
     </xsd:complexContent>
   </xsd:complexType>
   
+  <!-- FeatureAttribute -->
+  <xsd:element name="featureAttribute" type="FeatureAttribute" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureAttribute">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <!-- Property: Name -->
+        <xsd:attribute name="name" type="xsd:string" />
+        <!-- Property: Domain -->
+        <xsd:attribute name="domain" type="xsd:string" />
+        <!-- Property: Value -->
+        <xsd:attribute name="value" type="xsd:string" />
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureAttribute Moniker -->
+  <xsd:element name="featureAttributeMoniker" type="FeatureAttributeMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureAttributeMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FeatureAttribute instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
   <!-- FeatureModelHasElements -->
   <xsd:element name="featureModelHasElements" abstract="true" type="FeatureModelHasElements" substitutionGroup="core:modelElement" />
   <xsd:complexType name="FeatureModelHasElements" abstract="true" >

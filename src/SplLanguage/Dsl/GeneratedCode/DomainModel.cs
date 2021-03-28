@@ -69,6 +69,7 @@ namespace Company.SplLanguage
 			{
 				typeof(FeatureModel),
 				typeof(FeatureElement),
+				typeof(FeatureAttribute),
 				typeof(FeatureModelHasElements),
 				typeof(FeatureElementOptionalReferencesFeatureElement),
 				typeof(FeatureElementMandatoryReferencesFeatureElement),
@@ -79,7 +80,8 @@ namespace Company.SplLanguage
 				typeof(MandatoryConnector),
 				typeof(RequiresConnector),
 				typeof(ExcludeConnector),
-				typeof(ExampleShape),
+				typeof(FeatureShape),
+				typeof(FeatureAttributeShape),
 				typeof(global::Company.SplLanguage.FixUpDiagram),
 				typeof(global::Company.SplLanguage.ConnectorRolePlayerChanged),
 			};
@@ -100,6 +102,9 @@ namespace Company.SplLanguage
 				new DomainMemberInfo(typeof(FeatureElement), "Type", FeatureElement.TypeDomainPropertyId, typeof(FeatureElement.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Label", FeatureElement.LabelDomainPropertyId, typeof(FeatureElement.LabelPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "IdFeature", FeatureElement.IdFeatureDomainPropertyId, typeof(FeatureElement.IdFeaturePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureAttribute), "Name", FeatureAttribute.NameDomainPropertyId, typeof(FeatureAttribute.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureAttribute), "Domain", FeatureAttribute.DomainDomainPropertyId, typeof(FeatureAttribute.DomainPropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureAttribute), "Value", FeatureAttribute.ValueDomainPropertyId, typeof(FeatureAttribute.ValuePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -141,15 +146,17 @@ namespace Company.SplLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(10);
 				createElementMap.Add(typeof(FeatureModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
-				createElementMap.Add(typeof(SplLanguageDiagram), 2);
-				createElementMap.Add(typeof(OptionalConnector), 3);
-				createElementMap.Add(typeof(MandatoryConnector), 4);
-				createElementMap.Add(typeof(RequiresConnector), 5);
-				createElementMap.Add(typeof(ExcludeConnector), 6);
-				createElementMap.Add(typeof(ExampleShape), 7);
+				createElementMap.Add(typeof(FeatureAttribute), 2);
+				createElementMap.Add(typeof(SplLanguageDiagram), 3);
+				createElementMap.Add(typeof(OptionalConnector), 4);
+				createElementMap.Add(typeof(MandatoryConnector), 5);
+				createElementMap.Add(typeof(RequiresConnector), 6);
+				createElementMap.Add(typeof(ExcludeConnector), 7);
+				createElementMap.Add(typeof(FeatureShape), 8);
+				createElementMap.Add(typeof(FeatureAttributeShape), 9);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -165,12 +172,14 @@ namespace Company.SplLanguage
 			{
 				case 0: return new FeatureModel(partition, propertyAssignments);
 				case 1: return new FeatureElement(partition, propertyAssignments);
-				case 2: return new SplLanguageDiagram(partition, propertyAssignments);
-				case 3: return new OptionalConnector(partition, propertyAssignments);
-				case 4: return new MandatoryConnector(partition, propertyAssignments);
-				case 5: return new RequiresConnector(partition, propertyAssignments);
-				case 6: return new ExcludeConnector(partition, propertyAssignments);
-				case 7: return new ExampleShape(partition, propertyAssignments);
+				case 2: return new FeatureAttribute(partition, propertyAssignments);
+				case 3: return new SplLanguageDiagram(partition, propertyAssignments);
+				case 4: return new OptionalConnector(partition, propertyAssignments);
+				case 5: return new MandatoryConnector(partition, propertyAssignments);
+				case 6: return new RequiresConnector(partition, propertyAssignments);
+				case 7: return new ExcludeConnector(partition, propertyAssignments);
+				case 8: return new FeatureShape(partition, propertyAssignments);
+				case 9: return new FeatureAttributeShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}

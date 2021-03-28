@@ -958,3 +958,305 @@ namespace Company.SplLanguage
 		#endregion
 	}
 }
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainClass FeatureAttribute
+	/// Description for Company.SplLanguage.FeatureAttribute
+	/// </summary>
+	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureAttribute.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureAttribute.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
+	[global::System.CLSCompliant(true)]
+	[DslModeling::DomainObjectId("8edaac53-90f8-4739-a6b2-39fcae20306f")]
+	public partial class FeatureAttribute : DslModeling::ModelElement
+	{
+		#region Constructors, domain class Id
+	
+		/// <summary>
+		/// FeatureAttribute domain class Id.
+		/// </summary>
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x8edaac53, 0x90f8, 0x4739, 0xa6, 0xb2, 0x39, 0xfc, 0xae, 0x20, 0x30, 0x6f);
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="store">Store where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public FeatureAttribute(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
+		{
+		}
+		
+		/// <summary>
+		/// Constructor
+		/// </summary>
+		/// <param name="partition">Partition where new element is to be created.</param>
+		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
+		public FeatureAttribute(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+			: base(partition, propertyAssignments)
+		{
+		}
+		#endregion
+		#region Name domain property code
+		
+		/// <summary>
+		/// Name domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid NameDomainPropertyId = new global::System.Guid(0xedb24ed8, 0xa5cb, 0x4f33, 0xa4, 0x82, 0x2c, 0xe9, 0x53, 0x93, 0xe3, 0xf4);
+		
+		/// <summary>
+		/// Storage for Name
+		/// </summary>
+		private global::System.String namePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Name domain property.
+		/// Description for Company.SplLanguage.FeatureAttribute.Name
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureAttribute/Name.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureAttribute/Name.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("edb24ed8-a5cb-4f33-a482-2ce95393e3f4")]
+		public global::System.String Name
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return namePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				NamePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FeatureAttribute.Name domain property.
+		/// </summary>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureAttribute, global::System.String>
+		{
+			private NamePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FeatureAttribute.Name domain property value handler.
+			/// </summary>
+			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FeatureAttribute.Name domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return NameDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(FeatureAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.namePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FeatureAttribute element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.namePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Domain domain property code
+		
+		/// <summary>
+		/// Domain domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid DomainDomainPropertyId = new global::System.Guid(0x75afc430, 0x1646, 0x456a, 0xa5, 0x07, 0xab, 0xb0, 0x74, 0x23, 0x79, 0x1c);
+		
+		/// <summary>
+		/// Storage for Domain
+		/// </summary>
+		private global::System.String domainPropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Domain domain property.
+		/// Description for Company.SplLanguage.FeatureAttribute.Domain
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureAttribute/Domain.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureAttribute/Domain.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("75afc430-1646-456a-a507-abb07423791c")]
+		public global::System.String Domain
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return domainPropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				DomainPropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FeatureAttribute.Domain domain property.
+		/// </summary>
+		internal sealed partial class DomainPropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureAttribute, global::System.String>
+		{
+			private DomainPropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FeatureAttribute.Domain domain property value handler.
+			/// </summary>
+			public static readonly DomainPropertyHandler Instance = new DomainPropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FeatureAttribute.Domain domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return DomainDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(FeatureAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.domainPropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FeatureAttribute element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.domainPropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+		#region Value domain property code
+		
+		/// <summary>
+		/// Value domain property Id.
+		/// </summary>
+		public static readonly global::System.Guid ValueDomainPropertyId = new global::System.Guid(0xa672ac9d, 0x314e, 0x4fc8, 0x96, 0x88, 0x93, 0x50, 0x8b, 0x83, 0xb2, 0x61);
+		
+		/// <summary>
+		/// Storage for Value
+		/// </summary>
+		private global::System.String valuePropertyStorage = string.Empty;
+		
+		/// <summary>
+		/// Gets or sets the value of Value domain property.
+		/// Description for Company.SplLanguage.FeatureAttribute.Value
+		/// </summary>
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureAttribute/Value.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureAttribute/Value.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainObjectId("a672ac9d-314e-4fc8-9688-93508b83b261")]
+		public global::System.String Value
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return valuePropertyStorage;
+			}
+			[global::System.Diagnostics.DebuggerStepThrough]
+			set
+			{
+				ValuePropertyHandler.Instance.SetValue(this, value);
+			}
+		}
+		/// <summary>
+		/// Value handler for the FeatureAttribute.Value domain property.
+		/// </summary>
+		internal sealed partial class ValuePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureAttribute, global::System.String>
+		{
+			private ValuePropertyHandler() { }
+		
+			/// <summary>
+			/// Gets the singleton instance of the FeatureAttribute.Value domain property value handler.
+			/// </summary>
+			public static readonly ValuePropertyHandler Instance = new ValuePropertyHandler();
+		
+			/// <summary>
+			/// Gets the Id of the FeatureAttribute.Value domain property.
+			/// </summary>
+			public sealed override global::System.Guid DomainPropertyId
+			{
+				[global::System.Diagnostics.DebuggerStepThrough]
+				get
+				{
+					return ValueDomainPropertyId;
+				}
+			}
+			
+			/// <summary>
+			/// Gets a strongly-typed value of the property on specified element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <returns>Property value.</returns>
+			public override sealed global::System.String GetValue(FeatureAttribute element)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+				return element.valuePropertyStorage;
+			}
+		
+			/// <summary>
+			/// Sets property value on an element.
+			/// </summary>
+			/// <param name="element">Element which owns the property.</param>
+			/// <param name="newValue">New property value.</param>
+			public override sealed void SetValue(FeatureAttribute element, global::System.String newValue)
+			{
+				if (element == null) throw new global::System.ArgumentNullException("element");
+		
+				global::System.String oldValue = GetValue(element);
+				if (newValue != oldValue)
+				{
+					ValueChanging(element, oldValue, newValue);
+					element.valuePropertyStorage = newValue;
+					ValueChanged(element, oldValue, newValue);
+				}
+			}
+		}
+		
+		#endregion
+	}
+}
