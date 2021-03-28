@@ -61,6 +61,14 @@ namespace Company.SplLanguage
 					"@RequiresRelationshipToolboxBitmap;Company.SplLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 3)]
+	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
+					"@ExcludeRelationshipToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.ExcludeRelationshipToolboxItem", 
+					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
+					"ExcludeRelationship", 
+					"@ExcludeRelationshipToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					0xff00ff,
+					Index = 4)]
 	[VSShell::ProvideEditorFactory(typeof(SplLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
 	[VSShell::ProvideEditorExtension(typeof(SplLanguageEditorFactory), "." + Constants.DesignerFileExtension, 50)]
 	[VSShell::ProvideEditorLogicalView(typeof(SplLanguageEditorFactory), "{7651A702-06E5-11D1-8EBD-00A0C90F26EA}")] // Designer logical view GUID i.e. VSConstants.LOGVIEWID_Designer

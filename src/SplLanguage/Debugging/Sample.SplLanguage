@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" name="MinistoreModel" description="Feature Model for Ministore product" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
   <elements>
-    <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="Mini Store Dotnet" included="true" type="Root">
+    <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="Mini Store Dotnet" included="true" type="Root" idFeature="00000000-0000-0000-0000-000000000000">
       <sourceOptionalFeatureElement>
         <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Cloud Provider" />
       </sourceOptionalFeatureElement>
@@ -16,8 +16,8 @@
         </featureElementRequiresReferencesFeatureElements>
       </sourceRequiresFeatureElement>
     </featureElement>
-    <featureElement Id="9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa" name="Cloud Provider" included="false" type="Abstract" />
-    <featureElement Id="87d22180-1bb9-4f4d-97b3-5a89f20ee3db" name="Infrastructure" included="false" type="Abstract">
+    <featureElement Id="9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa" name="Cloud Provider" included="false" type="Abstract" idFeature="00000000-0000-0000-0000-000000000000" />
+    <featureElement Id="87d22180-1bb9-4f4d-97b3-5a89f20ee3db" name="Infrastructure" included="false" type="Abstract" idFeature="00000000-0000-0000-0000-000000000000">
       <sourceOptionalFeatureElement>
         <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Microservices" />
       </sourceOptionalFeatureElement>
@@ -27,8 +27,8 @@
         </featureElementRequiresReferencesFeatureElements>
       </sourceRequiresFeatureElement>
     </featureElement>
-    <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="VM" included="true" type="Concrete" />
-    <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Microservices" included="true" type="Concrete" />
-    <featureElement Id="3b955e06-7006-4d42-a192-144b69d90a83" name="Core components" included="true" type="Concrete" />
+    <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="VM" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
+    <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Microservices" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
+    <featureElement Id="3b955e06-7006-4d42-a192-144b69d90a83" name="Core components" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
   </elements>
 </featureModel>

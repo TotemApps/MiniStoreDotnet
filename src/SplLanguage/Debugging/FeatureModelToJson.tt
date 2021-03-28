@@ -14,6 +14,8 @@ for (int i = 0; i < this.FeatureModel.Elements.Count;i++)
 
 #>
         {
+            "id": "<#= element.IdFeature #>",
+            "label":"<#= element.Label #>",
             "name": "<#= element.Name #>",
             "included": "<#= element.Included #>",
             "type": "<#= element.Type #>"

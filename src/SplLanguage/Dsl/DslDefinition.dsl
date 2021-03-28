@@ -43,6 +43,16 @@
             <DomainEnumerationMoniker Name="FeatureType" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="9b1c52c6-8c35-45ed-bbc3-c9eb1da950b4" Description="Description for Company.SplLanguage.FeatureElement.Label" Name="Label" DisplayName="Label">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
+        <DomainProperty Id="6600a355-0f20-49e9-a07c-fa161173b2ce" Description="Description for Company.SplLanguage.FeatureElement.Id Feature" Name="IdFeature" DisplayName="Id Feature">
+          <Type>
+            <ExternalTypeMoniker Name="/System/Guid" />
+          </Type>
+        </DomainProperty>
       </Properties>
     </DomainClass>
   </Classes>
@@ -111,6 +121,22 @@
         </DomainRole>
       </Target>
     </DomainRelationship>
+    <DomainRelationship Id="32831621-5ce2-4339-a437-2efdacb820cd" Description="Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement" Name="FeatureElementExcludesReferenceFeatureElement" DisplayName="Feature Element Excludes Reference Feature Element" Namespace="Company.SplLanguage">
+      <Source>
+        <DomainRole Id="bfda71cd-6af0-4add-ac93-7d4afd44f943" Description="Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.SourceExcludeFeatureElement" Name="SourceExcludeFeatureElement" DisplayName="Source Exclude Feature Element" PropertyName="TargetExcludeFeatureElements" PropertyDisplayName="Target Exclude Feature Elements">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Source>
+      <Target>
+        <DomainRole Id="00ed89f8-1810-4700-873b-115a3e716a80" Description="Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.TargetExcludeFeatureElement" Name="TargetExcludeFeatureElement" DisplayName="Target Exclude Feature Element" PropertyName="SourceExcludeFeatureElements" PropertyDisplayName="Source Exclude Feature Elements">
+          <RolePlayer>
+            <DomainClassMoniker Name="FeatureElement" />
+          </RolePlayer>
+        </DomainRole>
+      </Target>
+    </DomainRelationship>
   </Relationships>
   <Types>
     <ExternalType Name="DateTime" Namespace="System" />
@@ -151,6 +177,7 @@
     <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="OptionalConnector" DisplayName="Optional Connector" Namespace="Company.SplLanguage" FixedTooltipText="Optional Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
     <Connector Id="b33c28f5-07e2-4271-9171-b8b4b6132bab" Description="Description for Company.SplLanguage.MandatoryConnector" Name="MandatoryConnector" DisplayName="Mandatory Connector" Namespace="Company.SplLanguage" FixedTooltipText="Mandatory Connector" TargetEndStyle="FilledDiamond" Thickness="0.01" RoutingStyle="Straight" />
     <Connector Id="5b5a6950-700f-400f-a55c-6d1e08c6c096" Description="Description for Company.SplLanguage.RequiresConnector" Name="RequiresConnector" DisplayName="Requires Connector" Namespace="Company.SplLanguage" FixedTooltipText="Requires Connector" TargetEndStyle="EmptyArrow" Thickness="0.01" RoutingStyle="Straight" />
+    <Connector Id="18106ec3-7708-473f-be15-6639cec425eb" Description="Description for Company.SplLanguage.ExcludeConnector" Name="ExcludeConnector" DisplayName="Exclude Connector" Namespace="Company.SplLanguage" FixedTooltipText="Exclude Connector" SourceEndStyle="EmptyArrow" TargetEndStyle="EmptyArrow" Thickness="0.01" RoutingStyle="Straight" />
   </Connectors>
   <XmlSerializationBehavior Name="SplLanguageSerializationBehavior" Namespace="Company.SplLanguage">
     <ClassData>
@@ -189,6 +216,15 @@
           <XmlPropertyData XmlName="type">
             <DomainPropertyMoniker Name="FeatureElement/Type" />
           </XmlPropertyData>
+          <XmlRelationshipData UseFullForm="true" RoleElementName="targetExcludeFeatureElements">
+            <DomainRelationshipMoniker Name="FeatureElementExcludesReferenceFeatureElement" />
+          </XmlRelationshipData>
+          <XmlPropertyData XmlName="label">
+            <DomainPropertyMoniker Name="FeatureElement/Label" />
+          </XmlPropertyData>
+          <XmlPropertyData XmlName="idFeature">
+            <DomainPropertyMoniker Name="FeatureElement/IdFeature" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureModelHasElements" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureModelHasElementsMoniker" ElementName="featureModelHasElements" MonikerTypeName="FeatureModelHasElementsMoniker">
@@ -217,6 +253,12 @@
       </XmlClassData>
       <XmlClassData TypeName="RequiresConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="requiresConnectorMoniker" ElementName="requiresConnector" MonikerTypeName="RequiresConnectorMoniker">
         <ConnectorMoniker Name="RequiresConnector" />
+      </XmlClassData>
+      <XmlClassData TypeName="FeatureElementExcludesReferenceFeatureElement" MonikerAttributeName="" SerializeId="true" MonikerElementName="featureElementExcludesReferenceFeatureElementMoniker" ElementName="featureElementExcludesReferenceFeatureElement" MonikerTypeName="FeatureElementExcludesReferenceFeatureElementMoniker">
+        <DomainRelationshipMoniker Name="FeatureElementExcludesReferenceFeatureElement" />
+      </XmlClassData>
+      <XmlClassData TypeName="ExcludeConnector" MonikerAttributeName="" SerializeId="true" MonikerElementName="excludeConnectorMoniker" ElementName="excludeConnector" MonikerTypeName="ExcludeConnectorMoniker">
+        <ConnectorMoniker Name="ExcludeConnector" />
       </XmlClassData>
     </ClassData>
   </XmlSerializationBehavior>
@@ -280,6 +322,25 @@
         </TargetDirectives>
       </LinkConnectDirective>
     </ConnectionBuilder>
+    <ConnectionBuilder Name="FeatureElementExcludesReferenceFeatureElementBuilder">
+      <LinkConnectDirective>
+        <DomainRelationshipMoniker Name="FeatureElementExcludesReferenceFeatureElement" />
+        <SourceDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="FeatureElement" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </SourceDirectives>
+        <TargetDirectives>
+          <RolePlayerConnectDirective>
+            <AcceptingClass>
+              <DomainClassMoniker Name="FeatureElement" />
+            </AcceptingClass>
+          </RolePlayerConnectDirective>
+        </TargetDirectives>
+      </LinkConnectDirective>
+    </ConnectionBuilder>
   </ConnectionBuilders>
   <Diagram Id="6b900dfb-d311-439e-9e49-49fb7002df41" Description="Description for Company.SplLanguage.SplLanguageDiagram" Name="SplLanguageDiagram" DisplayName="Minimal Language Diagram" Namespace="Company.SplLanguage">
     <Class>
@@ -321,6 +382,10 @@
         <ConnectorMoniker Name="RequiresConnector" />
         <DomainRelationshipMoniker Name="FeatureElementRequiresReferencesFeatureElements" />
       </ConnectorMap>
+      <ConnectorMap>
+        <ConnectorMoniker Name="ExcludeConnector" />
+        <DomainRelationshipMoniker Name="FeatureElementExcludesReferenceFeatureElement" />
+      </ConnectorMap>
     </ConnectorMaps>
   </Diagram>
   <Designer CopyPasteGeneration="CopyPasteOnly" FileExtension="SplLanguage" EditorGuid="aab0177a-6704-4fce-9dee-dcc789321e57">
@@ -342,6 +407,9 @@
       </ConnectionTool>
       <ConnectionTool Name="RequiresRelationship" ToolboxIcon="Resources\RequiresIcon.bmp" Caption="Requires Relationship" Tooltip="Requires Relationship" HelpKeyword="RequiresRelationship">
         <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementRequiresReferencesFeatureElementsBuilder" />
+      </ConnectionTool>
+      <ConnectionTool Name="ExcludeRelationship" ToolboxIcon="Resources\ExcludesIcon.bmp" Caption="Exclude Relationship" Tooltip="Exclude Relationship" HelpKeyword="ExcludeRelationship">
+        <ConnectionBuilderMoniker Name="SplLanguage/FeatureElementExcludesReferenceFeatureElementBuilder" />
       </ConnectionTool>
     </ToolboxTab>
     <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />

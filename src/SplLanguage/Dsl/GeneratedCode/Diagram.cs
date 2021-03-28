@@ -212,6 +212,11 @@ namespace Company.SplLanguage
 				global::Company.SplLanguage.RequiresConnector newShape = new global::Company.SplLanguage.RequiresConnector(this.Partition);
 				return newShape;
 			}
+			if(element is global::Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement)
+			{
+				global::Company.SplLanguage.ExcludeConnector newShape = new global::Company.SplLanguage.ExcludeConnector(this.Partition);
+				return newShape;
+			}
 			return base.CreateChildShape(element);
 		}
 		#endregion
@@ -254,6 +259,7 @@ namespace Company.SplLanguage
 		private global::Company.SplLanguage.OptionalRelationshipConnectAction optionalRelationshipConnectAction;
 		private global::Company.SplLanguage.MandatoryRelationshipConnectAction mandatoryRelationshipConnectAction;
 		private global::Company.SplLanguage.RequiresRelationshipConnectAction requiresRelationshipConnectAction;
+		private global::Company.SplLanguage.ExcludeRelationshipConnectAction excludeRelationshipConnectAction;
 		/// <summary>
 		/// Virtual method to provide a filter when to select the mouse action
 		/// </summary>
@@ -302,6 +308,15 @@ namespace Company.SplLanguage
 						this.requiresRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
 					}
 					action = this.requiresRelationshipConnectAction;
+				} 
+				else if (SelectedToolboxItemSupportsFilterString(activeView, global::Company.SplLanguage.SplLanguageToolboxHelper.ExcludeRelationshipFilterString))
+				{
+					if (this.excludeRelationshipConnectAction == null)
+					{
+						this.excludeRelationshipConnectAction = new global::Company.SplLanguage.ExcludeRelationshipConnectAction(this);
+						this.excludeRelationshipConnectAction.MouseActionDeactivated += new DslDiagrams::MouseAction.MouseActionDeactivatedEventHandler(OnConnectActionDeactivated);
+					}
+					action = this.excludeRelationshipConnectAction;
 				} 
 				else
 				{
@@ -375,6 +390,11 @@ namespace Company.SplLanguage
 						this.requiresRelationshipConnectAction.Dispose();
 						this.requiresRelationshipConnectAction = null;
 					}
+					if(this.excludeRelationshipConnectAction != null)
+					{
+						this.excludeRelationshipConnectAction.Dispose();
+						this.excludeRelationshipConnectAction = null;
+					}
 				}
 			}
 			finally
@@ -432,6 +452,7 @@ namespace Company.SplLanguage
 		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed partial class FixUpDiagram : FixUpDiagramBase
 		{
 			[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
@@ -559,6 +580,7 @@ namespace Company.SplLanguage
 		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
+		[DslModeling::RuleOn(typeof(global::Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement), FireTime = DslModeling::TimeToFire.TopLevelCommit, Priority = DslDiagrams::DiagramFixupConstants.AddConnectionRulePriority, InitiallyDisabled=true)]
 		internal sealed class ConnectorRolePlayerChanged : DslModeling::RolePlayerChangeRule
 		{
 			/// <summary>

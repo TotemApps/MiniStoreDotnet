@@ -131,6 +131,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: FeatureElementExcludesReferenceFeatureElement -->
+          <xsd:element name="targetExcludeFeatureElements" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of FeatureElementExcludesReferenceFeatureElement</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="featureElementExcludesReferenceFeatureElement" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of FeatureElementExcludesReferenceFeatureElement needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -144,6 +159,10 @@
         <xsd:attribute name="included" type="xsd:boolean" />
         <!-- Property: Type -->
         <xsd:attribute name="type" type="FeatureType" />
+        <!-- Property: Label -->
+        <xsd:attribute name="label" type="xsd:string" />
+        <!-- Property: IdFeature -->
+        <xsd:attribute name="idFeature" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -319,6 +338,46 @@
   <xsd:complexType name="FeatureElementRequiresReferencesFeatureElementsMoniker">
     <xsd:annotation>
       <xsd:documentation>Moniker for FeatureElementRequiresReferencesFeatureElements instance.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElementMoniker">
+        <xsd:attribute name="Id" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Attribute to store the moniker string.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureElementExcludesReferenceFeatureElement -->
+  <xsd:element name="featureElementExcludesReferenceFeatureElement" type="FeatureElementExcludesReferenceFeatureElement" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureElementExcludesReferenceFeatureElement">
+    <xsd:complexContent>
+      <xsd:extension base="core:ModelElement">
+        <xsd:sequence minOccurs="0" maxOccurs="1">
+          <!-- Target end FeatureElement -->
+          <xsd:element ref="featureElementMoniker" minOccurs="1" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>[Target role-player]</xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <!-- Id -->
+        <xsd:attribute name="Id" type="xsd:string">
+          <xsd:annotation>
+            <xsd:documentation>Instance Guid of this element, needed because SerializeId is set to true.</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  
+  <!-- FeatureElementExcludesReferenceFeatureElement Moniker -->
+  <xsd:element name="featureElementExcludesReferenceFeatureElementMoniker" type="FeatureElementExcludesReferenceFeatureElementMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureElementExcludesReferenceFeatureElementMoniker">
+    <xsd:annotation>
+      <xsd:documentation>Moniker for FeatureElementExcludesReferenceFeatureElement instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

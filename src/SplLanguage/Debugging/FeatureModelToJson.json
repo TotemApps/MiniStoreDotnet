@@ -5,31 +5,43 @@
     "name":"MinistoreModel",
     "features":[
         {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "label":"",
             "name": "Mini Store Dotnet",
             "included": "True",
             "type": "Root"
         },
         {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "label":"",
             "name": "Cloud Provider",
             "included": "False",
             "type": "Abstract"
         },
         {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "label":"",
             "name": "Infrastructure",
             "included": "False",
             "type": "Abstract"
         },
         {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "label":"",
             "name": "VM",
             "included": "True",
             "type": "Concrete"
         },
         {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "label":"",
             "name": "Microservices",
             "included": "True",
             "type": "Concrete"
         },
         {
+            "id": "00000000-0000-0000-0000-000000000000",
+            "label":"",
             "name": "Core components",
             "included": "True",
             "type": "Concrete"

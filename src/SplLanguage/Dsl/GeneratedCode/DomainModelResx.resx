@@ -181,6 +181,22 @@
     <value>Type</value>
     <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureElement/Label.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElement.Label</value>
+    <comment>Description for DomainProperty &apos;Label&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Label.DisplayName" xml:space="preserve">
+    <value>Label</value>
+    <comment>DisplayName for DomainProperty &apos;Label&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/IdFeature.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElement.Id Feature</value>
+    <comment>Description for DomainProperty &apos;IdFeature&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/IdFeature.DisplayName" xml:space="preserve">
+    <value>Id Feature</value>
+    <comment>DisplayName for DomainProperty &apos;IdFeature&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureModelHasElements.Description" xml:space="preserve">
     <value>Embedding relationship between the Model and Elements</value>
     <comment>Description for DomainClass &apos;FeatureModelHasElements&apos;</comment>
@@ -309,6 +325,38 @@
     <value>Target Requires Feature Element</value>
     <comment>PropertyDisplayName for DomainRole &apos;TargetRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement</value>
+    <comment>Description for DomainClass &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element Excludes Reference Feature Element</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/SourceExcludeFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.SourceExcludeFeatureElement</value>
+    <comment>Description for DomainRole &apos;SourceExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/SourceExcludeFeatureElement.DisplayName" xml:space="preserve">
+    <value>Source Exclude Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;SourceExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/SourceExcludeFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Target Exclude Feature Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/TargetExcludeFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.TargetExcludeFeatureElement</value>
+    <comment>Description for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/TargetExcludeFeatureElement.DisplayName" xml:space="preserve">
+    <value>Target Exclude Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/TargetExcludeFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Source Exclude Feature Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureType/Abstract.DisplayName" xml:space="preserve">
     <value>Abstract</value>
     <comment>Display name for EnumerationLiteral &apos;Abstract&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
@@ -369,6 +417,14 @@
     <value>Requires Connector</value>
     <comment>DisplayName for DomainClass &apos;RequiresConnector&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.ExcludeConnector.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ExcludeConnector</value>
+    <comment>Description for DomainClass &apos;ExcludeConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ExcludeConnector.DisplayName" xml:space="preserve">
+    <value>Exclude Connector</value>
+    <comment>DisplayName for DomainClass &apos;ExcludeConnector&apos;</comment>
+  </data>
   <data name="FormatList" xml:space="preserve">
     <value>SplLanguage (*.SplLanguage)|*.SplLanguage</value>
     <comment>A list of file format specifiers for the Save dialog box</comment>
@@ -419,6 +475,14 @@
   </data>
   <data name="RequiresRelationshipToolboxTooltip" xml:space="preserve">
     <value>Requires Relationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ExcludeRelationshipToolboxItem" xml:space="preserve">
+    <value>Exclude Relationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ExcludeRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Exclude Relationship</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="UnresolvedToolboxItem" xml:space="preserve">
@@ -564,6 +628,10 @@ A DomainClass can be serialized as a moniker only if
   </data>
   <data name="RequiresRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\RequiresIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ExcludeRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExcludesIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
 </root>

@@ -73,10 +73,12 @@ namespace Company.SplLanguage
 				typeof(FeatureElementOptionalReferencesFeatureElement),
 				typeof(FeatureElementMandatoryReferencesFeatureElement),
 				typeof(FeatureElementRequiresReferencesFeatureElements),
+				typeof(FeatureElementExcludesReferenceFeatureElement),
 				typeof(SplLanguageDiagram),
 				typeof(OptionalConnector),
 				typeof(MandatoryConnector),
 				typeof(RequiresConnector),
+				typeof(ExcludeConnector),
 				typeof(ExampleShape),
 				typeof(global::Company.SplLanguage.FixUpDiagram),
 				typeof(global::Company.SplLanguage.ConnectorRolePlayerChanged),
@@ -96,6 +98,8 @@ namespace Company.SplLanguage
 				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Included", FeatureElement.IncludedDomainPropertyId, typeof(FeatureElement.IncludedPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Type", FeatureElement.TypeDomainPropertyId, typeof(FeatureElement.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureElement), "Label", FeatureElement.LabelDomainPropertyId, typeof(FeatureElement.LabelPropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureElement), "IdFeature", FeatureElement.IdFeatureDomainPropertyId, typeof(FeatureElement.IdFeaturePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -114,6 +118,8 @@ namespace Company.SplLanguage
 				new DomainRolePlayerInfo(typeof(FeatureElementMandatoryReferencesFeatureElement), "TargetMandatoryFeatureElement", FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementRequiresReferencesFeatureElements), "SourceRequiresFeatureElement", FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementRequiresReferencesFeatureElements), "TargetRequiresFeatureElement", FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementExcludesReferenceFeatureElement), "SourceExcludeFeatureElement", FeatureElementExcludesReferenceFeatureElement.SourceExcludeFeatureElementDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureElementExcludesReferenceFeatureElement), "TargetExcludeFeatureElement", FeatureElementExcludesReferenceFeatureElement.TargetExcludeFeatureElementDomainRoleId),
 			};
 		}
 		#endregion
@@ -135,14 +141,15 @@ namespace Company.SplLanguage
 	
 			if (createElementMap == null)
 			{
-				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(7);
+				createElementMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(8);
 				createElementMap.Add(typeof(FeatureModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(SplLanguageDiagram), 2);
 				createElementMap.Add(typeof(OptionalConnector), 3);
 				createElementMap.Add(typeof(MandatoryConnector), 4);
 				createElementMap.Add(typeof(RequiresConnector), 5);
-				createElementMap.Add(typeof(ExampleShape), 6);
+				createElementMap.Add(typeof(ExcludeConnector), 6);
+				createElementMap.Add(typeof(ExampleShape), 7);
 			}
 			int index;
 			if (!createElementMap.TryGetValue(elementType, out index))
@@ -162,7 +169,8 @@ namespace Company.SplLanguage
 				case 3: return new OptionalConnector(partition, propertyAssignments);
 				case 4: return new MandatoryConnector(partition, propertyAssignments);
 				case 5: return new RequiresConnector(partition, propertyAssignments);
-				case 6: return new ExampleShape(partition, propertyAssignments);
+				case 6: return new ExcludeConnector(partition, propertyAssignments);
+				case 7: return new ExampleShape(partition, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -185,11 +193,12 @@ namespace Company.SplLanguage
 	
 			if (createElementLinkMap == null)
 			{
-				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(4);
+				createElementLinkMap = new global::System.Collections.Generic.Dictionary<global::System.Type, int>(5);
 				createElementLinkMap.Add(typeof(FeatureModelHasElements), 0);
 				createElementLinkMap.Add(typeof(FeatureElementOptionalReferencesFeatureElement), 1);
 				createElementLinkMap.Add(typeof(FeatureElementMandatoryReferencesFeatureElement), 2);
 				createElementLinkMap.Add(typeof(FeatureElementRequiresReferencesFeatureElements), 3);
+				createElementLinkMap.Add(typeof(FeatureElementExcludesReferenceFeatureElement), 4);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -208,6 +217,7 @@ namespace Company.SplLanguage
 				case 1: return new FeatureElementOptionalReferencesFeatureElement(partition, roleAssignments, propertyAssignments);
 				case 2: return new FeatureElementMandatoryReferencesFeatureElement(partition, roleAssignments, propertyAssignments);
 				case 3: return new FeatureElementRequiresReferencesFeatureElements(partition, roleAssignments, propertyAssignments);
+				case 4: return new FeatureElementExcludesReferenceFeatureElement(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
