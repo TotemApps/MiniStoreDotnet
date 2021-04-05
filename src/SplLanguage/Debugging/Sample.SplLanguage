@@ -1,45 +1,91 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" name="MinistoreModel" description="Feature Model for Ministore product" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
+<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" name="MinistoreModel" description="Feature Model for Ministore product developed by jasotov@eafit.ed.co" version="0.0.2" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
   <elements>
-    <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="Mini Store Dotnet" included="true" type="Root" idFeature="00000000-0000-0000-0000-000000000000">
-      <sourceOptionalFeatureElement>
-        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Cloud Provider" />
-      </sourceOptionalFeatureElement>
+    <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="Mini Store Dotnet" included="true" type="Root">
       <sourceMandatoryFeatureElement>
         <featureElementMandatoryReferencesFeatureElement Id="bc4700f1-7329-4ca5-b64f-c12deffcf6cb">
           <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Infrastructure" />
         </featureElementMandatoryReferencesFeatureElement>
-      </sourceMandatoryFeatureElement>
-      <sourceRequiresFeatureElement>
-        <featureElementRequiresReferencesFeatureElements Id="b37783cb-e7b9-4042-b7c3-aa6a7d3133a3">
+        <featureElementMandatoryReferencesFeatureElement Id="3fc7953c-72b8-4016-9ecc-bfe055b32307">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Cloud Provider" />
+        </featureElementMandatoryReferencesFeatureElement>
+        <featureElementMandatoryReferencesFeatureElement Id="ea866bf8-ace5-46ec-b267-2af20962db25">
           <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Core components" />
-        </featureElementRequiresReferencesFeatureElements>
-      </sourceRequiresFeatureElement>
+        </featureElementMandatoryReferencesFeatureElement>
+      </sourceMandatoryFeatureElement>
     </featureElement>
-    <featureElement Id="9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa" name="Cloud Provider" included="false" type="Abstract" idFeature="00000000-0000-0000-0000-000000000000" />
-    <featureElement Id="87d22180-1bb9-4f4d-97b3-5a89f20ee3db" name="Infrastructure" included="false" type="Abstract" idFeature="00000000-0000-0000-0000-000000000000">
+    <featureElement Id="9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa" name="Cloud Provider" included="true" type="Abstract">
       <sourceOptionalFeatureElement>
-        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Microservices" />
+        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Azure" />
+        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/AWS" />
       </sourceOptionalFeatureElement>
-      <sourceRequiresFeatureElement>
-        <featureElementRequiresReferencesFeatureElements Id="1da1fe4e-108c-4f80-99eb-7742ce622acb">
-          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/VM" />
-        </featureElementRequiresReferencesFeatureElements>
-      </sourceRequiresFeatureElement>
+      <targetExcludeFeatureElements>
+        <featureElementExcludesReferenceFeatureElement Id="8e60f2e4-a282-4218-890e-4ca36971c87a">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Containers" />
+        </featureElementExcludesReferenceFeatureElement>
+      </targetExcludeFeatureElements>
       <featureAttributed>
-        <featureElementHasFeatureAttributed Id="21bb93c2-96f8-48c8-9aff-a4af669e6e3f">
-          <featureAttribute Id="93fc3e9e-d049-41c4-bed9-4fb254f2affa" />
+        <featureElementHasFeatureAttributed Id="f01e4282-8189-4aff-a0a7-78a2e47e1037">
+          <featureAttribute Id="7c7c515f-e75b-43a4-8d2f-6872e1cb96f0" name="Q001" domain="Question" value="Chose cloud provider" />
         </featureElementHasFeatureAttributed>
       </featureAttributed>
     </featureElement>
-    <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="VM" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
-    <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Microservices" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000">
+    <featureElement Id="87d22180-1bb9-4f4d-97b3-5a89f20ee3db" name="Infrastructure" included="true" type="Abstract">
+      <sourceOptionalFeatureElement>
+        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Containers" />
+        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Instances" />
+      </sourceOptionalFeatureElement>
+      <featureAttributed>
+        <featureElementHasFeatureAttributed Id="21bb93c2-96f8-48c8-9aff-a4af669e6e3f">
+          <featureAttribute Id="93fc3e9e-d049-41c4-bed9-4fb254f2affa" name="Q002" domain="Question" value="Chose compute model" />
+        </featureElementHasFeatureAttributed>
+      </featureAttributed>
+    </featureElement>
+    <featureElement Id="de260835-b72b-4ef0-bda7-e9196eddabe4" name="Instances" included="false" type="Concrete" />
+    <featureElement Id="fc165727-538b-45be-a378-acf5331e47e5" name="Containers" included="true" type="Concrete">
       <featureConstraints>
-        <featureElementHasFeatureConstraints Id="bc6b127b-b46e-4a63-9aa2-57b771cca5e3">
-          <featureConstraint Id="35904b25-041b-40e8-a9b8-0e8f0cf1f1b3" type="Boolean" />
+        <featureElementHasFeatureConstraints Id="90c28ed7-8780-49d3-b21e-03edc389676d">
+          <featureConstraint Id="8cff382b-3334-4d6e-86e2-0ac5a00fe432" type="Arithmetic" />
         </featureElementHasFeatureConstraints>
       </featureConstraints>
     </featureElement>
-    <featureElement Id="3b955e06-7006-4d42-a192-144b69d90a83" name="Core components" included="true" type="Concrete" idFeature="00000000-0000-0000-0000-000000000000" />
+    <featureElement Id="3b955e06-7006-4d42-a192-144b69d90a83" name="Core components" included="true" type="Concrete">
+      <sourceMandatoryFeatureElement>
+        <featureElementMandatoryReferencesFeatureElement Id="549a5fab-6484-42ea-a91a-9aaa8f3b279f">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Data Acces" />
+        </featureElementMandatoryReferencesFeatureElement>
+        <featureElementMandatoryReferencesFeatureElement Id="9fee13e5-d5d2-45fd-a38c-34f21d660e76">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Base components" />
+        </featureElementMandatoryReferencesFeatureElement>
+      </sourceMandatoryFeatureElement>
+    </featureElement>
+    <featureElement Id="ee438469-ac0f-467d-8a4f-b86126728b86" name="Azure" included="true" type="Concrete">
+      <targetExcludeFeatureElements>
+        <featureElementExcludesReferenceFeatureElement Id="b6f19943-1fe7-4f89-926d-500d378e467e">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/AWS" />
+        </featureElementExcludesReferenceFeatureElement>
+      </targetExcludeFeatureElements>
+      <featureConstraints>
+        <featureElementHasFeatureConstraints Id="f6d5a5dd-edc5-418d-8173-ae21ce11bf30">
+          <featureConstraint Id="7977c717-5e2c-44e7-81a5-d033b52af7ca" type="Boolean" />
+        </featureElementHasFeatureConstraints>
+      </featureConstraints>
+    </featureElement>
+    <featureElement Id="68ea2948-9c9a-4348-90a9-75f39f1ccdf5" name="AWS" included="false" type="Concrete" />
+    <featureElement Id="c4023306-6efc-4912-a739-4f6513cd68b2" name="Data Acces" included="true" type="Abstract">
+      <sourceOptionalFeatureElement>
+        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Oracle" />
+        <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/MSSQL" />
+      </sourceOptionalFeatureElement>
+    </featureElement>
+    <featureElement Id="d37c8883-874d-44ca-be53-5e30fda2ac20" name="Base components" included="false" type="Abstract" />
+    <featureElement Id="1ac9978f-947e-4ab6-887a-9c3356479039" name="Oracle" included="true" type="Concrete">
+      <targetExcludeFeatureElements>
+        <featureElementExcludesReferenceFeatureElement Id="39c9ebb5-dd6d-437c-9ad1-d1705b69760a">
+          <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/MSSQL" />
+        </featureElementExcludesReferenceFeatureElement>
+      </targetExcludeFeatureElements>
+    </featureElement>
+    <featureElement Id="a15fb36e-875a-4730-8191-d44eed3e193b" name="MSSQL" included="false" type="Concrete" />
   </elements>
 </featureModel>

@@ -188,6 +188,23 @@ namespace Company.SplLanguage
 					}
 				}
 			}
+			// Version
+			if (!serializationContext.Result.Failed)
+			{
+				string attribVersion = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "version");
+				if (attribVersion != null)
+				{
+					global::System.String valueOfVersion;
+					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribVersion, out valueOfVersion))
+					{
+						instanceOfFeatureModel.Version = valueOfVersion;
+					}
+					else
+					{	// Invalid property value, ignored.
+						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "version", typeof(global::System.String), attribVersion);
+					}
+				}
+			}
 		}
 	
 		/// <summary>
@@ -726,6 +743,17 @@ namespace Company.SplLanguage
 	
 				}
 			}
+			// Version
+			if (!serializationContext.Result.Failed)
+			{
+				global::System.String propValue = instanceOfFeatureModel.Version;
+				if (!serializationContext.Result.Failed)
+				{
+					if (!string.IsNullOrEmpty(propValue))
+						SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "version", propValue);
+	
+				}
+			}
 		}
 	
 		/// <summary>
@@ -1050,23 +1078,6 @@ namespace Company.SplLanguage
 					else
 					{	// Invalid property value, ignored.
 						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "label", typeof(global::System.String), attribLabel);
-					}
-				}
-			}
-			// IdFeature
-			if (!serializationContext.Result.Failed)
-			{
-				string attribIdFeature = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "idFeature");
-				if (attribIdFeature != null)
-				{
-					global::System.Guid valueOfIdFeature;
-					if (DslModeling::SerializationUtilities.TryGetValue<global::System.Guid>(serializationContext, attribIdFeature, out valueOfIdFeature))
-					{
-						instanceOfFeatureElement.IdFeature = valueOfIdFeature;
-					}
-					else
-					{	// Invalid property value, ignored.
-						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "idFeature", typeof(global::System.Guid), attribIdFeature);
 					}
 				}
 			}
@@ -1903,16 +1914,6 @@ namespace Company.SplLanguage
 	
 				}
 			}
-			// IdFeature
-			if (!serializationContext.Result.Failed)
-			{
-				global::System.Guid propValue = instanceOfFeatureElement.IdFeature;
-				string serializedPropValue = DslModeling::SerializationUtilities.GetString<global::System.Guid>(serializationContext, propValue);
-				if (!serializationContext.Result.Failed)
-				{
-					SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "idFeature", serializedPropValue);
-				}
-			}
 		}
 	
 		/// <summary>
@@ -2315,14 +2316,14 @@ namespace Company.SplLanguage
 				string attribDomain = SplLanguageSerializationHelper.Instance.ReadAttribute(serializationContext, element, reader, "domain");
 				if (attribDomain != null)
 				{
-					global::System.String valueOfDomain;
-					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribDomain, out valueOfDomain))
+					DomainPropierty valueOfDomain;
+					if (DslModeling::SerializationUtilities.TryGetValue<DomainPropierty>(serializationContext, attribDomain, out valueOfDomain))
 					{
 						instanceOfFeatureAttribute.Domain = valueOfDomain;
 					}
 					else
 					{	// Invalid property value, ignored.
-						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "domain", typeof(global::System.String), attribDomain);
+						SplLanguageSerializationBehaviorSerializationMessages.IgnoredPropertyValue(serializationContext, reader, "domain", typeof(DomainPropierty), attribDomain);
 					}
 				}
 			}
@@ -2782,12 +2783,11 @@ namespace Company.SplLanguage
 			// Domain
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfFeatureAttribute.Domain;
+				DomainPropierty propValue = instanceOfFeatureAttribute.Domain;
+				string serializedPropValue = DslModeling::SerializationUtilities.GetString<DomainPropierty>(serializationContext, propValue);
 				if (!serializationContext.Result.Failed)
 				{
-					if (!string.IsNullOrEmpty(propValue))
-						SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "domain", propValue);
-	
+					SplLanguageSerializationHelper.Instance.WriteAttributeString(serializationContext, element, writer, "domain", serializedPropValue);
 				}
 			}
 			// Value

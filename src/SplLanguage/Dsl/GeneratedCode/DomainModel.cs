@@ -99,11 +99,11 @@ namespace Company.SplLanguage
 			{
 				new DomainMemberInfo(typeof(FeatureModel), "Name", FeatureModel.NameDomainPropertyId, typeof(FeatureModel.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureModel), "Description", FeatureModel.DescriptionDomainPropertyId, typeof(FeatureModel.DescriptionPropertyHandler)),
+				new DomainMemberInfo(typeof(FeatureModel), "Version", FeatureModel.VersionDomainPropertyId, typeof(FeatureModel.VersionPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Name", FeatureElement.NameDomainPropertyId, typeof(FeatureElement.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Included", FeatureElement.IncludedDomainPropertyId, typeof(FeatureElement.IncludedPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Type", FeatureElement.TypeDomainPropertyId, typeof(FeatureElement.TypePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureElement), "Label", FeatureElement.LabelDomainPropertyId, typeof(FeatureElement.LabelPropertyHandler)),
-				new DomainMemberInfo(typeof(FeatureElement), "IdFeature", FeatureElement.IdFeatureDomainPropertyId, typeof(FeatureElement.IdFeaturePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Name", FeatureAttribute.NameDomainPropertyId, typeof(FeatureAttribute.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Domain", FeatureAttribute.DomainDomainPropertyId, typeof(FeatureAttribute.DomainPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Value", FeatureAttribute.ValueDomainPropertyId, typeof(FeatureAttribute.ValuePropertyHandler)),
@@ -541,6 +541,29 @@ namespace Company.SplLanguage
 		/// </summary>
 		[DslDesign::DescriptionResource("Company.SplLanguage.ConstraintType/Symbolic.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 		Symbolic = 2,
+	}
+}
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainEnumeration: DomainPropierty
+	/// Description for Company.SplLanguage.DomainPropierty
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum DomainPropierty
+	{
+		/// <summary>
+		/// Question
+		/// Questión for the product configurator
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.DomainPropierty/Question.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Question = 0,
+		/// <summary>
+		/// Value
+		/// Propierty general value
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.DomainPropierty/Value.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Value = 1,
 	}
 }
 

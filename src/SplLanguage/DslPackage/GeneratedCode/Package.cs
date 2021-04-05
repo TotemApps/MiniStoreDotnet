@@ -70,11 +70,11 @@ namespace Company.SplLanguage
 					0xff00ff,
 					Index = 4)]
 	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
-					"@FetureAttributeToolboxItem;Company.SplLanguage.Dsl.dll", 
-					"Company.SplLanguage.FetureAttributeToolboxItem", 
+					"@FeatureAttributeToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.FeatureAttributeToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"FetureAttribute", 
-					"@FetureAttributeToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					"FeatureAttribute", 
+					"@FeatureAttributeToolboxBitmap;Company.SplLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",

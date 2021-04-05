@@ -247,17 +247,17 @@ namespace Company.SplLanguage
 							new global::System.ComponentModel.ToolboxItemFilterAttribute(ExcludeRelationshipFilterString)
 						});
 					break;
-				case "Company.SplLanguage.FetureAttributeToolboxItem":
-					// Add FetureAttribute shape tool.
+				case "Company.SplLanguage.FeatureAttributeToolboxItem":
+					// Add FeatureAttribute shape tool.
 					result = new DslDesign::ModelingToolboxItem(
-						"Company.SplLanguage.FetureAttributeToolboxItem", // Unique identifier (non-localized) for the toolbox item.
+						"Company.SplLanguage.FeatureAttributeToolboxItem", // Unique identifier (non-localized) for the toolbox item.
 						6, // Position relative to other items in the same toolbox tab.
-						resourceManager.GetString("FetureAttributeToolboxItem", resourceCulture), // Localized display name for the item.
-						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("FetureAttributeToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
+						resourceManager.GetString("FeatureAttributeToolboxItem", resourceCulture), // Localized display name for the item.
+						(global::System.Drawing.Bitmap)DslDiagrams::ImageHelper.GetImage(resourceManager.GetObject("FeatureAttributeToolboxBitmap", resourceCulture)), // Image displayed next to the toolbox item.
 						"Company.SplLanguage.SplLanguageToolboxTab", // Unique identifier (non-localized) for the toolbox item tab.
 						resourceManager.GetString("SplLanguageToolboxTab", resourceCulture), // Localized display name for the toolbox tab.
-						"FetureAttribute", // F1 help keyword for the toolbox item.
-						resourceManager.GetString("FetureAttributeToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
+						"FeatureAttribute", // F1 help keyword for the toolbox item.
+						resourceManager.GetString("FeatureAttributeToolboxTooltip", resourceCulture), // Localized tooltip text for the toolbox item.
 						CreateElementToolPrototype(store, global::Company.SplLanguage.FeatureAttribute.DomainClassId), // ElementGroupPrototype (data object) representing model element on the toolbox.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute[] { // Collection of ToolboxItemFilterAttribute objects that determine visibility of the toolbox item.
 						new global::System.ComponentModel.ToolboxItemFilterAttribute(ToolboxFilterString, global::System.ComponentModel.ToolboxItemFilterType.Require) 

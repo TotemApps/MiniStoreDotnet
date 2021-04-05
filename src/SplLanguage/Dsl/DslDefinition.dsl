@@ -13,6 +13,11 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
+        <DomainProperty Id="327f3ef8-e851-4ba0-8cde-811b37d252a6" Description="Model version" Name="Version" DisplayName="Version">
+          <Type>
+            <ExternalTypeMoniker Name="/System/String" />
+          </Type>
+        </DomainProperty>
       </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
@@ -48,11 +53,6 @@
             <ExternalTypeMoniker Name="/System/String" />
           </Type>
         </DomainProperty>
-        <DomainProperty Id="6600a355-0f20-49e9-a07c-fa161173b2ce" Description="Description for Company.SplLanguage.FeatureElement.Id Feature" Name="IdFeature" DisplayName="Id Feature">
-          <Type>
-            <ExternalTypeMoniker Name="/System/Guid" />
-          </Type>
-        </DomainProperty>
       </Properties>
       <ElementMergeDirectives>
         <ElementMergeDirective>
@@ -82,7 +82,7 @@
         </DomainProperty>
         <DomainProperty Id="75afc430-1646-456a-a507-abb07423791c" Description="Description for Company.SplLanguage.FeatureAttribute.Domain" Name="Domain" DisplayName="Domain">
           <Type>
-            <ExternalTypeMoniker Name="/System/String" />
+            <DomainEnumerationMoniker Name="DomainPropierty" />
           </Type>
         </DomainProperty>
         <DomainProperty Id="a672ac9d-314e-4fc8-9688-93508b83b261" Description="Description for Company.SplLanguage.FeatureAttribute.Value" Name="Value" DisplayName="Value">
@@ -256,6 +256,12 @@
         <EnumerationLiteral Description="Description for Company.SplLanguage.ConstraintType.Symbolic" Name="Symbolic" Value="2" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="DomainPropierty" Namespace="Company.SplLanguage" Description="Description for Company.SplLanguage.DomainPropierty">
+      <Literals>
+        <EnumerationLiteral Description="Questión for the product configurator" Name="Question" Value="0" />
+        <EnumerationLiteral Description="Propierty general value" Name="Value" Value="1" />
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="828ca0d5-7a5e-414a-adb6-d8b8b144cc01" Description="Shape used to represent ExampleElements on a Diagram." Name="FeatureShape" DisplayName="Feature Shape" Namespace="Company.SplLanguage" FixedTooltipText="Feature Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
@@ -288,6 +294,9 @@
           <XmlPropertyData XmlName="description">
             <DomainPropertyMoniker Name="FeatureModel/Description" />
           </XmlPropertyData>
+          <XmlPropertyData XmlName="version">
+            <DomainPropertyMoniker Name="FeatureModel/Version" />
+          </XmlPropertyData>
         </ElementData>
       </XmlClassData>
       <XmlClassData TypeName="FeatureElement" MonikerAttributeName="name" SerializeId="true" MonikerElementName="featureElementMoniker" ElementName="featureElement" MonikerTypeName="FeatureElementMoniker">
@@ -316,9 +325,6 @@
           </XmlRelationshipData>
           <XmlPropertyData XmlName="label">
             <DomainPropertyMoniker Name="FeatureElement/Label" />
-          </XmlPropertyData>
-          <XmlPropertyData XmlName="idFeature">
-            <DomainPropertyMoniker Name="FeatureElement/IdFeature" />
           </XmlPropertyData>
           <XmlRelationshipData UseFullForm="true" RoleElementName="featureAttributed">
             <DomainRelationshipMoniker Name="FeatureElementHasFeatureAttributed" />
@@ -553,7 +559,7 @@
         <DomainClassMoniker Name="FeatureConstraint" />
       </ElementTool>
     </ToolboxTab>
-    <Validation UsesMenu="false" UsesOpen="false" UsesSave="false" UsesLoad="false" />
+    <Validation UsesMenu="true" UsesOpen="true" UsesSave="true" UsesCustom="true" UsesLoad="true" />
     <DiagramMoniker Name="SplLanguageDiagram" />
   </Designer>
   <Explorer ExplorerGuid="fc1481ca-6c14-4994-97de-6423c213cb1c" Title="SplLanguage Explorer">

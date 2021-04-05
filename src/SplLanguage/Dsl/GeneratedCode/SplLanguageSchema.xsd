@@ -49,6 +49,12 @@
         <xsd:attribute name="name" type="xsd:string" />
         <!-- Property: Description -->
         <xsd:attribute name="description" type="xsd:string" />
+        <!-- Property: Version -->
+        <xsd:attribute name="version" type="xsd:string" >
+          <xsd:annotation>
+            <xsd:documentation>Model version</xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -191,8 +197,6 @@
         <xsd:attribute name="type" type="FeatureType" />
         <!-- Property: Label -->
         <xsd:attribute name="label" type="xsd:string" />
-        <!-- Property: IdFeature -->
-        <xsd:attribute name="idFeature" type="xsd:string" />
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
@@ -228,7 +232,7 @@
         <!-- Property: Name -->
         <xsd:attribute name="name" type="xsd:string" />
         <!-- Property: Domain -->
-        <xsd:attribute name="domain" type="xsd:string" />
+        <xsd:attribute name="domain" type="DomainPropierty" />
         <!-- Property: Value -->
         <xsd:attribute name="value" type="xsd:string" />
       </xsd:extension>
@@ -591,6 +595,22 @@
       <xsd:enumeration value="Boolean"/>
       <xsd:enumeration value="Arithmetic"/>
       <xsd:enumeration value="Symbolic"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
+  <!-- Enum DomainPropierty -->
+  <xsd:simpleType name="DomainPropierty">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Question">
+        <xsd:annotation>
+          <xsd:documentation>Questión for the product configurator</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Value">
+        <xsd:annotation>
+          <xsd:documentation>Propierty general value</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
     </xsd:restriction>
   </xsd:simpleType>
   

@@ -36,11 +36,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DebugTest.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DebugTest.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +43,11 @@
       <Link>SplLanguageSchema.xsd</Link>
       <SubType>
       </SubType>
+    </None>
+    <None Include="DebugTest.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebugTest.tt</DependentUpon>
     </None>
     <None Include="FeatureModelToJson.json">
       <AutoGen>True</AutoGen>
@@ -77,7 +77,7 @@
   <ItemGroup>
     <Content Include="DebugTest.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DebugTest.cs</LastGenOutput>
+      <LastGenOutput>DebugTest.json</LastGenOutput>
     </Content>
     <Content Include="FeatureModelToJson.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

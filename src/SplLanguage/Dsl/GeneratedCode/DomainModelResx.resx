@@ -149,6 +149,14 @@
     <value>Description</value>
     <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;FeatureModel&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureModel/Version.Description" xml:space="preserve">
+    <value>Model version</value>
+    <comment>Description for DomainProperty &apos;Version&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Version.DisplayName" xml:space="preserve">
+    <value>Version</value>
+    <comment>DisplayName for DomainProperty &apos;Version&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureElement.Description" xml:space="preserve">
     <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
     <comment>Description for DomainClass &apos;FeatureElement&apos;</comment>
@@ -188,14 +196,6 @@
   <data name="Company.SplLanguage.FeatureElement/Label.DisplayName" xml:space="preserve">
     <value>Label</value>
     <comment>DisplayName for DomainProperty &apos;Label&apos; on DomainClass &apos;FeatureElement&apos;</comment>
-  </data>
-  <data name="Company.SplLanguage.FeatureElement/IdFeature.Description" xml:space="preserve">
-    <value>Description for Company.SplLanguage.FeatureElement.Id Feature</value>
-    <comment>Description for DomainProperty &apos;IdFeature&apos; on DomainClass &apos;FeatureElement&apos;</comment>
-  </data>
-  <data name="Company.SplLanguage.FeatureElement/IdFeature.DisplayName" xml:space="preserve">
-    <value>Id Feature</value>
-    <comment>DisplayName for DomainProperty &apos;IdFeature&apos; on DomainClass &apos;FeatureElement&apos;</comment>
   </data>
   <data name="Company.SplLanguage.FeatureAttribute.Description" xml:space="preserve">
     <value>Description for Company.SplLanguage.FeatureAttribute</value>
@@ -533,6 +533,22 @@
     <value>Description for Company.SplLanguage.ConstraintType.Symbolic</value>
     <comment>Description for EnumerationLiteral &apos;Symbolic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.DomainPropierty/Question.DisplayName" xml:space="preserve">
+    <value>Question</value>
+    <comment>Display name for EnumerationLiteral &apos;Question&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Question.Description" xml:space="preserve">
+    <value>Questión for the product configurator</value>
+    <comment>Description for EnumerationLiteral &apos;Question&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Value.DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>Display name for EnumerationLiteral &apos;Value&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Value.Description" xml:space="preserve">
+    <value>Propierty general value</value>
+    <comment>Description for EnumerationLiteral &apos;Value&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;FeatureShape&apos;</comment>
@@ -637,12 +653,12 @@
     <value>Exclude Relationship</value>
     <comment>Toolbox tooltip text</comment>
   </data>
-  <data name="FetureAttributeToolboxItem" xml:space="preserve">
-    <value>Feture AttributeElement</value>
+  <data name="FeatureAttributeToolboxItem" xml:space="preserve">
+    <value>Feature Attribute</value>
     <comment>Toolbox item name</comment>
   </data>
-  <data name="FetureAttributeToolboxTooltip" xml:space="preserve">
-    <value>Feture Attribute</value>
+  <data name="FeatureAttributeToolboxTooltip" xml:space="preserve">
+    <value>Feature Attribute</value>
     <comment>Toolbox tooltip text</comment>
   </data>
   <data name="FeatureConstraintToolboxItem" xml:space="preserve">
@@ -802,7 +818,7 @@ A DomainClass can be serialized as a moniker only if
     <value>..\Resources\ExcludesIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>
-  <data name="FetureAttributeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+  <data name="FeatureAttributeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
     <value>..\Resources\AttributeIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
     <comment>Toolbox item image</comment>
   </data>

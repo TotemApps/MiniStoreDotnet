@@ -1,49 +1,93 @@
 ﻿
 {
     "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "name":"MinistoreModel",
+    "id":"62219585-981d-4f23-bc53-d6ebad321a1a",
+    "description":"Feature Model for Ministore product developed by jasotov@eafit.ed.co",
     "features":[
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "126fa3c4-31ad-4c46-92da-569c1eee78ae",
             "label":"",
             "name": "Mini Store Dotnet",
             "included": "True",
             "type": "Root"
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa",
             "label":"",
             "name": "Cloud Provider",
-            "included": "False",
+            "included": "True",
             "type": "Abstract"
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "87d22180-1bb9-4f4d-97b3-5a89f20ee3db",
             "label":"",
             "name": "Infrastructure",
-            "included": "False",
+            "included": "True",
             "type": "Abstract"
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "de260835-b72b-4ef0-bda7-e9196eddabe4",
             "label":"",
-            "name": "VM",
+            "name": "Instances",
+            "included": "False",
+            "type": "Concrete"
+        },
+        {
+            "id": "fc165727-538b-45be-a378-acf5331e47e5",
+            "label":"",
+            "name": "Containers",
             "included": "True",
             "type": "Concrete"
         },
         {
-            "id": "00000000-0000-0000-0000-000000000000",
-            "label":"",
-            "name": "Microservices",
-            "included": "True",
-            "type": "Concrete"
-        },
-        {
-            "id": "00000000-0000-0000-0000-000000000000",
+            "id": "3b955e06-7006-4d42-a192-144b69d90a83",
             "label":"",
             "name": "Core components",
             "included": "True",
+            "type": "Concrete"
+        },
+        {
+            "id": "ee438469-ac0f-467d-8a4f-b86126728b86",
+            "label":"",
+            "name": "Azure",
+            "included": "True",
+            "type": "Concrete"
+        },
+        {
+            "id": "68ea2948-9c9a-4348-90a9-75f39f1ccdf5",
+            "label":"",
+            "name": "AWS",
+            "included": "False",
+            "type": "Concrete"
+        },
+        {
+            "id": "c4023306-6efc-4912-a739-4f6513cd68b2",
+            "label":"",
+            "name": "Data Acces",
+            "included": "True",
+            "type": "Abstract"
+        },
+        {
+            "id": "d37c8883-874d-44ca-be53-5e30fda2ac20",
+            "label":"",
+            "name": "Base components",
+            "included": "False",
+            "type": "Abstract"
+        },
+        {
+            "id": "1ac9978f-947e-4ab6-887a-9c3356479039",
+            "label":"",
+            "name": "Oracle",
+            "included": "True",
+            "type": "Concrete"
+        },
+        {
+            "id": "a15fb36e-875a-4730-8191-d44eed3e193b",
+            "label":"",
+            "name": "MSSQL",
+            "included": "False",
             "type": "Concrete"
         }
     ]
