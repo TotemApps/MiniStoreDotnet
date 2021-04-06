@@ -32,6 +32,21 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
+          <!-- Relationship: FeatureModelHasModelConstraints -->
+          <xsd:element name="modelConstraints" minOccurs="0" maxOccurs="1">
+            <xsd:annotation>
+              <xsd:documentation>Instances of FeatureModelHasModelConstraints</xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element ref="featureModelHasModelConstraints" minOccurs="0" maxOccurs="unbounded">
+                  <xsd:annotation>
+                    <xsd:documentation>[Instance of FeatureModelHasModelConstraints needs to be serialized in full-form]</xsd:documentation>
+                  </xsd:annotation>
+                </xsd:element>
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -167,21 +182,6 @@
               </xsd:sequence>
             </xsd:complexType>
           </xsd:element>
-          <!-- Relationship: FeatureElementHasFeatureConstraints -->
-          <xsd:element name="featureConstraints" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation>Instances of FeatureElementHasFeatureConstraints</xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element ref="featureElementHasFeatureConstraints" minOccurs="0" maxOccurs="unbounded">
-                  <xsd:annotation>
-                    <xsd:documentation>[Instance of FeatureElementHasFeatureConstraints needs to be serialized in full-form]</xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-              </xsd:sequence>
-            </xsd:complexType>
-          </xsd:element>
         </xsd:sequence>
         <!-- Id -->
         <xsd:attribute name="Id" type="xsd:string">
@@ -256,9 +256,9 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- FeatureConstraint -->
-  <xsd:element name="featureConstraint" type="FeatureConstraint" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="FeatureConstraint">
+  <!-- ModelConstraint -->
+  <xsd:element name="modelConstraint" type="ModelConstraint" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="ModelConstraint">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <!-- Id -->
@@ -277,11 +277,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- FeatureConstraint Moniker -->
-  <xsd:element name="featureConstraintMoniker" type="FeatureConstraintMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="FeatureConstraintMoniker">
+  <!-- ModelConstraint Moniker -->
+  <xsd:element name="modelConstraintMoniker" type="ModelConstraintMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="ModelConstraintMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for FeatureConstraint instance.</xsd:documentation>
+      <xsd:documentation>Moniker for ModelConstraint instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">
@@ -540,14 +540,14 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- FeatureElementHasFeatureConstraints -->
-  <xsd:element name="featureElementHasFeatureConstraints" type="FeatureElementHasFeatureConstraints" substitutionGroup="core:modelElement" />
-  <xsd:complexType name="FeatureElementHasFeatureConstraints">
+  <!-- FeatureModelHasModelConstraints -->
+  <xsd:element name="featureModelHasModelConstraints" type="FeatureModelHasModelConstraints" substitutionGroup="core:modelElement" />
+  <xsd:complexType name="FeatureModelHasModelConstraints">
     <xsd:complexContent>
       <xsd:extension base="core:ModelElement">
         <xsd:sequence minOccurs="0" maxOccurs="1">
-          <!-- Target end FeatureConstraint -->
-          <xsd:element ref="featureConstraint" minOccurs="1" maxOccurs="1">
+          <!-- Target end ModelConstraint -->
+          <xsd:element ref="modelConstraint" minOccurs="1" maxOccurs="1">
             <xsd:annotation>
               <xsd:documentation>[Target role-player]</xsd:documentation>
             </xsd:annotation>
@@ -563,11 +563,11 @@
     </xsd:complexContent>
   </xsd:complexType>
   
-  <!-- FeatureElementHasFeatureConstraints Moniker -->
-  <xsd:element name="featureElementHasFeatureConstraintsMoniker" type="FeatureElementHasFeatureConstraintsMoniker" substitutionGroup="core:modelElementMoniker" />
-  <xsd:complexType name="FeatureElementHasFeatureConstraintsMoniker">
+  <!-- FeatureModelHasModelConstraints Moniker -->
+  <xsd:element name="featureModelHasModelConstraintsMoniker" type="FeatureModelHasModelConstraintsMoniker" substitutionGroup="core:modelElementMoniker" />
+  <xsd:complexType name="FeatureModelHasModelConstraintsMoniker">
     <xsd:annotation>
-      <xsd:documentation>Moniker for FeatureElementHasFeatureConstraints instance.</xsd:documentation>
+      <xsd:documentation>Moniker for FeatureModelHasModelConstraints instance.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="core:ModelElementMoniker">

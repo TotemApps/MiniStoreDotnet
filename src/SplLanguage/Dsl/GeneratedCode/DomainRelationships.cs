@@ -1379,33 +1379,33 @@ namespace Company.SplLanguage
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// DomainRelationship FeatureElementHasFeatureConstraints
-	/// Description for Company.SplLanguage.FeatureElementHasFeatureConstraints
+	/// DomainRelationship FeatureModelHasModelConstraints
+	/// Description for Company.SplLanguage.FeatureModelHasModelConstraints
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementHasFeatureConstraints.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementHasFeatureConstraints.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureModelHasModelConstraints.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelHasModelConstraints.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
 	[DslModeling::DomainRelationship(IsEmbedding=true)]
-	[DslModeling::DomainObjectId("ff7d02ac-1334-40a8-963c-09d62df722fb")]
-	public partial class FeatureElementHasFeatureConstraints : DslModeling::ElementLink
+	[DslModeling::DomainObjectId("b2959368-f45f-442a-af54-3f178f91344c")]
+	public partial class FeatureModelHasModelConstraints : DslModeling::ElementLink
 	{
 		#region Constructors, domain class Id
 		
 		/// <summary>
-		/// FeatureElementHasFeatureConstraints domain class Id.
+		/// FeatureModelHasModelConstraints domain class Id.
 		/// </summary>
-		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xff7d02ac, 0x1334, 0x40a8, 0x96, 0x3c, 0x09, 0xd6, 0x2d, 0xf7, 0x22, 0xfb);
+		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0xb2959368, 0xf45f, 0x442a, 0xaf, 0x54, 0x3f, 0x17, 0x8f, 0x91, 0x34, 0x4c);
 	
 				
 		/// <summary>
 		/// Constructor
-		/// Creates a FeatureElementHasFeatureConstraints link in the same Partition as the given FeatureElement
+		/// Creates a FeatureModelHasModelConstraints link in the same Partition as the given FeatureModel
 		/// </summary>
-		/// <param name="source">FeatureElement to use as the source of the relationship.</param>
-		/// <param name="target">FeatureConstraint to use as the target of the relationship.</param>
-		public FeatureElementHasFeatureConstraints(FeatureElement source, FeatureConstraint target)
-			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId, source), new DslModeling::RoleAssignment(FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId, target)}, null)
+		/// <param name="source">FeatureModel to use as the source of the relationship.</param>
+		/// <param name="target">ModelConstraint to use as the target of the relationship.</param>
+		public FeatureModelHasModelConstraints(FeatureModel source, ModelConstraint target)
+			: base((source != null ? source.Partition : null), new DslModeling::RoleAssignment[]{new DslModeling::RoleAssignment(FeatureModelHasModelConstraints.FeatureModelDomainRoleId, source), new DslModeling::RoleAssignment(FeatureModelHasModelConstraints.ModelConstraintDomainRoleId, target)}, null)
 		{
 		}
 		
@@ -1414,7 +1414,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public FeatureElementHasFeatureConstraints(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureModelHasModelConstraints(DslModeling::Store store, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, null)
 		{
 		}
@@ -1425,7 +1425,7 @@ namespace Company.SplLanguage
 		/// <param name="store">Store where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public FeatureElementHasFeatureConstraints(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureModelHasModelConstraints(DslModeling::Store store, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, roleAssignments, propertyAssignments)
 		{
 		}
@@ -1435,7 +1435,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
-		public FeatureElementHasFeatureConstraints(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
+		public FeatureModelHasModelConstraints(DslModeling::Partition partition, params DslModeling::RoleAssignment[] roleAssignments)
 			: base(partition, roleAssignments, null)
 		{
 		}
@@ -1446,126 +1446,125 @@ namespace Company.SplLanguage
 		/// <param name="partition">Partition where new link is to be created.</param>
 		/// <param name="roleAssignments">List of relationship role assignments.</param>
 		/// <param name="propertyAssignments">List of properties assignments to set on the new link.</param>
-		public FeatureElementHasFeatureConstraints(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
+		public FeatureModelHasModelConstraints(DslModeling::Partition partition, DslModeling::RoleAssignment[] roleAssignments, DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, roleAssignments, propertyAssignments)
 		{
 		}
 		#endregion
-		#region FeatureElement domain role code
+		#region FeatureModel domain role code
 		
 		/// <summary>
-		/// FeatureElement domain role Id.
+		/// FeatureModel domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid FeatureElementDomainRoleId = new global::System.Guid(0xa3a82740, 0x9d40, 0x42bc, 0xaf, 0x4e, 0x6e, 0x23, 0x58, 0xbe, 0x49, 0x2a);
+		public static readonly global::System.Guid FeatureModelDomainRoleId = new global::System.Guid(0xd8aebef5, 0xc783, 0x4f9a, 0x8e, 0xa7, 0x97, 0xc9, 0x22, 0x6c, 0x56, 0xcc);
 		
 		/// <summary>
-		/// DomainRole FeatureElement
-		/// Description for
-		/// Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElement
+		/// DomainRole FeatureModel
+		/// Description for Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModel
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureElement.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureElement.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "FeatureConstraints", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureElement.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
-		[DslModeling::DomainObjectId("a3a82740-9d40-42bc-af4e-6e2358be492a")]
-		public virtual FeatureElement FeatureElement
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureModelHasModelConstraints/FeatureModel.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelHasModelConstraints/FeatureModel.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Source, PropertyName = "ModelConstraints", PropertyDisplayNameKey="Company.SplLanguage.FeatureModelHasModelConstraints/FeatureModel.PropertyDisplayName",  PropagatesCopy = DslModeling::PropagatesCopyOption.PropagatesCopyToLinkAndOppositeRolePlayer, Multiplicity = DslModeling::Multiplicity.ZeroMany)]
+		[DslModeling::DomainObjectId("d8aebef5-c783-4f9a-8ea7-97c9226c56cc")]
+		public virtual FeatureModel FeatureModel
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (FeatureElement)DslModeling::DomainRoleInfo.GetRolePlayer(this, FeatureElementDomainRoleId);
+				return (FeatureModel)DslModeling::DomainRoleInfo.GetRolePlayer(this, FeatureModelDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, FeatureElementDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, FeatureModelDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access FeatureElement of a FeatureConstraint
+		#region Static methods to access FeatureModel of a ModelConstraint
 		/// <summary>
-		/// Gets FeatureElement.
+		/// Gets FeatureModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static FeatureElement GetFeatureElement(FeatureConstraint element)
+		public static FeatureModel GetFeatureModel(ModelConstraint element)
 		{
-			return DslModeling::DomainRoleInfo.GetLinkedElement(element, FeatureConstraintDomainRoleId) as FeatureElement;
+			return DslModeling::DomainRoleInfo.GetLinkedElement(element, ModelConstraintDomainRoleId) as FeatureModel;
 		}
 		
 		/// <summary>
-		/// Sets FeatureElement.
+		/// Sets FeatureModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static void SetFeatureElement(FeatureConstraint element, FeatureElement newFeatureElement)
+		public static void SetFeatureModel(ModelConstraint element, FeatureModel newFeatureModel)
 		{
-			DslModeling::DomainRoleInfo.SetLinkedElement(element, FeatureConstraintDomainRoleId, newFeatureElement);
+			DslModeling::DomainRoleInfo.SetLinkedElement(element, ModelConstraintDomainRoleId, newFeatureModel);
 		}
 		#endregion
-		#region FeatureConstraint domain role code
+		#region ModelConstraint domain role code
 		
 		/// <summary>
-		/// FeatureConstraint domain role Id.
+		/// ModelConstraint domain role Id.
 		/// </summary>
-		public static readonly global::System.Guid FeatureConstraintDomainRoleId = new global::System.Guid(0x00102a39, 0xd3ad, 0x404a, 0x8a, 0x26, 0xda, 0x60, 0xcb, 0xae, 0xb4, 0x61);
+		public static readonly global::System.Guid ModelConstraintDomainRoleId = new global::System.Guid(0x41089d60, 0xd7ac, 0x4225, 0x9b, 0x81, 0x37, 0x21, 0x7b, 0x3c, 0x55, 0x10);
 		
 		/// <summary>
-		/// DomainRole FeatureConstraint
+		/// DomainRole ModelConstraint
 		/// Description for
-		/// Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraint
+		/// Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraint
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureConstraint.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureConstraint.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "FeatureElement", PropertyDisplayNameKey="Company.SplLanguage.FeatureElementHasFeatureConstraints/FeatureConstraint.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
-		[DslModeling::DomainObjectId("00102a39-d3ad-404a-8a26-da60cbaeb461")]
-		public virtual FeatureConstraint FeatureConstraint
+		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureModelHasModelConstraints/ModelConstraint.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelHasModelConstraints/ModelConstraint.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::DomainRole(DslModeling::DomainRoleOrder.Target, PropertyName = "FeatureModel", PropertyDisplayNameKey="Company.SplLanguage.FeatureModelHasModelConstraints/ModelConstraint.PropertyDisplayName", PropagatesDelete = true,  PropagatesCopy = DslModeling::PropagatesCopyOption.DoNotPropagateCopy, Multiplicity = DslModeling::Multiplicity.One)]
+		[DslModeling::DomainObjectId("41089d60-d7ac-4225-9b81-37217b3c5510")]
+		public virtual ModelConstraint ModelConstraint
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return (FeatureConstraint)DslModeling::DomainRoleInfo.GetRolePlayer(this, FeatureConstraintDomainRoleId);
+				return (ModelConstraint)DslModeling::DomainRoleInfo.GetRolePlayer(this, ModelConstraintDomainRoleId);
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetRolePlayer(this, FeatureConstraintDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetRolePlayer(this, ModelConstraintDomainRoleId, value);
 			}
 		}
 				
 		#endregion
-		#region Static methods to access FeatureConstraints of a FeatureElement
+		#region Static methods to access ModelConstraints of a FeatureModel
 		/// <summary>
-		/// Gets a list of FeatureConstraints.
+		/// Gets a list of ModelConstraints.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static DslModeling::LinkedElementCollection<FeatureConstraint> GetFeatureConstraints(FeatureElement element)
+		public static DslModeling::LinkedElementCollection<ModelConstraint> GetModelConstraints(FeatureModel element)
 		{
-			return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureConstraint>, FeatureConstraint>(element, FeatureElementDomainRoleId);
+			return GetRoleCollection<DslModeling::LinkedElementCollection<ModelConstraint>, ModelConstraint>(element, FeatureModelDomainRoleId);
 		}
 		#endregion
-		#region FeatureElement link accessor
+		#region FeatureModel link accessor
 		/// <summary>
-		/// Get the list of FeatureElementHasFeatureConstraints links to a FeatureElement.
+		/// Get the list of FeatureModelHasModelConstraints links to a FeatureModel.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementHasFeatureConstraints> GetLinksToFeatureConstraints ( global::Company.SplLanguage.FeatureElement featureElementInstance )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureModelHasModelConstraints> GetLinksToModelConstraints ( global::Company.SplLanguage.FeatureModel featureModelInstance )
 		{
-			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementHasFeatureConstraints>(featureElementInstance, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId);
+			return DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureModelHasModelConstraints>(featureModelInstance, global::Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModelDomainRoleId);
 		}
 		#endregion
-		#region FeatureConstraint link accessor
+		#region ModelConstraint link accessor
 		/// <summary>
-		/// Get the FeatureElementHasFeatureConstraints link to a FeatureConstraint.
+		/// Get the FeatureModelHasModelConstraints link to a ModelConstraint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.SplLanguage.FeatureElementHasFeatureConstraints GetLinkToFeatureElement (global::Company.SplLanguage.FeatureConstraint featureConstraintInstance)
+		public static global::Company.SplLanguage.FeatureModelHasModelConstraints GetLinkToFeatureModel (global::Company.SplLanguage.ModelConstraint modelConstraintInstance)
 		{
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementHasFeatureConstraints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementHasFeatureConstraints>(featureConstraintInstance, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId);
-			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of FeatureConstraint not obeyed.");
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureModelHasModelConstraints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureModelHasModelConstraints>(modelConstraintInstance, global::Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraintDomainRoleId);
+			global::System.Diagnostics.Debug.Assert(links.Count <= 1, "Multiplicity of ModelConstraint not obeyed.");
 			if ( links.Count == 0 )
 			{
 				return null;
@@ -1576,20 +1575,20 @@ namespace Company.SplLanguage
 			}
 		}
 		#endregion
-		#region FeatureElementHasFeatureConstraints instance accessors
+		#region FeatureModelHasModelConstraints instance accessors
 		
 		/// <summary>
-		/// Get any FeatureElementHasFeatureConstraints links between a given FeatureElement and a FeatureConstraint.
+		/// Get any FeatureModelHasModelConstraints links between a given FeatureModel and a ModelConstraint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureElementHasFeatureConstraints> GetLinks( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureConstraint target )
+		public static global::System.Collections.ObjectModel.ReadOnlyCollection<global::Company.SplLanguage.FeatureModelHasModelConstraints> GetLinks( global::Company.SplLanguage.FeatureModel source, global::Company.SplLanguage.ModelConstraint target )
 		{
-			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementHasFeatureConstraints> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureElementHasFeatureConstraints>();
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementHasFeatureConstraints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementHasFeatureConstraints>(source, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId);
-			foreach ( global::Company.SplLanguage.FeatureElementHasFeatureConstraints link in links )
+			global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureModelHasModelConstraints> outLinks = new global::System.Collections.Generic.List<global::Company.SplLanguage.FeatureModelHasModelConstraints>();
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureModelHasModelConstraints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureModelHasModelConstraints>(source, global::Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModelDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureModelHasModelConstraints link in links )
 			{
-				if ( target.Equals(link.FeatureConstraint) )
+				if ( target.Equals(link.ModelConstraint) )
 				{
 					outLinks.Add(link);
 				}
@@ -1597,16 +1596,16 @@ namespace Company.SplLanguage
 			return outLinks.AsReadOnly();
 		}
 		/// <summary>
-		/// Get the one FeatureElementHasFeatureConstraints link between a given FeatureElementand a FeatureConstraint.
+		/// Get the one FeatureModelHasModelConstraints link between a given FeatureModeland a ModelConstraint.
 		/// </summary>
 		[global::System.Diagnostics.DebuggerStepThrough]
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1011")]
-		public static global::Company.SplLanguage.FeatureElementHasFeatureConstraints GetLink( global::Company.SplLanguage.FeatureElement source, global::Company.SplLanguage.FeatureConstraint target )
+		public static global::Company.SplLanguage.FeatureModelHasModelConstraints GetLink( global::Company.SplLanguage.FeatureModel source, global::Company.SplLanguage.ModelConstraint target )
 		{
-			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureElementHasFeatureConstraints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureElementHasFeatureConstraints>(source, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId);
-			foreach ( global::Company.SplLanguage.FeatureElementHasFeatureConstraints link in links )
+			global::System.Collections.Generic.IList<global::Company.SplLanguage.FeatureModelHasModelConstraints> links = DslModeling::DomainRoleInfo.GetElementLinks<global::Company.SplLanguage.FeatureModelHasModelConstraints>(source, global::Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModelDomainRoleId);
+			foreach ( global::Company.SplLanguage.FeatureModelHasModelConstraints link in links )
 			{
-				if ( target.Equals(link.FeatureConstraint) )
+				if ( target.Equals(link.ModelConstraint) )
 				{
 					return link;
 				}

@@ -177,8 +177,8 @@ namespace Company.SplLanguage
 		protected override void InitializeShapeFields(global::System.Collections.Generic.IList<DslDiagrams::ShapeField> shapeFields)
 		{
 			base.InitializeShapeFields(shapeFields);
-			DslDiagrams::TextField field1 = new DslDiagrams::TextField("NameDecorator");
-			field1.DefaultText = global::Company.SplLanguage.SplLanguageDomainModel.SingletonResourceManager.GetString("FeatureShapeNameDecoratorDefaultText");
+			DslDiagrams::TextField field1 = new DslDiagrams::TextField("LabelDecorator");
+			field1.DefaultText = global::Company.SplLanguage.SplLanguageDomainModel.SingletonResourceManager.GetString("FeatureShapeLabelDecoratorDefaultText");
 			field1.DefaultFocusable = true;
 			field1.DefaultAutoSize = true;
 			field1.AnchoringBehavior.MinimumHeightInLines = 1;
@@ -201,7 +201,7 @@ namespace Company.SplLanguage
 		{
 			base.InitializeDecorators(shapeFields, decorators);
 			
-			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "NameDecorator");
+			DslDiagrams::ShapeField field1 = DslDiagrams::ShapeElement.FindShapeField(shapeFields, "LabelDecorator");
 			DslDiagrams::Decorator decorator1 = new DslDiagrams::ShapeDecorator(field1, DslDiagrams::ShapeDecoratorPosition.Center, DslDiagrams::PointD.Empty);
 			decorators.Add(decorator1);
 				

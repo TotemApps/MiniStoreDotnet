@@ -70,14 +70,14 @@ namespace Company.SplLanguage
 				typeof(FeatureModel),
 				typeof(FeatureElement),
 				typeof(FeatureAttribute),
-				typeof(FeatureConstraint),
+				typeof(ModelConstraint),
 				typeof(FeatureModelHasElements),
 				typeof(FeatureElementOptionalReferencesFeatureElement),
 				typeof(FeatureElementMandatoryReferencesFeatureElement),
 				typeof(FeatureElementRequiresReferencesFeatureElements),
 				typeof(FeatureElementExcludesReferenceFeatureElement),
 				typeof(FeatureElementHasFeatureAttributed),
-				typeof(FeatureElementHasFeatureConstraints),
+				typeof(FeatureModelHasModelConstraints),
 				typeof(SplLanguageDiagram),
 				typeof(OptionalConnector),
 				typeof(MandatoryConnector),
@@ -107,9 +107,9 @@ namespace Company.SplLanguage
 				new DomainMemberInfo(typeof(FeatureAttribute), "Name", FeatureAttribute.NameDomainPropertyId, typeof(FeatureAttribute.NamePropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Domain", FeatureAttribute.DomainDomainPropertyId, typeof(FeatureAttribute.DomainPropertyHandler)),
 				new DomainMemberInfo(typeof(FeatureAttribute), "Value", FeatureAttribute.ValueDomainPropertyId, typeof(FeatureAttribute.ValuePropertyHandler)),
-				new DomainMemberInfo(typeof(FeatureConstraint), "Type", FeatureConstraint.TypeDomainPropertyId, typeof(FeatureConstraint.TypePropertyHandler)),
-				new DomainMemberInfo(typeof(FeatureConstraint), "Name", FeatureConstraint.NameDomainPropertyId, typeof(FeatureConstraint.NamePropertyHandler)),
-				new DomainMemberInfo(typeof(FeatureConstraint), "Value", FeatureConstraint.ValueDomainPropertyId, typeof(FeatureConstraint.ValuePropertyHandler)),
+				new DomainMemberInfo(typeof(ModelConstraint), "Type", ModelConstraint.TypeDomainPropertyId, typeof(ModelConstraint.TypePropertyHandler)),
+				new DomainMemberInfo(typeof(ModelConstraint), "Name", ModelConstraint.NameDomainPropertyId, typeof(ModelConstraint.NamePropertyHandler)),
+				new DomainMemberInfo(typeof(ModelConstraint), "Value", ModelConstraint.ValueDomainPropertyId, typeof(ModelConstraint.ValuePropertyHandler)),
 			};
 		}
 		/// <summary>
@@ -132,8 +132,8 @@ namespace Company.SplLanguage
 				new DomainRolePlayerInfo(typeof(FeatureElementExcludesReferenceFeatureElement), "TargetExcludeFeatureElement", FeatureElementExcludesReferenceFeatureElement.TargetExcludeFeatureElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureAttributed), "FeatureElement", FeatureElementHasFeatureAttributed.FeatureElementDomainRoleId),
 				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureAttributed), "FeatureAttribute", FeatureElementHasFeatureAttributed.FeatureAttributeDomainRoleId),
-				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureConstraints), "FeatureElement", FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId),
-				new DomainRolePlayerInfo(typeof(FeatureElementHasFeatureConstraints), "FeatureConstraint", FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureModelHasModelConstraints), "FeatureModel", FeatureModelHasModelConstraints.FeatureModelDomainRoleId),
+				new DomainRolePlayerInfo(typeof(FeatureModelHasModelConstraints), "ModelConstraint", FeatureModelHasModelConstraints.ModelConstraintDomainRoleId),
 			};
 		}
 		#endregion
@@ -159,7 +159,7 @@ namespace Company.SplLanguage
 				createElementMap.Add(typeof(FeatureModel), 0);
 				createElementMap.Add(typeof(FeatureElement), 1);
 				createElementMap.Add(typeof(FeatureAttribute), 2);
-				createElementMap.Add(typeof(FeatureConstraint), 3);
+				createElementMap.Add(typeof(ModelConstraint), 3);
 				createElementMap.Add(typeof(SplLanguageDiagram), 4);
 				createElementMap.Add(typeof(OptionalConnector), 5);
 				createElementMap.Add(typeof(MandatoryConnector), 6);
@@ -182,7 +182,7 @@ namespace Company.SplLanguage
 				case 0: return new FeatureModel(partition, propertyAssignments);
 				case 1: return new FeatureElement(partition, propertyAssignments);
 				case 2: return new FeatureAttribute(partition, propertyAssignments);
-				case 3: return new FeatureConstraint(partition, propertyAssignments);
+				case 3: return new ModelConstraint(partition, propertyAssignments);
 				case 4: return new SplLanguageDiagram(partition, propertyAssignments);
 				case 5: return new OptionalConnector(partition, propertyAssignments);
 				case 6: return new MandatoryConnector(partition, propertyAssignments);
@@ -218,7 +218,7 @@ namespace Company.SplLanguage
 				createElementLinkMap.Add(typeof(FeatureElementRequiresReferencesFeatureElements), 3);
 				createElementLinkMap.Add(typeof(FeatureElementExcludesReferenceFeatureElement), 4);
 				createElementLinkMap.Add(typeof(FeatureElementHasFeatureAttributed), 5);
-				createElementLinkMap.Add(typeof(FeatureElementHasFeatureConstraints), 6);
+				createElementLinkMap.Add(typeof(FeatureModelHasModelConstraints), 6);
 			}
 			int index;
 			if (!createElementLinkMap.TryGetValue(elementLinkType, out index))
@@ -239,7 +239,7 @@ namespace Company.SplLanguage
 				case 3: return new FeatureElementRequiresReferencesFeatureElements(partition, roleAssignments, propertyAssignments);
 				case 4: return new FeatureElementExcludesReferenceFeatureElement(partition, roleAssignments, propertyAssignments);
 				case 5: return new FeatureElementHasFeatureAttributed(partition, roleAssignments, propertyAssignments);
-				case 6: return new FeatureElementHasFeatureConstraints(partition, roleAssignments, propertyAssignments);
+				case 6: return new FeatureModelHasModelConstraints(partition, roleAssignments, propertyAssignments);
 				default: return null;
 			}
 		}
@@ -410,7 +410,7 @@ namespace Company.SplLanguage
 			#region Initialize DomainData Table
 			DomainRoles.Add(global::Company.SplLanguage.FeatureModelHasElements.ElementDomainRoleId, true);
 			DomainRoles.Add(global::Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureAttributeDomainRoleId, true);
-			DomainRoles.Add(global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId, true);
+			DomainRoles.Add(global::Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraintDomainRoleId, true);
 			#endregion
 		}
 		/// <summary>

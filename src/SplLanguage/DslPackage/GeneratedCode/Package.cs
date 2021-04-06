@@ -78,11 +78,11 @@ namespace Company.SplLanguage
 					0xff00ff,
 					Index = 5)]
 	[VSShell::ProvideStaticToolboxItem("Company.SplLanguage.SplLanguageToolboxTab",
-					"@FeatureConstraintToolboxItem;Company.SplLanguage.Dsl.dll", 
-					"Company.SplLanguage.FeatureConstraintToolboxItem", 
+					"@ModelConstraintToolboxItem;Company.SplLanguage.Dsl.dll", 
+					"Company.SplLanguage.ModelConstraintToolboxItem", 
 					"CF_TOOLBOXITEMCONTAINER,CF_TOOLBOXITEMCONTAINER_HASH,CF_TOOLBOXITEMCONTAINER_CONTENTS", 
-					"FeatureConstraint", 
-					"@FeatureConstraintToolboxBitmap;Company.SplLanguage.Dsl.dll", 
+					"ModelConstraint", 
+					"@ModelConstraintToolboxBitmap;Company.SplLanguage.Dsl.dll", 
 					0xff00ff,
 					Index = 6)]
 	[VSShell::ProvideEditorFactory(typeof(SplLanguageEditorFactory), 103, TrustLevel = VSShellInterop::__VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]

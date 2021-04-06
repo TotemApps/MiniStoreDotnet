@@ -253,20 +253,36 @@ namespace Company.SplLanguage
 		/// <param name="element">In-memory FeatureModel instance that will get the deserialized data.</param>
 		private static void ReadChildElements(DslModeling::SerializationContext serializationContext, FeatureModel element, global::System.Xml.XmlReader reader)
 		{
-			if (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
-				if (string.Compare(reader.LocalName, "elements", global::System.StringComparison.CurrentCulture) == 0)
+				switch (reader.LocalName)
 				{
-					if (reader.IsEmptyElement)
-					{	// No instance of this relationship, just skip
-						DslModeling::SerializationUtilities.Skip(reader);
-					}
-					else
-					{
-						DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <elements>
-						ReadFeatureModelHasElementsInstances(serializationContext, element, reader);
-						DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </elements>
-					}
+					case "elements":	// Relationship "FeatureModelHasElements"
+						if (reader.IsEmptyElement)
+						{	// No instance of this relationship, just skip
+							DslModeling::SerializationUtilities.Skip(reader);
+						}
+						else
+						{
+							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <elements>
+							ReadFeatureModelHasElementsInstances(serializationContext, element, reader);
+							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </elements>
+						}
+						break;
+					case "modelConstraints":	// Relationship "FeatureModelHasModelConstraints"
+						if (reader.IsEmptyElement)
+						{	// No instance of this relationship, just skip
+							DslModeling::SerializationUtilities.Skip(reader);
+						}
+						else
+						{
+							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <modelConstraints>
+							ReadFeatureModelHasModelConstraintsInstances(serializationContext, element, reader);
+							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </modelConstraints>
+						}
+						break;
+					default:
+						return;  // Don't know this element.
 				}
 			}
 		}
@@ -315,6 +331,52 @@ namespace Company.SplLanguage
 					}
 					else
 					{	// Unknown element, skip
+						DslModeling::SerializationUtilities.Skip(reader);
+					}
+				}
+			}
+		}
+	
+		/// <summary>
+		/// Reads all instances of relationship FeatureModelHasModelConstraints.
+		/// </summary>
+		/// <remarks>
+		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
+		/// either the first instance, or a bogus tag. This method will deserialize all instances and ignore all bogus tags. When the
+		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
+		/// </remarks>
+		/// <param name="serializationContext">Serialization context.</param>
+		/// <param name="element">In-memory FeatureModel instance that will get the deserialized data.</param>
+		/// <param name="reader">XmlReader to read serialized data from.</param>
+		private static void ReadFeatureModelHasModelConstraintsInstances(DslModeling::SerializationContext serializationContext, FeatureModel element, global::System.Xml.XmlReader reader)
+		{
+			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
+			{
+				DslModeling::DomainClassXmlSerializer newFeatureModelHasModelConstraintsSerializer = serializationContext.Directory.GetSerializer(FeatureModelHasModelConstraints.DomainClassId);
+				global::System.Diagnostics.Debug.Assert(newFeatureModelHasModelConstraintsSerializer != null, "Cannot find serializer for FeatureModelHasModelConstraints!");
+				FeatureModelHasModelConstraints newFeatureModelHasModelConstraints = newFeatureModelHasModelConstraintsSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as FeatureModelHasModelConstraints;
+				if (newFeatureModelHasModelConstraints != null)
+				{
+					DslModeling::DomainRoleInfo.SetRolePlayer (newFeatureModelHasModelConstraints, FeatureModelHasModelConstraints.FeatureModelDomainRoleId, element);
+					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newFeatureModelHasModelConstraints.GetDomainClass().Id);	
+					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newFeatureModelHasModelConstraints.GetDomainClass().Name + "!");
+					targetSerializer.Read(serializationContext, newFeatureModelHasModelConstraints, reader);
+				}
+				else
+				{	// Maybe the relationship is serialized in short-form by mistake.
+					DslModeling::DomainClassXmlSerializer newModelConstraintOfFeatureModelHasModelConstraintsSerializer = serializationContext.Directory.GetSerializer(ModelConstraint.DomainClassId);
+					global::System.Diagnostics.Debug.Assert(newModelConstraintOfFeatureModelHasModelConstraintsSerializer != null, "Cannot find serializer for ModelConstraint!");
+					ModelConstraint newModelConstraintOfFeatureModelHasModelConstraints = newModelConstraintOfFeatureModelHasModelConstraintsSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as ModelConstraint;
+					if (newModelConstraintOfFeatureModelHasModelConstraints != null)
+					{
+						SplLanguageSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(FeatureModelHasModelConstraints));
+						element.ModelConstraints.Add(newModelConstraintOfFeatureModelHasModelConstraints);
+						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newModelConstraintOfFeatureModelHasModelConstraints.GetDomainClass().Id);	
+						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newModelConstraintOfFeatureModelHasModelConstraints.GetDomainClass().Name + "!");
+						targetSerializer.Read(serializationContext, newModelConstraintOfFeatureModelHasModelConstraints, reader);
+					}
+					else
+					{	// Unknown element, skip.
 						DslModeling::SerializationUtilities.Skip(reader);
 					}
 				}
@@ -814,6 +876,23 @@ namespace Company.SplLanguage
 				writer.WriteEndElement();
 			}
 	
+			// FeatureModelHasModelConstraints
+			global::System.Collections.ObjectModel.ReadOnlyCollection<FeatureModelHasModelConstraints> allFeatureModelHasModelConstraintsInstances = FeatureModelHasModelConstraints.GetLinksToModelConstraints(element);
+			if (!serializationContext.Result.Failed && allFeatureModelHasModelConstraintsInstances.Count > 0)
+			{
+				writer.WriteStartElement("modelConstraints");
+				foreach (FeatureModelHasModelConstraints eachFeatureModelHasModelConstraintsInstance in allFeatureModelHasModelConstraintsInstances)
+				{
+					if (serializationContext.Result.Failed)
+						break;
+	
+					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachFeatureModelHasModelConstraintsInstance.GetDomainClass().Id);
+					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachFeatureModelHasModelConstraintsInstance.GetDomainClass().Name + "!");
+					relSerializer.Write(serializationContext, eachFeatureModelHasModelConstraintsInstance, writer);
+				}
+				writer.WriteEndElement();
+			}
+	
 		}
 		#endregion
 	
@@ -1193,18 +1272,6 @@ namespace Company.SplLanguage
 							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </featureAttributed>
 						}
 						break;
-					case "featureConstraints":	// Relationship "FeatureElementHasFeatureConstraints"
-						if (reader.IsEmptyElement)
-						{	// No instance of this relationship, just skip
-							DslModeling::SerializationUtilities.Skip(reader);
-						}
-						else
-						{
-							DslModeling::SerializationUtilities.SkipToFirstChild(reader);  // Skip the open tag of <featureConstraints>
-							ReadFeatureElementHasFeatureConstraintsInstances(serializationContext, element, reader);
-							DslModeling::SerializationUtilities.Skip(reader);  // Skip the close tag of </featureConstraints>
-						}
-						break;
 					default:
 						return;  // Don't know this element.
 				}
@@ -1432,52 +1499,6 @@ namespace Company.SplLanguage
 						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newFeatureAttributeOfFeatureElementHasFeatureAttributed.GetDomainClass().Id);	
 						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newFeatureAttributeOfFeatureElementHasFeatureAttributed.GetDomainClass().Name + "!");
 						targetSerializer.Read(serializationContext, newFeatureAttributeOfFeatureElementHasFeatureAttributed, reader);
-					}
-					else
-					{	// Unknown element, skip.
-						DslModeling::SerializationUtilities.Skip(reader);
-					}
-				}
-			}
-		}
-	
-		/// <summary>
-		/// Reads all instances of relationship FeatureElementHasFeatureConstraints.
-		/// </summary>
-		/// <remarks>
-		/// The caller will position the reader at the open tag of the first XML element inside the relationship tag, so it can be
-		/// either the first instance, or a bogus tag. This method will deserialize all instances and ignore all bogus tags. When the
-		/// method returns, the reader will be positioned at the end tag of the relationship (or EOF if somehow that happens).
-		/// </remarks>
-		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureElement instance that will get the deserialized data.</param>
-		/// <param name="reader">XmlReader to read serialized data from.</param>
-		private static void ReadFeatureElementHasFeatureConstraintsInstances(DslModeling::SerializationContext serializationContext, FeatureElement element, global::System.Xml.XmlReader reader)
-		{
-			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
-			{
-				DslModeling::DomainClassXmlSerializer newFeatureElementHasFeatureConstraintsSerializer = serializationContext.Directory.GetSerializer(FeatureElementHasFeatureConstraints.DomainClassId);
-				global::System.Diagnostics.Debug.Assert(newFeatureElementHasFeatureConstraintsSerializer != null, "Cannot find serializer for FeatureElementHasFeatureConstraints!");
-				FeatureElementHasFeatureConstraints newFeatureElementHasFeatureConstraints = newFeatureElementHasFeatureConstraintsSerializer.TryCreateInstance (serializationContext, reader, element.Partition) as FeatureElementHasFeatureConstraints;
-				if (newFeatureElementHasFeatureConstraints != null)
-				{
-					DslModeling::DomainRoleInfo.SetRolePlayer (newFeatureElementHasFeatureConstraints, FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId, element);
-					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newFeatureElementHasFeatureConstraints.GetDomainClass().Id);	
-					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newFeatureElementHasFeatureConstraints.GetDomainClass().Name + "!");
-					targetSerializer.Read(serializationContext, newFeatureElementHasFeatureConstraints, reader);
-				}
-				else
-				{	// Maybe the relationship is serialized in short-form by mistake.
-					DslModeling::DomainClassXmlSerializer newFeatureConstraintOfFeatureElementHasFeatureConstraintsSerializer = serializationContext.Directory.GetSerializer(FeatureConstraint.DomainClassId);
-					global::System.Diagnostics.Debug.Assert(newFeatureConstraintOfFeatureElementHasFeatureConstraintsSerializer != null, "Cannot find serializer for FeatureConstraint!");
-					FeatureConstraint newFeatureConstraintOfFeatureElementHasFeatureConstraints = newFeatureConstraintOfFeatureElementHasFeatureConstraintsSerializer.TryCreateInstance(serializationContext, reader, element.Partition) as FeatureConstraint;
-					if (newFeatureConstraintOfFeatureElementHasFeatureConstraints != null)
-					{
-						SplLanguageSerializationBehaviorSerializationMessages.ExpectingFullFormRelationship(serializationContext, reader, typeof(FeatureElementHasFeatureConstraints));
-						element.FeatureConstraints.Add(newFeatureConstraintOfFeatureElementHasFeatureConstraints);
-						DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (newFeatureConstraintOfFeatureElementHasFeatureConstraints.GetDomainClass().Id);	
-						global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + newFeatureConstraintOfFeatureElementHasFeatureConstraints.GetDomainClass().Name + "!");
-						targetSerializer.Read(serializationContext, newFeatureConstraintOfFeatureElementHasFeatureConstraints, reader);
 					}
 					else
 					{	// Unknown element, skip.
@@ -2041,23 +2062,6 @@ namespace Company.SplLanguage
 					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachFeatureElementHasFeatureAttributedInstance.GetDomainClass().Id);
 					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachFeatureElementHasFeatureAttributedInstance.GetDomainClass().Name + "!");
 					relSerializer.Write(serializationContext, eachFeatureElementHasFeatureAttributedInstance, writer);
-				}
-				writer.WriteEndElement();
-			}
-	
-			// FeatureElementHasFeatureConstraints
-			global::System.Collections.ObjectModel.ReadOnlyCollection<FeatureElementHasFeatureConstraints> allFeatureElementHasFeatureConstraintsInstances = FeatureElementHasFeatureConstraints.GetLinksToFeatureConstraints(element);
-			if (!serializationContext.Result.Failed && allFeatureElementHasFeatureConstraintsInstances.Count > 0)
-			{
-				writer.WriteStartElement("featureConstraints");
-				foreach (FeatureElementHasFeatureConstraints eachFeatureElementHasFeatureConstraintsInstance in allFeatureElementHasFeatureConstraintsInstances)
-				{
-					if (serializationContext.Result.Failed)
-						break;
-	
-					DslModeling::DomainClassXmlSerializer relSerializer = serializationContext.Directory.GetSerializer(eachFeatureElementHasFeatureConstraintsInstance.GetDomainClass().Id);
-					global::System.Diagnostics.Debug.Assert(relSerializer != null, "Cannot find serializer for " + eachFeatureElementHasFeatureConstraintsInstance.GetDomainClass().Name + "!");
-					relSerializer.Write(serializationContext, eachFeatureElementHasFeatureConstraintsInstance, writer);
 				}
 				writer.WriteEndElement();
 			}
@@ -2873,15 +2877,15 @@ namespace Company.SplLanguage
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// Serializer FeatureConstraintSerializer for DomainClass FeatureConstraint.
+	/// Serializer ModelConstraintSerializer for DomainClass ModelConstraint.
 	/// </summary>
-	public partial class FeatureConstraintSerializer : DslModeling::DomainClassXmlSerializer
+	public partial class ModelConstraintSerializer : DslModeling::DomainClassXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// FeatureConstraintSerializer Constructor
+		/// ModelConstraintSerializer Constructor
 		/// </summary>
-		public FeatureConstraintSerializer ()
+		public ModelConstraintSerializer ()
 			: base ()
 		{
 		}
@@ -2907,25 +2911,25 @@ namespace Company.SplLanguage
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of FeatureConstraint.
+		/// This is the XML tag name used to serialize an instance of ModelConstraint.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"featureConstraint"; }
+			get { return @"modelConstraint"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of FeatureConstraint.
+		/// This is the XML tag name used to serialize a monikerized instance of ModelConstraint.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"featureConstraintMoniker"; }
+			get { return @"modelConstraintMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of FeatureConstraint in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of ModelConstraint in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -2936,16 +2940,16 @@ namespace Company.SplLanguage
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one FeatureConstraint instance from XML.
+		/// Public Read() method that deserializes one ModelConstraint instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the FeatureConstraint element that is about to be deserialized. 
+		/// of the ModelConstraint element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureConstraint instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory ModelConstraint instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -3003,7 +3007,7 @@ namespace Company.SplLanguage
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureConstraint instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory ModelConstraint instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -3011,8 +3015,8 @@ namespace Company.SplLanguage
 			// Always call the base class so any extensions are deserialized
 			base.ReadPropertiesFromAttributes(serializationContext, element, reader);
 	
-			FeatureConstraint instanceOfFeatureConstraint = element as FeatureConstraint;
-			global::System.Diagnostics.Debug.Assert(instanceOfFeatureConstraint != null, "Expecting an instance of FeatureConstraint");
+			ModelConstraint instanceOfModelConstraint = element as ModelConstraint;
+			global::System.Diagnostics.Debug.Assert(instanceOfModelConstraint != null, "Expecting an instance of ModelConstraint");
 	
 			// Type
 			if (!serializationContext.Result.Failed)
@@ -3023,7 +3027,7 @@ namespace Company.SplLanguage
 					ConstraintType valueOfType;
 					if (DslModeling::SerializationUtilities.TryGetValue<ConstraintType>(serializationContext, attribType, out valueOfType))
 					{
-						instanceOfFeatureConstraint.Type = valueOfType;
+						instanceOfModelConstraint.Type = valueOfType;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -3040,7 +3044,7 @@ namespace Company.SplLanguage
 					global::System.String valueOfName;
 					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribName, out valueOfName))
 					{
-						instanceOfFeatureConstraint.Name = valueOfName;
+						instanceOfModelConstraint.Name = valueOfName;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -3057,7 +3061,7 @@ namespace Company.SplLanguage
 					global::System.String valueOfValue;
 					if (DslModeling::SerializationUtilities.TryGetValue<global::System.String>(serializationContext, attribValue, out valueOfValue))
 					{
-						instanceOfFeatureConstraint.Value = valueOfValue;
+						instanceOfModelConstraint.Value = valueOfValue;
 					}
 					else
 					{	// Invalid property value, ignored.
@@ -3081,7 +3085,7 @@ namespace Company.SplLanguage
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureConstraint instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory ModelConstraint instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -3092,8 +3096,8 @@ namespace Company.SplLanguage
 	
 		#region TryCreateInstance
 		/// <summary>
-		/// This method creates a correct instance of FeatureConstraint based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized FeatureConstraint, a new FeatureConstraint instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of ModelConstraint based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized ModelConstraint, a new ModelConstraint instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -3103,7 +3107,7 @@ namespace Company.SplLanguage
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created FeatureConstraint instance, or null if the reader is not pointing to a serialized FeatureConstraint instance.</returns>
+		/// <returns>Created ModelConstraint instance, or null if the reader is not pointing to a serialized ModelConstraint instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -3123,18 +3127,18 @@ namespace Company.SplLanguage
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "FeatureConstraint" instance.
+				{	// New "ModelConstraint" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "FeatureConstraint".
+				{	// Check for derived classes of "ModelConstraint".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class instance.
-						FeatureConstraintSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureConstraintSerializer;
+						ModelConstraintSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ModelConstraintSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -3145,8 +3149,8 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// This method creates an instance of FeatureConstraint based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of FeatureConstraint.
+		/// This method creates an instance of ModelConstraint based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of ModelConstraint.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -3154,8 +3158,8 @@ namespace Company.SplLanguage
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new FeatureConstraint instance should be created.</param>	
-		/// <returns>Created FeatureConstraint instance.</returns>
+		/// <param name="partition">Partition in which new ModelConstraint instance should be created.</param>	
+		/// <returns>Created ModelConstraint instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -3171,7 +3175,7 @@ namespace Company.SplLanguage
 				{
 					id = new global::System.Guid (idStr);
 				}
-				return new FeatureConstraint(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
+				return new ModelConstraint(partition, new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id));
 			}
 			catch (global::System.ArgumentNullException /* anEx */)
 			{	
@@ -3189,12 +3193,12 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from FeatureConstraint, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from ModelConstraint, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from FeatureConstraint.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from ModelConstraint.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -3203,7 +3207,7 @@ namespace Company.SplLanguage
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureConstraint.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ModelConstraint.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -3235,7 +3239,7 @@ namespace Company.SplLanguage
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including FeatureConstraint itself) instance of FeatureConstraint based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including ModelConstraint itself) instance of ModelConstraint based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -3269,18 +3273,18 @@ namespace Company.SplLanguage
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "FeatureConstraint" moniker instance.
+				{	// New "ModelConstraint" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "FeatureConstraint".
+				{	// Check for derived classes of "ModelConstraint".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						FeatureConstraintSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureConstraintSerializer;
+						ModelConstraintSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as ModelConstraintSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -3291,7 +3295,7 @@ namespace Company.SplLanguage
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of FeatureConstraint based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of ModelConstraint based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -3316,7 +3320,7 @@ namespace Company.SplLanguage
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, FeatureConstraint.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, ModelConstraint.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -3340,12 +3344,12 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureConstraint, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from ModelConstraint, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureConstraint.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from ModelConstraint.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -3354,7 +3358,7 @@ namespace Company.SplLanguage
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureConstraint.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(ModelConstraint.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -3380,13 +3384,13 @@ namespace Company.SplLanguage
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized FeatureConstraint instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized ModelConstraint instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureConstraint instance to be monikerized.</param>
+		/// <param name="element">ModelConstraint instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the FeatureConstraint instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the FeatureConstraint instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the ModelConstraint instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the ModelConstraint instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -3415,10 +3419,10 @@ namespace Company.SplLanguage
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one FeatureConstraint instance into XML.
+		/// Public Write() method that serializes one ModelConstraint instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureConstraint instance to be serialized.</param>
+		/// <param name="element">ModelConstraint instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -3479,7 +3483,7 @@ namespace Company.SplLanguage
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureConstraint instance to be serialized.</param>
+		/// <param name="element">ModelConstraint instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -3487,13 +3491,13 @@ namespace Company.SplLanguage
 			// Always call the base class so any extensions are serialized
 			base.WritePropertiesAsAttributes(serializationContext, element, writer);
 	
-			FeatureConstraint instanceOfFeatureConstraint = element as FeatureConstraint;
-			global::System.Diagnostics.Debug.Assert(instanceOfFeatureConstraint != null, "Expecting an instance of FeatureConstraint");
+			ModelConstraint instanceOfModelConstraint = element as ModelConstraint;
+			global::System.Diagnostics.Debug.Assert(instanceOfModelConstraint != null, "Expecting an instance of ModelConstraint");
 	
 			// Type
 			if (!serializationContext.Result.Failed)
 			{
-				ConstraintType propValue = instanceOfFeatureConstraint.Type;
+				ConstraintType propValue = instanceOfModelConstraint.Type;
 				string serializedPropValue = DslModeling::SerializationUtilities.GetString<ConstraintType>(serializationContext, propValue);
 				if (!serializationContext.Result.Failed)
 				{
@@ -3503,7 +3507,7 @@ namespace Company.SplLanguage
 			// Name
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfFeatureConstraint.Name;
+				global::System.String propValue = instanceOfModelConstraint.Name;
 				if (!serializationContext.Result.Failed)
 				{
 					if (!string.IsNullOrEmpty(propValue))
@@ -3514,7 +3518,7 @@ namespace Company.SplLanguage
 			// Value
 			if (!serializationContext.Result.Failed)
 			{
-				global::System.String propValue = instanceOfFeatureConstraint.Value;
+				global::System.String propValue = instanceOfModelConstraint.Value;
 				if (!serializationContext.Result.Failed)
 				{
 					if (!string.IsNullOrEmpty(propValue))
@@ -3528,7 +3532,7 @@ namespace Company.SplLanguage
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureConstraint instance to be serialized.</param>
+		/// <param name="element">ModelConstraint instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -3541,11 +3545,11 @@ namespace Company.SplLanguage
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given FeatureConstraint instance.
+		/// This method calculates a moniker to a given ModelConstraint instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">FeatureConstraint instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the FeatureConstraint instance.</returns>
+		/// <param name="element">ModelConstraint instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the ModelConstraint instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -3557,8 +3561,8 @@ namespace Company.SplLanguage
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			FeatureConstraint instance = element as FeatureConstraint;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of FeatureConstraint!");
+			ModelConstraint instance = element as ModelConstraint;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of ModelConstraint!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -3569,7 +3573,7 @@ namespace Company.SplLanguage
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">FeatureConstraint instance to get moniker qualifier from.</param>
+		/// <param name="element">ModelConstraint instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -8554,15 +8558,15 @@ namespace Company.SplLanguage
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// Serializer FeatureElementHasFeatureConstraintsSerializer for DomainClass FeatureElementHasFeatureConstraints.
+	/// Serializer FeatureModelHasModelConstraintsSerializer for DomainClass FeatureModelHasModelConstraints.
 	/// </summary>
-	public partial class FeatureElementHasFeatureConstraintsSerializer : DslModeling::DomainRelationshipXmlSerializer
+	public partial class FeatureModelHasModelConstraintsSerializer : DslModeling::DomainRelationshipXmlSerializer
 	{
 		#region Constructor
 		/// <summary>
-		/// FeatureElementHasFeatureConstraintsSerializer Constructor
+		/// FeatureModelHasModelConstraintsSerializer Constructor
 		/// </summary>
-		public FeatureElementHasFeatureConstraintsSerializer ()
+		public FeatureModelHasModelConstraintsSerializer ()
 			: base ()
 		{
 		}
@@ -8588,25 +8592,25 @@ namespace Company.SplLanguage
 	
 		#region Public Properties
 		/// <summary>
-		/// This is the XML tag name used to serialize an instance of FeatureElementHasFeatureConstraints.
+		/// This is the XML tag name used to serialize an instance of FeatureModelHasModelConstraints.
 		/// </summary>
 		public override string XmlTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"featureElementHasFeatureConstraints"; }
+			get { return @"featureModelHasModelConstraints"; }
 		}
 	
 		/// <summary>
-		/// This is the XML tag name used to serialize a monikerized instance of FeatureElementHasFeatureConstraints.
+		/// This is the XML tag name used to serialize a monikerized instance of FeatureModelHasModelConstraints.
 		/// </summary>
 		public override string MonikerTagName
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
-			get { return @"featureElementHasFeatureConstraintsMoniker"; }
+			get { return @"featureModelHasModelConstraintsMoniker"; }
 		}
 		
 		/// <summary>
-		/// This is the name of the XML attribute that stores the moniker of FeatureElementHasFeatureConstraints in a serialized monikerized instance.
+		/// This is the name of the XML attribute that stores the moniker of FeatureModelHasModelConstraints in a serialized monikerized instance.
 		/// </summary>
 		public override string MonikerAttributeName
 		{
@@ -8617,16 +8621,16 @@ namespace Company.SplLanguage
 	
 		#region Read Methods
 		/// <summary>
-		/// Public Read() method that deserializes one FeatureElementHasFeatureConstraints instance from XML.
+		/// Public Read() method that deserializes one FeatureModelHasModelConstraints instance from XML.
 		/// </summary>
 		/// <remarks>
 		/// When this method is called, caller guarantees that the passed-in XML reader is positioned at the open XML tag
-		/// of the FeatureElementHasFeatureConstraints element that is about to be deserialized. 
+		/// of the FeatureModelHasModelConstraints element that is about to be deserialized. 
 		/// The method needs to ensure that when it returns, the reader is positioned at the open XML tag of the next sibling element,
 		/// or the close tag of the parent element (or EOF).
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureElementHasFeatureConstraints instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory FeatureModelHasModelConstraints instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		public override void Read(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -8645,7 +8649,7 @@ namespace Company.SplLanguage
 			// Read properties serialized as XML attributes.
 			ReadPropertiesFromAttributes(serializationContext, element, reader);
 				
-			// Read nested XML elements, which include at least the instance of target role-player FeatureConstraint
+			// Read nested XML elements, which include at least the instance of target role-player ModelConstraint
 			if (!serializationContext.Result.Failed)
 			{
 				if (!reader.IsEmptyElement)
@@ -8656,7 +8660,7 @@ namespace Company.SplLanguage
 					// Read any extension element data under this XML element
 					SplLanguageSerializationHelper.Instance.ReadExtensions(serializationContext, element, reader);
 					
-					// Read target role-player FeatureConstraint.
+					// Read target role-player ModelConstraint.
 					ReadTargetRolePlayer(serializationContext, element, reader);
 	
 					// Read nested XML elements, they can be either properties serialized as XML elements, or child 
@@ -8674,7 +8678,7 @@ namespace Company.SplLanguage
 				}
 				else
 				{
-					SplLanguageSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "FeatureElementHasFeatureConstraints");
+					SplLanguageSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "FeatureModelHasModelConstraints");
 				}
 			}
 	
@@ -8684,7 +8688,7 @@ namespace Company.SplLanguage
 		
 	
 		/// <summary>
-		/// This method reads the target role player FeatureConstraint.
+		/// This method reads the target role player ModelConstraint.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at the open tag of the first child XML element.
@@ -8698,7 +8702,7 @@ namespace Company.SplLanguage
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureElementHasFeatureConstraints instance that will link to the target FeatureConstraint instance.</param>
+		/// <param name="element">In-memory FeatureModelHasModelConstraints instance that will link to the target ModelConstraint instance.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected virtual void ReadTargetRolePlayer(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -8714,10 +8718,10 @@ namespace Company.SplLanguage
 				throw new global::System.ArgumentNullException ("reader");
 			#endregion
 	
-			// Read the instance of target role-player FeatureConstraint
+			// Read the instance of target role-player ModelConstraint
 			DslModeling::ModelElement targetRolePlayer = null;
-			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(FeatureConstraint.DomainClassId);
-			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for FeatureConstraint!");
+			DslModeling::DomainClassXmlSerializer targetRoleSerializer = serializationContext.Directory.GetSerializer(ModelConstraint.DomainClassId);
+			global::System.Diagnostics.Debug.Assert(targetRoleSerializer != null, "Cannot find serializer for ModelConstraint!");
 	
 			while (!serializationContext.Result.Failed && !reader.EOF && reader.NodeType == global::System.Xml.XmlNodeType.Element)
 			{
@@ -8725,7 +8729,7 @@ namespace Company.SplLanguage
 				if (targetRolePlayer != null)
 				{
 					// Attach the target role-player.
-					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId, targetRolePlayer);
+					DslModeling::DomainRoleInfo.SetRolePlayer(element as DslModeling::ElementLink, FeatureModelHasModelConstraints.ModelConstraintDomainRoleId, targetRolePlayer);
 					// Read target role-player.
 					DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer (targetRolePlayer.GetDomainClass().Id);	
 					global::System.Diagnostics.Debug.Assert (targetSerializer != null, "Cannot find serializer for " + targetRolePlayer.GetDomainClass().Name + "!");
@@ -8738,7 +8742,7 @@ namespace Company.SplLanguage
 			}
 			if (targetRolePlayer == null)
 			{
-				SplLanguageSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "FeatureElementHasFeatureConstraints");
+				SplLanguageSerializationBehaviorSerializationMessages.DanglingRelationship(serializationContext, reader, "FeatureModelHasModelConstraints");
 			}
 		}
 	
@@ -8750,7 +8754,7 @@ namespace Company.SplLanguage
 		/// The caller will guarantee that the reader is positioned on the open XML tag of the current element being deserialized.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureElementHasFeatureConstraints instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory FeatureModelHasModelConstraints instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void ReadPropertiesFromAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
@@ -8775,7 +8779,7 @@ namespace Company.SplLanguage
 		/// 3) EOF.
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">In-memory FeatureElementHasFeatureConstraints instance that will get the deserialized data.</param>
+		/// <param name="element">In-memory FeatureModelHasModelConstraints instance that will get the deserialized data.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		protected override void ReadElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlReader reader)
 		{
@@ -8786,8 +8790,8 @@ namespace Company.SplLanguage
 	
 		#region TryCreateInstance & TryCreateDerivedInstance
 		/// <summary>
-		/// This method creates a correct instance of FeatureElementHasFeatureConstraints based on the tag currently pointed by the reader. If the reader
-		/// is positioned at a serialized FeatureElementHasFeatureConstraints, a new FeatureElementHasFeatureConstraints instance will be created in the given partition, otherwise 
+		/// This method creates a correct instance of FeatureModelHasModelConstraints based on the tag currently pointed by the reader. If the reader
+		/// is positioned at a serialized FeatureModelHasModelConstraints, a new FeatureModelHasModelConstraints instance will be created in the given partition, otherwise 
 		/// null is returned.
 		/// </summary>
 		/// <remarks>
@@ -8797,7 +8801,7 @@ namespace Company.SplLanguage
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>	
-		/// <returns>Created FeatureElementHasFeatureConstraints instance, or null if the reader is not pointing to a serialized FeatureElementHasFeatureConstraints instance.</returns>
+		/// <returns>Created FeatureModelHasModelConstraints instance, or null if the reader is not pointing to a serialized FeatureModelHasModelConstraints instance.</returns>
 		public override DslModeling::ModelElement TryCreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -8816,9 +8820,9 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// This method creates a correct derived instance of FeatureElementHasFeatureConstraints based on the tag currently pointed by the reader.
+		/// This method creates a correct derived instance of FeatureModelHasModelConstraints based on the tag currently pointed by the reader.
 		/// Note that the difference between this method and the above one is that this method will never create an instance of the
-		/// FeatureElementHasFeatureConstraints type itself, only derived types are checked.
+		/// FeatureModelHasModelConstraints type itself, only derived types are checked.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -8827,7 +8831,7 @@ namespace Company.SplLanguage
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
 		/// <param name="partition">Partition in which new elements should be created.</param>
-		/// <returns>Created instance that derives from FeatureElementHasFeatureConstraints, or null if the reader is not pointing to such a serialized instance.</returns>
+		/// <returns>Created instance that derives from FeatureModelHasModelConstraints, or null if the reader is not pointing to such a serialized instance.</returns>
 		public override DslModeling::ElementLink TryCreateDerivedInstance (DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			#region Check Parameters
@@ -8859,18 +8863,18 @@ namespace Company.SplLanguage
 			{
 				string localName = reader.LocalName;
 				if (!derivedTypesOnly && string.Compare (localName, this.XmlTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "FeatureElementHasFeatureConstraints" instance.
+				{	// New "FeatureModelHasModelConstraints" instance.
 					result = this.CreateInstance(serializationContext, reader, partition);
 				}
 				else
-				{	// Check for derived classes of "FeatureElementHasFeatureConstraints".
+				{	// Check for derived classes of "FeatureModelHasModelConstraints".
 					if (this.derivedClasses == null)
 						this.ConstructDerivedClassesLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert (this.derivedClasses != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClasses.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived relationship instance.
-						FeatureElementHasFeatureConstraintsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureElementHasFeatureConstraintsSerializer;
+						FeatureModelHasModelConstraintsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureModelHasModelConstraintsSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateInstance(serializationContext, reader, partition);
 					}
@@ -8881,8 +8885,8 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// This method creates an instance of FeatureElementHasFeatureConstraints based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
-		/// to be pointed at a serialized instance of FeatureElementHasFeatureConstraints.
+		/// This method creates an instance of FeatureModelHasModelConstraints based on the tag currently pointed by the reader. The reader is guaranteed (by the caller)
+		/// to be pointed at a serialized instance of FeatureModelHasModelConstraints.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the ModelRoot instance being read. This method should
@@ -8890,8 +8894,8 @@ namespace Company.SplLanguage
 		/// </remarks>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="reader">XmlReader to read serialized data from.</param>
-		/// <param name="partition">Partition in which new FeatureElementHasFeatureConstraints instance should be created.</param>	
-		/// <returns>Created FeatureElementHasFeatureConstraints instance.</returns>
+		/// <param name="partition">Partition in which new FeatureModelHasModelConstraints instance should be created.</param>	
+		/// <returns>Created FeatureModelHasModelConstraints instance.</returns>
 		protected override DslModeling::ModelElement CreateInstance(DslModeling::SerializationContext serializationContext, global::System.Xml.XmlReader reader, DslModeling::Partition partition)
 		{
 			string idStr = reader.GetAttribute ("Id");
@@ -8908,11 +8912,11 @@ namespace Company.SplLanguage
 					id = new global::System.Guid (idStr);
 				}
 				// Create the link with place-holder role-players.
-				return new FeatureElementHasFeatureConstraints(
+				return new FeatureModelHasModelConstraints(
 					partition,
 					new DslModeling::RoleAssignment[] {
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId), 
-						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId)
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (FeatureModelHasModelConstraints.FeatureModelDomainRoleId), 
+						DslModeling::RoleAssignment.CreatePlaceholderRoleAssignment (FeatureModelHasModelConstraints.ModelConstraintDomainRoleId)
 					},
 					new DslModeling::PropertyAssignment[] {
 						new DslModeling::PropertyAssignment(DslModeling::ElementFactory.IdPropertyAssignment, id)
@@ -8935,12 +8939,12 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from FeatureElementHasFeatureConstraints, created on demand.
+		/// Stores a mapping from XmlTagName to DomainClassInfo that derives from FeatureModelHasModelConstraints, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClasses;
 	
 		/// <summary>
-		/// Construct the apping from XmlTagName to DomainClassInfo that derives from FeatureElementHasFeatureConstraints.
+		/// Construct the apping from XmlTagName to DomainClassInfo that derives from FeatureModelHasModelConstraints.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -8949,7 +8953,7 @@ namespace Company.SplLanguage
 			global::System.Diagnostics.Debug.Assert(this.derivedClasses == null); // Shouldn't construct the table more than once.
 			this.derivedClasses = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureElementHasFeatureConstraints.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureModelHasModelConstraints.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -8981,7 +8985,7 @@ namespace Company.SplLanguage
 	
 		#region TryCreateMonikerInstance
 		/// <summary>
-		/// This method creates a Moniker of the correct derived (including FeatureElementHasFeatureConstraints itself) instance of FeatureElementHasFeatureConstraints based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of the correct derived (including FeatureModelHasModelConstraints itself) instance of FeatureModelHasModelConstraints based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -9015,18 +9019,18 @@ namespace Company.SplLanguage
 			{
 				string localName = reader.LocalName;
 				if (string.Compare (localName, this.MonikerTagName, global::System.StringComparison.CurrentCulture) == 0)
-				{	// New "FeatureElementHasFeatureConstraints" moniker instance.
+				{	// New "FeatureModelHasModelConstraints" moniker instance.
 					result = this.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 				}
 				else
-				{	// Check for derived classes of "FeatureElementHasFeatureConstraints".
+				{	// Check for derived classes of "FeatureModelHasModelConstraints".
 					if (this.derivedClassMonikers == null)
 						this.ConstructDerivedClassMonikersLookupTable(serializationContext, partition.DomainDataDirectory);
 					global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers != null);
 					DslModeling::DomainClassInfo derivedClass = null;
 					if (this.derivedClassMonikers.TryGetValue (localName, out derivedClass) && derivedClass != null)
 					{	// New derived class moniker instance.
-						FeatureElementHasFeatureConstraintsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureElementHasFeatureConstraintsSerializer;
+						FeatureModelHasModelConstraintsSerializer derivedSerializer = serializationContext.Directory.GetSerializer(derivedClass.Id) as FeatureModelHasModelConstraintsSerializer;
 						global::System.Diagnostics.Debug.Assert(derivedSerializer != null, "Cannot find serializer for " + derivedClass.Name + "!");
 						result = derivedSerializer.CreateMonikerInstance(serializationContext, reader, sourceRolePlayer, relDomainClassId, partition);
 					}
@@ -9037,7 +9041,7 @@ namespace Company.SplLanguage
 		}
 		
 		/// <summary>
-		/// This method creates a Moniker of FeatureElementHasFeatureConstraints based on the tag currently pointed by the reader.
+		/// This method creates a Moniker of FeatureModelHasModelConstraints based on the tag currently pointed by the reader.
 		/// </summary>
 		/// <remarks>
 		/// The caller will guarantee that the reader is positioned at open XML tag of the next element being read. This method should
@@ -9062,7 +9066,7 @@ namespace Company.SplLanguage
 			{	// Normalize the Id.
 				global::System.Guid id = new global::System.Guid(monikerString);
 				monikerString = id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
-				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, FeatureElementHasFeatureConstraints.DomainClassId, partition.Store), partition.Store);
+				DslModeling::Moniker result = new DslModeling::Moniker(new DslModeling::MonikerKey(monikerString, relDomainClassId, FeatureModelHasModelConstraints.DomainClassId, partition.Store), partition.Store);
 				// Set location info if possible.
 				result.Location = serializationContext.Location;
 				global::System.Xml.IXmlLineInfo xmlLineInfo = reader as global::System.Xml.IXmlLineInfo;
@@ -9086,12 +9090,12 @@ namespace Company.SplLanguage
 		}
 	
 		/// <summary>
-		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureElementHasFeatureConstraints, created on demand.
+		/// Stores a mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureModelHasModelConstraints, created on demand.
 		/// </summary>
 		private global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> derivedClassMonikers;
 	
 		/// <summary>
-		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureElementHasFeatureConstraints.
+		/// Construct the mapping from Moniker Xml tag name to DomainClassInfo that derives from FeatureModelHasModelConstraints.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
 		/// <param name="domainDataDirectory">DomainDataDirectory to be used to discover all derived classes.</param>
@@ -9100,7 +9104,7 @@ namespace Company.SplLanguage
 			global::System.Diagnostics.Debug.Assert(this.derivedClassMonikers == null); // Shouldn't construct the table more than once.
 			this.derivedClassMonikers = new global::System.Collections.Generic.Dictionary<string, DslModeling::DomainClassInfo> (global::System.StringComparer.CurrentCulture);
 	
-			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureElementHasFeatureConstraints.DomainClassId);
+			DslModeling::DomainClassInfo thisClass = domainDataDirectory.GetDomainClass(FeatureModelHasModelConstraints.DomainClassId);
 			global::System.Diagnostics.Debug.Assert(thisClass != null, "Cannot find DomainClassInfo for ModelRoot!");
 	
 			global::System.Collections.ObjectModel.ReadOnlyCollection<DslModeling::DomainClassInfo> descendents = thisClass.AllDescendants;
@@ -9126,13 +9130,13 @@ namespace Company.SplLanguage
 	
 		#region Write Methods
 		/// <summary>
-		/// Public WriteMoniker() method that writes a monikerized FeatureElementHasFeatureConstraints instance into XML.
+		/// Public WriteMoniker() method that writes a monikerized FeatureModelHasModelConstraints instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureElementHasFeatureConstraints instance to be monikerized.</param>
+		/// <param name="element">FeatureModelHasModelConstraints instance to be monikerized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
-		/// <param name="sourceRolePlayer">Source element that references the FeatureElementHasFeatureConstraints instance being monikerized.</param>
-		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the FeatureElementHasFeatureConstraints instance being monikerized.</param>
+		/// <param name="sourceRolePlayer">Source element that references the FeatureModelHasModelConstraints instance being monikerized.</param>
+		/// <param name="relSerializer">Serializer that handles the relationship connecting the source element to the FeatureModelHasModelConstraints instance being monikerized.</param>
 		public override void WriteMoniker(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer, DslModeling::ModelElement sourceRolePlayer, DslModeling::DomainRelationshipXmlSerializer relSerializer)
 		{
 			#region Check Parameters
@@ -9161,10 +9165,10 @@ namespace Company.SplLanguage
 		}
 		
 		/// <summary>
-		/// Public Write() method that serializes one FeatureElementHasFeatureConstraints instance into XML.
+		/// Public Write() method that serializes one FeatureModelHasModelConstraints instance into XML.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureElementHasFeatureConstraints instance to be serialized.</param>
+		/// <param name="element">FeatureModelHasModelConstraints instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>
 		/// <param name="rootElementSettings">
 		/// The root element settings if the passed in element is serialized as a root element in the XML. The root element contains additional
@@ -9213,10 +9217,10 @@ namespace Company.SplLanguage
 			}
 	
 			// Write the target role-player instance.
-			FeatureElementHasFeatureConstraints instance = element as FeatureElementHasFeatureConstraints;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of FeatureElementHasFeatureConstraints!");
+			FeatureModelHasModelConstraints instance = element as FeatureModelHasModelConstraints;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of FeatureModelHasModelConstraints!");
 	
-			DslModeling::ModelElement targetElement = instance.FeatureConstraint;
+			DslModeling::ModelElement targetElement = instance.ModelConstraint;
 			DslModeling::DomainClassXmlSerializer targetSerializer = serializationContext.Directory.GetSerializer(targetElement.GetDomainClass().Id);
 			global::System.Diagnostics.Debug.Assert(targetSerializer != null, "Cannot find serializer for " + targetElement.GetDomainClass().Name + "!");
 			targetSerializer.Write(serializationContext, targetElement, writer);
@@ -9234,7 +9238,7 @@ namespace Company.SplLanguage
 		/// Write all properties that need to be serialized as XML attributes.
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureElementHasFeatureConstraints instance to be serialized.</param>
+		/// <param name="element">FeatureModelHasModelConstraints instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param> 
 		[global::System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity", Justification = "Generated code.")]
 		protected override void WritePropertiesAsAttributes(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
@@ -9249,7 +9253,7 @@ namespace Company.SplLanguage
 		/// This methods serializes 1) properties serialized as nested XML elements and 2) child model elements into XML. 
 		/// </summary>
 		/// <param name="serializationContext">Serialization context.</param>
-		/// <param name="element">FeatureElementHasFeatureConstraints instance to be serialized.</param>
+		/// <param name="element">FeatureModelHasModelConstraints instance to be serialized.</param>
 		/// <param name="writer">XmlWriter to write serialized data to.</param>        
 		protected override void WriteElements(DslModeling::SerializationContext serializationContext, DslModeling::ModelElement element, global::System.Xml.XmlWriter writer)
 		{
@@ -9262,11 +9266,11 @@ namespace Company.SplLanguage
 	
 		#region Moniker Support
 		/// <summary>
-		/// This method calculates a moniker to a given FeatureElementHasFeatureConstraints instance.
+		/// This method calculates a moniker to a given FeatureModelHasModelConstraints instance.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">FeatureElementHasFeatureConstraints instance to calculate qualified name for.</param>
-		/// <returns>A fully qualified string moniker to the FeatureElementHasFeatureConstraints instance.</returns>
+		/// <param name="element">FeatureModelHasModelConstraints instance to calculate qualified name for.</param>
+		/// <returns>A fully qualified string moniker to the FeatureModelHasModelConstraints instance.</returns>
 		public override string CalculateQualifiedName(DslModeling::DomainXmlSerializerDirectory directory, DslModeling::ModelElement element)
 		{
 			#region Check Parameters
@@ -9278,8 +9282,8 @@ namespace Company.SplLanguage
 				throw new global::System.ArgumentNullException("element");
 			#endregion	
 			
-			FeatureElementHasFeatureConstraints instance = element as FeatureElementHasFeatureConstraints;
-			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of FeatureElementHasFeatureConstraints!");
+			FeatureModelHasModelConstraints instance = element as FeatureModelHasModelConstraints;
+			global::System.Diagnostics.Debug.Assert(instance != null, "Expecting an instance of FeatureModelHasModelConstraints!");
 	
 			return instance.Id.ToString("D", global::System.Globalization.CultureInfo.CurrentCulture);
 		}
@@ -9290,7 +9294,7 @@ namespace Company.SplLanguage
 		/// returns empty string.
 		/// </summary>
 		/// <param name="directory">Directory to look up serializer based on model element type.</param>
-		/// <param name="element">FeatureElementHasFeatureConstraints instance to get moniker qualifier from.</param>
+		/// <param name="element">FeatureModelHasModelConstraints instance to get moniker qualifier from.</param>
 		/// <returns>
 		/// Value of this element's moniker qualifier property, if it has one, or the value of the container's moniker qualifier property. Or empty string if this
 		/// element is not monikerized using standard /qualifier/key mechanism.
@@ -12782,14 +12786,14 @@ namespace Company.SplLanguage
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureModel.DomainClassId, typeof(FeatureModelSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElement.DomainClassId, typeof(FeatureElementSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureAttribute.DomainClassId, typeof(FeatureAttributeSerializer)));
-					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureConstraint.DomainClassId, typeof(FeatureConstraintSerializer)));
+					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(ModelConstraint.DomainClassId, typeof(ModelConstraintSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureModelHasElements.DomainClassId, typeof(FeatureModelHasElementsSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementOptionalReferencesFeatureElement.DomainClassId, typeof(FeatureElementOptionalReferencesFeatureElementSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementMandatoryReferencesFeatureElement.DomainClassId, typeof(FeatureElementMandatoryReferencesFeatureElementSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementRequiresReferencesFeatureElements.DomainClassId, typeof(FeatureElementRequiresReferencesFeatureElementsSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementExcludesReferenceFeatureElement.DomainClassId, typeof(FeatureElementExcludesReferenceFeatureElementSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementHasFeatureAttributed.DomainClassId, typeof(FeatureElementHasFeatureAttributedSerializer)));
-					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureElementHasFeatureConstraints.DomainClassId, typeof(FeatureElementHasFeatureConstraintsSerializer)));
+					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureModelHasModelConstraints.DomainClassId, typeof(FeatureModelHasModelConstraintsSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(FeatureShape.DomainClassId, typeof(FeatureShapeSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(OptionalConnector.DomainClassId, typeof(OptionalConnectorSerializer)));
 					SplLanguageSerializationBehavior.serializerTypes.Add(new DslModeling::DomainXmlSerializerDirectoryEntry(MandatoryConnector.DomainClassId, typeof(MandatoryConnectorSerializer)));

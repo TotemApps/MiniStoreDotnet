@@ -1,0 +1,38 @@
+﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
+<#@ output extension=".mnz" #>
+<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
+% MiniZinc Model for: <#= this.FeatureModel.Name #>
+
+<#
+foreach(FeatureElement feature in this.FeatureModel.Elements)
+{
+    foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
+    {
+#>
+bool <#= feature.Name + ".Included = " + feature.Included.ToString() #>
+bool <#= featureExcluded.Name + ".Included = " + featureExcluded.Included.ToString() #>
+<#
+    }
+}
+#>
+
+var 1..nc: wa;   var 1..nc: nt;  var 1..nc: sa;   var 1..nc: q;
+var 1..nc: nsw;  var 1..nc: v;   var 1..nc: t;
+
+<#
+foreach(FeatureElement feature in this.FeatureModel.Elements)
+{
+    foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
+    {
+#>
+constraint <#= feature.Name + ".Included != " + featureExcluded.Name + ".Included" #>
+<#
+    }
+}
+#>
+
+solve satisfy;
+
+output ["wa=\(wa)\t nt=\(nt)\t sa=\(sa)\n",
+        "q=\(q)\t nsw=\(nsw)\t v=\(v)\n",
+         "t=", show(t),  "\n"];

@@ -323,6 +323,21 @@ namespace Company.SplLanguage
 			}
 		}
 		#endregion
+		#region ModelConstraints opposite domain role accessor
+		
+		/// <summary>
+		/// Gets a list of ModelConstraints.
+		/// Description for Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModel
+		/// </summary>
+		public virtual DslModeling::LinkedElementCollection<ModelConstraint> ModelConstraints
+		{
+			[global::System.Diagnostics.DebuggerStepThrough]
+			get
+			{
+				return GetRoleCollection<DslModeling::LinkedElementCollection<ModelConstraint>, ModelConstraint>(global::Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModelDomainRoleId);
+			}
+		}
+		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -344,6 +359,11 @@ namespace Company.SplLanguage
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.SplLanguage.FeatureElement.DomainClassId)) 
+				{
+					return true;
+				}
+				
+				if (rootElementDomainInfo.IsDerivedFrom(global::Company.SplLanguage.ModelConstraint.DomainClassId)) 
 				{
 					return true;
 				}
@@ -380,6 +400,15 @@ namespace Company.SplLanguage
 
 				return;
 			}
+				
+			global::Company.SplLanguage.ModelConstraint sourceModelConstraint2 = sourceElement as global::Company.SplLanguage.ModelConstraint;
+			if (sourceModelConstraint2 != null)
+			{
+				// Create link for path FeatureModelHasModelConstraints.ModelConstraints
+				this.ModelConstraints.Add(sourceModelConstraint2);
+
+				return;
+			}
 		
 			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
 			// during a "Paste".
@@ -412,6 +441,20 @@ namespace Company.SplLanguage
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.SplLanguage.FeatureModelHasElements.FeatureModelDomainRoleId, global::Company.SplLanguage.FeatureModelHasElements.ElementDomainRoleId);
+				}
+
+				return;
+			}
+				
+			global::Company.SplLanguage.ModelConstraint sourceModelConstraint2 = sourceElement as global::Company.SplLanguage.ModelConstraint;
+			if (sourceModelConstraint2 != null)
+			{
+				// Delete link for path FeatureModelHasModelConstraints.ModelConstraints
+				
+				foreach (DslModeling::ElementLink link in global::Company.SplLanguage.FeatureModelHasModelConstraints.GetLinks((global::Company.SplLanguage.FeatureModel)this, sourceModelConstraint2))
+				{
+					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
+					link.Delete(global::Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModelDomainRoleId, global::Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraintDomainRoleId);
 				}
 
 				return;
@@ -972,22 +1015,6 @@ namespace Company.SplLanguage
 			}
 		}
 		#endregion
-		#region FeatureConstraints opposite domain role accessor
-		
-		/// <summary>
-		/// Gets a list of FeatureConstraints.
-		/// Description for
-		/// Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElement
-		/// </summary>
-		public virtual DslModeling::LinkedElementCollection<FeatureConstraint> FeatureConstraints
-		{
-			[global::System.Diagnostics.DebuggerStepThrough]
-			get
-			{
-				return GetRoleCollection<DslModeling::LinkedElementCollection<FeatureConstraint>, FeatureConstraint>(global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId);
-			}
-		}
-		#endregion
 		#region ElementGroupPrototype Merge methods
 		/// <summary>
 		/// Returns a value indicating whether the source element represented by the
@@ -1009,11 +1036,6 @@ namespace Company.SplLanguage
 				DslModeling::DomainClassInfo rootElementDomainInfo = this.Partition.DomainDataDirectory.GetDomainClass(rootElement.DomainClassId);
 				
 				if (rootElementDomainInfo.IsDerivedFrom(global::Company.SplLanguage.FeatureAttribute.DomainClassId)) 
-				{
-					return true;
-				}
-				
-				if (rootElementDomainInfo.IsDerivedFrom(global::Company.SplLanguage.FeatureConstraint.DomainClassId)) 
 				{
 					return true;
 				}
@@ -1050,15 +1072,6 @@ namespace Company.SplLanguage
 
 				return;
 			}
-				
-			global::Company.SplLanguage.FeatureConstraint sourceFeatureConstraint2 = sourceElement as global::Company.SplLanguage.FeatureConstraint;
-			if (sourceFeatureConstraint2 != null)
-			{
-				// Create link for path FeatureElementHasFeatureConstraints.FeatureConstraints
-				this.FeatureConstraints.Add(sourceFeatureConstraint2);
-
-				return;
-			}
 		
 			// Sdk workaround to runtime bug #879350 (DSL: can't copy and paste a MEL that has a MEX). Avoid MergeRelate on ModelElementExtension
 			// during a "Paste".
@@ -1091,20 +1104,6 @@ namespace Company.SplLanguage
 				{
 					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
 					link.Delete(global::Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureElementDomainRoleId, global::Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureAttributeDomainRoleId);
-				}
-
-				return;
-			}
-				
-			global::Company.SplLanguage.FeatureConstraint sourceFeatureConstraint2 = sourceElement as global::Company.SplLanguage.FeatureConstraint;
-			if (sourceFeatureConstraint2 != null)
-			{
-				// Delete link for path FeatureElementHasFeatureConstraints.FeatureConstraints
-				
-				foreach (DslModeling::ElementLink link in global::Company.SplLanguage.FeatureElementHasFeatureConstraints.GetLinks((global::Company.SplLanguage.FeatureElement)this, sourceFeatureConstraint2))
-				{
-					// Delete the link, but without possible delete propagation to the element since it's moving to a new location.
-					link.Delete(global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureElementDomainRoleId, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId);
 				}
 
 				return;
@@ -1440,20 +1439,21 @@ namespace Company.SplLanguage
 namespace Company.SplLanguage
 {
 	/// <summary>
-	/// DomainClass FeatureConstraint
-	/// Description for Company.SplLanguage.FeatureConstraint
+	/// DomainClass ModelConstraint
+	/// Description for Company.SplLanguage.ModelConstraint
 	/// </summary>
-	[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureConstraint.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-	[DslDesign::DescriptionResource("Company.SplLanguage.FeatureConstraint.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DisplayNameResource("Company.SplLanguage.ModelConstraint.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+	[DslDesign::DescriptionResource("Company.SplLanguage.ModelConstraint.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 	[DslModeling::DomainModelOwner(typeof(global::Company.SplLanguage.SplLanguageDomainModel))]
 	[global::System.CLSCompliant(true)]
+	[global::System.Diagnostics.DebuggerDisplay("{GetType().Name,nq} (Name = {namePropertyStorage})")]
 	[DslModeling::DomainObjectId("7f044b6e-9619-4c37-9142-4d95570f1be9")]
-	public partial class FeatureConstraint : DslModeling::ModelElement
+	public partial class ModelConstraint : DslModeling::ModelElement
 	{
 		#region Constructors, domain class Id
 	
 		/// <summary>
-		/// FeatureConstraint domain class Id.
+		/// ModelConstraint domain class Id.
 		/// </summary>
 		public static readonly new global::System.Guid DomainClassId = new global::System.Guid(0x7f044b6e, 0x9619, 0x4c37, 0x91, 0x42, 0x4d, 0x95, 0x57, 0x0f, 0x1b, 0xe9);
 		/// <summary>
@@ -1461,7 +1461,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="store">Store where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public FeatureConstraint(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ModelConstraint(DslModeling::Store store, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: this(store != null ? store.DefaultPartitionForClass(DomainClassId) : null, propertyAssignments)
 		{
 		}
@@ -1471,7 +1471,7 @@ namespace Company.SplLanguage
 		/// </summary>
 		/// <param name="partition">Partition where new element is to be created.</param>
 		/// <param name="propertyAssignments">List of domain property id/value pairs to set once the element is created.</param>
-		public FeatureConstraint(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
+		public ModelConstraint(DslModeling::Partition partition, params DslModeling::PropertyAssignment[] propertyAssignments)
 			: base(partition, propertyAssignments)
 		{
 		}
@@ -1490,10 +1490,10 @@ namespace Company.SplLanguage
 		
 		/// <summary>
 		/// Gets or sets the value of Type domain property.
-		/// Description for Company.SplLanguage.FeatureConstraint.Type
+		/// Description for Company.SplLanguage.ModelConstraint.Type
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureConstraint/Type.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureConstraint/Type.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.ModelConstraint/Type.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.ModelConstraint/Type.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("7ff449cd-cdf4-4b12-8590-79a0cb587fb3")]
 		public ConstraintType Type
 		{
@@ -1509,19 +1509,19 @@ namespace Company.SplLanguage
 			}
 		}
 		/// <summary>
-		/// Value handler for the FeatureConstraint.Type domain property.
+		/// Value handler for the ModelConstraint.Type domain property.
 		/// </summary>
-		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureConstraint, ConstraintType>
+		internal sealed partial class TypePropertyHandler : DslModeling::DomainPropertyValueHandler<ModelConstraint, ConstraintType>
 		{
 			private TypePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the FeatureConstraint.Type domain property value handler.
+			/// Gets the singleton instance of the ModelConstraint.Type domain property value handler.
 			/// </summary>
 			public static readonly TypePropertyHandler Instance = new TypePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the FeatureConstraint.Type domain property.
+			/// Gets the Id of the ModelConstraint.Type domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -1537,7 +1537,7 @@ namespace Company.SplLanguage
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed ConstraintType GetValue(FeatureConstraint element)
+			public override sealed ConstraintType GetValue(ModelConstraint element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.typePropertyStorage;
@@ -1548,7 +1548,7 @@ namespace Company.SplLanguage
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(FeatureConstraint element, ConstraintType newValue)
+			public override sealed void SetValue(ModelConstraint element, ConstraintType newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -1577,10 +1577,11 @@ namespace Company.SplLanguage
 		
 		/// <summary>
 		/// Gets or sets the value of Name domain property.
-		/// Description for Company.SplLanguage.FeatureConstraint.Name
+		/// Description for Company.SplLanguage.ModelConstraint.Name
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureConstraint/Name.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureConstraint/Name.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.ModelConstraint/Name.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.ModelConstraint/Name.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslModeling::ElementName]
 		[DslModeling::DomainObjectId("fc32fd23-15cd-4865-a6a2-605a4df1a44f")]
 		public global::System.String Name
 		{
@@ -1596,19 +1597,19 @@ namespace Company.SplLanguage
 			}
 		}
 		/// <summary>
-		/// Value handler for the FeatureConstraint.Name domain property.
+		/// Value handler for the ModelConstraint.Name domain property.
 		/// </summary>
-		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureConstraint, global::System.String>
+		internal sealed partial class NamePropertyHandler : DslModeling::DomainPropertyValueHandler<ModelConstraint, global::System.String>
 		{
 			private NamePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the FeatureConstraint.Name domain property value handler.
+			/// Gets the singleton instance of the ModelConstraint.Name domain property value handler.
 			/// </summary>
 			public static readonly NamePropertyHandler Instance = new NamePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the FeatureConstraint.Name domain property.
+			/// Gets the Id of the ModelConstraint.Name domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -1624,7 +1625,7 @@ namespace Company.SplLanguage
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(FeatureConstraint element)
+			public override sealed global::System.String GetValue(ModelConstraint element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.namePropertyStorage;
@@ -1635,7 +1636,7 @@ namespace Company.SplLanguage
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(FeatureConstraint element, global::System.String newValue)
+			public override sealed void SetValue(ModelConstraint element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -1664,10 +1665,10 @@ namespace Company.SplLanguage
 		
 		/// <summary>
 		/// Gets or sets the value of Value domain property.
-		/// Description for Company.SplLanguage.FeatureConstraint.Value
+		/// Description for Company.SplLanguage.ModelConstraint.Value
 		/// </summary>
-		[DslDesign::DisplayNameResource("Company.SplLanguage.FeatureConstraint/Value.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
-		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureConstraint/Value.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DisplayNameResource("Company.SplLanguage.ModelConstraint/Value.DisplayName", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		[DslDesign::DescriptionResource("Company.SplLanguage.ModelConstraint/Value.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
 		[DslModeling::DomainObjectId("8bbc1517-3caf-4567-80ce-71dcdb338fbf")]
 		public global::System.String Value
 		{
@@ -1683,19 +1684,19 @@ namespace Company.SplLanguage
 			}
 		}
 		/// <summary>
-		/// Value handler for the FeatureConstraint.Value domain property.
+		/// Value handler for the ModelConstraint.Value domain property.
 		/// </summary>
-		internal sealed partial class ValuePropertyHandler : DslModeling::DomainPropertyValueHandler<FeatureConstraint, global::System.String>
+		internal sealed partial class ValuePropertyHandler : DslModeling::DomainPropertyValueHandler<ModelConstraint, global::System.String>
 		{
 			private ValuePropertyHandler() { }
 		
 			/// <summary>
-			/// Gets the singleton instance of the FeatureConstraint.Value domain property value handler.
+			/// Gets the singleton instance of the ModelConstraint.Value domain property value handler.
 			/// </summary>
 			public static readonly ValuePropertyHandler Instance = new ValuePropertyHandler();
 		
 			/// <summary>
-			/// Gets the Id of the FeatureConstraint.Value domain property.
+			/// Gets the Id of the ModelConstraint.Value domain property.
 			/// </summary>
 			public sealed override global::System.Guid DomainPropertyId
 			{
@@ -1711,7 +1712,7 @@ namespace Company.SplLanguage
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <returns>Property value.</returns>
-			public override sealed global::System.String GetValue(FeatureConstraint element)
+			public override sealed global::System.String GetValue(ModelConstraint element)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 				return element.valuePropertyStorage;
@@ -1722,7 +1723,7 @@ namespace Company.SplLanguage
 			/// </summary>
 			/// <param name="element">Element which owns the property.</param>
 			/// <param name="newValue">New property value.</param>
-			public override sealed void SetValue(FeatureConstraint element, global::System.String newValue)
+			public override sealed void SetValue(ModelConstraint element, global::System.String newValue)
 			{
 				if (element == null) throw new global::System.ArgumentNullException("element");
 		
@@ -1737,23 +1738,23 @@ namespace Company.SplLanguage
 		}
 		
 		#endregion
-		#region FeatureElement opposite domain role accessor
+		#region FeatureModel opposite domain role accessor
 		/// <summary>
-		/// Gets or sets FeatureElement.
+		/// Gets or sets FeatureModel.
 		/// Description for
-		/// Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraint
+		/// Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraint
 		/// </summary>
-		public virtual FeatureElement FeatureElement
+		public virtual FeatureModel FeatureModel
 		{
 			[global::System.Diagnostics.DebuggerStepThrough]
 			get
 			{
-				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId) as FeatureElement;
+				return DslModeling::DomainRoleInfo.GetLinkedElement(this, global::Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraintDomainRoleId) as FeatureModel;
 			}
 			[global::System.Diagnostics.DebuggerStepThrough]
 			set
 			{
-				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.SplLanguage.FeatureElementHasFeatureConstraints.FeatureConstraintDomainRoleId, value);
+				DslModeling::DomainRoleInfo.SetLinkedElement(this, global::Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraintDomainRoleId, value);
 			}
 		}
 		#endregion
