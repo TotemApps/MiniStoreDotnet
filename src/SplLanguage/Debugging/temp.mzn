@@ -1,4 +1,3 @@
-﻿% MiniZinc Model for: MinistoreModel
 par bool: ContainersIncluded = true;
 par bool: CloudAzureIncluded = true;
 par bool: DataAccesssOracleIncluded = true;

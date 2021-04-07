@@ -1,15 +1,14 @@
 ﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
 <#@ output extension=".mzn" #>
-<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
+<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel"#>
 % MiniZinc Model for: <#= this.FeatureModel.Name #>
-
 <#
 foreach(FeatureElement feature in this.FeatureModel.Elements)
 {
     foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
     {
 #>
-bool <#= feature.Name + ".Included = " + feature.Included.ToString() #>
+par bool: <#= feature.Name + "Included = " + feature.Included.ToString().ToLower() #>;
 <#
     }
 }
@@ -21,7 +20,7 @@ foreach(FeatureElement feature in this.FeatureModel.Elements)
     foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
     {
 #>
-var bool: <#= featureExcluded.Name + ".Included" #>;
+var bool: <#= featureExcluded.Name + "Included" #>;
 <#
     }
 }
@@ -33,7 +32,7 @@ foreach(FeatureElement feature in this.FeatureModel.Elements)
     foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
     {
 #>
-constraint <#= feature.Name + ".Included != " + featureExcluded.Name + ".Included" #>
+constraint <#= feature.Name + "Included != " + featureExcluded.Name + "Included" #>;
 <#
     }
 }
@@ -41,8 +40,4 @@ constraint <#= feature.Name + ".Included != " + featureExcluded.Name + ".Include
 
 solve satisfy;
 
-output ["wa=\(wa)\t nt=\(nt)\t sa=\(sa)\n",
-        "q=\(q)\t nsw=\(nsw)\t v=\(v)\n",
-         "t=", show(t),  "\n"];
-
-output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(feature.Type==Company.SplLanguage.FeatureType.Concrete){#><#= feature.Name #>=\(<#=feature.Name#>)\t <#}}#>"];
+output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(feature.Type==Company.SplLanguage.FeatureType.Concrete){#><#= feature.Name + "Included" #>=\(<#=feature.Name + "Included"#>)\t <#}}#>"];
