@@ -1,5 +1,5 @@
 ﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
-<#@ output extension=".mnz" #>
+<#@ output extension=".mzn" #>
 <#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
 % MiniZinc Model for: <#= this.FeatureModel.Name #>
 
@@ -10,14 +10,22 @@ foreach(FeatureElement feature in this.FeatureModel.Elements)
     {
 #>
 bool <#= feature.Name + ".Included = " + feature.Included.ToString() #>
-bool <#= featureExcluded.Name + ".Included = " + featureExcluded.Included.ToString() #>
 <#
     }
 }
 #>
 
-var 1..nc: wa;   var 1..nc: nt;  var 1..nc: sa;   var 1..nc: q;
-var 1..nc: nsw;  var 1..nc: v;   var 1..nc: t;
+<#
+foreach(FeatureElement feature in this.FeatureModel.Elements)
+{
+    foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
+    {
+#>
+var bool: <#= featureExcluded.Name + ".Included" #>;
+<#
+    }
+}
+#>
 
 <#
 foreach(FeatureElement feature in this.FeatureModel.Elements)
@@ -36,3 +44,5 @@ solve satisfy;
 output ["wa=\(wa)\t nt=\(nt)\t sa=\(sa)\n",
         "q=\(q)\t nsw=\(nsw)\t v=\(v)\n",
          "t=", show(t),  "\n"];
+
+output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(feature.Type==Company.SplLanguage.FeatureType.Concrete){#><#= feature.Name #>=\(<#=feature.Name#>)\t <#}}#>"];

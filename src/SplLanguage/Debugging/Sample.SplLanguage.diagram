@@ -77,14 +77,14 @@
     <featureShape Id="fb37a896-0950-4626-a11e-e9f2aea43fa2" absoluteBounds="17, 8.5, 2, 0.75">
       <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/BaseComponents" />
     </featureShape>
-    <mandatoryConnector Id="5dbe2250-ab60-4e6c-9468-0f5a7d9893d0" edgePoints="[(14.4479166666667 : 4.375); (11.6522005541347 : 8.5)]" fixedFrom="Caller" fixedTo="Caller">
+    <mandatoryConnector Id="5dbe2250-ab60-4e6c-9468-0f5a7d9893d0" edgePoints="[(14.4479166666667 : 4.375); (11.6522005541347 : 8.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <featureElementMandatoryReferencesFeatureElementMoniker Id="549a5fab-6484-42ea-a91a-9aaa8f3b279f" />
       <nodes>
         <featureShapeMoniker Id="53aa3ea8-8e3e-4f7a-9cb0-8dbb865fbfc2" />
         <featureShapeMoniker Id="266a392a-75bc-458c-9186-3bcbd87cbbed" />
       </nodes>
     </mandatoryConnector>
-    <mandatoryConnector Id="c674e3c3-0c51-4f0e-a169-a1564bfca845" edgePoints="[(14.689810075289 : 4.375); (18.0122575289033 : 8.5)]" fixedFrom="Caller" fixedTo="Caller">
+    <mandatoryConnector Id="c674e3c3-0c51-4f0e-a169-a1564bfca845" edgePoints="[(14.689810075289 : 4.375); (18.0122575289033 : 8.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <featureElementMandatoryReferencesFeatureElementMoniker Id="9fee13e5-d5d2-45fd-a38c-34f21d660e76" />
       <nodes>
         <featureShapeMoniker Id="53aa3ea8-8e3e-4f7a-9cb0-8dbb865fbfc2" />

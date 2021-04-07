@@ -1,14 +1,12 @@
 ﻿% MiniZinc Model for: MinistoreModel
 
 bool Containers.Included = True
-bool Instances.Included = False
 bool CloudAzure.Included = True
-bool CloudAws.Included = False
 bool DataAccesssOracle.Included = True
-bool DataAccesssMssql.Included = False
 
-var 1..nc: wa;   var 1..nc: nt;  var 1..nc: sa;   var 1..nc: q;
-var 1..nc: nsw;  var 1..nc: v;   var 1..nc: t;
+var bool: Instances.Included;
+var bool: CloudAws.Included;
+var bool: DataAccesssMssql.Included;
 
 constraint Containers.Included != Instances.Included
 constraint CloudAzure.Included != CloudAws.Included
@@ -19,3 +17,5 @@ solve satisfy;
 output ["wa=\(wa)\t nt=\(nt)\t sa=\(sa)\n",
         "q=\(q)\t nsw=\(nsw)\t v=\(v)\n",
          "t=", show(t),  "\n"];
+
+output ["Instances=\(Instances)\t Containers=\(Containers)\t CloudAzure=\(CloudAzure)\t CloudAws=\(CloudAws)\t DataAccesssOracle=\(DataAccesssOracle)\t DataAccesssMssql=\(DataAccesssMssql)\t "];

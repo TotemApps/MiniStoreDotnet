@@ -78,9 +78,4 @@
     </featureElement>
     <featureElement Id="a15fb36e-875a-4730-8191-d44eed3e193b" name="DataAccesssMssql" included="false" type="Concrete" label="MSSQL" />
   </elements>
-  <modelConstraints>
-    <featureModelHasModelConstraints Id="57956ea7-3515-4855-962f-ec99c899d98c">
-      <modelConstraint Id="f3ec8f72-2802-4f1c-95e8-4edc6d611ce5" type="Boolean" name="Cloud" />
-    </featureModelHasModelConstraints>
-  </modelConstraints>
 </featureModel>

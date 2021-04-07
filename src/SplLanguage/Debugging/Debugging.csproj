@@ -54,7 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FeatureModelToJson.tt</DependentUpon>
     </None>
-    <None Include="FeatureModelToMiniZinc.mnz">
+    <None Include="FeatureModelToMiniZinc.mzn">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FeatureModelToMiniZinc.tt</DependentUpon>
@@ -90,7 +90,7 @@
     </Content>
     <Content Include="FeatureModelToMiniZinc.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>FeatureModelToMiniZinc.mnz</LastGenOutput>
+      <LastGenOutput>FeatureModelToMiniZinc.mzn</LastGenOutput>
     </Content>
     <Content Include="SplLanguageReport.txt">
       <AutoGen>True</AutoGen>
