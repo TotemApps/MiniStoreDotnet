@@ -1,7 +1,7 @@
-﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
-<#@ output extension=".mzn" #>
+﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" linePragmas="false" culture="en-US" #>
+<#@ output extension=".mzn" encoding="us-ascii" #>
 <#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel"#>
-% MiniZinc Model for: <#= this.FeatureModel.Name #>
+%MiniZinc Model for: <#= this.FeatureModel.Name #>
 <#
 foreach(FeatureElement feature in this.FeatureModel.Elements)
 {
@@ -40,4 +40,4 @@ constraint <#= feature.Name + "Included != " + featureExcluded.Name + "Included"
 
 solve satisfy;
 
-output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(feature.Type==Company.SplLanguage.FeatureType.Concrete){#><#= feature.Name + "Included" #>=\(<#=feature.Name + "Included"#>)\t <#}}#>"];
+output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(feature.Type==Company.SplLanguage.FeatureType.Concrete){#><#= feature.Name + "Included" #>=\(<#=feature.Name + "Included"#>)\n<#}}#>"];

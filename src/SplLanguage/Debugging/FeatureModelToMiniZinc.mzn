@@ -1,4 +1,4 @@
-﻿% MiniZinc Model for: MinistoreModel
+%MiniZinc Model for: MinistoreModel
 par bool: ContainersIncluded = true;
 par bool: CloudAzureIncluded = true;
 par bool: DataAccesssOracleIncluded = true;
@@ -13,4 +13,4 @@ constraint DataAccesssOracleIncluded != DataAccesssMssqlIncluded;
 
 solve satisfy;
 
-output ["InstancesIncluded=\(InstancesIncluded)\t ContainersIncluded=\(ContainersIncluded)\t CloudAzureIncluded=\(CloudAzureIncluded)\t CloudAwsIncluded=\(CloudAwsIncluded)\t DataAccesssOracleIncluded=\(DataAccesssOracleIncluded)\t DataAccesssMssqlIncluded=\(DataAccesssMssqlIncluded)\t "];
+output ["InstancesIncluded=\(InstancesIncluded)\nContainersIncluded=\(ContainersIncluded)\nCloudAzureIncluded=\(CloudAzureIncluded)\nCloudAwsIncluded=\(CloudAwsIncluded)\nDataAccesssOracleIncluded=\(DataAccesssOracleIncluded)\nDataAccesssMssqlIncluded=\(DataAccesssMssqlIncluded)\n"];
