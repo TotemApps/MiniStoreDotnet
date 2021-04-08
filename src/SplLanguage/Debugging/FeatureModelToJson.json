@@ -11,7 +11,7 @@
             "label":"Mini Store Dotnet",
             "name": "MiniStoreDotnetModel",
             "included": "True",
-            "type": "Root"
+            "type": "Abstract"
         },
         {
             "id": "9b6b319c-50e5-4bfd-8a97-5b4fc7efb0fa",

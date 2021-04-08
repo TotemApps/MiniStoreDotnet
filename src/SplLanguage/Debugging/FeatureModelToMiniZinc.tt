@@ -3,7 +3,9 @@
 <#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='FeatureModel.SplLanguage'" provides="FeatureModel=FeatureModel"#>
 %MiniZinc Model for: <#= this.FeatureModel.Name #>
 <#
-validateRoot();
+if(!validateRoot()){
+    return "";
+}
 #>
 <#
 foreach(FeatureElement feature in this.FeatureModel.Elements)
@@ -49,22 +51,30 @@ output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(fe
 /*
 Validates that the Model should have one root element 
 */
-void validateRoot()
+bool validateRoot()
 {
-    bool modelIsValid = false;
+    int elementRootCount = 0;
+    bool isValid = false;
 
     foreach(FeatureElement feature in this.FeatureModel.Elements)
     {
-        if(feature.Type == FeatureType.Abstract)
+        if(feature.Type == FeatureType.Root)
         {
-            modelIsValid = true;
-            break;
+            elementRootCount++;
         }
     }
 
-    if(!modelIsValid)
+    if(elementRootCount==0)
     {
-        Warning("The model doesn't have a root element");
+        Error("The model doesn't have a root element");
+        isValid = false;
+    }else if(elementRootCount>1){
+        Error(String.Format("The model has {0} root elements",elementRootCount.ToString()));
+        isValid=true;
+    }else{
+        isValid = true;
     }
+
+    return isValid;
 }
 #>
