@@ -49,6 +49,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DebugTest.tt</DependentUpon>
     </None>
+    <None Include="FeatureModel.SplLanguage" />
+    <None Include="FeatureModel.SplLanguage.diagram">
+      <DependentUpon>FeatureModel.SplLanguage</DependentUpon>
+    </None>
     <None Include="FeatureModelToJson.json">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,10 +70,6 @@
     <None Include="SplLanguageReportVB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>SplLanguageReportVB.txt</LastGenOutput>
-    </None>
-    <None Include="Sample.SplLanguage" />
-    <None Include="Sample.SplLanguage.diagram">
-      <DependentUpon>Sample.SplLanguage</DependentUpon>
     </None>
     <None Include="Test.SplLanguage" />
     <None Include="Test.SplLanguage.diagram">

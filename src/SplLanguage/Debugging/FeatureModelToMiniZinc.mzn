@@ -14,3 +14,4 @@ constraint DataAccesssOracleIncluded != DataAccesssMssqlIncluded;
 solve satisfy;
 
 output ["InstancesIncluded=\(InstancesIncluded)\nContainersIncluded=\(ContainersIncluded)\nCloudAzureIncluded=\(CloudAzureIncluded)\nCloudAwsIncluded=\(CloudAwsIncluded)\nDataAccesssOracleIncluded=\(DataAccesssOracleIncluded)\nDataAccesssMssqlIncluded=\(DataAccesssMssqlIncluded)\n"];
+

@@ -1,6 +1,6 @@
 ﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
 <#@ output extension=".json" #>
-<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='Sample.SplLanguage'" provides="FeatureModel=FeatureModel" #>
+<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='FeatureModel.SplLanguage'" provides="FeatureModel=FeatureModel" #>
 
 {
     "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
