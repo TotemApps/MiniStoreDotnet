@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="62219585-981d-4f23-bc53-d6ebad321a1a" name="MinistoreModel" description="Feature Model for Ministore product developed by jasotov@eafit.ed.co" version="0.0.2" xmlns="http://schemas.microsoft.com/dsltools/SplLanguage">
   <elements>
-    <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="MiniStoreDotnetModel" included="true" type="Root" label="Mini Store Dotnet">
+    <featureElement Id="126fa3c4-31ad-4c46-92da-569c1eee78ae" name="MiniStoreDotnetModel" included="false" type="Root" label="Mini Store Dotnet">
       <sourceMandatoryFeatureElement>
         <featureElementMandatoryReferencesFeatureElement Id="bc4700f1-7329-4ca5-b64f-c12deffcf6cb">
           <featureElementMoniker name="/62219585-981d-4f23-bc53-d6ebad321a1a/Infrastructure" />

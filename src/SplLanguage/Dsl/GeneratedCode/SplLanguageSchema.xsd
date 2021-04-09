@@ -614,5 +614,27 @@
     </xsd:restriction>
   </xsd:simpleType>
   
+  <!-- Enum FeatureModelType -->
+  <xsd:simpleType name="FeatureModelType">
+    <xsd:restriction base="xsd:string">
+      <xsd:enumeration value="Business">
+        <xsd:annotation>
+          <xsd:documentation>Feature Model for organization business area. Managers, CEO</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Sales">
+        <xsd:annotation>
+          <xsd:documentation>Feature Model for organization sales area. Account Managers, Sales representatives</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+      <xsd:enumeration value="Domain"/>
+      <xsd:enumeration value="Product">
+        <xsd:annotation>
+          <xsd:documentation>Feature Model for organization product engineering area. Product architects, Product developers</xsd:documentation>
+        </xsd:annotation>
+      </xsd:enumeration>
+    </xsd:restriction>
+  </xsd:simpleType>
+  
 </xsd:schema>
 

@@ -566,4 +566,39 @@ namespace Company.SplLanguage
 		Value = 1,
 	}
 }
+namespace Company.SplLanguage
+{
+	/// <summary>
+	/// DomainEnumeration: FeatureModelType
+	/// Description for Company.SplLanguage.FeatureModelType
+	/// </summary>
+	[global::System.CLSCompliant(true)]
+	public enum FeatureModelType
+	{
+		/// <summary>
+		/// Business
+		/// Description for Company.SplLanguage.FeatureModelType.Business
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelType/Business.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Business = 3,
+		/// <summary>
+		/// Sales
+		/// Description for Company.SplLanguage.FeatureModelType.Sales
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelType/Sales.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Sales = 2,
+		/// <summary>
+		/// Domain
+		/// Description for Company.SplLanguage.FeatureModelType.Domain
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelType/Domain.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Domain = 1,
+		/// <summary>
+		/// Product
+		/// Description for Company.SplLanguage.FeatureModelType.Product
+		/// </summary>
+		[DslDesign::DescriptionResource("Company.SplLanguage.FeatureModelType/Product.Description", typeof(global::Company.SplLanguage.SplLanguageDomainModel), "Company.SplLanguage.GeneratedCode.DomainModelResx")]
+		Product = 1,
+	}
+}
 

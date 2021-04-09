@@ -549,6 +549,38 @@
     <value>Propierty general value</value>
     <comment>Description for EnumerationLiteral &apos;Value&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
   </data>
+  <data name="Company.SplLanguage.FeatureModelType/Business.DisplayName" xml:space="preserve">
+    <value>Business</value>
+    <comment>Display name for EnumerationLiteral &apos;Business&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Business.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Business</value>
+    <comment>Description for EnumerationLiteral &apos;Business&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Sales.DisplayName" xml:space="preserve">
+    <value>Sales</value>
+    <comment>Display name for EnumerationLiteral &apos;Sales&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Sales.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Sales</value>
+    <comment>Description for EnumerationLiteral &apos;Sales&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Domain.DisplayName" xml:space="preserve">
+    <value>Domain</value>
+    <comment>Display name for EnumerationLiteral &apos;Domain&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Domain.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Domain</value>
+    <comment>Description for EnumerationLiteral &apos;Domain&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Product.DisplayName" xml:space="preserve">
+    <value>Product</value>
+    <comment>Display name for EnumerationLiteral &apos;Product&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Product.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Product</value>
+    <comment>Description for EnumerationLiteral &apos;Product&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
   <data name="Company.SplLanguage.FeatureShape.Description" xml:space="preserve">
     <value>Shape used to represent ExampleElements on a Diagram.</value>
     <comment>Description for DomainClass &apos;FeatureShape&apos;</comment>

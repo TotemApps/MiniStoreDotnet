@@ -262,6 +262,20 @@
         <EnumerationLiteral Description="Propierty general value" Name="Value" Value="1" />
       </Literals>
     </DomainEnumeration>
+    <DomainEnumeration Name="FeatureModelType" Namespace="Company.SplLanguage" Description="Description for Company.SplLanguage.FeatureModelType">
+      <Literals>
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureModelType.Business" Name="Business" Value="3">
+          <Notes>Feature Model for organization business area. Managers, CEO</Notes>
+        </EnumerationLiteral>
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureModelType.Sales" Name="Sales" Value="2">
+          <Notes>Feature Model for organization sales area. Account Managers, Sales representatives</Notes>
+        </EnumerationLiteral>
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureModelType.Domain" Name="Domain" Value="1" />
+        <EnumerationLiteral Description="Description for Company.SplLanguage.FeatureModelType.Product" Name="Product" Value="1">
+          <Notes>Feature Model for organization product engineering area. Product architects, Product developers</Notes>
+        </EnumerationLiteral>
+      </Literals>
+    </DomainEnumeration>
   </Types>
   <Shapes>
     <GeometryShape Id="828ca0d5-7a5e-414a-adb6-d8b8b144cc01" Description="Shape used to represent ExampleElements on a Diagram." Name="FeatureShape" DisplayName="Feature Shape" Namespace="Company.SplLanguage" FixedTooltipText="Feature Shape" FillColor="242, 239, 229" OutlineColor="113, 111, 110" InitialWidth="2" InitialHeight="0.75" OutlineThickness="0.01" Geometry="Rectangle">
@@ -275,8 +289,8 @@
     </GeometryShape>
   </Shapes>
   <Connectors>
-    <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="OptionalConnector" DisplayName="Optional Connector" Namespace="Company.SplLanguage" FixedTooltipText="Optional Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" />
-    <Connector Id="b33c28f5-07e2-4271-9171-b8b4b6132bab" Description="Description for Company.SplLanguage.MandatoryConnector" Name="MandatoryConnector" DisplayName="Mandatory Connector" Namespace="Company.SplLanguage" FixedTooltipText="Mandatory Connector" TargetEndStyle="FilledDiamond" Thickness="0.01" RoutingStyle="Straight" />
+    <Connector Id="f0b7116b-612f-46cc-98dc-ebaa03cd1db6" Description="Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram." Name="OptionalConnector" DisplayName="Optional Connector" Namespace="Company.SplLanguage" FixedTooltipText="Optional Connector" Color="113, 111, 110" TargetEndStyle="EmptyDiamond" Thickness="0.01" RoutingStyle="Straight" targetEndWidth="0.2" />
+    <Connector Id="b33c28f5-07e2-4271-9171-b8b4b6132bab" Description="Description for Company.SplLanguage.MandatoryConnector" Name="MandatoryConnector" DisplayName="Mandatory Connector" Namespace="Company.SplLanguage" FixedTooltipText="Mandatory Connector" TargetEndStyle="FilledDiamond" Thickness="0.01" RoutingStyle="Straight" targetEndWidth="0.2" />
     <Connector Id="5b5a6950-700f-400f-a55c-6d1e08c6c096" Description="Description for Company.SplLanguage.RequiresConnector" Name="RequiresConnector" DisplayName="Requires Connector" Namespace="Company.SplLanguage" FixedTooltipText="Requires Connector" TargetEndStyle="EmptyArrow" Thickness="0.01" RoutingStyle="Straight" />
     <Connector Id="18106ec3-7708-473f-be15-6639cec425eb" Description="Description for Company.SplLanguage.ExcludeConnector" Name="ExcludeConnector" DisplayName="Exclude Connector" Namespace="Company.SplLanguage" FixedTooltipText="Exclude Connector" SourceEndStyle="EmptyArrow" TargetEndStyle="EmptyArrow" Thickness="0.01" RoutingStyle="Straight" />
   </Connectors>
