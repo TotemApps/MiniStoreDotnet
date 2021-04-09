@@ -13,4 +13,10 @@
     <RepositoryType>Git</RepositoryType>
   </PropertyGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="..\MiniStoreDotnetCore.DependencyValidation\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+
 </Project>

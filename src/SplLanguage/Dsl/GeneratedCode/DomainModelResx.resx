@@ -1,0 +1,863 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Company.SplLanguage.SplLanguageDomainModel.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.SplLanguage</value>
+    <comment>Description for DslLibrary &apos;SplLanguage&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.SplLanguageDomainModel.DisplayName" xml:space="preserve">
+    <value>SplLanguage</value>
+    <comment>DisplayName for DslLibrary &apos;SplLanguage&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel.Description" xml:space="preserve">
+    <value>The root in which all other elements are embedded. Appears as a diagram.</value>
+    <comment>Description for DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel.DisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>DisplayName for DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModel.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Description.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModel.Description</value>
+    <comment>Description for DomainProperty &apos;Description&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Description.DisplayName" xml:space="preserve">
+    <value>Description</value>
+    <comment>DisplayName for DomainProperty &apos;Description&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Version.Description" xml:space="preserve">
+    <value>Model version</value>
+    <comment>Description for DomainProperty &apos;Version&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModel/Version.DisplayName" xml:space="preserve">
+    <value>Version</value>
+    <comment>DisplayName for DomainProperty &apos;Version&apos; on DomainClass &apos;FeatureModel&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement.Description" xml:space="preserve">
+    <value>Elements embedded in the model. Appear as boxes on the diagram.</value>
+    <comment>Description for DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElement.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Included.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElement.Included</value>
+    <comment>Description for DomainProperty &apos;Included&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Included.DisplayName" xml:space="preserve">
+    <value>Included</value>
+    <comment>DisplayName for DomainProperty &apos;Included&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Type.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElement.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Label.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElement.Label</value>
+    <comment>Description for DomainProperty &apos;Label&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElement/Label.DisplayName" xml:space="preserve">
+    <value>Label</value>
+    <comment>DisplayName for DomainProperty &apos;Label&apos; on DomainClass &apos;FeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute</value>
+    <comment>Description for DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute.DisplayName" xml:space="preserve">
+    <value>Feature Attribute</value>
+    <comment>DisplayName for DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Domain.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute.Domain</value>
+    <comment>Description for DomainProperty &apos;Domain&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Domain.DisplayName" xml:space="preserve">
+    <value>Domain</value>
+    <comment>DisplayName for DomainProperty &apos;Domain&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Value.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureAttribute.Value</value>
+    <comment>Description for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureAttribute/Value.DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>DisplayName for DomainProperty &apos;Value&apos; on DomainClass &apos;FeatureAttribute&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ModelConstraint</value>
+    <comment>Description for DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint.DisplayName" xml:space="preserve">
+    <value>Model Constraint</value>
+    <comment>DisplayName for DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint/Type.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ModelConstraint.Type</value>
+    <comment>Description for DomainProperty &apos;Type&apos; on DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint/Type.DisplayName" xml:space="preserve">
+    <value>Type</value>
+    <comment>DisplayName for DomainProperty &apos;Type&apos; on DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint/Name.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ModelConstraint.Name</value>
+    <comment>Description for DomainProperty &apos;Name&apos; on DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint/Name.DisplayName" xml:space="preserve">
+    <value>Name</value>
+    <comment>DisplayName for DomainProperty &apos;Name&apos; on DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint/Value.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ModelConstraint.Value</value>
+    <comment>Description for DomainProperty &apos;Value&apos; on DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ModelConstraint/Value.DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>DisplayName for DomainProperty &apos;Value&apos; on DomainClass &apos;ModelConstraint&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements.Description" xml:space="preserve">
+    <value>Embedding relationship between the Model and Elements</value>
+    <comment>Description for DomainClass &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements.DisplayName" xml:space="preserve">
+    <value>Feature Model Has Elements</value>
+    <comment>DisplayName for DomainClass &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements/FeatureModel.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements/FeatureModel.DisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>DisplayName for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements/FeatureModel.PropertyDisplayName" xml:space="preserve">
+    <value>Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements/Element.Description" xml:space="preserve">
+    <value></value>
+    <comment>Description for DomainRole &apos;Element&apos; on DomainRelationship &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements/Element.DisplayName" xml:space="preserve">
+    <value>Element</value>
+    <comment>DisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasElements/Element.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>PropertyDisplayName for DomainRole &apos;Element&apos; on DomainRelationship &apos;FeatureModelHasElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.Description" xml:space="preserve">
+    <value>Reference relationship between Elements.</value>
+    <comment>Description for DomainClass &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element Optional References Feature Element</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/SourceOptionalFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ExampleRelationship.Target</value>
+    <comment>Description for DomainRole &apos;SourceOptionalFeatureElement&apos; on DomainRelationship &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/SourceOptionalFeatureElement.DisplayName" xml:space="preserve">
+    <value>SourceOptionalFeatureElement</value>
+    <comment>DisplayName for DomainRole &apos;SourceOptionalFeatureElement&apos; on DomainRelationship &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/SourceOptionalFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Source Optional Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceOptionalFeatureElement&apos; on DomainRelationship &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/TargetOptionalFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ExampleRelationship.Source</value>
+    <comment>Description for DomainRole &apos;TargetOptionalFeatureElement&apos; on DomainRelationship &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/TargetOptionalFeatureElement.DisplayName" xml:space="preserve">
+    <value>Target Optional Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;TargetOptionalFeatureElement&apos; on DomainRelationship &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementOptionalReferencesFeatureElement/TargetOptionalFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Target Optional Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetOptionalFeatureElement&apos; on DomainRelationship &apos;FeatureElementOptionalReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement</value>
+    <comment>Description for DomainClass &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element Mandatory References Feature Element</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/SourceMandatoryFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.SourceMandatoryFeatureElement</value>
+    <comment>Description for DomainRole &apos;SourceMandatoryFeatureElement&apos; on DomainRelationship &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/SourceMandatoryFeatureElement.DisplayName" xml:space="preserve">
+    <value>Source Mandatory Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;SourceMandatoryFeatureElement&apos; on DomainRelationship &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/SourceMandatoryFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Source Mandatory Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceMandatoryFeatureElement&apos; on DomainRelationship &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/TargetMandatoryFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement.TargetMandatoryFeatureElement</value>
+    <comment>Description for DomainRole &apos;TargetMandatoryFeatureElement&apos; on DomainRelationship &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/TargetMandatoryFeatureElement.DisplayName" xml:space="preserve">
+    <value>Target Mandatory Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;TargetMandatoryFeatureElement&apos; on DomainRelationship &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementMandatoryReferencesFeatureElement/TargetMandatoryFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Target Mandatory Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetMandatoryFeatureElement&apos; on DomainRelationship &apos;FeatureElementMandatoryReferencesFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements</value>
+    <comment>Description for DomainClass &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.DisplayName" xml:space="preserve">
+    <value>Feature Element Requires References Feature Elements</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/SourceRequiresFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.SourceRequiresFeatureElement</value>
+    <comment>Description for DomainRole &apos;SourceRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/SourceRequiresFeatureElement.DisplayName" xml:space="preserve">
+    <value>Source Requires Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;SourceRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/SourceRequiresFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Source Requires Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/TargetRequiresFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements.TargetRequiresFeatureElement</value>
+    <comment>Description for DomainRole &apos;TargetRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/TargetRequiresFeatureElement.DisplayName" xml:space="preserve">
+    <value>Target Requires Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;TargetRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementRequiresReferencesFeatureElements/TargetRequiresFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Target Requires Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetRequiresFeatureElement&apos; on DomainRelationship &apos;FeatureElementRequiresReferencesFeatureElements&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement</value>
+    <comment>Description for DomainClass &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element Excludes Reference Feature Element</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/SourceExcludeFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.SourceExcludeFeatureElement</value>
+    <comment>Description for DomainRole &apos;SourceExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/SourceExcludeFeatureElement.DisplayName" xml:space="preserve">
+    <value>Source Exclude Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;SourceExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/SourceExcludeFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Target Exclude Feature Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;SourceExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/TargetExcludeFeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement.TargetExcludeFeatureElement</value>
+    <comment>Description for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/TargetExcludeFeatureElement.DisplayName" xml:space="preserve">
+    <value>Target Exclude Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementExcludesReferenceFeatureElement/TargetExcludeFeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Source Exclude Feature Elements</value>
+    <comment>PropertyDisplayName for DomainRole &apos;TargetExcludeFeatureElement&apos; on DomainRelationship &apos;FeatureElementExcludesReferenceFeatureElement&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureAttributed</value>
+    <comment>Description for DomainClass &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed.DisplayName" xml:space="preserve">
+    <value>Feature Element Has Feature Attributed</value>
+    <comment>DisplayName for DomainClass &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureElement.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureElement</value>
+    <comment>Description for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureElement.DisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>DisplayName for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureElement.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Attributed</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureElement&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureAttribute.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureElementHasFeatureAttributed.FeatureAttribute</value>
+    <comment>Description for DomainRole &apos;FeatureAttribute&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureAttribute.DisplayName" xml:space="preserve">
+    <value>Feature Attribute</value>
+    <comment>DisplayName for DomainRole &apos;FeatureAttribute&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureElementHasFeatureAttributed/FeatureAttribute.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureAttribute&apos; on DomainRelationship &apos;FeatureElementHasFeatureAttributed&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelHasModelConstraints</value>
+    <comment>Description for DomainClass &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints.DisplayName" xml:space="preserve">
+    <value>Feature Model Has Model Constraints</value>
+    <comment>DisplayName for DomainClass &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints/FeatureModel.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelHasModelConstraints.FeatureModel</value>
+    <comment>Description for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints/FeatureModel.DisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>DisplayName for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints/FeatureModel.PropertyDisplayName" xml:space="preserve">
+    <value>Model Constraints</value>
+    <comment>PropertyDisplayName for DomainRole &apos;FeatureModel&apos; on DomainRelationship &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints/ModelConstraint.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelHasModelConstraints.ModelConstraint</value>
+    <comment>Description for DomainRole &apos;ModelConstraint&apos; on DomainRelationship &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints/ModelConstraint.DisplayName" xml:space="preserve">
+    <value>Model Constraint</value>
+    <comment>DisplayName for DomainRole &apos;ModelConstraint&apos; on DomainRelationship &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelHasModelConstraints/ModelConstraint.PropertyDisplayName" xml:space="preserve">
+    <value>Feature Model</value>
+    <comment>PropertyDisplayName for DomainRole &apos;ModelConstraint&apos; on DomainRelationship &apos;FeatureModelHasModelConstraints&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureType/Abstract.DisplayName" xml:space="preserve">
+    <value>Abstract</value>
+    <comment>Display name for EnumerationLiteral &apos;Abstract&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureType/Abstract.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureType.Abstract</value>
+    <comment>Description for EnumerationLiteral &apos;Abstract&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureType/Concrete.DisplayName" xml:space="preserve">
+    <value>Concrete</value>
+    <comment>Display name for EnumerationLiteral &apos;Concrete&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureType/Concrete.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureType.Concrete</value>
+    <comment>Description for EnumerationLiteral &apos;Concrete&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureType/Root.DisplayName" xml:space="preserve">
+    <value>Root</value>
+    <comment>Display name for EnumerationLiteral &apos;Root&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureType/Root.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureType.Root</value>
+    <comment>Description for EnumerationLiteral &apos;Root&apos; on DomainEnumeration &apos;FeatureType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Boolean.DisplayName" xml:space="preserve">
+    <value>Boolean</value>
+    <comment>Display name for EnumerationLiteral &apos;Boolean&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Boolean.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ConstraintType.Boolean</value>
+    <comment>Description for EnumerationLiteral &apos;Boolean&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Arithmetic.DisplayName" xml:space="preserve">
+    <value>Arithmetic</value>
+    <comment>Display name for EnumerationLiteral &apos;Arithmetic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Arithmetic.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ConstraintType.Arithmetic</value>
+    <comment>Description for EnumerationLiteral &apos;Arithmetic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Symbolic.DisplayName" xml:space="preserve">
+    <value>Symbolic</value>
+    <comment>Display name for EnumerationLiteral &apos;Symbolic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ConstraintType/Symbolic.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ConstraintType.Symbolic</value>
+    <comment>Description for EnumerationLiteral &apos;Symbolic&apos; on DomainEnumeration &apos;ConstraintType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Question.DisplayName" xml:space="preserve">
+    <value>Question</value>
+    <comment>Display name for EnumerationLiteral &apos;Question&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Question.Description" xml:space="preserve">
+    <value>Questión for the product configurator</value>
+    <comment>Description for EnumerationLiteral &apos;Question&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Value.DisplayName" xml:space="preserve">
+    <value>Value</value>
+    <comment>Display name for EnumerationLiteral &apos;Value&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.DomainPropierty/Value.Description" xml:space="preserve">
+    <value>Propierty general value</value>
+    <comment>Description for EnumerationLiteral &apos;Value&apos; on DomainEnumeration &apos;DomainPropierty&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Business.DisplayName" xml:space="preserve">
+    <value>Business</value>
+    <comment>Display name for EnumerationLiteral &apos;Business&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Business.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Business</value>
+    <comment>Description for EnumerationLiteral &apos;Business&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Sales.DisplayName" xml:space="preserve">
+    <value>Sales</value>
+    <comment>Display name for EnumerationLiteral &apos;Sales&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Sales.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Sales</value>
+    <comment>Description for EnumerationLiteral &apos;Sales&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Domain.DisplayName" xml:space="preserve">
+    <value>Domain</value>
+    <comment>Display name for EnumerationLiteral &apos;Domain&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Domain.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Domain</value>
+    <comment>Description for EnumerationLiteral &apos;Domain&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Product.DisplayName" xml:space="preserve">
+    <value>Product</value>
+    <comment>Display name for EnumerationLiteral &apos;Product&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureModelType/Product.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.FeatureModelType.Product</value>
+    <comment>Description for EnumerationLiteral &apos;Product&apos; on DomainEnumeration &apos;FeatureModelType&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureShape.Description" xml:space="preserve">
+    <value>Shape used to represent ExampleElements on a Diagram.</value>
+    <comment>Description for DomainClass &apos;FeatureShape&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.FeatureShape.DisplayName" xml:space="preserve">
+    <value>Feature Shape</value>
+    <comment>DisplayName for DomainClass &apos;FeatureShape&apos;</comment>
+  </data>
+  <data name="FeatureShapeLabelDecoratorDefaultText" xml:space="preserve">
+    <value>LabelDecorator</value>
+    <comment>Text decorator default text</comment>
+  </data>
+  <data name="Company.SplLanguage.OptionalConnector.Description" xml:space="preserve">
+    <value>Connector between the ExampleShapes. Represents ExampleRelationships on the Diagram.</value>
+    <comment>Description for DomainClass &apos;OptionalConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.OptionalConnector.DisplayName" xml:space="preserve">
+    <value>Optional Connector</value>
+    <comment>DisplayName for DomainClass &apos;OptionalConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.MandatoryConnector.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.MandatoryConnector</value>
+    <comment>Description for DomainClass &apos;MandatoryConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.MandatoryConnector.DisplayName" xml:space="preserve">
+    <value>Mandatory Connector</value>
+    <comment>DisplayName for DomainClass &apos;MandatoryConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.RequiresConnector.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.RequiresConnector</value>
+    <comment>Description for DomainClass &apos;RequiresConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.RequiresConnector.DisplayName" xml:space="preserve">
+    <value>Requires Connector</value>
+    <comment>DisplayName for DomainClass &apos;RequiresConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ExcludeConnector.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.ExcludeConnector</value>
+    <comment>Description for DomainClass &apos;ExcludeConnector&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.ExcludeConnector.DisplayName" xml:space="preserve">
+    <value>Exclude Connector</value>
+    <comment>DisplayName for DomainClass &apos;ExcludeConnector&apos;</comment>
+  </data>
+  <data name="FormatList" xml:space="preserve">
+    <value>SplLanguage (*.SplLanguage)|*.SplLanguage</value>
+    <comment>A list of file format specifiers for the Save dialog box</comment>
+  </data>
+  <data name="ModelExplorerTitle" xml:space="preserve">
+    <value>SplLanguage Explorer</value>
+    <comment>Model Explorer Toolwindow title</comment>
+  </data>
+  <data name="Company.SplLanguage.SplLanguageDiagram.Description" xml:space="preserve">
+    <value>Description for Company.SplLanguage.SplLanguageDiagram</value>
+    <comment>Description for DomainClass &apos;SplLanguageDiagram&apos;</comment>
+  </data>
+  <data name="Company.SplLanguage.SplLanguageDiagram.DisplayName" xml:space="preserve">
+    <value>Minimal Language Diagram</value>
+    <comment>DisplayName for DomainClass &apos;SplLanguageDiagram&apos;</comment>
+  </data>
+  <data name="SplLanguageToolboxTab" xml:space="preserve">
+    <value>SplLanguage</value>
+    <comment>Toolbox item tab name</comment>
+  </data>
+  <data name="FeatureElementToolboxItem" xml:space="preserve">
+    <value>Feature Element</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="FeatureElementToolboxTooltip" xml:space="preserve">
+    <value>Create an ExampleElement</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="OptionalRelationshipToolboxItem" xml:space="preserve">
+    <value>Optional Relationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="OptionalRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Drag between ExampleElements to create an ExampleRelationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="MandatoryRelationshipToolboxItem" xml:space="preserve">
+    <value>Mandatory Relationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="MandatoryRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Mandatory Relationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="RequiresRelationshipToolboxItem" xml:space="preserve">
+    <value>Requires Relationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="RequiresRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Requires Relationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ExcludeRelationshipToolboxItem" xml:space="preserve">
+    <value>Exclude Relationship</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ExcludeRelationshipToolboxTooltip" xml:space="preserve">
+    <value>Exclude Relationship</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="FeatureAttributeToolboxItem" xml:space="preserve">
+    <value>Feature Attribute</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="FeatureAttributeToolboxTooltip" xml:space="preserve">
+    <value>Feature Attribute</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="ModelConstraintToolboxItem" xml:space="preserve">
+    <value>Feature Constraint</value>
+    <comment>Toolbox item name</comment>
+  </data>
+  <data name="ModelConstraintToolboxTooltip" xml:space="preserve">
+    <value>Model Constraint</value>
+    <comment>Toolbox tooltip text</comment>
+  </data>
+  <data name="UnresolvedToolboxItem" xml:space="preserve">
+    <value>ToolboxItem {0} was not found</value>
+    <comment>Invalid toolId</comment>
+  </data>
+  <data name="UnsupportedToolboxFormat" xml:space="preserve">
+    <value>Unsupported toolbox format: {0}</value>
+    <comment>Unsupported format Id</comment>
+  </data>
+  <data name="UnrecognizedElementType" xml:space="preserve">
+    <value>ElementType {0} is not recognized as a type of domain class which belongs to this domain model.</value>
+    <comment>Incorrect ElementType passed in to Model.CreateElement method</comment>
+  </data>
+  <data name="UnrecognizedElementLinkType" xml:space="preserve">
+    <value>ElementLinkType {0} is not recognized as a type of domain relationship which belongs to this domain model.</value>
+    <comment>Incorrect ElementLinkType passed in to Model.CreateElementLink method</comment>
+  </data>
+  <data name="AmbiguousSchema" xml:space="preserve">
+    <value>More than one schema found for target namespace &apos;{0}&apos;, use the first one at &apos;{1}&apos;.</value>
+    <comment>Serialization Warning: AmbiguousSchema</comment>
+  </data>
+  <data name="ExpectingFullFormRelationship" xml:space="preserve">
+    <value>Element &apos;{0}&apos; is treated as the target role-player of a relationship &apos;{1}&apos; instance, which should be serialized in full-form.</value>
+    <comment>Serialization Warning: ExpectingFullFormRelationship</comment>
+  </data>
+  <data name="ExpectingShortFormRelationship" xml:space="preserve">
+    <value>Instances of relationship &apos;{0}&apos; should be serialized in short-form.</value>
+    <comment>Serialization Warning: ExpectingShortFormRelationship</comment>
+  </data>
+  <data name="IgnoredPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;, ignored.</value>
+    <comment>Serialization Warning: IgnoredPropertyValue</comment>
+  </data>
+  <data name="MissingId" xml:space="preserve">
+    <value>Missing &apos;Id&apos; attribute, a new Guid &apos;{0}&apos; is auto-generated.</value>
+    <comment>Serialization Warning: MissingId</comment>
+  </data>
+  <data name="MonikerResolvedToDuplicateLink" xml:space="preserve">
+    <value>Resolving moniker &apos;{0}&apos; causes a duplicate link to be created, so the link and the moniker are ignored.</value>
+    <comment>Serialization Warning: MonikerResolvedToDuplicateLink</comment>
+  </data>
+  <data name="NoSchema" xml:space="preserve">
+    <value>Cannot find a schema that defines target namespace &apos;{0}&apos;, schema validation skipped.</value>
+    <comment>Serialization Warning: NoSchema</comment>
+  </data>
+  <data name="UnexpectedXmlElement" xml:space="preserve">
+    <value>Unexpected XML element &apos;{0}&apos;, ignored.</value>
+    <comment>Serialization Warning: UnexpectedXmlElement</comment>
+  </data>
+  <data name="AmbiguousMoniker" xml:space="preserve">
+    <value>Ambiguous moniker &apos;{0}&apos; encountered. It is used for both &apos;{1}&apos; and &apos;{2}&apos;.</value>
+    <comment>Serialization Error: AmbiguousMoniker</comment>
+  </data>
+  <data name="CannotMonikerizeElement" xml:space="preserve">
+    <value>Instances of DomainClass &apos;{0}&apos; cannot be serialized as a moniker.
+A DomainClass can be serialized as a moniker only if 
+1) it has a defined/inherited DomainProperty marked as IsMonikerKey=true, or 
+2) it is marked/inherited with SerializeId=true.</value>
+    <comment>Serialization Error: CannotMonikerizeElement</comment>
+  </data>
+  <data name="CannotOpenDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotOpenDocument</comment>
+  </data>
+  <data name="CannotSaveDocument" xml:space="preserve">
+    <value>Error encountered, check Error List window for details.</value>
+    <comment>Serialization Error: CannotSaveDocument</comment>
+  </data>
+  <data name="DanglingRelationship" xml:space="preserve">
+    <value>Relationship &apos;{0}&apos; instance is missing target role-player.</value>
+    <comment>Serialization Error: DanglingRelationship</comment>
+  </data>
+  <data name="InvalidPropertyValue" xml:space="preserve">
+    <value>Invalid property value &apos;{0}&apos; for property &apos;{1}&apos; with type &apos;{2}&apos;.</value>
+    <comment>Serialization Error: InvalidPropertyValue</comment>
+  </data>
+  <data name="MissingMoniker" xml:space="preserve">
+    <value>Missing moniker. A moniker is expected in attribute &apos;{0}&apos;.</value>
+    <comment>Serialization Error: MissingMoniker</comment>
+  </data>
+  <data name="MissingTransaction" xml:space="preserve">
+    <value>This must be called within the context of an active transaction.</value>
+    <comment>Serialization Error: MissingTransaction</comment>
+  </data>
+  <data name="UnresolvedMoniker" xml:space="preserve">
+    <value>Cannot resolve moniker &apos;{0}&apos;.</value>
+    <comment>Serialization Error: UnresolvedMoniker</comment>
+  </data>
+  <data name="VersionMismatch" xml:space="preserve">
+    <value>Unsupported version &apos;{0}&apos;, can only support &apos;{1}&apos;.</value>
+    <comment>Serialization Error: VersionMismatch</comment>
+  </data>
+  <data name="CannotCloseExistingDiagramDocument" xml:space="preserve">
+    <value>Diagram file &apos;{0}&apos; cannot be closed.</value>
+    <comment>User cancel closing diagram file. Hence, the DSL model file cannot be opened</comment>
+  </data>
+  <data name="BindingErrorOccurred" xml:space="preserve">
+    <value>Extensions for this designer may not be found as a MEF binding error has occurred. The error that occurred was:
+{0}</value>
+    <comment>MEF binding error occurred - exception message being logged in the error window so the user is aware.</comment>
+  </data>
+  <data name="InvalidSaveRootElementType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid root element type.</value>
+    <comment>Exception message used if an invalid root element type is passed to IDomainModelSerializer.SaveModel / SaveModelAndDiagram</comment>
+  </data>
+  <data name="InvalidSaveDiagramType" xml:space="preserve">
+    <value>&apos;{0}&apos; is not a valid diagram type.</value>
+    <comment>Exception message used if an invalid diagram type is passed to IDomainModelSerializer.SaveModelAndDiagram</comment>
+  </data>
+  <data name="MinimumMultiplicityMissingLink" xml:space="preserve">
+    <value>{0} {1} has no {2}.</value>
+    <comment>Multiplicity underflow validation.</comment>
+  </data>
+  <data name="SaveOperationCancelled" xml:space="preserve">
+    <value>Save operation cancelled.</value>
+    <comment>Message when save is cancelled on validation errors</comment>
+  </data>
+  <data name="SaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors, continue save?</value>
+    <comment>Message when validation errors are found on save</comment>
+  </data>
+  <data name="UnloadableSaveValidationFailed" xml:space="preserve">
+    <value>There were validation errors. Continuing to save may cause the file to become unloadable, do you want to continue?</value>
+    <comment>Message when validation errors are found on save that will cause file to become unloadable</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="FeatureShapeIncludedDecoratorDefaultImage" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\SelectedIcon.bmp;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Icon decorator default image</comment>
+  </data>
+  <data name="FeatureElementToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\resources\exampleshapetoolbitmap.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="OptionalRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\OptionalIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="MandatoryRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\MandatoryIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="RequiresRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\RequiresIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ExcludeRelationshipToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ExcludesIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="FeatureAttributeToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\AttributeIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+  <data name="ModelConstraintToolboxBitmap" type="System.Resources.ResXFileRef, System.Windows.Forms" xml:space="preserve">
+    <value>..\Resources\ConstraintIcon.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <comment>Toolbox item image</comment>
+  </data>
+</root>
+
+

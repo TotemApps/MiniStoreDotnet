@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<labDslEDiagram dslVersion="1.0.0.0" Id="b4a92c1b-bb56-4cf1-84de-e4b373b17e6a" absoluteBounds="0, 0, 11, 8.5" name="Ministore">
+  <featureModelMoniker Id="dc511776-40c1-470a-a306-7779f895b213" />
+  <nestedChildShapes>
+    <exampleShape Id="919c9b3f-fce5-4b05-b5c9-8df2fb5b7608" absoluteBounds="3.125, 0.5, 2, 0.75">
+      <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Ministore" />
+    </exampleShape>
+    <exampleShape Id="5b8325b3-884d-488e-ab12-69c4a370dcc3" absoluteBounds="1.125, 1.875, 2, 0.75">
+      <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Stack" />
+    </exampleShape>
+    <exampleConnector Id="bae1051a-3de5-4a5d-8d0e-2f5a0869d511" edgePoints="[(3.8046859375 : 1.25); (3.8046859375 : 2.20959595959596); (3.125 : 2.20959595959596)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="80657553-7092-4e14-82c2-9242a14bea89">
+      <nodes>
+        <exampleShapeMoniker Id="919c9b3f-fce5-4b05-b5c9-8df2fb5b7608" />
+        <exampleShapeMoniker Id="5b8325b3-884d-488e-ab12-69c4a370dcc3" />
+      </nodes>
+    </exampleConnector>
+    <exampleShape Id="6ae5fec9-3c3b-490f-9683-98998243fad5" absoluteBounds="5.125, 1.875, 2, 0.75">
+      <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Core Components" />
+    </exampleShape>
+    <exampleConnector Id="5910e054-231b-45e7-9658-d6ceea36ac29" edgePoints="[(4.46484546875 : 1.25); (4.46484546875 : 2.19791666666667); (5.125 : 2.19791666666667)]" fixedFrom="NotFixed" fixedTo="NotFixed" TargetRelationshipDomainClassId="80657553-7092-4e14-82c2-9242a14bea89">
+      <nodes>
+        <exampleShapeMoniker Id="919c9b3f-fce5-4b05-b5c9-8df2fb5b7608" />
+        <exampleShapeMoniker Id="6ae5fec9-3c3b-490f-9683-98998243fad5" />
+      </nodes>
+    </exampleConnector>
+    <abstractFeatureShape Id="4aa494f8-6fd9-46dd-acaf-c587c1f29271" absoluteBounds="1.125, 0.5, 1.5, 1">
+      <abstractFeatureMoniker Id="dda5950a-d0f6-49e7-926f-9f8004cc19ca" />
+    </abstractFeatureShape>
+    <abstractFeatureShape Id="9fd36795-14eb-4657-9d4d-d64c4938ac66" absoluteBounds="5.625, 0.5, 1.5, 1">
+      <abstractFeatureMoniker Id="4b4fa05b-fd08-46a7-b1c6-d92c41da1a1c" />
+    </abstractFeatureShape>
+    <exampleShape Id="5a2a3510-d0dd-4c1e-9700-be594979b10f" absoluteBounds="4.875, 3.875, 2, 0.75">
+      <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/FeatureElement1" />
+    </exampleShape>
+  </nestedChildShapes>
+</labDslEDiagram>

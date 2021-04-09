@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{feb2375e-917d-4a3b-bf80-9c712fca18c3}</TemplateID>
+		<Name Package="{6fb3ec30-432b-428f-97bd-990c443a15f0}" ID="103"/>
+		<Description Package="{6fb3ec30-432b-428f-97bd-990c443a15f0}" ID="102"/>
+		<Icon Package="{6fb3ec30-432b-428f-97bd-990c443a15f0}" ID="201" />
+		<ProjectType>CSharp</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>FeatureSpl.feature</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.feature">feature.feature</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.feature.diagram">feature.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

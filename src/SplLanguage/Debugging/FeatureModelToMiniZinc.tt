@@ -1,0 +1,80 @@
+﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation" linePragmas="false" culture="en-US" #>
+<#@ output extension=".mzn" encoding="us-ascii" #>
+<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='FeatureModel.SplLanguage'" provides="FeatureModel=FeatureModel"#>
+%MiniZinc Model for: <#= this.FeatureModel.Name #>
+<#
+if(!validateRoot()){
+    return "";
+}
+#>
+<#
+foreach(FeatureElement feature in this.FeatureModel.Elements)
+{
+    foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
+    {
+#>
+par bool: <#= feature.Name + "Included = " + feature.Included.ToString().ToLower() #>;
+<#
+    }
+}
+#>
+
+<#
+foreach(FeatureElement feature in this.FeatureModel.Elements)
+{
+    foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
+    {
+#>
+var bool: <#= featureExcluded.Name + "Included" #>;
+<#
+    }
+}
+#>
+
+<#
+foreach(FeatureElement feature in this.FeatureModel.Elements)
+{
+    foreach(FeatureElement featureExcluded in feature.TargetExcludeFeatureElements)
+    {
+#>
+constraint <#= feature.Name + "Included != " + featureExcluded.Name + "Included" #>;
+<#
+    }
+}
+#>
+
+solve satisfy;
+
+output ["<# foreach(FeatureElement feature in this.FeatureModel.Elements){ if(feature.Type==Company.SplLanguage.FeatureType.Concrete){#><#= feature.Name + "Included" #>=\(<#=feature.Name + "Included"#>)\n<#}}#>"];
+
+<#+
+/*
+Validates that the Model should have one root element 
+*/
+bool validateRoot()
+{
+    int elementRootCount = 0;
+    bool isValid = false;
+
+    foreach(FeatureElement feature in this.FeatureModel.Elements)
+    {
+        if(feature.Type == FeatureType.Root)
+        {
+            elementRootCount++;
+        }
+    }
+
+    if(elementRootCount==0)
+    {
+        Error("The model doesn't have a root element");
+        isValid = false;
+    }else if(elementRootCount>1){
+        Error(String.Format("The model has {0} root elements",elementRootCount.ToString()));
+        isValid=true;
+    }else{
+        isValid = true;
+    }
+
+    return isValid;
+}
+#>

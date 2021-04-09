@@ -1,0 +1,17 @@
+﻿<!--DSL Tools Language Template-->
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<TemplateData>
+		<TemplateID>{306259b0-93a5-47b7-b088-33819445a5fa}</TemplateID>
+		<Name Package="{5090cb56-7f40-4eed-bd79-9e0284e26410}" ID="103"/>
+		<Description Package="{5090cb56-7f40-4eed-bd79-9e0284e26410}" ID="102"/>
+		<Icon Package="{5090cb56-7f40-4eed-bd79-9e0284e26410}" ID="201" />
+		<ProjectType>VisualBasic</ProjectType>
+		<SortOrder>360</SortOrder>
+		<DefaultName>LabDslE.LabDslE</DefaultName>
+	</TemplateData>
+	<TemplateContent>
+		<ProjectItem TargetFileName="$fileinputname$.LabDslE">LabDslE.LabDslE</ProjectItem>
+		<ProjectItem TargetFileName="$fileinputname$.LabDslE.diagram">LabDslE.diagram</ProjectItem>
+	</TemplateContent>
+</VSTemplate>
+

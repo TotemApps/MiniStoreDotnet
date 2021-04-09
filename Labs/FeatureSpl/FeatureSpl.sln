@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dsl", "Dsl\Dsl.csproj", "{DD18A82A-37BB-43D6-88AA-B99775F8FA79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DslPackage", "DslPackage\DslPackage.csproj", "{71376147-873A-4D4C-A5F8-0603A3414516}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD18A82A-37BB-43D6-88AA-B99775F8FA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD18A82A-37BB-43D6-88AA-B99775F8FA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD18A82A-37BB-43D6-88AA-B99775F8FA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD18A82A-37BB-43D6-88AA-B99775F8FA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71376147-873A-4D4C-A5F8-0603A3414516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71376147-873A-4D4C-A5F8-0603A3414516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71376147-873A-4D4C-A5F8-0603A3414516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71376147-873A-4D4C-A5F8-0603A3414516}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C4B91A1-185A-4865-9F01-504E7DCBCCEC}
+	EndGlobalSection
+EndGlobal
