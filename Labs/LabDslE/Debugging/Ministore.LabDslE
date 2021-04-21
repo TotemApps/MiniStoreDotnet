@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dc511776-40c1-470a-a306-7779f895b213" xmlns="http://schemas.microsoft.com/dsltools/LabDslE">
+  <elements>
+    <featureElement Id="0ab2f34e-8a56-496d-aab9-840c326c2c5f" name="Ministore">
+      <targets>
+        <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Stack" />
+        <featureElementMoniker name="/dc511776-40c1-470a-a306-7779f895b213/Core Components" />
+      </targets>
+    </featureElement>
+    <featureElement Id="e7ef14b8-cae1-4c9a-b2e8-1ebd57660bde" name="Stack" />
+    <featureElement Id="c16fe3be-6694-4c4a-86ea-f965444ef5a1" name="Core Components" />
+    <featureElement Id="d27e148d-dc3d-412b-8ffc-64a64110bcd6" name="FeatureElement1" />
+  </elements>
+  <abstractFeatured>
+    <featureModelHasAbstractFeatured Id="402c5dd5-981d-4e1a-afcb-66607e8ca28f">
+      <abstractFeature Id="dda5950a-d0f6-49e7-926f-9f8004cc19ca" />
+    </featureModelHasAbstractFeatured>
+    <featureModelHasAbstractFeatured Id="7017c21b-a21b-496d-9c68-607e9f62f25c">
+      <abstractFeature Id="4b4fa05b-fd08-46a7-b1c6-d92c41da1a1c" />
+    </featureModelHasAbstractFeatured>
+  </abstractFeatured>
+</featureModel>

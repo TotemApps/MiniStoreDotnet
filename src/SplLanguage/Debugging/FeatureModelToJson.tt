@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" debug="true" inherits="Microsoft.VisualStudio.TextTemplating.VSHost.ModelingTextTransformation"#>
+<#@ output extension=".json" #>
+<#@ SplLanguage processor="SplLanguageDirectiveProcessor" requires="fileName='FeatureModel.SplLanguage'" provides="FeatureModel=FeatureModel" #>
+
+{
+    "$schema":"file:d:/FuentesTFS/TotemApps/MiniStoreDotnet/Models/Feature Models/ExtendedFeatureModelScheme.json",
+    "version": "<#= this.FeatureModel.Version #>",
+    "name":"<#= this.FeatureModel.Name #>",
+    "id":"<#= this.FeatureModel.Id #>",
+    "description":"<#= this.FeatureModel.Description #>",
+    "features":[
+<#
+for (int i = 0; i < this.FeatureModel.Elements.Count;i++)
+{
+    FeatureElement element = this.FeatureModel.Elements[i];
+
+#>
+        {
+            "id": "<#= element.Id #>",
+            "label":"<#= element.Label #>",
+            "name": "<#= element.Name #>",
+            "included": "<#= element.Included #>",
+            "type": "<#= element.Type #>"
+        }<#= i<(this.FeatureModel.Elements.Count - 1) ? "," : "" #>
+<#
+}
+#>
+    ]
+}

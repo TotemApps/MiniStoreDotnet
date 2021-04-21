@@ -12,6 +12,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <AdditionalFiles Include="..\MiniStoreDotnetCore.DependencyValidation\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+      <Visible>False</Visible>
+    </AdditionalFiles>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MiniStoreDotnetCore.DataAccess\MiniStoreDotnetCore.DataAccess.csproj" />
   </ItemGroup>
 

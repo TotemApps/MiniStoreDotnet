@@ -1,0 +1,29 @@
+﻿
+{
+    "features":[
+    "Name": "Mini Store Dotnet",
+    "Included": "True"
+    "Name": "Cloud Provider",
+    "Included": "True"
+    "Name": "Infrastructure",
+    "Included": "True"
+    "Name": "Instances",
+    "Included": "False"
+    "Name": "Containers",
+    "Included": "True"
+    "Name": "Core components",
+    "Included": "True"
+    "Name": "Azure",
+    "Included": "True"
+    "Name": "AWS",
+    "Included": "False"
+    "Name": "Data Acces",
+    "Included": "True"
+    "Name": "Base components",
+    "Included": "False"
+    "Name": "Oracle",
+    "Included": "True"
+    "Name": "MSSQL",
+    "Included": "False"
+    ]
+}

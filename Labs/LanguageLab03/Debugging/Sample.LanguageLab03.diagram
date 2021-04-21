@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<languageLab03Diagram dslVersion="1.0.0.0" Id="6db1470d-0c4f-4e15-aacf-9763fb097cea" absoluteBounds="0, 0, 11, 8.5" name="Sample">
+  <exampleModelMoniker Id="deb247fc-4b98-4120-b3f8-202bd1b59418" />
+  <nestedChildShapes>
+    <exampleShape Id="330043dc-d4ee-49d5-aae1-b52f82fcc3fd" absoluteBounds="6.375, 1.25, 2, 0.75">
+      <exampleElementMoniker name="/deb247fc-4b98-4120-b3f8-202bd1b59418/Root Element" />
+    </exampleShape>
+    <exampleShape Id="57aaacd3-a474-4e5a-b261-74f7e2117134" absoluteBounds="4.5, 4.25, 2, 0.75">
+      <exampleElementMoniker name="/deb247fc-4b98-4120-b3f8-202bd1b59418/Child 01" />
+    </exampleShape>
+    <exampleShape Id="4663d7a9-814f-4eab-a04e-9c8581de459c" absoluteBounds="8.25, 4.25, 2, 0.75">
+      <exampleElementMoniker name="/deb247fc-4b98-4120-b3f8-202bd1b59418/Child 02" />
+    </exampleShape>
+    <exampleConnector Id="cbab289a-16ba-46ee-a963-6c1609f24c6b" edgePoints="[(7.10156175 : 2); (7.10156175 : 4.7265625); (6.5 : 4.7265625)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="94cb2453-4531-4687-9286-5083404d585a">
+      <nodes>
+        <exampleShapeMoniker Id="330043dc-d4ee-49d5-aae1-b52f82fcc3fd" />
+        <exampleShapeMoniker Id="57aaacd3-a474-4e5a-b261-74f7e2117134" />
+      </nodes>
+    </exampleConnector>
+    <exampleConnector Id="3092a989-aa4a-44fa-88e9-eaa0797ecc71" edgePoints="[(8.375 : 1.625); (9.3125005 : 1.625); (9.3125005 : 4.25)]" fixedFrom="Algorithm" fixedTo="Algorithm" TargetRelationshipDomainClassId="94cb2453-4531-4687-9286-5083404d585a">
+      <nodes>
+        <exampleShapeMoniker Id="330043dc-d4ee-49d5-aae1-b52f82fcc3fd" />
+        <exampleShapeMoniker Id="4663d7a9-814f-4eab-a04e-9c8581de459c" />
+      </nodes>
+    </exampleConnector>
+  </nestedChildShapes>
+</languageLab03Diagram>

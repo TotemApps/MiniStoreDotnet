@@ -7,6 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <AdditionalFiles Include="..\MiniStoreDotnetServices.Modeling\DependencyValidation1.layerdiagram" Link="DependencyValidation1.layerdiagram">
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="..\MiniStoreDotnetServices.Modeling\DependencyValidation1.layerdiagram.layout" Link="DependencyValidation1.layerdiagram.layout" />
+    <None Include="..\MiniStoreDotnetServices.Modeling\DependencyValidation1.layerdiagram.suppressions" Link="DependencyValidation1.layerdiagram.suppressions" />
+    <AdditionalFiles Include="..\MiniStoreDotnetServices.Modeling\MiniStoreDornetServicesDependencyValidation.layerdiagram" Link="MiniStoreDornetServicesDependencyValidation.layerdiagram">
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="..\MiniStoreDotnetServices.Modeling\MiniStoreDornetServicesDependencyValidation.layerdiagram.layout" Link="MiniStoreDornetServicesDependencyValidation.layerdiagram.layout" />
+    <None Include="..\MiniStoreDotnetServices.Modeling\MiniStoreDornetServicesDependencyValidation.layerdiagram.suppressions" Link="MiniStoreDornetServicesDependencyValidation.layerdiagram.suppressions" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
     <PackageReference Include="MiniStoreDotnetCore.DataAccess" Version="0.1.0" />
     <PackageReference Include="MiniStoreDotnetCore.DataAccess.MsSql" Version="0.1.0" />

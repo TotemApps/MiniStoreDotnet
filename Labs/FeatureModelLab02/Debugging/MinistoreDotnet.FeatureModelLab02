@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<featureModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6" xmlns="http://schemas.microsoft.com/dsltools/FeatureModelLab02">
+  <elements>
+    <featureElement Id="58d7fa11-a798-44b5-9329-87d189cde012" name="Ministore Dotnet">
+      <targets>
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Cloud provider" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Infrastructure" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Core components" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Web store" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Dash board" />
+      </targets>
+    </featureElement>
+    <featureElement Id="889c0d23-817c-4502-9e4a-47341acd82f9" name="Cloud provider">
+      <targets>
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Azure" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/AWS" />
+      </targets>
+    </featureElement>
+    <featureElement Id="a56d9a7a-cc7e-4d58-843d-e7d9fdf9688c" name="Infrastructure">
+      <targets>
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/VM" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Microservices" />
+      </targets>
+    </featureElement>
+    <featureElement Id="b9f6094b-80ca-4c76-b99d-150d9edf0d2c" name="Core components">
+      <targets>
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Data Acces" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Base Components" />
+      </targets>
+    </featureElement>
+    <featureElement Id="a691a399-4788-4d8f-bb58-f7afc8744af0" name="Web store" />
+    <featureElement Id="cf773590-e037-4e26-bc4b-e55758db0726" name="Dash board" />
+    <featureElement Id="25e513bd-236c-4157-8156-d78d9ce92077" name="Azure" />
+    <featureElement Id="51a244ca-1331-4a30-bf59-0db8d2fed5da" name="AWS" included="false" />
+    <featureElement Id="104536e9-e641-4adc-b7c3-9fe91b63dadc" name="VM" />
+    <featureElement Id="2146a56b-a4bc-4922-81d3-12b507f124e6" name="Microservices" included="false" />
+    <featureElement Id="9bf101dd-48d7-4197-8c68-29826a41143e" name="Data Acces">
+      <targets>
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Oracle" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/MSSql" />
+      </targets>
+    </featureElement>
+    <featureElement Id="a245eb90-5f83-4d0c-bd61-4ebd88d21668" name="Base Components">
+      <targets>
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/System Logs" />
+        <featureElementMoniker name="/a494c3ce-74d4-4c93-ac5d-b9a4cea7b4c6/Stock" />
+      </targets>
+    </featureElement>
+    <featureElement Id="d851159e-3c29-4b2c-93ca-b1818899867b" name="Oracle" />
+    <featureElement Id="555b9ee6-f882-4005-be0c-aef1ef62813c" name="MSSql" included="false" />
+    <featureElement Id="c01b18d6-c2b5-4371-aff8-31598760a07f" name="System Logs" />
+    <featureElement Id="752984d5-c979-430a-8bf5-8e3a7a0e7337" name="Stock" included="false" />
+  </elements>
+</featureModel>

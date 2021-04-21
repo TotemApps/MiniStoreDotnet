@@ -1,0 +1,114 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="16.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.10318</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44816568-5324-441A-AE44-F1B7EF335D21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Debugging</RootNamespace>
+    <AssemblyName>Debugging</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Dsl\GeneratedCode\SplLanguageSchema.xsd">
+      <Link>SplLanguageSchema.xsd</Link>
+      <SubType>
+      </SubType>
+    </None>
+    <None Include="DebugTest.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DebugTest.tt</DependentUpon>
+    </None>
+    <None Include="FeatureModel.SplLanguage" />
+    <None Include="FeatureModel.SplLanguage.diagram">
+      <DependentUpon>FeatureModel.SplLanguage</DependentUpon>
+    </None>
+    <None Include="FeatureModelToJson.json">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeatureModelToJson.tt</DependentUpon>
+    </None>
+    <None Include="FeatureModelToMiniZinc.mzn">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeatureModelToMiniZinc.tt</DependentUpon>
+    </None>
+    <None Include="SplLanguageReport.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SplLanguageReport.txt</LastGenOutput>
+    </None>
+    <None Include="SplLanguageReportVB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SplLanguageReportVB.txt</LastGenOutput>
+    </None>
+    <None Include="Test.SplLanguage" />
+    <None Include="Test.SplLanguage.diagram">
+      <DependentUpon>Test.SplLanguage</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4df5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DebugTest.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DebugTest.json</LastGenOutput>
+    </Content>
+    <Content Include="FeatureModelToJson.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FeatureModelToJson.json</LastGenOutput>
+    </Content>
+    <Content Include="FeatureModelToMiniZinc.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>FeatureModelToMiniZinc.mzn</LastGenOutput>
+    </Content>
+    <Content Include="SplLanguageReport.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SplLanguageReport.tt</DependentUpon>
+    </Content>
+    <Content Include="SplLanguageReportVB.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SplLanguageReportVB.tt</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
