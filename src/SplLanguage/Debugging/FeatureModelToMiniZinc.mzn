@@ -4,8 +4,11 @@ par bool: CloudAzureIncluded = true;
 par bool: DataAccesssOracleIncluded = true;
 
 var bool: InstancesIncluded;
+
 var bool: CloudAwsIncluded;
+
 var bool: DataAccesssMssqlIncluded;
+
 
 constraint ContainersIncluded != InstancesIncluded;
 constraint CloudAzureIncluded != CloudAwsIncluded;
