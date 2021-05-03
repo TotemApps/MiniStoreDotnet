@@ -1,0 +1,61 @@
+// Date: 20210503
+// Tool: https://app.gleek.io/
+
+//Features
+Mini Store Dotnet
+Cloud Provider
+Infrastructure
+Core components
+Data access
+Oracle
+MsSql
+Web store
+Dashboard
+Azure
+AWS
+VM
+Microservice
+Base components
+Base services
+System Logs
+Stock
+Identity manager
+Base dashboard
+Base store
+Product list
+Cart
+Real time tracking
+Standard tracking
+Dashboard stock
+Dasboard log
+Service desk
+Analitics
+
+
+//Relations
+Mini Store Dotnet --> Cloud Provider
+Mini Store Dotnet --> Infrastructure
+Mini Store Dotnet --> Core components
+Mini Store Dotnet --> Web store
+Mini Store Dotnet --> Dashboard
+Mini Store Dotnet --> Base components
+Mini Store Dotnet --> Base services
+Cloud Provider --> AWS
+Cloud Provider --> Azure
+Infrastructure -->VM
+Infrastructure -->Microservice
+Core components --> Data access
+Data access --> Oracle
+Data access --> MsSql
+Base components --> System Logs
+Base components --> Stock
+Base services --> Base dashboard
+Base services --> Base store
+Web store --> Product list
+Web store --> Cart
+Web store --> Real time tracking
+Web store --> Standard tracking
+Dashboard --> Dashboard stock
+Dashboard --> Dasboard log
+Dashboard --> Service desk
+Dashboard --> Analitics
